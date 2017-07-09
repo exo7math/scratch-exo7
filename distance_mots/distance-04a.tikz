@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+
+% Grille
+\draw (-1,2) grid ++(6,-5);
+
+% Mot 1
+\node at (-0.5,-0.5) {\bf P};
+\node at (-0.5,-1.5) {\bf A};
+\node at (-0.5,-2.5) {\bf S};
+
+% Mot 2
+\node at (1.5,1.5) {\bf P};
+\node at (2.5,1.5) {\bf L};
+\node at (3.5,1.5) {\bf A};
+\node at (4.5,1.5) {\bf T};
+
+
+
+\end{tikzpicture}

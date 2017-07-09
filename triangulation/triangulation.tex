@@ -1,0 +1,314 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+% Commande spécifique
+
+\titre[F]{Triangulation}
+%===============================
+
+\emph{Lorsque l'on a une surface, il est utile de la découper en petites zones simples afin de traiter chaque zone individuellement, par exemple pour la colorier ou lui appliquer une texture. Nous allons voir comment découper une région du plan en triangles.}
+
+\bigskip
+\bigskip
+
+
+\begin{activite}[Triangulation]
+
+\emph{Trianguler} un ensemble de points du plan, c'est relier ces points par des segments de façon à former des triangles. Les points seront appelés les \emph{sommets}.
+%Une \emph{triangulation}, c'est relier des points du plan par des segments de façon à former des triangles. Les points seront appelés les \emph{sommets}.
+%Il y a quelques conditions :
+Il faut néanmoins respecter quelques règles : 
+\begin{itemize}
+  \item[(a)] Les seuls polygones autorisés sont des triangles.
+  \item[(b)] Tous les sommets doivent faire partie d'au moins un triangle.
+  \item[(c)] La triangulation est convexe.
+\end{itemize}  
+   
+\myfigure{1}{
+  \tikzinput{triangulation_ex0_01}\qquad
+  \tikzinput{triangulation_ex0_02}
+  }
+  
+  \medskip
+  
+\myfigure{1}{  
+  \tikzinput{triangulation_ex0_03}\qquad
+  \tikzinput{triangulation_ex0_04}  
+}
+
+
+Dessine des triangulations pour les ensembles de sommets suivants (plusieurs solutions sont possibles) :
+   
+\myfigure{1}{
+  \tikzinput{triangulation_ex0_05}
+  \tikzinput{triangulation_ex0_06}  
+}
+\end{activite}
+
+\begin{activite}[Un triangle]
+
+Pour les triangles $ABC$  suivants, trace :
+\begin{itemize}
+  \item les trois médiatrices,
+  \item le point $O$ d'intersection de ces médiatrices,
+  \item le cercle circonscrit au triangle $ABC$ (c'est-à-dire le cercle de centre $O$ passant par $A$, $B$ et $C$).
+\end{itemize}
+
+  
+  
+\myfigure{0.7}{
+  \tikzinput{triangulation_ex1_02}\quad
+  \tikzinput{triangulation_ex1_03}\qquad
+  \tikzinput{triangulation_ex1_04}
+}
+
+\end{activite}
+
+
+
+\begin{activite}[Deux triangles]
+
+Soit $ABCD$ un quadrilatère. Il existe deux triangulations possibles.
+Soit avec les triangles $ABD$ et $BCD$ ; soit avec les triangles $ABC$ et $CDA$.
+Nous allons privilégier une configuration par rapport à l'autre.
+
+
+\myfigure{0.7}{
+  \tikzinput{triangulation_ex2_02}\qquad\quad
+  \tikzinput{triangulation_ex2_01}  
+}
+
+\begin{center}
+\begin{minipage}{0.9\textwidth}
+\textbf{Proposition.}
+\emph{
+%Pour l'une des deux triangulations d'un quadrilatère,
+%chaque cercle circonscrit aux triangles ne contient, dans son intérieur, aucun sommet.  
+Dans l'une des deux triangulations possibles d'un quadrilatère, les deux cercles circonscrits aux triangles ne contiennent dans leur intérieur aucun sommet.
+}
+\end{minipage}
+\end{center}
+
+Sur la triangulation de gauche, le cercle circonscrit au triangle $BCD$ 
+\couleurnb{(en vert)}{} contient le point $A$.
+Sur la triangulation à droite, les intérieurs des deux cercles circonscrits ne contiennent aucun sommet. C'est cette triangulation de droite qui valide la proposition. 
+
+\myfigure{0.7}{
+  \tikzinput{triangulation_ex2_04}\qquad\quad
+  \tikzinput{triangulation_ex2_03}  
+}
+
+De plus, si les $4$ sommets ne sont pas sur un même cercle, alors il n'y a qu'une seule des deux triangulations qui valide cette proposition.
+
+
+\begin{enumerate}
+  \item Pour les quadrilatères suivants dessine les deux triangulations, les cercles circonscrits et décide quelle est la triangulation qui valide la proposition.
+  
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+ 
+\myfigure{0.7}{
+  \tikzinput{triangulation_ex2_05}\qquad\qquad
+  \tikzinput{triangulation_ex2_05}  
+}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+ 
+\myfigure{0.7}{
+  \tikzinput{triangulation_ex2_06}\qquad\qquad
+  \tikzinput{triangulation_ex2_06}  
+}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+  \item Pour les quadrilatères suivants, dessine la triangulation qui valide la proposition.
+  
+\bigskip
+\bigskip
+\bigskip
+\bigskip
+
+ 
+\myfigure{0.7}{
+  \tikzinput{triangulation_ex2_07}\qquad\qquad
+  \tikzinput{triangulation_ex2_08}  
+}
+
+\bigskip
+\bigskip
+\bigskip
+\bigskip  
+  \item Que se passe-t-il dans le cas très particulier où les $4$ points 
+  sont sur un même cercle ? (On pourra prendre l'exemple d'un rectangle.)
+\end{enumerate}
+
+
+\end{activite}
+
+
+
+\begin{activite}[Triangulation de Delaunay]
+
+\sauteligne
+
+\begin{center}
+\begin{minipage}{0.9\textwidth}
+\textbf{Définition.}
+\emph{
+Une triangulation est dite \emph{triangulation de Delaunay} si l'intérieur des cercles circonscrits ne contient pas de sommets.
+}
+\end{minipage}
+\end{center}
+
+\`A gauche, la triangulation n'est pas du type Delaunay (le point $A$ est à l'intérieur d'un cercle et le point $C$ également). Par contre la triangulation de droite est une triangulation de Delaunay.
+
+\myfigure{0.7}{
+  \tikzinput{triangulation_ex3_01}\qquad
+  \tikzinput{triangulation_ex3_02}  
+}
+
+
+Les triangles d'une triangulation de Delaunay sont peu allongés : les angles sont les moins aigus possibles. Voici un exemple.
+
+
+\myfigure{1.3}{
+  \tikzinput{triangulation_ex3_03}  
+}
+
+
+\bigskip
+Lorsque qu'il y a $4$ sommets situés sur un même cercle, alors deux triangulations de Delaunay sont possibles. Mais si ce n'est pas le cas, alors :
+
+\bigskip
+\begin{center}
+\begin{minipage}{0.9\textwidth}
+\textbf{Proposition.} 
+\emph{
+Une triangulation de Delaunay existe toujours et est unique.
+}
+\end{minipage}
+\end{center}
+
+\bigskip
+\bigskip
+\begin{center}
+\begin{minipage}{0.9\textwidth}
+\textbf{Algorithme.} 
+\emph{
+Pour obtenir une triangulation de Delaunay :
+\begin{itemize}
+  \item partir d'une triangulation quelconque ;
+  \item chaque fois que l'on trouve un triangle dont le cercle circonscrit contient en son intérieur un sommet, on effectue un basculement comme dans la figure du quadrilatère ci-dessus.
+\end{itemize}
+}
+\end{minipage}
+\end{center}
+\bigskip
+
+ Dans la pratique, on commence par tracer le contour, on trace des triangles ayant les angles les moins aigus possibles (même si on ne peut pas vraiment les éviter sur les bords). Si on a un doute sur un triangle, on trace le cercle circonscrit ; si ce cercle contient un sommet en son intérieur, on effectue un basculement.
+
+Trace les triangulations de Delaunay pour les ensembles de sommets suivants.
+
+
+\myfigure{1.3}{
+  \tikzinput{triangulation_ex3_04}
+}
+
+\myfigure{1}{
+  \tikzinput{triangulation_ex3_05}
+}
+
+\myfigure{0.9}{
+  \tikzinput{triangulation_ex3_06}
+}
+
+\end{activite}
+
+
+
+\begin{activite}[Cellules de Voronoï]
+
+\sauteligne
+
+\begin{enumerate}
+  \item Deux princesses, vivant dans des châteaux $A$ et $B$, revendiquent un territoire. Elles se mettent d'accord sur le principe suivant : \og Je possède les terres qui sont plus proches de mon château que du tien. \fg{}
+
+Dessine le territoire de chacune des princesses.
+\myfigure{1}{
+\tikzinput{triangulation_ex4_01}
+}
+
+  \item Il y a maintenant $3$ princesses. Chacune possède les terres qui sont plus proches de son château que d'un autre château.
+  
+
+Dessine le territoire de chacune des princesses.
+\myfigure{1}{
+\tikzinput{triangulation_ex4_02}
+\tikzinput{triangulation_ex4_03}
+}  
+  
+  \item Il y a maintenant plein de princesses !
+  Voici une méthode pour tracer les territoires de chaque princesse, appelés \emph{cellules de Voronoï}. 
+  \begin{itemize}
+    \item Trace la triangulation de Delaunay (où les sommets sont les châteaux).
+    \item Trace les médiatrices de chaque triangle et le centre du cercle circonscrit.
+    \item Les cellules de Voronoï sont délimitées par des portions de médiatrices.
+  \end{itemize}
+
+\myfigure{1}{
+  \tikzinput{triangulation_ex4_05}
+  \tikzinput{triangulation_ex4_06}  
+}
+\myfigure{1}{
+  \tikzinput{triangulation_ex4_07}
+  \tikzinput{triangulation_ex4_08}  
+}
+\myfigure{1}{
+  \tikzinput{triangulation_ex4_09}  
+}
+ 
+ 
+  
+Voici ce que l'on obtient avec un exemple plus compliqué.
+\myfigure{1}{
+  \tikzinput{triangulation_ex4_10}  
+}  
+  
+Trace les cellules de Voronoï des configurations suivantes.
+
+\myfigure{1.5}{
+  \tikzinput{triangulation_ex4_14}  
+}  
+  
+  
+ \myfigure{1.5}{
+  \tikzinput{triangulation_ex4_11}
+ }
+ 
+ \myfigure{1.2}{ 
+  \tikzinput{triangulation_ex4_12}  
+ }
+ 
+ \myfigure{1}{  
+  \tikzinput{triangulation_ex4_13}    
+} 
+\end{enumerate}
+
+\end{activite}
+
+
+
+\end{document}
+

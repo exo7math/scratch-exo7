@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw,  thick]
+\tikzstyle{point} = [black]
+
+
+\coordinate (A) at (0,2);
+\coordinate (B) at (3,1);
+\coordinate (C) at (0,0);
+\coordinate (D) at (2,3);
+\coordinate (E) at (4,2);
+\coordinate (F) at (3,0);
+\coordinate (G) at (-1,1);
+\coordinate (H) at (-2,0);
+
+\draw[line,red] (A)--(B)--(C)--cycle;
+\draw[line,red] (D)--(A);
+\draw[line,red] (D)--(E);
+\draw[line,red] (F)--(B)--(E)--cycle;
+\draw[line,red] (F)--(C);
+\draw[line,red] (C)--(G)--(A)--cycle;
+
+\foreach \point/\position in {A,B,C,D,E,F,G}{
+  \fill[point] (\point) circle (2pt);
+}
+
+\node at (1.5,-0.5) {Condition (a) non respect\'ee};
+\node at (1.5,-1) {(il y a un quadrilat\`ere)};
+
+\end{tikzpicture}

@@ -1,0 +1,29 @@
+%\definecolor{coul_prive}{rgb}{0.93,0.26,0}
+%\definecolor{coul_public}{rgb}{0.06,0.63,0}
+%\newcommand{\prive}[1]{\relax\ifmmode{\color{coul_prive} #1}\else{\bf\color{coul_prive} #1}\fi}
+%\newcommand{\public}[1]{\relax\ifmmode{\color{coul_public} #1}\else{\bf\color{coul_public} #1}\fi}
+% From m0nhawk on texstackexchange
+  \begin{tikzpicture}
+    \pgfmathsetmacro{\alphsize}{26}
+
+    \pgfmathsetmacro{\ang}{360/\alphsize}
+    \pgfmathsetmacro{\d}{3}
+    \pgfmathsetmacro{\op}{98 + \ang/2 - 1.2}
+    \pgfmathsetmacro{\e}{\ang + \ang*\d}
+    \pgfmathsetmacro{\ep}{\op + \ang*\d}
+
+    \foreach \x in {0,\ang,...,360} {
+      \draw[gray] (\x:8em) -- (\x:10em);
+    }
+
+    \foreach \xi in {0,...,25} {
+      \node[rotate=- \ang*\xi] at (90 - \ang*\xi:9em) {\bf\xi};
+    }
+
+    \draw[thick] (0cm,0cm) circle(10em);
+ %   \draw[gray] (0cm,0cm) circle(10em);
+    \draw[thick] (0cm,0cm) circle(8em);
+
+    \draw[->,>=latex, red, very thick] (90:11em) arc(90:50:11em)
+node[midway, above,rotate=-17]{d\'ecalage $k$};
+  \end{tikzpicture}

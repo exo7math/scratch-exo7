@@ -1,0 +1,42 @@
+\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+\tikzstyle{boxstyle} =  [draw, text width=8em, text centered, minimum width=10em,  minimum height=3em, drop shadow]
+
+\tikzstyle{boxinput} = [boxstyle, rounded corners, drop shadow, fill=green!30]
+\tikzstyle{instruction} = [boxstyle,  fill=blue!30]
+\tikzstyle{ifthen} = [boxstyle,  text width=5em, diamond, fill=red!30]
+
+\tikzstyle{line} = [draw, very thick, shorten <=3pt,shorten >=3pt, color=black!70, -latex']
+
+
+
+\begin{tikzpicture}[scale=1.4]
+
+
+%Draw diagram elements
+\path node(P1)[ifthen] {Est-ce que $n \ge 1$ ?};
+
+\path (P1)+(0,-4.5) node(P11)[ifthen] {Est-ce que $n$ est pair ?};
+\path (P1)+(0,3.5) node(P0)[instruction] {$S \leftarrow 100$};
+\path (P0)+(0,2.5) node(P00)[boxinput] {Demander $n$};
+\path (P11)+(0,-3.5) node(P2)[instruction] {$S \leftarrow S - n$};
+\path (P2)+(0,-2.5) node(P4)[instruction] {$n \leftarrow n - 1$};
+\path (P1)+(6,0) node(P3)[boxinput] {Renvoyer $S$};
+
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [left,pos=0.4] {\bf oui} (P11);
+\path[line] (P11.south) -- node [left,pos=0.4] {\bf oui} (P2);
+\path[line] (P1.east) -- node [above, pos=0.3] {\bf non} (P3);
+\path[line] (P11.east) -- node [above, pos=0.3] {\bf non} ++(2.5,0) -- ++(0,-6)--(P4.east);
+\path[line] (P0.south) -- (P1);
+\path[line] (P00.south) -- (P0);
+
+\path[line] (P2.south) -- (P4);
+\path[line] (P4.west) -- ++(-2.5,0) -- ++(0,10.5)--(P1.west);
+
+
+\end{tikzpicture}

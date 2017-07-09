@@ -1,0 +1,24 @@
+\tikzstyle{line} = [draw,gray,thick]
+\tikzstyle{arrow} = [->,>=latex,thick]
+\begin{tikzpicture}[scale=0.5,scale=0.95]
+
+\draw[line] (-5,10)--(25,10);
+\draw[line] (10,-5)--(10,20);
+\draw[line] (20,-5)--(20,20);
+
+\draw[arrow,orange] (-5,0)--(25,0) node[below]{$x$};
+\draw[arrow,blue] (0,-5)--(0,20) node[left]{$y$};
+
+\node[above right] at (0,0) {$(0,0)$};
+\node[below left, orange] at (10,0) {$100$};
+\node[below left, orange] at (20,0) {$200$};
+\node[below left, blue] at (0,10) {$100$};
+
+\fill (0,0) circle (0.25);
+
+% Chiffre 7
+
+\draw[blue,ultra thick] (12,12) node[left]{$(120,120)$}--(20,12)node[right]{$(200,120)$}--(12,2)node[below]{$(120,20)$};
+\draw[blue,ultra thick] (14,7)node[left]{$(140,70)$}--(18,7)[right]node{$(180,70)$};
+
+\end{tikzpicture}

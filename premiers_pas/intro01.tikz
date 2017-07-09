@@ -1,0 +1,69 @@
+\tikzstyle{line} = [draw,blue,very thick]
+\tikzstyle{grid} = [draw,gray,thin]
+\begin{tikzpicture}
+
+\draw[grid] (0,-1) grid ++(16,11);
+
+
+%%%
+\draw[line, xshift=1cm, yshift=7cm] (0,0)--++(0,2)--++(2,0)--++(2,-2)--cycle;
+
+%%%
+\draw[line, xshift=6cm, yshift=7cm, thin, fill] (0,0) rectangle (1,2);
+\draw[line, xshift=6cm, yshift=7cm, thin, red,fill=red] (1.03,0) rectangle ++(0.96,1);
+
+
+%%%
+\draw[line, xshift=9cm, yshift=7cm] (0,0) rectangle +(2,2);
+\draw[line, xshift=9cm, yshift=7cm,red] (0,1)--++(1,1)--++(1,-1)--++(-1,-1)--cycle; 
+
+%%%
+\draw[line, xshift=12cm, yshift=7cm,fill] (0,0) rectangle +(1,1);
+\draw[line, xshift=12cm, yshift=7cm,fill] (1,1) rectangle +(1,1);
+\draw[line, xshift=12cm, yshift=7cm,fill] (2,0) rectangle +(1,1);
+\draw[line, xshift=12cm, yshift=7cm] (1,-1) rectangle +(1,1);
+
+%%%
+\draw[line, xshift=0cm, yshift=4cm] (1,0)--++(2,0)--++(0,2)--++(-1,0)--++(0,-1)--++(-1,0); 
+\draw[line, xshift=1cm, yshift=4cm] (0,1) arc (-90:90:-0.5);
+
+%%%
+\draw[line, xshift=4cm, yshift=5cm] (0,0)--++(2,0)--++(-2,1)--cycle; 
+\draw[line, xshift=4cm, yshift=5cm] (2,0)--++(0,-1)--++(-2,0)--cycle; 
+
+%%%
+\draw[line, xshift=7cm, yshift=4cm] (0,0)--++(2,0)--++(120:2)--cycle; 
+\draw[line, xshift=7cm, yshift=4cm,red] (2,0) circle (1); 
+
+
+%%%
+\draw[line, xshift=11cm, yshift=4cm] (0,0)--++(4,0)--++(0,2)--++(-2,-1)--++(-2,1)--cycle; 
+
+%%%
+\draw[line, xshift=2cm, yshift=1cm] (0,0) rectangle ++(2,2); 
+\draw[line, xshift=2cm, yshift=1cm,red] (0,0) circle (1); 
+\begin{scope}
+  \clip[xshift=2cm, yshift=1cm] (-0.02,-0.02) rectangle ++(2,2);
+  \fill[red,xshift=2cm, yshift=1cm] (0,0) circle (1);
+\end{scope}
+
+%%%
+\draw[line, xshift=5cm, yshift=2cm,red,fill] (0,0) rectangle ++(1,1); 
+\draw[line, xshift=5cm, yshift=2cm,green,fill] (1,0) rectangle ++(1,1); 
+\draw[line, xshift=5cm, yshift=2cm,blue,fill] (2,0) rectangle ++(1,1); 
+\draw[line, xshift=5cm, yshift=2cm,red,fill] (1,-1) rectangle ++(1,1); 
+\draw[line, xshift=5cm, yshift=2cm,green,fill] (2,-1) rectangle ++(1,1); 
+\draw[line, xshift=5cm, yshift=2cm,blue,fill] (3,-1) rectangle ++(1,1); 
+\draw[line, xshift=5cm, yshift=2cm,red,fill] (2.5,-1.5) circle (0.5); 
+\draw[line, xshift=5cm, yshift=2cm,green,fill] (3.5,-1.5) circle (0.5); 
+\draw[line, xshift=5cm, yshift=2cm,blue,fill] (4.5,-1.5) circle (0.5); 
+
+
+%%%
+\draw[line, xshift=11cm, yshift=1cm] (4,0) arc (0:180:2) --cycle;
+\draw[line, xshift=11cm, yshift=1cm] (4,0) arc (0:180:1);
+\draw[line, xshift=11cm, yshift=1cm] (2,0)arc (0:180:1);
+\draw[line, xshift=11cm, yshift=1cm] (1,0)arc (180:360:1);
+
+
+\end{tikzpicture}

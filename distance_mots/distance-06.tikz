@@ -1,0 +1,12 @@
+
+\begin{tikzpicture}
+
+\draw (0,0) grid ++(2,2);
+
+% Flèches
+\tikzstyle{arrow} = [->,>=latex,ultra thick,shorten >=4pt,shorten <=6pt,green!60!black];
+
+\draw[arrow] (1.5,0.5)--++(-1,1);
+\draw[arrow] (1.5,0.5)--++(-1,0);
+\draw[arrow] (1.5,0.5)--++(0,1);
+\end{tikzpicture}

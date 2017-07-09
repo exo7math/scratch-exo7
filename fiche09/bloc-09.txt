@@ -1,0 +1,109 @@
+# Blocs utiles
+
+jouer la note (60 v) pendant (0.5) temps
+
+
+([sin v] de (nombre))
+
+
+( (100) * ( ([e^ v] de ((-0.01)*(x)))  * ([sin v] de ((7)*(x))) ) )
+
+
+# Activité 1
+
+
+quand le drapeau vert pressé
+répéter indéfiniment
+    avancer de (30)
+    tourner droite de (10) degrés
+    rebondir si le bord est atteint
+    mettre [duree v] à ( (0.05) * (nombre aléatoire entre (1) et (10)) )
+    si < couleur [#FF0000] touchée?> alors
+        jouer la note (60 v) pendant (duree) temps
+    fin    
+	si < couleur [#00FF00] touchée?> alors
+        jouer la note (62 v) pendant (duree) temps
+    fin    
+fin
+
+
+# Activité 2
+
+
+// Chat
+quand le drapeau vert pressé
+mettre [frequence1 v] à [2]
+mettre [frequence2 v] à [5]
+mettre [x v] à [-200]
+stylo en position d'écriture
+effacer tout
+répéter (200) fois
+    mettre [y1 v] à ( (40) * ( [sin v] de ( (frequence1) * (x) ) )
+    mettre [y2 v] à ( (40) * ( [sin v] de ( (frequence2) * (x) ) )
+    mettre [y3 v] à ( (y1) + (y2) )
+    aller à x: (x) y: ( (100) + (y1) )
+    ajouter à [x v] (2)
+fin
+
+// Chien (le cheval est semblable)
+quand le drapeau vert pressé
+stylo en position d'écriture
+répéter (200) fois
+    aller à x: (x) y: (y2)
+fin
+
+
+
+# Activité 3
+
+// Chat
+quand le drapeau vert pressé
+aller à x: (-200) y: (0)
+effacer tout
+mettre [vitesse v] à [10]
+répéter indéfiniment
+    avancer de (vitesse)
+    rebondir si le bord est atteint
+    attendre (1) secondes
+    créer un clone de [cercle v]
+fin 
+
+
+// Cercle
+quand je commence comme un clone
+attendre (1) secondes
+aller à [Chat v]
+mettre à (10) % de la taille initiale
+mettre l'effet [fantôme v] à (0)
+montrer
+répéter (20) fois
+    attendre (0.3) secondes
+    ajouter (5) à la taille
+    ajouter à l'effet [fantôme v] (5)
+fin
+cacher
+supprimer ce clone
+
+
+// Microphone
+quand le drapeau vert pressé
+mettre à (100) % de la taille initiale
+répéter (10) fois
+    ajouter (-10) à la taille
+    attendre (0.5) secondes
+fin
+répéter indéfiniment
+    si < [Cercle v] touché ?> alors
+        jouer la note (60 v) pendant (0.3) temps
+    fin
+fin
+
+# Enigme 1
+
+([plancher v] de ((100) * ([sin v] de ((97) * (n)))))
+
+
+# Enigme 2
+( (100) * ( ([e^ v] de ( (-0.01) * (x))) * ([sin v] de ((7) * (x))) )
+
+

@@ -1,0 +1,66 @@
+
+% Author: Andrew Stacey
+% http://tex.stackexchange.com/questions/14613
+% Adapted by A. Bodin 
+% Not compatible with package svg du to xcolor conflict (??)
+% A triangle with red, blue and green corners and weighted color within
+% Based on fadings
+% \usetikzlibrary{fadings}
+\begin{tikzpicture}
+  \fill[red] (90:4) -- (210:4) -- (-30:4) -- cycle;
+  \fill[green,path fading=west] (90:4) -- (210:4) -- (-30:4) -- cycle;
+  \fill[blue,path fading=south] (90:4) -- (210:4) -- (-30:4) -- cycle;
+
+  \node at (210:4.5) {\bf Rouge};
+  \node at (-30:4.5) {\bf Vert};
+  \node at (90:4.5) {\bf Bleu};
+
+\end{tikzpicture}
+%Other solution
+% \usepackage{pgfplots}
+% \begin{tikzpicture}
+% \begin{axis}
+%     \addplot[
+%         patch,
+%         shader=interp,
+%         mesh/color input=explicit,
+%         data cs=polar,
+%     ]
+%     coordinates {
+%         (90,4) [color=red]
+%         (210,4) [color=green]
+%         (-30,4) [color=blue]
+%     };
+% \end{axis}
+% \end{tikzpicture}
+%http://tex.stackexchange.com/questions/14613/tikz-triangle-with-point-colours
+%\usetikzlibrary{fadings}
+% Problem to scale picture!
+% \begin{tikzpicture}
+% \begin{scope}
+% \pgfdeclarefunctionalshading{rgbtriangle}
+% {\pgfpointorigin}{\pgfpoint{100bp}{86.60bp}}{}{
+%     % y coordinate is on top of the stack, x below it
+%     % divide both by 100 to get numbers in [0,1]
+%     100 div exch 100 div exch
+%     % save a copy of the coordinates
+%     2 copy
+%     % calculate red amount
+%     0.5774 mul add neg 1 add
+%     % bring copy of the coordinates to the top
+%     3 1 roll
+%     % calculate green amount
+%     0.5774 mul neg add 
+%     % calculate blue as (1-red-green)
+%     2 copy
+%     add 1 sub neg
+% }
+% \clip[shift={(-50bp,{-25bp*sqrt(3)})}] (0,0) -- (50bp,{50bp*sqrt(3)}) -- (100bp,0) -- cycle;
+% \pgfuseshading{rgbtriangle}
+% \end{scope}
+% 
+% \node at (90:2) {\bf Bleu};
+% \node at (220:2.7) {\bf Rouge};
+% \node at (-40:2.7) {\bf Vert};
+% 
+% \end{tikzpicture}

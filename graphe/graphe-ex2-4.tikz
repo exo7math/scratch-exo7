@@ -1,0 +1,32 @@
+
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{vertex} = [draw] 
+
+\begin{scope}[scale=1]
+
+\coordinate (A) at (-2,0);
+\coordinate (B) at (0,0);
+\coordinate (C) at (2,0);
+\coordinate (D) at (0,3);
+
+\fill (A) circle (0.1) node[below left]{A};
+\fill (B) circle (0.1) node[below]{B};
+\fill (C) circle (0.1) node[below right]{C};
+\fill (D) circle (0.1) node[above]{D};
+
+
+\draw[edge] (A) to[bend left] (B);
+\draw[edge] (A) to[bend right] (B);
+
+\draw[edge] (C) to[bend left] (B);
+\draw[edge] (C) to[bend right] (B);
+
+\draw[edge] (A) -- (D) -- (C);
+\draw[edge] (D) -- (B);
+
+
+\end{scope}
+
+\end{tikzpicture}

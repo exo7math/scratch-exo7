@@ -1,0 +1,57 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+\titre[P]{Triangulation}
+%===============================
+
+
+
+\section*{Objectifs}
+
+\begin{itemize}
+  \item Présenter un algorithme graphique.
+  \item Faire de beaux dessins !
+\end{itemize}
+
+
+\section*{Durée}
+
+2 heures (??)
+
+\section*{Les activités}
+
+\begin{itemize}
+  \item La triangulation s'obtient par une construction graphique que l'on pourra faire à la règle et au compas ou alors à la règle graduée et au rapporteur. 
+
+  \item L'algorithme de basculement est élémentaire mais suffisant. Il existe bien sûr des algorithmes bien plus rapides. Cependant avec un peu d'expérience on arrive "à voir" quels sont les bons triangles à dessiner, et cela va très vite.
+
+  \item La triangulation de Delaunay est aussi celle qui maximise les angles. 
+  En effet à chaque triangulation on peut associer un mot formé de tous les angles de tous les triangles, classés de plus petit au plus grand. Et on met l'ordre lexicographique sur ces mots.   
+
+  \item Application de la triangulation : essentiellement de la visualisation 3D, on découpe une forme en petits triangles et on applique un traitement sur chaque triangle. (Voir des logiciels comme \emph{Blender} par exemple.)
+  
+  \item Les cellules de Voronoï ont beaucoup d'applications.
+  \begin{itemize}
+    \item Le nom "téléphone cellulaire" (nom désuet pour téléphone portable) vient du fait que l'on se trouve dans une cellule de Voronoï associée à l'antenne-relais la plus proche.
+    \item Les cartes d'aviations font apparaître des cellules de Voronoï par les pistes d’atterrissage les plus proche en cas d'incident.
+    \item En biologie, on retrouve ce type de géométrie chez les cellules.
+    \item On peut imaginer le jeu inverse : retrouver le sommet à partir de cellules données. C'est d'ailleurs comme cela que l'on peut retrouver le foyer d'une épidémie à partir de la géométrie des zones contaminées.
+  \end{itemize}
+\end{itemize}
+
+
+
+\section*{Ressources}
+
+\section*{People}
+
+\begin{itemize}
+  \item Auteur : Arnaud Bodin
+  \item Certaines figures viennent des forums Tikz, en particulier merci à Kroum Tzanev pour ses diagrammes de Voronoï.
+\end{itemize}
+
+\end{document}
+
+

@@ -1,0 +1,28 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, ultra thick]
+\tikzstyle{vertex} = [draw] 
+
+\coordinate (A) at (-1,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (0,1);
+\coordinate (D) at (0,-1);
+
+\fill[gray!60] (A)--(C)--(B)--cycle;
+\fill[gray!20] (A)--(D)--(B)--cycle;
+
+\fill (A) circle (0.1);
+\fill (B) circle (0.1);
+\fill (C) circle (0.1);
+\fill (D) circle (0.1);
+
+\draw[edge] (A) -- (B);
+\draw[edge] (A) -- (C) -- (B) -- (D) -- cycle;
+
+
+\draw[<-,>=latex] (0,0.3) to [bend left] (2,1) node[right] {face 1};
+
+\draw[<-,>=latex] (0,-0.3) to [bend right] (2,-1) node[right] {face 2};
+
+\end{tikzpicture}

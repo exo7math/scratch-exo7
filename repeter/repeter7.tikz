@@ -1,0 +1,36 @@
+%\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+
+\tikzstyle{line} = [draw, ultra thick]
+\tikzstyle{point} = [circle, fill=red]
+
+
+\begin{tikzpicture}
+
+\draw[step=1.0, black] (0,0) grid (13,7);
+
+\coordinate (A) at (2,4);
+\node[below right] at (A) {$P'$};
+
+\coordinate (B) at (10,3);
+\node[below right]  at (B) {$S'$};
+
+\draw[->,>=latex,ultra thick,blue] (A)--++(1,0);
+
+\draw[draw,fill=red] (A) circle (0.7ex); 
+\draw[draw,fill=red] (B) circle (0.7ex); 
+
+\fill (4.5,2.5) rectangle ++(1,4.5);
+\fill (9.5,0.5) rectangle ++(2,1);
+\fill (7.5,1.5) rectangle ++(1,3);
+\fill (7.5,4.5) rectangle ++(4,1);
+
+% \begin{scope}[xshift=-2cm,yshift=1cm,scale=0.8]
+% \draw[<->, >=latex, ultra thick] (-1,0) node[left]{O}--(1,0)node[right]{E};
+% \draw[<->, >=latex, ultra thick] (0,-1)node[below]{S}--(0,1)node[above]{N};
+% \end{scope}
+
+\end{tikzpicture}

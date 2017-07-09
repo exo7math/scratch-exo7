@@ -1,0 +1,13 @@
+\begin{tikzpicture}[scale=2]
+
+\tikzstyle{arrow} = [->,>=latex,thick]
+
+\draw[gray,thick] (0,0)--(60:1) node[midway, below right]{$100$} ;
+
+
+\draw[black,very thick] (-1,-1) rectangle ++(2,2);
+\draw[red,thick] (0,0) circle(0.99);
+
+
+
+\end{tikzpicture}

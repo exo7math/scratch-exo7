@@ -1,0 +1,120 @@
+# Fiche 04
+
+
+# Blocs utiles
+
+
+si <couleur [#F00] touchée?> alors
+
+fin
+
+stop [tout v]
+
+
+si <touche [flèche droite v] pressée ?> alors
+    
+fin 
+
+
+si <souris pressée ?> alors
+
+fin 
+
+si <couleur [#000] touchée ?> alors
+
+fin
+
+montrer
+
+cacher
+
+stop [tout v]
+
+
+# Activité 1
+
+quand le drapeau vert pressé
+aller à x:(-200) y:(0)
+s'orienter à (30)
+répéter indéfiniment
+    avancer de (5)
+    rebondir si le bord est atteint
+    si <couleur [#F00] touchée?> alors
+      dire [Gagné !] pendant (2) secondes
+      stop [tout v]
+    fin
+    si <couleur [#00F] touchée?> alors
+      dire [Perdu !] pendant (2) secondes
+      stop [tout v]
+    fin 
+fin
+
+
+
+# Activité 2
+
+quand le drapeau vert pressé
+aller à x:(-200) y:(80)
+répéter indéfiniment
+      si <touche [flèche droite v] pressée ?> alors
+	      ajouter (5) à x
+      fin 
+      si <touche [flèche gauche v] pressée ?> alors
+	      ajouter (-5) à x
+      fin 
+      si <touche [flèche haut v] pressée ?> alors
+	      ajouter (5) à y
+      fin 
+      si <touche [flèche bas v] pressée ?> alors
+	      ajouter (-5) à y
+      fin 	  
+fin
+
+
+
+# Activité 3
+
+quand le drapeau vert pressé
+aller à x:(-240) y:(0)
+s'orienter à (90)
+montrer
+répéter (10) fois
+      ajouter (5) à x
+	  attendre (0.1) secondes
+fin 
+cacher
+répéter (70) fois
+      ajouter (5) à x
+	  attendre (0.1) secondes
+	  si <souris pressée ?> alors
+	      montrer
+		  
+		  si <couleur [#000] touchée ?> alors
+		      dire [Bravo !] pendant (2) secondes
+		  fin
+	      stop [tout v]
+      fin 	  
+fin 
+montrer
+dire [Trop tard !] pendant (2) secondes
+
+
+# Enigme 3
+
+si <[2]<[3]> alors
+    avancer de (30)
+fin
+
+si <((2)+(3)) =  [4]> alors
+    avancer de (40) 
+fin	
+
+si  < < ((2)*(3)) >  [7]> ou < ((9)-(5)) > [3]> > alors
+    avancer de (50) 
+fin
+
+si <non<((3)*(4)) =  [12]>> alors
+    avancer de (60)   
+fin 
+
+    

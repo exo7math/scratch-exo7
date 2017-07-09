@@ -1,0 +1,56 @@
+\tikzstyle{line} = [draw,gray,thick]
+\tikzstyle{arrow} = [->,>=latex,thick]
+\begin{tikzpicture}[scale=0.25]
+
+\draw[line] (-25,10)--(25,10);
+\draw[line] (-25,20)--(25,20);
+\draw[line] (-25,-10)--(25,-10);
+\draw[line] (-25,-20)--(25,-20);
+
+\draw[line] (10,-21)--(10,21);
+\draw[line] (20,-21)--(20,21);
+\draw[line] (-10,-21)--(-10,21);
+\draw[line] (-20,-21)--(-20,21);
+
+
+
+
+% Enigme : TURING
+\begin{scope}[gray]
+\node[scale=5] at (15,-15) {\bf T};
+\node[scale=5] at (15,5) {\bf U};
+\node[scale=5] at (-15,5) {\bf R};
+\node[scale=5] at (5,-15) {\bf I};
+\node[scale=5] at (5,15) {\bf N};
+\node[scale=5] at (-5,15) {\bf G};
+
+
+% Bad letters
+\node[scale=5] at (-15,15) {\bf E};
+\node[scale=5] at (15,15) {\bf S};
+\node[scale=5] at (-15,-5) {\bf O};
+\node[scale=5] at (-5,5) {\bf A};
+\node[scale=5] at (5,5) {\bf L};
+\node[scale=5] at (-5,-5) {\bf C};
+\node[scale=5] at (5,-5) {\bf M};
+\node[scale=5] at (15,-5) {\bf D};
+\node[scale=5] at (-15,-15) {\bf F};
+\node[scale=5] at (-5,-15) {\bf P};
+\end{scope}
+
+
+
+\draw[arrow,orange] (-25,0)--(25,0) node[below]{$x$};
+\draw[arrow,blue] (0,-22)--(0,22) node[left]{$y$};
+
+\node[above right] at (0,0) {$(0,0)$};
+\node[below left, orange] at (10,0) {$100$};
+\node[below left, orange] at (20,0) {$200$};
+\node[below left, blue] at (0,10) {$100$};
+
+\fill (0,0) circle (0.25);
+
+
+
+
+\end{tikzpicture}

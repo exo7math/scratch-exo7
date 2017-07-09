@@ -1,0 +1,22 @@
+\tikzstyle{arrow} = [->,>=latex,thick]
+\begin{tikzpicture}[scale=1]
+
+
+\draw[arrow,thick] (-1,0)--(10,0);
+
+\foreach \x in {0,...,9}{
+    \draw (\x,-2pt) -- (\x,3pt);
+    \node[above] at (\x,0) {$\x$};
+}
+
+
+\fill[blue] (2.7,0) circle (0.08) node[below=10pt]{$2,7$};
+\fill[blue] (4.2,0) circle (0.08) node[below=10pt]{$4,2$};
+\fill[blue] (6.5,0) circle (0.08) node[below=10pt]{$6,5$};
+
+\draw[->,>=latex,red, thick] (2.7,0.1) ..controls(2.85,1.5).. (3,0.5);
+\draw[->,>=latex,red, thick] (4.2,0.1) ..controls(4.1,1.5).. (4,0.5);
+\draw[->,>=latex,red, thick] (6.5,0.1) ..controls(6.25,1.5).. (6,0.5);
+
+
+\end{tikzpicture}

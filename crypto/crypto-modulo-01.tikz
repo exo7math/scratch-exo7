@@ -1,0 +1,28 @@
+% From m0nhawk on texstackexchange
+  \begin{tikzpicture}
+    \pgfmathsetmacro{\alphsize}{12}
+
+    \pgfmathsetmacro{\ang}{360/\alphsize}
+    \pgfmathsetmacro{\anghalf}{360/\alphsize/2}
+    \pgfmathsetmacro{\d}{3}
+    \pgfmathsetmacro{\op}{98 + \ang/2 - 1.2}
+    \pgfmathsetmacro{\e}{\ang + \ang*\d}
+    \pgfmathsetmacro{\ep}{\op + \ang*\d}
+
+    \foreach \x in {0,\ang,...,360} {
+      \draw[gray] (\x+\anghalf:8em) -- (\x+\anghalf:12em);
+    }
+
+    \foreach \xi in {0,...,11} {
+      
+      \node[rotate=- \ang*\xi] at (90- \ang*\xi:9em+0.1*\xi em) {\bf\xi};
+      \pgfmathtruncatemacro{\xii}{\xi+\alphsize}
+      \node[gray,rotate=- \ang*\xi] at (90- \ang*\xi:10.2em+0.1*\xi em) {\xii};
+      \pgfmathtruncatemacro{\xii}{\xi+2*\alphsize}
+      \node[gray,rotate=- \ang*\xi] at (90- \ang*\xi:11.4em+0.1*\xi em) {\xii};
+    }
+  
+   %\draw[thick] (0cm,0cm) circle(12em);
+   % \draw[gray] (0cm,0cm) circle(10em);
+    \draw[thick] (0cm,0cm) circle(8em);
+  \end{tikzpicture}

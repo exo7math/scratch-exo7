@@ -1,0 +1,26 @@
+\tikzstyle{line} = [draw,gray,thick]
+\tikzstyle{arrow} = [->,>=latex,thick]
+\begin{tikzpicture}[scale=0.5]
+
+\draw[gray] (-12,-7) grid (2,12);
+
+\draw[arrow,thick,orange] (-13,0)--(3.5,0) node[below]{$x$};
+\draw[arrow,thick,blue] (0,-8)--(0,13) node[left]{$y$};
+
+\node[above right] at (0,0) {$(0,0)$};
+
+\foreach \x/\L in {2/20,,-2/-20,-6/-60,-8/-80,-10/-100}{
+    \node[below, orange] at (\x,0) {$\L$};
+}
+
+\foreach \y/\L in {-2/-20,-4/-40,-6/-60,2/20,4/40,6/60,8/80,10/100,12/120,}{
+    \node[right, blue] at (0,\y) {$\L$};
+}
+
+\fill (0,0) circle (0.2);
+
+% Chiffre 4
+
+\draw[blue,ultra thick] (0,0)--++(-10,0)--++(0,11) ++(6,0)--++(0,-17);
+
+\end{tikzpicture}

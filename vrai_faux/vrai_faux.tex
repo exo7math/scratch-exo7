@@ -1,0 +1,269 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+\titre[F]{Vrai et faux}
+%===================
+
+
+\emph{Dans de nombreuses situations il n'y a que deux choix possibles : Vrai/Faux, Allumé/Éteint, Ouvert\slash Fermé... C'est particulièrement le cas en informatique avec le choix zéro ou un.}
+
+\bigskip
+\bigskip
+
+
+\begin{activite}
+\sauteligne
+\begin{enumerate}
+  \item \emph{Dire si chacune des affirmations suivantes est vraie ou fausse. Si par exemple on définit $x = 2$, alors \og $x < 3$ \fg{} est une affirmation vraie, alors que \og $x + 2 = 5$ \fg{} est une affirmation fausse.}
+ 
+  Pour $x=2$, les affirmations suivantes sont-elles vraies ou fausses ?
+  \begin{enumerate}
+    \item \og $x - 1 > 3$ \fg{}
+    \item \og $3 < x \times x$ \fg{}
+    \item \og $3 \times x$ est un nombre impair \fg{}
+  \end{enumerate}  
+  
+  \item \emph{Une affirmation avec un \og ou \fg{} est vraie dès que l'une des propositions de chaque côté du \og ou \fg{} est vraie. Par exemple, pour $x=10$, l'affirmation  
+\og $x > 5$ ou $2 \times x < 13$ \fg{} est vraie. En effet, la proposition de gauche de cette affirmation \og $x>5$ \fg{} est vraie (peu importe que la proposition de droite  \og $2 \times x < 13$ \fg{} soit vraie ou fausse).}
+  
+  L'affirmation suivante, avec $x=2$, est-elle vraie : \og $x > 5$ ou $2 \times x < 13$ \fg{}  ?
+
+  
+  \item \emph{Une affirmation avec un \og et \fg{} est vraie lorsque les deux propositions de chaque côté du \og et \fg{} sont vraies. Par exemple, pour $x=10$, l'affirmation  
+\og $x > 5$ et $2 \times x < 13$ \fg{} est fausse. En effet, la proposition de gauche de cette affirmation \og $x>5$ \fg{} est vraie, mais comme la proposition de droite  \og $2 \times x < 13$ \fg{} est fausse, alors l'affirmation avec un \og et \fg{} est fausse.}
+  
+  L'affirmation suivante, avec $x=2$, est-elle vraie : \og $x > 5$ et $2 \times x < 13$ \fg{} ?
+  
+  \item Reprends les trois questions précédentes avec $x = 6$. Puis avec $x = 7$.
+  
+  \item
+
+  \begin{enumerate}
+    \item Trouve tous les $x$ entiers positifs qui vérifient l'affirmation \og $3 \times x + 4 < 21$ \fg{}.
+    \item Trouve tous les $x$ entiers positifs qui vérifient  l'affirmation \og $x$ est impair et $x\times(x+1) < 43$ \fg{}.
+    \item Trouve tous les $x$ entiers positifs qui vérifient l'affirmation \og $x \times x < 5$ ou $x >10$ \fg{}.
+  \end{enumerate} 
+   
+\end{enumerate}
+
+
+\end{activite}
+
+
+\begin{activite}
+On construit des circuits électriques qui allument ou éteignent des lampes. Le circuit se lit de haut en bas et comporte des portes logiques.
+
+\myfigure{0.8}{
+\tikzinput{vraifaux01}
+} 
+
+\begin{enumerate}
+  \item \textbf{La porte \og OU \fg{}.} Si une des deux lampes en entrée est allumée alors la lampe en sortie s'allume. Il en est de même lorsque les deux lampes en entrée sont allumées. Si les deux lampes en entrée sont éteintes, alors la lampe en sortie reste éteinte.
+Voici les 4 situations possibles pour la porte \og OU \fg{}.
+
+
+\myfigure{0.8}{
+\tikzinput{vraifaux02}
+} 
+
+
+  \item \textbf{La porte \og ET \fg{}.} Si les deux lampes en entrée de la porte sont allumées alors la lampe en sortie s'allume. Dans tous les autres cas, la lampe en sortie reste éteinte.
+Dessine les 4 situations possibles pour la porte \og ET \fg{}.
+
+\myfigure{0.8}{
+\tikzinput{vraifaux03}
+} 
+
+
+ 
+  \item \textbf{La porte \og NON \fg{}} n'a qu'une seule entrée. Si la lampe en entrée est allumée, alors la lampe en sortie est éteinte ; si la lampe en entrée est éteinte, alors la lampe en sortie est allumée. 
+Dessine les 2 situations possibles pour la porte \og NON \fg{}.
+
+\myfigure{0.8}{
+\tikzinput{vraifaux04}
+} 
+  
+  \item Dessine les 4 situations possibles pour chacun des deux circuits ci-dessous. Il y a deux lampes en entrée (en haut) et une lampe en sortie (en bas). Que remarques-tu ?
+  
+  
+\myfigure{0.6}{
+\tikzinput{vraifaux05}\qquad\qquad
+\tikzinput{vraifaux05}\qquad\qquad
+\tikzinput{vraifaux05}\qquad\qquad
+\tikzinput{vraifaux05}\qquad\qquad
+} 
+
+\bigskip
+
+\myfigure{0.6}{
+\tikzinput{vraifaux06}
+\tikzinput{vraifaux06}
+\tikzinput{vraifaux06}
+\tikzinput{vraifaux06}
+} 
+
+
+  
+  \item Dessine les 4 situations possibles pour le circuit ci-dessous. Ce circuit correspond au \og OU EXCLUSIF \fg{} (celui de l'expression \og fromage ou dessert \fg{}, soit le fromage, soit le dessert, mais pas les deux !).
+  
+\myfigure{0.65}{
+\tikzinput{vraifaux07}\qquad
+\tikzinput{vraifaux07}\qquad
+\tikzinput{vraifaux07}\qquad
+\tikzinput{vraifaux07}
+}  
+
+  
+  \item Pour chaque circuit ci-dessous, il y a une seule façon d'allumer la lampe tout en bas. Sais-tu correctement allumer les lampes en entrée pour cela ?
+  
+\myfigure{0.8}{
+%\small
+\tikzinput{vraifaux08}
+\qquad
+\tikzinput{vraifaux09}
+\qquad
+\tikzinput{vraifaux10}
+} 
+
+  
+  \item Pour chaque circuit ci-dessous, trouve les différentes positions possibles des lampes qu'il faut allumer en entrée afin d'allumer la lampe en sortie.
+
+\myfigure{0.8}{
+%\small
+\tikzinput{vraifaux11}
+\qquad
+\tikzinput{vraifaux12}
+\qquad
+\tikzinput{vraifaux13}
+} 
+
+\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}
+\sauteligne
+\begin{enumerate}
+  \item \textbf{Addition binaire sans retenue.}
+  
+On définit les nombres binaires comme une suite de 0 et de 1 (par exemple 1.0.0 ce n'est pas \og cent \fg{} mais 1, suivi de 0, suivi de 0). On choisit de calculer la \emph{somme} de deux nombres binaires de même longueur avec la règle suivante : 
+\begin{itemize}
+  \item $0 \oplus 0 = 0$
+  \item $1 \oplus 0 = 1$
+  \item $0 \oplus 1 = 1$
+  \item et plus surprenant $1 \oplus 1 = 0$
+  \item  enfin les additions se font sans retenue.
+\end{itemize}
+
+    Voici un exemple : $1.0.0 \oplus 0.1.0 = 1.1.0$ (c'est l'addition posée à gauche ci-dessous). Autre exemple $0.1.1 \oplus 1.1.0 = 1.0.1$ (à droite ci-dessous).
+
+\myfigure{1}{
+\tikzinput{vraifaux21}
+} 
+
+
+  
+  \begin{enumerate}
+    \item Effectue les additions suivantes : $1.0 \oplus 0.1$ ; puis $1.1 \oplus 1.0$ ; puis $1.1.0 \oplus 0.1.1$ ; puis $1.0.1.0.1.1 \oplus 1.1.1.1.1.0$.
+
+    \item Trouve les nombres binaires qui conviennent pour avoir $1.0.1 \oplus ?.?.? = 0.0.1$. Puis $1.0.1.0 \oplus ?.?.?.? = 1.1.0.1$.
+    
+    \item  Prends un nombre au hasard (par exemple $b = 1.0.1.0.0$). Calcule $b \oplus b$. Que constates-tu ? Prends un autre nombre et recommence le calcul. Que conjectures-tu ? Prouve ta conjecture, quel que soit le nombre choisi $b$. Calcule maintenant $b \oplus b \oplus b$.
+    
+    \item Si $b$ est un nombre binaire fixé (par exemple $b = 1.0.1.0.1$), que fait l'opération $b \oplus 1.1.1.1.1$ ? (on ajoute le nombre binaire qui n'a que des $1$ et qui a le même nombre de chiffres)    
+  \end{enumerate}  
+  
+  \item \textbf{Affichage.}
+  
+On affiche un caractère en allumant certains segments d'un cadran numérique. On allume (ou pas) ces segments en fonction d'une suite de 0 et de 1 : avec 1, le segment est allumé ; avec 0, il est éteint. Avec une suite de 7 zéro ou un, on décide lesquels des 7 segments il faut allumer. Par exemple 0.1.1.1.1.1.0 nous dit qu'il faut allumer les segments numéros 2, 3, 4, 5 et 6 car on a des 1 en deuxième, troisième, quatrième, cinquième et sixième position. Ce nombre binaire affiche donc sur le cadran la lettre \mot{H}.
+
+
+\myfigure{1}{
+\tikzinput{vraifaux32}
+} 
+
+
+
+  \begin{enumerate}
+    \item Quel mot se cache derrière les trois nombres 1.1.0.1.1.0.0 ; 1.1.0.1.1.0.1 ; 0.1.1.0.1.1.1 ? Quel mot se cache derrière 1.1.1.1.1.0.0 ; 0.0.1.0.0.1.0 ; 0.1.0.0.1.0.1, 1.1.0.1.1.0.1 ?
+
+\myfigure{0.9}{
+\tikzinput{vraifaux33}
+} 
+     
+    \item Trouve les nombres liés au mot \mot{SAC} et au mot \mot{LOUP}. 
+
+\myfigure{0.9}{
+\tikzinput{vraifaux33}
+} 
+
+   
+    
+  \end{enumerate}  
+  
+  \item \textbf{Code secret.}
+   
+Pour s'envoyer des messages secrets, Adèle et Béryl se mettent d'accord sur une clé secrète, par exemple $c = 1.0.1.1.0.1.0$. Pour envoyer un message secret à Béryl, Adèle ajoute la clé secrète à chacune des lettres du message. Par exemple, pour envoyer la lettre \mot{H} sous forme secrète, Adèle transforme d'abord \mot{H} en son écriture binaire $b_H = 0.1.1.1.1.1.0$ ; ensuite Adèle ajoute la clé secrète, ce qui donne $b_H \oplus c = 1.1.0.0.1.0.0$ ; elle transmet donc à Béryl le dessin suivant : 
+
+\myfigure{0.25}{
+\tikzinput{vraifaux34}
+} 
+   
+Ce signe ne veut rien dire, sauf pour ceux qui possèdent la clé secrète. Adèle recommence avec chaque lettre du message (et toujours la même clé secrète).
+
+    Aide Adèle à transmettre le message secret \mot{CHAISE} avec la clé secrète $c = 1.0.1.1.0.1.0$.
+
+
+  \item \textbf{Déchiffrement.}
+  
+Pour déchiffrer le message reçu, Béryl transforme d'abord les signes en écriture binaire puis leur ajoute la même clé secrète $c$. Par exemple, si elle a reçu le signe
+\myfigure{0.25}{
+\tikzinput{vraifaux34}
+} 
+qui correspond à $d = 1.1.0.0.1.0.0$, alors Béryl calcule $d \oplus c$, elle trouve $d \oplus c = 0.1.1.1.1.1.0$, ce qui correspond bien au signe de la lettre \mot{H} :
+\myfigure{0.25}{
+\tikzinput{vraifaux35}
+} 
+que voulait transmettre Adèle.
+
+  \begin{enumerate}
+    \item Vérifie le principe du déchiffrement avec le mot secret associé à \mot{CHAISE} trouvé à la question précédente.
+    
+    \item Explique le principe de chiffrement/déchiffrement en calculant 
+    $b \oplus c \oplus c$ (quel que soit $b$ et quel que soit $c$).
+        
+    \item Béryl reçoit le message suivant qui a été construit avec la même clé secrète qu'auparavant :
+    
+\myfigure{0.25}{
+\tikzinput{vraifaux36} \tikzinput{vraifaux37} \tikzinput{vraifaux38} \tikzinput{vraifaux39}
+} 
+
+%    \centerline{$1.0.0.1.0.0.1$ ; $0.1.0.1.1.0.1$ ; $1.0.0.1.0.0.0$ ; $0.1.1.0.1.1.1$}
+    
+     Déchiffre ce message.
+     
+    \item Avec ton voisin, choisissez une clé secrète et envoyez-vous des messages secrets !
+  \end{enumerate} 
+
+\myfigure{0.9}{
+\tikzinput{vraifaux33}
+}   
+\myfigure{0.9}{
+\tikzinput{vraifaux33}
+} 
+\myfigure{0.9}{
+\tikzinput{vraifaux33}
+} 
+\myfigure{0.9}{
+\tikzinput{vraifaux33}
+} 
+\end{enumerate}
+
+\end{activite}
+
+
+\end{document}

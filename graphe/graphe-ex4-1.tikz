@@ -1,0 +1,45 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw,  thick]
+
+
+\begin{scope}[yshift=0cm]
+\fill circle (0.1) node(P1){};
+
+\node[below=3ex] at (P1) {homme sans enfant};
+
+\end{scope}
+
+\begin{scope}[yshift=0cm,xshift=4cm]
+\fill circle (0.1) node(P1) {};
+\fill (P1)+(0,-1) circle (0.1) node(P2) {};
+\fill (P2)+(-0.5,-1) circle (0.1) node(P4) {};
+\fill (P2)+(0.5,-1) circle (0.1) node(P5){};
+
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P2);
+\path[line] (P2.south) -- node [above] {} (P4);
+\path[line] (P2.south) -- node [above] {} (P5);
+
+\end{scope}
+
+\begin{scope}[xshift=8cm]
+\fill circle (0.1) node(P1) {};
+\fill (P1)+(-1,-1) circle (0.1) node(P2) {};
+\fill (P1)+(1,-1) circle (0.1) node(P3){};
+\fill (P3)+(-0.5,-1) circle (0.1) node(P6) {};
+\fill (P3)+(0.5,-1) circle (0.1) node(P7) {};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P2);
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P6);
+\path[line] (P3.south) -- node [above] {} (P7);
+
+\draw[|-|] (1.5,0.3)--+(0,-0.6) node[midway, right] {homme};
+\draw[|-|] (2,-0.7)--+(0,-0.6) node[midway, right] {enfants};
+\draw[|-|] (2.5,-1.7)--+(0,-0.6) node[midway, right] {petits-enfants};
+\end{scope}
+
+\end{tikzpicture}

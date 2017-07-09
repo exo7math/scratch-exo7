@@ -1,0 +1,51 @@
+\begin{tikzpicture}
+
+\foreach \b in {0,1,...,3}{
+  \pgfmathtruncatemacro\y{\b*64};   
+  \foreach \r in {0,1,...,3}{
+    \pgfmathtruncatemacro\x{\r*64}; 
+    \definecolor{Coul}{RGB}{\x,0,\y};
+    \filldraw[fill=Coul] (\r,\b) rectangle ++(1,1); 
+  }
+ \definecolor{Coul}{RGB}{255,0,\y};
+ \filldraw[fill=Coul] (4,\b) rectangle ++(1,1);
+}
+  \foreach \r in {0,1,...,3}{
+    \pgfmathtruncatemacro\x{\r*64}; 
+    \definecolor{Coul}{RGB}{\x,0,255};
+    \filldraw[fill=Coul] (\r,4) rectangle ++(1,1); 
+  }
+   
+% Horizontal numbers
+\foreach \c in {0,1,...,8}{
+  \draw (\c,-1) rectangle ++(1,1); 
+  \pgfmathtruncatemacro\x{\c*32/255*100};
+  \node at (\c+0.5,-0.6) {$\x\%$};
+}
+
+\foreach \c in {0,1,...,7}{
+  \draw (\c,-2) rectangle ++(1,1); 
+  \pgfmathtruncatemacro\x{\c*32};
+  \node at (\c+0.5,-1.6) {$\x$};
+}
+  \draw (8,-2) rectangle ++(1,1); 
+  \node at (8+0.5,-1.6) {$255$};
+
+% Vertical numbers
+\foreach \c in {0,1,...,8}{
+  \draw (-1,\c) rectangle ++(1,1); 
+  \pgfmathtruncatemacro\x{\c*32/256*100};
+  \node at (-0.6,\c+0.5) {$\x\%$};
+}
+
+\foreach \c in {0,1,...,7}{
+  \draw (-2,\c) rectangle ++(1,1); 
+  \pgfmathtruncatemacro\x{\c*32};
+  \node at (-1.6,\c+0.5) {$\x$};
+}
+  \draw (-2,8) rectangle ++(1,1); 
+  \node at (-1.6,8+0.5) {$255$};
+
+
+
+\end{tikzpicture}

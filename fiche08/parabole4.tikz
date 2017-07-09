@@ -1,0 +1,75 @@
+\usetikzlibrary{calc}
+\tikzstyle{line} = [draw,blue,very thick]
+\tikzstyle{arrow} = [->,>=latex,very thick,red]
+\begin{tikzpicture}[scale=1]
+
+
+\def\angle{50}
+
+\coordinate (A0) at (0,0);
+\coordinate (B0) at (\angle:5);
+\coordinate (C0) at ($(B0) + (0,0)$);
+
+\draw[arrow] ($(A0)+(0,0.1)$) --($(B0)+(0,0.1)$);
+\draw[line] (A0) -- (C0);
+
+%%%
+\coordinate (A1) at (C0);
+\coordinate (B1) at ($(A1)+(\angle:5)$);
+\coordinate (C1) at ($(B1) + (0,-1)$);
+
+\draw[arrow] (A1) --(B1);
+\draw[arrow] (B1) --(C1);
+\draw[line] (A1) -- (C1);
+
+%%%
+\coordinate (A2) at (C1);
+\coordinate (B2) at ($(A2)+(\angle:5)$);
+\coordinate (C2) at ($(B2) + (0,-2)$);
+
+\draw[arrow] (A2) --(B2);
+\draw[arrow] (B2) --(C2);
+\draw[line] (A2) -- (C2);
+
+
+%%%
+\coordinate (A3) at (C2);
+\coordinate (B3) at ($(A3)+(\angle:5)$);
+\coordinate (C3) at ($(B3) + (0,-3)$);
+
+\draw[arrow] (A3) --(B3);
+\draw[arrow] (B3) --(C3);
+\draw[line] (A3) -- (C3);
+
+%%%
+\coordinate (A4) at (C3);
+\coordinate (B4) at ($(A4)+(\angle:5)$);
+\coordinate (C4) at ($(B4) + (0,-4)$);
+
+\draw[arrow] (A4) --(B4);
+\draw[arrow] (B4) --(C4);
+\draw[line] (A4) -- (C4);
+
+
+%\draw (0,0)--++(0,3);
+
+%\draw[double] (90:1) arc(90:\angle:1); % node[midway, above] {angle};
+%\draw[<->,>=latex]  -- ($(B)+(0,-0.25)$) node[midway,below, sloped] {puissance};
+
+
+
+
+
+
+
+
+\node at (7,-1) {(d) simulation du tir parabolique};
+
+
+
+
+
+
+
+
+\end{tikzpicture}

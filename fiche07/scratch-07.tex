@@ -1,0 +1,130 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen,nosolutions]{../scratch}
+
+\begin{document}
+
+\titre[S]{Si ... alors ... sinon ...}
+%===============================
+
+\insertvideo{nVhnbm-irjw}{Si ... alors ... sinon ... -- Activité 1}
+
+\insertvideo{O4MQnGwgqjM}{Si ... alors ... sinon ... -- Activité 2}
+
+\insertvideo{wwNLx33Subk}{Si ... alors ... sinon ... -- Activité 3}
+
+\bigskip
+\bigskip
+
+\begin{activite}
+
+Programme un petit quiz.
+
+\begin{itemize}
+  \item Pose une question avec trois réponses possibles. 
+  \item L'utilisateur répond 1, 2 ou 3.
+  \item Informe l'utilisateur s'il a donné ou non la bonne réponse.
+\end{itemize}
+
+
+
+\begin{center}
+  \includegraphics[scale=\scaleecran]{ecran-07-ex1} 
+\end{center}
+
+
+\bigskip
+
+\textbf{Blocs utiles.}
+
+\begin{center}
+  \includegraphics[scale=\scalebloc]{bloc-07-ex1} 
+\end{center} 
+  
+  
+Exemples de questions sur le thème \og dates de l'histoire des sciences \fg{} :
+\begin{itemize}
+  \item L'invention de l'imprimerie (1. 1450, 2. 1550, 3. 1650).
+  \item L'encyclopédie de Diderot (1. 1650, 2. 1750, 3. 1850).
+  \item Second voyage de Christophe Colomb (1. 1493, 2. 1497, 3. 1502).
+  \item Premier homme dans l'espace, Youri Gagarine (1. 1941, 2. 1951, 3. 1961).
+  \item Premier homme sur la lune, Neil Armstrong (1. 1959, 2. 1969, 3. 1979).
+  \item Premier ordinateur électronique, ENIAC (1. 1947, 2. 1967, 3. 1987).
+  \item \ldots
+\end{itemize} 
+
+\end{activite}
+
+
+
+\begin{activite}
+
+Demande à l'utilisateur un nombre entre $100$ et $999$ et fais en sorte que l'ordinateur réponde si ce nombre est divisible par $5$, puis s'il est divisible par $3$.
+
+\begin{center}
+  \includegraphics[scale=\scaleecran]{ecran-07-ex2} 
+\end{center}
+
+
+\begin{itemize}
+  \item \textbf{Critère de divisibilité par 5.}
+  
+  Un entier est divisible par $5$ exactement lorsque son chiffre des unités est $0$ ou $5$.
+  
+  Exemple : $160$ et $485$ sont divisibles par $5$, par contre $753$ ne l'est pas !
+  
+  \item \textbf{Critère de divisibilité par 3.}  
+  
+  Un entier est divisible par $3$ exactement lorsque la somme de ses chiffres est divisible par $3$.
+  Exemple : $561$ est divisible par $3$, car $5+6+1=12$ est divisible par $3$.
+  Par contre $917$ ne l'est pas.  
+\end{itemize}
+
+\bigskip
+
+\textbf{Blocs utiles.}
+Comment récupérer les chiffres d'un nombre ? Si ce nombre est un 
+nombre à $3$ chiffres, alors on considère ce nombre comme un mot de $3$ lettres.
+Par exemple, si le nombre est $492$, alors la première lettre est $4$, la deuxième est $9$, la troisième est $2$.
+
+\begin{center}
+  \includegraphics[scale=\scalebloc]{bloc-07-ex2} 
+\end{center} 
+
+
+
+
+\end{activite}
+
+
+
+\begin{activite}
+
+Programme un jeu de calcul mental.
+
+\begin{center}
+  \includegraphics[scale=\scaleecran]{ecran-07-ex3} 
+\end{center}
+
+\begin{itemize}
+  \item Fixe un maximum (par exemple $50$).
+  \item Tire deux nombres au hasard plus petits que ce maximum.
+  \item Demande combien vaut la somme de ces deux nombres.
+  \item Vérifie le résultat. Si la réponse est juste, augmente le score du joueur, sinon joue un son.
+  \item Demande plusieurs calculs et affiche le score final.
+\end{itemize}
+
+\end{activite}
+
+
+
+\ifx \displaysolutions \myzero
+\else
+\begin{code}
+\onesolution{Si ... alors ... sinon ...}{Activité 1}{\includegraphics[scale=\scalesolution]{code-07-ex1}}
+\onesolution{Si ... alors ... sinon ...}{Activité 2}{\includegraphics[scale=\scalesolution]{code-07-ex2}}
+\onesolution{Si ... alors ... sinon ...}{Activité 3}{\includegraphics[scale=\scalesolution]{code-07-ex3}}    
+\end{code}
+\fi
+
+\end{document}
+

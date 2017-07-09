@@ -1,0 +1,101 @@
+# Fiche 06
+
+// Warning ! Attention à bien écrire "jusqu’à" et pas "jusqu'à" (problème de l'apostrophe).
+
+
+# Blocs utiles
+
+(mavariable)
+mettre [mavariable v] à (7)
+ajouter à [mavariable v] (1)
+dire (mavariable) pendant (2) secondes
+
+
+nombre aléatoire entre (1) et (50)
+
+
+s'orienter à ((180) - (direction))
+
+# Bloc énigme :
+
+(x) modulo (100)
+
+
+# Activité 1
+
+quand le drapeau vert pressé
+mettre [NombreMystere v] à (nombre aléatoire entre (1) et (50))
+demander [Quel nombre ?] et attendre
+répéter jusqu’à <(NombreMystere) = (réponse)> 
+    si <(NombreMystere) < (réponse)> alors 
+        dire [Le nombre à trouver est plus petit.] pendant (2) secondes
+    fin
+    si <(NombreMystere) > (réponse)> alors 
+        dire [Le nombre à trouver est plus grand.] pendant (2) secondes
+    fin
+    demander [Quel nombre ?] et attendre
+fin
+dire (regroupe [Bravo, c'était bien ] (réponse)) pendant (2) secondes
+
+
+
+# Activité 2
+
+quand le drapeau vert pressé
+effacer tout
+répéter indéfiniment
+    mettre [point v] à (nombre aléatoire entre (1) et (3))  
+    si <(point)=[1]> alors
+        mettre [x v] à (((abscisse x) + (-200)) / (2))
+        mettre [y v] à (((ordonnée y) + (-170)) / (2))
+    fin
+    si <(point)=[2]> alors
+        mettre [x v] à (((abscisse x) + (200)) / (2))
+        mettre [y v] à (((ordonnée y) + (-170)) / (2))
+    fin    
+    si <(point)=[3]> alors
+        mettre [x v] à (((abscisse x) + (0)) / (2))
+        mettre [y v] à (((ordonnée y) + (170)) / (2))
+    fin    
+    aller à x:(x) y:(y)
+    estampiller          
+fin
+
+
+
+
+
+
+# Activité 3
+
+
+// Blocs raquette
+quand le drapeau vert pressé
+répéter indéfiniment
+    si <touche [flèche droite v] pressée ?> alors
+        ajouter (10) à x
+    fin
+     si <touche [flèche gauche v] pressée ?> alors
+        ajouter (-10) à x
+    fin  
+fin
+
+// Blocs balle
+quand le drapeau vert pressé
+mettre [vitesse v] à (5)
+donner la valeur (nombre aléatoire entre (-150) et (150)) à x
+donner la valeur (180) à y
+s'orienter à (nombre aléatoire entre (160) et (200))
+répéter indéfiniment
+    avancer de (vitesse)
+    rebondir si le bord est atteint
+    si <couleur [#F00] touchée?> alors
+        jouer le son [pop v]
+        stop [tout v]
+    fin
+    si <couleur [#000] touchée?> alors
+        s'orienter à ((180) - (direction))
+        ajouter à [vitesse v] (1)
+    fin    
+fin
+

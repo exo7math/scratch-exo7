@@ -1,0 +1,61 @@
+
+\begin{tikzpicture}
+% Small grid : four values, and the last one to color (or not) the small square.
+\newcommand{\quatre}[5]{
+\fill[black!#5] (1,0) rectangle ++(1,1);
+\draw (0,0) grid ++(2,2);
+
+\node at (0.5,1.5) {$#1$};
+\node at (1.5,1.5) {$#2$};
+\node at (0.5,0.5) {$#3$};
+\node[scale=1.1] at (1.5,0.5) {$#4$};
+
+}
+
+\begin{scope}[xshift=0cm], yshift=0cm]
+\quatre{3}{4}{3}{}{0};
+\end{scope}
+
+\begin{scope}[xshift=5cm, yshift=0cm]
+\quatre{3}{4}{3}{}{0};
+\node[scale=0.7] at (0.75,0.25) {$\color{blue}\mathbf{+1}$};
+\node[scale=0.7] at (0.75,1.25) {$\color{blue}\mathbf{+1}$};
+\node[scale=0.7] at (1.75,1.25) {$\color{blue}\mathbf{+1}$};
+\end{scope}
+
+\begin{scope}[xshift=10cm, yshift=0cm]
+\quatre{3}{4}{3}{\color{red}\mathbf{4}}{0};
+\node[scale=0.7] at (0.75,0.25) {$\color{blue}\mathbf{+1}$};
+\node[scale=0.7] at (0.75,1.25) {$\color{blue}\mathbf{+1}$};
+\node[scale=0.7] at (1.75,1.25) {$\color{blue}\mathbf{+1}$};
+\end{scope}
+
+
+
+\begin{scope}[xshift=0cm,yshift=-3cm]
+\quatre{3}{4}{3}{}{20};
+\end{scope}
+
+\begin{scope}[xshift=5cm, yshift=-3cm]
+\quatre{3}{4}{3}{}{20};
+\node[scale=0.7] at (0.75,0.25) {$\color{blue}\mathbf{+1}$};
+\node[scale=0.7] at (0.75,1.25) {$\color{red}\mathbf{+0}$};
+\node[scale=0.7] at (1.75,1.25) {$\color{blue}\mathbf{+1}$};
+\end{scope}
+
+\begin{scope}[xshift=10cm, yshift=-3cm]
+\quatre{3}{4}{3}{\color{red}\mathbf{3}}{20};
+\node[scale=0.7] at (0.75,0.25) {$\color{blue}\mathbf{+1}$};
+\node[scale=0.7] at (0.75,1.25) {$\color{red}\mathbf{+0}$};
+\node[scale=0.7] at (1.75,1.25) {$\color{blue}\mathbf{+1}$};
+\end{scope}
+
+
+\draw[->,>=latex,thick,blue] (2.5,1) -- ++(2,0) node[midway,above] {ajout};
+\draw[->,>=latex,thick,blue] (7.5,1) -- ++(2,0) node[midway,above] {minimum};
+\draw[->,>=latex,thick,blue] (2.5,-2) -- ++(2,0) node[midway,above] {ajout};
+\draw[->,>=latex,thick,blue] (7.5,-2) -- ++(2,0) node[midway,above] {minimum};
+
+\node[left] at (-1,1) {\bf Case blanche};
+\node[left] at (-1,-2) {\bf Case grise};
+\end{tikzpicture}

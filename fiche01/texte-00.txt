@@ -1,0 +1,217 @@
+
+===============================
+===============================
+Fiche 00 -- Logiciel Scratch
+===============================
+===============================
+
+===============================
+Fiche 00 - activité 1 - Installation de Scratch
+===============================
+
+Bienvenue, je vais vous présenter la méthode afin d’installer SCRATCH 2 sur votre ordinateur.
+
+On lance un navigateur internet et on tape : SCRATCH 2.
+
+Je clique sur le 1er lien : Scratch Offline Editor
+
+J’ai deux fichier à télécharger : (1) le package adobe air et (2) le package scratch
+[montrer les deux fichiers sur le bureau]
+
+On commence par installer le package adobe air [montrer l’installation]
+
+Et ensuite il suffit d’installer le package SCRATCH.
+ 
+Le logiciel est maintenant installé : il suffit de cliquer sur l’icone pour lancer le logiciel. [lancer le logiciel ]
+
+Vous remarquez que le logiciel est en anglais, il suffit de cliquer sur la petite terre en haut à gauche afin de choisir la langue. Vous voilà prêt à programmer !
+
+
+===============================
+Fiche 00 - activité 2 - Présentation de l'interface Scratch
+===============================
+
+[Lancer scratch]
+Petit rappel, afin de mettre SCRATCH en Français, il faut cliquer sur la Terre 
+et choisir la langue désirée.
+
+La fenêtre Scratch est découpée en 4 zones : 
+
+(1) la scène où laquelle agira le programme : on y retrouvera les lutins et leurs déplacements.
+
+(2) La seconde partie juste en dessous est la zone des lutins : on y retrouve les différents personnages qu’on appelle des lutins et qui font partie du programme et à qui on va associer des scripts. 
+
+Il y a aussi un partie ‘arrière-plan’ qui permet de changer de décors. 
+
+(3) La zone centrale est la zone des blocs:c’est la liste de toutes les instructions que l’on pourra demander à Scratch. Nous y reviendrons en détails.
+
+(4) Enfin la zone de droite est la zone de script : on  va y placer les blocs afin de construire un programme, c’est ici que tu décides ce quoi doivent faire chacun des personnage. C’est aussi là que tu peux changer les costumes des lutins, etc...
+
+Enfin vous avez ici le drapeau vert qui lance ton programme, et le bouton rouge c’est pour le stopper. 
+
+Dans le menu tu peux sauvegarder ton programme en lui donnant un nom bien choisi. 
+
+Retiens bien l’essentiel : c’est ici que Scratch va se déplacer et dessiner en suivant tes instructions, mais toi, tu vas travailler ici en y déposant des blocs !
+
+
+===============================
+Fiche 00 - activité 3 - Fonctionnement des blocs
+===============================
+
+Un programme pour SCRATCH est composé de blocs qui sont « aimantés »  les uns aux autres. 
+
+Chaque  bloc est rangé dans une catégorie associée à thème précis que nous verrons plus tard.
+
+Je vais choisir quelques blocs et faire un premier programme afin de de te montrer le principe.
+
+[prendre le bloc drapeau]: 
+Ce bloc signale le début du programme. 
+
+Les instructions qui suivent seront exécutées dès que l’utilisateur aura cliqué sur le petit drapeau vert. 
+
+[placer quelques blocs avancer / tourner et dire hello pendant 2 seconde]  
+
+Je choisis quelques blocs par exemple avancer, tourner et dire « hello ». 
+
+Les blocs se collent les uns aux autres automatiquement comme des aimants. 
+
+Lance notre ton premier programme en cliquant sur le drapeau vert !
+
+L’utilisation des blocs est assez intuitive ; et on peut les supprimer facilement et aussi les dupliquer [dupliquer à changer en copier/coller ??].
+
+[/présenter séparer / supprimer / dupliquer]
+
+Enfin, on peut distinguer différents types de blocs : 
+[annoncer chaque type de blocs]
+
+[texte à écrire j’imagine que tu veux parler de la forme des blocs : rectangle, arrondi, losange]
+
+
+
+===============================
+Fiche 00 - activité 4 - Les catégories de blocs
+===============================
+
+Nous allons  passer en revue les chaque catégories de blocs.
+
+Chaque couleur de blocs correspond à une catégorie. 
+
+Tout d’abord la catégorie Mouvement (blocs bleu): 
+
+On y trouve les blocs qui permettent de modifier la position du lutin. Les possibilités sont nombreuses : le faire avancer, tourner , le déplacer ou le faire « glisser » vers une position, modifier les coordonnées.
+
+
+La catégorie apparence : 
+Permet de changer le costume du lutin, de le cacher. C’est aussi ici que l’on peut faire « parler » les lutins en affichant de cours message à l’écran.
+
+La partie sons : … permet de faire des sons et de la musique ….
+
+La catégorie stylo : ces blocs ci permettent de paramétrer les tracés obtenus en déplaçant un lutin
+
+La partie « données »  permet de créer des variables et des listes. 
+
+La partie  « événements » : Ces blocs permettent de lancer les instructions  de différentes façons : le principal bloc étant bien sûr «quand le drapeau vert est cliqué »
+
+
+Dans la partie « contrôle » les blocs sont orange. Tu retrouves les blocs pour créer des boucles et faire des tests. Il y a aussi le bloc « attendre » qui permet de faire patienter le lutin.
+
+La partie « capteur » concerne les interactions entre l’utilisateur, la scène et le programme : on peut ainsi poser une question, pour ensuite utiliser la réponse dans le programme. Ces blocs permmettent aussi de déterminer si une touche est pressée .
+
+La partie « opérateurs » contient les opérations mathématiques : l’addition, la multiplications.Ces blocs permettent de savoir si par exemple un nombre est plus petit qu’un autre. Ou bien s’il est égale… Il y a aussi les opérateurs logiques  ‘ou’, ‘et’, ‘non’, très importants pour les tests ‘si … alors ...’ 
+Enfin la dernière partie nous permet de créer des « sous-programme » en créant nous même des blocs.
+
+Enfin si vous double cliquez sur un blocs, l’instruction s’éxécute même si le blocs n’est pas dans le programme.
+
+
+
+===============================
+Fiche 00 - activité 5 - Les costumes
+===============================
+
+[Lancer le logiciel scratch et cliquer sur l’onglet costume associé au lutin. ]
+
+Lorsque l’on utilise un lutin dans scratch, on va pouvoir modifier son aspect à l’aide de l’onglet costume.
+
+ Cela peut avoir plusieurs buts :
+
+[Mettre blocs drapeau / répéter 50 fois / avancer de 2 / attendre 0.1s / passer au costume suivant]
+
+On peut donner ainsi une impression de mouvement en alternant les costumes.
+
+Mais on ne se limite pas à cela, 
+
+on peut agrandir ou rétrécir le taille du costume.  
+
+Pour cela on clique sur le costume, et on des poignées apparaissent. 
+
+En cliquant sur une des poignées du coin, j’agrandis ou je rétrécis le costume. [montrer comment faire]
+
+Je peux aussi redessiner le lutin à l’aide de différents outils , importer une image, … 
+
+Par exemple ici je dessine avec le crayon, ou là je trace un rectangle. 
+
+Et j’ai une palette de couleurs à disposition.[montrer comment faire]
+
+Une notion importante est le centre du lutin, en effet c’est à partir de celui-ci que sont définies plusieurs actions du lutin : [changer de lutin pour le crayon]
+
+Il va tourner autour du centre [montrer]
+
+Il va effectuer des tracés autour de ce centre [montrer]
+
+Enfin c’est ce centre qui détermine les coordonnées du lutin ! 
+
+
+===============================
+Fiche 00 - activité 6 - Arrière-plan
+===============================
+
+L’arrière plan va nous permettre d’égayer un peu la scène .
+[Montrer comment changer l’arrière plan] 
+
+L’arrière-plan peut se changer facilement en cliquant sur les icones suivants : scène arrière plan, puis changer l’arrière-plan [les montrer]. [Montrer un arrière plan rigolo]
+
+Un arrière-plan important est l’arrière plan de la grille X et Y des coordonnées [l’afficher]. 
+
+Tu vois que l’arrière plan est une image 480 pixels de large sur 360 de haut.
+
+On peut même inventer son propre fond d’écran, soit à partir d’une photo [montrer photo webcam] soit d’une image que tu as créé avec un logiciel de dessin.
+
+Terminons par une remarque importante : il est aussi possible d’associer des scripts à l’arrière-plan. 
+
+
+
+===============================
+Fiche 00 - activité 7 - Lutin
+===============================
+
+Intéressons nous maintenant d’avantage aux lutins. 
+
+Nous avons vu les costumes et il est important de bien faire la distinction entre le lutin lui-même et ses costumes : chaque lutin est un comme un personnage, qui peut avoir de multiples costumes. 
+
+De plus il  est super important nommer ses lutins par un nom évocateur afin de ne pas se perdre dans les programmes qui en utilisent plusieurs. 
+
+Pour changer le nom j’effectue un clic droit sur le lutin et je clique sur « info ». 
+
+Je change le nom du lutin. Je vais maintenant expliquer ce que l’on voit ici : les différents style de rotation.
+
+[Préparer en amont le programme du lutin qui suit la souris. Et présenter les styles de rotation.]
+
+Le premier style de rotation permet au lutin de s’orienter dans n’importe quelle direction.
+ 
+Le second n’autorise le lutin à s’orienter seulement vers la droite ou la gauche.
+
+Enfin le dernier n’autorise qu’une position fixe du lutin.
+
+Ces styles de rotation peuvent être utiles dans la conception de certains jeux.
+
+===============================
+Fiche 00 - activité 8 - Erreurs fréquentes
+===============================
+
+Voici les erreurs les plus fréquentes qui peuvent apparaître au début de programmation.
+[[Script à écrire … ]]
+
+Problème pas de bloc de démarrage + 1 seul bloc drapeau vert
+Blocs mals aimantés
+Problème blocs manquants car arrière plan cliqué
+Confondre mettre X à 10 et ajouter 10 à X

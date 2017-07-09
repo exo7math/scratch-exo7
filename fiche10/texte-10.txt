@@ -1,0 +1,266 @@
+
+
+===============================
+===============================
+Fiche 10 -- Invasion
+===============================
+===============================
+
+
+===============================
+Fiche 10 - activité 1 - 
+===============================
+
+
+[Fiche 10 - activité 1]
+
+[part 0]
+
+Tu va programmer en trois étapes un jeu s'inspirant du célèbre jeu 'Space invaders'.
+
+Le chat est attaqué par des chauve-souris qui lui lancent des bombes bleues. 
+
+Mais le chat peut s'abriter sous un abris qui n'est que provisoire et peut également riposter en lançant des balles jaunes.
+
+Nous allons programmer ce jeu en 3 étapes :
+
+1. Dans cette première partie nous allons programmer le chat et les balles jaunes.
+
+2. Dans la partie suivante, nous rajouterons une chauve-souris qui attaque avec des bombes.
+
+3. Dans la troisième et dernière partie, nous protègerons la chat avec un pare-bombes qui se détruira une fois qu'il aura été touché par 5 bombes.
+
+
+Nous commençons avec le chat et les balles : 
+ - Le chat se déplace vers la droite ou vers la gauche avec les touches de flèches.
+ - Si la touche de la flèche vers le haut est pressée, alors le chat lance une balle.
+ - Cette balle part du chat et monte verticalement.
+
+
+[part 1]
+
+[préparer le chat réduit, et un lutin balle]
+
+Programme le chat qui lance des balles.
+
+Pour les déplacements du chat c'est facile : 
+  - si la touche 'flèche droite' est pressée, on ajoute 5 à x,
+  - si c'est la touche 'flèche gauche', on retire 5, autrement dit, on ajoute -5.
+
+Je place ces blocs dans une boucle infinie.
+
+quand le drapeau vert cliqué
+répéter indéfiniment
+    si <touche [flèche droite v] pressée ?> alors
+        ajouter (5) à x
+    fin
+    si <touche [flèche gauche v] pressée ?> alors
+        ajouter (-5) à x
+    fin
+
+Ok, maintenant je veux que le chat lance des balles.
+
+J'ai déjà ajouté un lutin balle.
+
+Je rajoute un nouveau test : si la touche du haut est pressée, alors le chat lance une balle.
+
+Comment le chat peut-il lancer plusieurs balles ? Pour cela, nous allons à chaque fois créer un clône de la balle.
+
+- créer un clone de 'balle'
+- et on attend un petit peu, afin de ne pas lancer trop de balles d'un coup.
+
+    si <touche [flèche haut v] pressée ?> alors
+        créer un clone de [Balle v]
+        attendre (0.3) secondes        
+    fin
+
+
+
+[part 2]
+
+[on peut cacher 'drapeau vert' + 'cacher']
+
+On s'occupe maintenant des balles clonées.
+
+Comment lancer plusieurs balles ? 
+Il suffit d'écrire le programme une seule fois pour la balle et l'appliquer à tous les clones de cette balle.
+
+Le code pour la balle commence par 'quand je commence comme un clone', au lieu de 'quand le drapeau vert est cliqué'
+
+
+Que fait la balle ?
+
+- elle se place d'abord au niveau du chat, c'est-à-dire à l'endroit où il se trouve
+- elle se montre
+- et elle monte tout droit : répéter indefiniment, ajouter (5) à y
+
+quand je commence comme un clone
+aller à [Chat v]
+montrer
+répéter indéfiniment
+    ajouter (5) à y
+fin 
+
+
+
+===============================
+Fiche 10 - activité 2 - 
+===============================
+
+[part 1]
+
+[La chauve-souris attaque]
+
+Occupons-nous maintenant de la chauve-souris.
+
+Elle se déplace toute seule de droite à gauche et de gauche à droite. [montrer mes mains]
+
+Si elle est touchée par une balle du chat, c'est terminée pour elle (cache-la et arrête son script).
+
+De temps en temps elle lance une bombe. Et si une bombe touche le chat alors la partie est finie.
+
+
+[part 2]
+
+J'introduis donc deux nouveaux lutins : 
+  - une chauve-souris que j'appelle 'Mechant1'
+  - et une balle bleue qui joue le rôle d'une 'bombe'.
+
+On programme la chauve-souris ainsi : 
+
+répéter indéfiniment
+    avancer de (5)
+    rebondir si le bord est atteint
+
+La chauve souris se déplace toute seule de droite à gauche et rebondit sur les bords !
+
+Maintenant il nous faut faire disparaître la chauve-souris lorsqu'elle est touchée par une balle jaune lancée par le chat.
+
+    si <[Balle v] touché ?> alors
+        cacher
+        stop [ce script v]
+    fin
+
+
+[part 3]
+
+De temps en temps la chauve-souris lance une bombe. Voici une façon de le réaliser :
+- je tire au hasard un nombre entre 1 et 20, 
+- si ce nombre est égale à 1 on lance une bombe, 
+- puis attends un peu avant de tirer un autre nombre au hasard.
+
+Ce qui se code ainsi : 
+    si < (nombre aléatoire entre (1) et (20)) = [1]> alors
+        créer un clone de [Bombe v]
+        attendre (0.1) secondes
+    fin
+
+Encore une fois, chaque bombe est un nouveau clone, créé par la chauve-souris.
+
+
+[part 4]
+
+J'ai déjà préparé le script de la bombe bleue. 
+
+Celui-ci est presque le même que celui de la balle jaune :
+
+quand je commence comme un clone
+aller à [Méchant1 v]
+s'orienter à (180)    [j'oriente vers le bas]
+montrer
+répéter indéfiniment
+    avancer de (3)      [j'avance pas trop vite, donc vers le bas]
+fin
+
+Il me reste juste à modifier le script du chat. 
+
+En effet, s'il est touché par une bombe, c'est perdu : je joue un son et arrête tout.
+
+    si <[Bombe v] touché ?> alors
+        jouer le son [miaou v] jusqu'au bout
+        stop [tout v]
+    fin
+
+
+
+===============================
+Fiche 10 - activité 3 - 
+===============================
+
+[part 1]
+
+Je souhaite maintenant ajouter un abris pare-bombe afin de protéger le chat.
+
+Avec cet atout, le jeu serait trop facile.
+On décide donc que ce pare-bombe ne resiste pas à plus de 5 bombes lancées par la chauve-souris.
+
+Au bout de 5 bombes qui le touchent, le pare-bombe disparaît.
+
+
+[part 2]
+
+J'ai donc ajouté un nouveau lutin, que j'appelle 'PareBombe', dont le costume est juste un bouton de la bibliothèque des costumes que j'ai ensuite étiré. 
+
+Le script du chat ne change pas, celui de la chauve-souris non plus.
+
+Il faut que je modifie le script des bombes bleues :
+si une bombe tombe sur le pare-bombe alors elle repart vers le haut !
+
+[après 'avancer de 3']
+
+    si <[PareBombe v] touché ?> alors
+        s'orienter à (0)
+    fin
+
+Maintenant les bombes rebondissent sur le pare-bombe !
+
+
+[part 3] 
+
+Bon, il faut aussi empêcher que le chat puisse tirer ses balles à travers le pare-bombes, sinon ce serait trop facile.
+
+Je modifie donc le script de la balle jaune : 
+[après 'ajouter 5 à y']
+
+  si <[PareBombe v] touché ?> alors
+        cacher
+        stop [ce script v]
+  fin 
+
+Maintenant si une balle lancée par le chat touche le pare-bombes, elle disparaît.
+
+
+[part 4]
+
+Je m'occupe maintenant du script du pare-bombe. 
+
+Le pare-bombe va disposer de 5 vies. Il perd une vie à chaque fois qu'il est touché par une bombe.
+
+J'ai donc besoin d'une variable 'vie'.
+
+Au départ :
+- quand le drapeau vert est cliqué
+- montrer
+- mettre [vie v] à [5]
+
+Puis je teste indéfiniment à tous les instants si une bombe touche mon abris.
+Si c'est le cas, il perd une vie.
+
+répéter indéfiniment
+    
+    si <[Bombe v] touché ?> alors
+        ajouter à [vie v] (-1)
+    fin
+
+Et enfin s'il n'a plus de vie, le pare-bombe disparaît.
+
+    si < (vie) = [0]> alors
+        cacher
+    fin
+fin
+
+Voilà c'est fini pour nous, mais tu peux améliorer ce jeu de plein de façons,
+par exemple tu peux mettre en scène plusieurs chauves-souris, plusieurs abris, tu peux aussi rajouter un score
+et pourquoi pas avoir un chat qui a plusieurs vies !
+
+

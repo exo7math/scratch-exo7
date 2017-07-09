@@ -1,0 +1,41 @@
+\tikzstyle{line} = [draw,gray,thick]
+\tikzstyle{arrow} = [->,>=latex,thick]
+\begin{tikzpicture}[scale=1]
+
+
+\begin{scope}[xshift=0cm]
+\draw[blue, thick] (0,0)--++(0,-3);
+\fill[blue] (0,0) circle (0.05); 
+\draw[->,>=latex,thick, green!60!black] (-0.2,0)--++(0,-3) node[midway, left,scale=2]{?};
+\node at (0,-4) {\'Etape 1};
+\end{scope}
+
+
+\begin{scope}[xshift=3cm]
+\draw[blue, thick] (0,0)--++(0,-3);
+\draw[gray,thick,dashed] (0,-3)--++(40:2);
+
+\draw[red, double] (0,-2.5) arc (90:40:0.5) node[midway, above,scale=2]{?};
+\fill[blue] (0,0) circle (0.05); 
+\node at (0.5,-4) {\'Etape 2};
+\end{scope}
+
+
+\begin{scope}[xshift=6cm]
+\draw[blue, thick] (0,0)--++(0,-3)  -- ++(40:5);
+\draw[red, double] (0,-2.5) arc (90:40:0.5);
+\fill[blue] (0,0) circle (0.05); 
+\draw[->,>=latex,thick, green!60!black] (0,-3.2)--++(40:5) node[midway, below right,scale=2]{?};
+\node at (1,-4) {\'Etape 3};
+\end{scope}
+
+
+
+\begin{scope}[xshift=11cm]
+\draw[blue, thick] (0,0)--++(0,-3)  -- ++(40:5)-- cycle;
+\draw[red, double] (0,-2.5) arc (90:40:0.5);
+\fill[blue] (0,0) circle (0.05); 
+\node at (1,-4) {\'Etape 4};
+\end{scope}
+
+\end{tikzpicture}

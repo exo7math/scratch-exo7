@@ -1,0 +1,35 @@
+\begin{tikzpicture}[scale=1]
+
+\def\R{2}
+
+
+\coordinate (S1) at (210:\R);
+\coordinate (S2) at (-30:\R);
+\coordinate (S3) at (90:\R);
+
+\draw[gray, very thick] (S1) -- (S2) -- (S3) -- cycle;
+\fill[blue] (S1) circle (2pt) node[below] {$S_1$};
+\fill[blue] (S2) circle (2pt) node[below] {$S_2$};
+\fill[blue] (S3) circle (2pt) node[above] {$S_3$};
+
+
+  \def\x{0.2}
+  \def\y{0.6}
+
+  \coordinate (P) at (\x,\y);
+
+  \fill[red] (P) circle (2pt) node[above] {$P_1$};
+% 
+%   \draw[red!50] (P)--(S2);
+%   \coordinate (P) at ($(P)!0.5!(S2)$);
+%   \fill[red] (P) circle (2pt) node[right] {$P_2$};
+% 
+%   \draw[red!50] (P)--(S1);
+%   \coordinate (P) at ($ (P)!0.5!(S1) $);
+%   \fill[red] (P) circle (2pt) node[below] {$P_3$};
+% 
+%   \draw[red!50] (P)--(S2);
+%   \coordinate (P) at ($ (P)!0.5!(S2) $);
+%   \fill[red] (P) circle (2pt) node[below] {$P_4$};
+
+\end{tikzpicture}

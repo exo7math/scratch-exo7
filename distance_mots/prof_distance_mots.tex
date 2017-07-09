@@ -1,0 +1,55 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+\titre[P]{Distance entre deux mots}
+%===============================
+
+
+
+\section*{Objectifs}
+
+\begin{itemize}
+  \item Définir des distances entres des mots.
+  \item Présenter un algorithme textuel.
+\end{itemize}
+
+
+\section*{Durée}
+
+2 heures (??)
+
+\section*{Les activités}
+
+\begin{itemize}
+  \item Pour la distance de Hamming on pourrait assez facilement prouver que c'est une vraie distance (au sens mathématique du terme).
+  
+  \item La distance de Jaccard est aussi un distance au sens mathématique du terme.
+  
+  \item La distance de Levensthein est aussi un distance au sens mathématique du terme. Elle est beaucoup plus difficile à calculer. Il serait bon de faire prendre conscience aux élèves du problème suivant : ce n'est pas parce que l'on a trouvé un chemin de longueur $4$ par exemple, que quelqu'un de plus malin n'arrivera pas à trouver un chemin de longueur $3$. Il est très difficile de prouver que l'on ne peut pas faire mieux.
+  
+  \item L'algorithme de Levensthein est une façon de justifier la valeur de ce minimum. Encore une fois c'est un peu à long formaliser mais cela s'explique en deux minutes à l'oral.
+  
+  \item La remontée de l'algorithme pour trouver les opérations pourra être réservée aux classes les plus motivées.
+  
+  
+  \item Il existe des variantes ou l'on autorise l'échange des deux lettres adjacentes. Il paraît que $80\%$ de fautes de frappes sont de l'un des $4$ types : un caractère en moins ; un caractère en trop ; un mauvais caractère ; deux caractère adjacents échangés.
+  
+    
+\end{itemize}
+
+
+
+\section*{Ressources}
+
+\section*{People}
+
+\begin{itemize}
+  \item Auteur : Arnaud Bodin
+  \item Sur une idée originale d'Éric Wegrzynowski
+\end{itemize}
+
+\end{document}
+
+

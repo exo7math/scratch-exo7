@@ -1,0 +1,55 @@
+\usetikzlibrary{shadows,arrows}
+
+% Define block styles
+
+
+\tikzstyle{boxstyle} =  [draw, text width=8em, text centered, minimum width=10em,
+  minimum height=3em, drop shadow]
+
+\tikzstyle{boxinput} = [boxstyle, rounded corners, drop shadow, fill=green!30]
+\tikzstyle{instruction} = [boxstyle,  fill=blue!30]
+\tikzstyle{ifthen} = [boxstyle,  fill=red!30]
+
+\tikzstyle{line} = [draw,  thick]
+
+
+
+\begin{tikzpicture}
+\begin{scope}[yshift=-0.5cm]
+\fill circle (0.1) node(P1){};
+\fill (P1)+(-1,-1) circle (0.1) node(P2) {};
+\fill (P1)+(1,-1) circle (0.1) node(P3){};
+
+\node[above left] at (P1) {anc\^etre};
+\node[below left] at (P2) {fils 1};
+\node[below right] at (P3) {fils 2};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P2);
+\path[line] (P1.south) -- node [above] {} (P3);
+\end{scope}
+
+\begin{scope}[xshift=6cm]
+\fill circle (0.1) node(P1) {};
+\fill (P1)+(-1,-1) circle (0.1) node(P2) {};
+\fill (P1)+(1,-1) circle (0.1) node(P3){};
+\fill (P2)+(-0.5,-1) circle (0.1) node(P4) {};
+\fill (P2)+(0.5,-1) circle (0.1) node(P5){};
+\fill (P3)+(-0.5,-1) circle (0.1) node(P6) {};
+\fill (P3)+(0.5,-1) circle (0.1) node(P7) {};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P2);
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P2.south) -- node [above] {} (P4);
+\path[line] (P2.south) -- node [above] {} (P5);
+\path[line] (P3.south) -- node [above] {} (P6);
+\path[line] (P3.south) -- node [above] {} (P7);
+
+\draw[|-|] (1.5,0.3)--+(0,-0.6) node[midway, right] {g\'en\'eration 1};
+\draw[|-|] (2,-0.7)--+(0,-0.6) node[midway, right] {g\'en\'eration 2};
+\draw[|-|] (2.5,-1.7)--+(0,-0.6) node[midway, right] {g\'en\'eration 3};
+\end{scope}
+
+
+\end{tikzpicture}

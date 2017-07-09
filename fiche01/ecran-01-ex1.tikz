@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+    \node[anchor=south west,inner sep=0] (image) at (-1.12,-2.5) {\includegraphics[height=5cm]{ecran-01-ex1.png}};
+
+  \coordinate (O) at (0,0);
+  \draw[<->,>=latex,thick,red] (O)--++(1.5,0) node[midway, below] {50};
+  \draw[<->,>=latex,thick,red] ($(O)+(1.5,0)$)--++(1.5,0) node[midway, below] {50};
+  \draw[<->,>=latex,thick,red] ($(O)+(3,0)$)--++(1.5,0) node[midway, below] {50};
+
+  \draw[<-,>=latex,thick,green!70!black] ($(O)+(1.5,0.2)$)--++(0,1) node[above] {pause};
+  \draw[<-,>=latex,thick,green!70!black] ($(O)+(3,0.2)$)--++(0,1) node[above] {pause};
+\end{tikzpicture} 

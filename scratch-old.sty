@@ -1,0 +1,334 @@
+% ===================================================================
+% Préliminaire du préliminaire
+
+% Je n'utilise pas \RequirePackage car \usepackage est moins geeky ;)
+% --------------------------------------------------------------------
+% pour l'inclusion des chapitres et la possibilité de les compiler à part
+\usepackage[subpreambles=false]{standalone}
+% --------------------------------------------------------------------
+% \mainfolder est utiliser pour indiquer où sont les fichiers .sty
+\ifdefined\mainfolder\relax\else
+  \ifstandalone
+    \newcommand*{\mainfolder}{../}
+  \else
+    \newcommand*{\mainfolder}{}
+  \fi
+\fi
+%\ifstandalone
+%  \newcommand*{\mainfolder}{../}
+%\else
+%  \newcommand*{\mainfolder}{}
+%\fi
+% --------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+% ----------------------------------------------------------------------
+% Pour la francisation du LaTeX
+\usepackage[francais]{babel}
+  % Pour ne pas modifier les espacements standard dans les listes et les retraits
+  %\frenchbsetup{StandardLayout=true}
+  \frenchbsetup{ReduceListSpacing=true}
+  %\frenchbsetup{IndentFirst=false}
+  \renewcommand{\Frlabelitemi}{\raisebox{-0.2ex}{\textbullet}}
+  \setlength{\listindentFB}{0pt}
+  
+% ----------------------------------------------------------------------
+% Format de la page
+\usepackage[
+  a4paper,
+  %papersize={7.5in,9.25in},
+  nomarginpar, nofoot,
+  margin = 2cm,
+  %top=0.5in,
+  %right=0.8in, left=0.8in, top=0.5in, bottom=0.7in,
+  bindingoffset=0cm,
+  headsep=21pt, heightrounded,
+%  showframe,
+]{geometry}
+
+
+
+% pas de retrait
+\setlength{\parindent}{0cm}
+% Espace interligne (+ xx%)
+\linespread{1.1}
+
+% ----------------------------------------------------------------------
+% Fontes
+\usepackage[charter]{mathdesign}
+
+% ----------------------------------------------------------------------
+% Modifications de symboles (\let est plus rapide que \renewcommand)
+%\let\epsilon\varepsilon
+\let\ge\geqslant
+\let\geq\geqslant
+\let\le\leqslant
+\let\leq\leqslant
+
+% ----------------------------------------------------------------------
+% Pour l'inclusion des chapitres
+\usepackage{import}
+
+% ----------------------------------------------------------------------
+% Pour inclure des images
+\usepackage{graphicx}
+\usepackage{float}
+
+% ----------------------------------------------------------------------
+% Pour l'utilisation des couleurs
+\usepackage[usenames,x11names,table]{xcolor}
+
+% ----------------------------------------------------------------------
+% Pour les images
+\usepackage{tikz}
+\usetikzlibrary{calc,shadows,arrows,shapes,patterns,matrix}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{fadings}
+
+\newcommand{\tikzinput}[1]{%
+  \input{#1.tikz}%
+}
+
+\newcommand{\myfigure}[2]{% entrée : échelle, fichier(s) figure à inclure
+\begin{center}\small
+\tikzstyle{every picture}=[scale=1.1*#1]% mise en échelle + 10% (automatiquement annulé à la fin du groupe)
+#2
+\end{center}}
+
+% ----------------------------------------------------------------------
+% --- Logo Exo7
+\definecolor{myred}{rgb}{0.93,0.26,0}
+\definecolor{myorange}{rgb}{0.97,0.58,0}
+\definecolor{myyellow}{rgb}{1,0.86,0}
+
+\newcommand{\LogoExoSept}[1]{  % input : échelle
+{\usefont{U}{cmss}{bx}{n}
+\begin{tikzpicture}[scale=0.1*#1,transform shape]
+  \fill[color=myorange] (0,0)--(4,0)--(4,-4)--(0,-4)--cycle;
+  \fill[color=myred] (0,0)--(0,3)--(-3,3)--(-3,0)--cycle;
+  \fill[color=myyellow] (4,0)--(7,4)--(3,7)--(0,3)--cycle;
+  \node[scale=5] at (3.5,3.5) {Exo7};
+\end{tikzpicture}}
+}
+
+% ----------------------------------------------------------------------
+% Faire passer une ligne si un environnement commence par une liste
+\newcommand{\sauteligne}{\leavevmode\vspace{-\baselineskip}}
+
+% ----------------------------------------------------------------------
+% Chapitre
+\usepackage[explicit,pagestyles]{titlesec}
+
+\newcommand{\ugqfont}{\fontfamily{ugq}}
+
+
+\titleformat{\chapter}[block]
+  {\raggedleft\ugqfont}% format
+  {}% label
+  {0pt}% sep
+  {% the title
+    \begin{tikzpicture}
+      \node[black, above left, inner ysep=0pt, text width=.7\linewidth, align=right, node font=\huge]{\color{Firebrick4}#1};
+      \draw[lightgray,line width=5pt] (0,-.1) -- (0,2.1);
+      \ifstandalone % Style chapitre si on compile un seul chapitre : pas numéro
+      \else % Style chapitre si on compile un seul livre
+        \coordinate (C) at (2,1.7);
+        \node[left, lightgray, inner sep=0pt] at (C) {\chaptertitlename};
+        \node[left, lightgray, inner sep=0pt, scale=3] at ([yshift=-20pt]C) {~\thechapter};
+      \fi
+    \end{tikzpicture}
+  }
+\titleformat{name=\chapter,numberless}[block]
+  {\raggedleft\ugqfont}% format
+  {}% label
+  {0pt}% sep
+  {% the title
+    \begin{tikzpicture}
+      \node[black, above left, inner ysep=0pt, text width=.7\linewidth, align=right, node font=\huge]{\color{Firebrick4}#1};
+      \draw[lightgray,line width=5pt] (0,-.1) -- (0,2.1);
+    \end{tikzpicture}
+  }
+
+% ----------------------------------------------------------------------
+% Titre
+
+\def\optS{S} % Fiche Scratch
+\def\optE{E} % Fiche énigmes
+\def\optF{F} % Activités sur feuille
+\def\optP{P} % Pour ls porfs
+
+\newcommand{\titre}[2][]{
+%\setcounter{exemple}{0}
+\setcounter{exercice}{0}
+\setcounter{enigme}{0}
+\def\opt{#1}
+\ifx \opt \optS \renewcommand{\chaptertitlename}{Scratch}\else\fi
+\ifx \opt \optE \renewcommand{\chaptertitlename}{Énigmes}\else\fi
+\ifx \opt \optF \renewcommand{\chaptertitlename}{Feuille}\else\fi
+\ifx \opt \optP \renewcommand{\chaptertitlename}{Profs}\else\fi
+\chapter{#2}
+\renewcommand{\chaptertitlename}{\chaptername}
+}
+
+
+% ----------------------------------------------------------------------
+% Personnalisation pour les théorèmes,...
+\usepackage{amsthm}
+
+\newtheoremstyle{definitionexo7}% name
+{5pt}% Space above
+{5pt}% Space below
+{\upshape}% Body font
+{}% Indent amount
+{\bfseries}% Theorem head font
+{.\newline}% Punctuation after theorem head
+{3pt}% Space after theorem head
+{}% Theorem head spec (can be left empty, meaning ‘normal’ )
+
+\theoremstyle{definitionexo7}
+\newtheorem{exercice}{Activité}
+\newtheorem{enigme}{\'Enigme}
+\newtheorem*{exemple}{Exemple}
+\newtheorem*{solution}{Solution}
+
+% legèrement personnalisées
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems, skins, breakable}
+\tcbset{
+  leftlined/.style 2 args={
+    blanker, breakable,
+    borderline west={#1}{0pt}{#2},left={#1*14/10+7pt},top=2ex, bottom=2ex
+  }
+}
+
+\tcolorboxenvironment{exercice}{leftlined={5pt}{gray}}
+\tcolorboxenvironment{enigme}{leftlined={5pt}{gray}}
+\tcolorboxenvironment{solution}{leftlined={3pt}{lightgray}}
+\tcolorboxenvironment{exemple}{leftlined={3pt}{lightgray,decorate,decoration={name=zigzag}}}
+
+% ----------------------------------------------------------------------
+\newcommand{\debutchapitres}{\cleardoublepage\pagestyle{main}\thispagestyle{empty}\setcounter{page}{1}}
+
+% ----------------------------------------------------------------------
+% Police pour l'entete
+%\newcommand{\entetefonte}[1]{\fontfamily{lmss}\selectfont\textls[-10]{\textsc{#1}}}
+%\newcommand{\entetefonte}[1]{\textls[-10]{\textsc{#1}}}
+\newcommand{\entetefonte}[1]{{\textsc{#1}}}
+
+% ----------------------------------------------------------------------
+% Format en-têtes
+%\usepackage{titleps} % chargé par titlesec, je suppse
+\newpagestyle{main}[\small]{
+  \setheadrule{0pt}%{.55pt}
+  \sethead[{\color{gray}\entetefonte{\chaptertitle}}]% even-left
+          []% even-center
+          [{\color{gray}\entetefonte{\thesection.~\sectiontitle}}\quad{\large\textbf{\thepage}}]% even-right
+          {{\color{gray}\entetefonte{\chaptertitle}}}% odd-left
+          {}% odd-center
+          {{\color{gray}\entetefonte{\thesection.~\sectiontitle}}\quad{\large\textbf{\thepage}}}% odd-right
+  %\renewcommand\makeheadrule{\color{lightgray}\rule[-.3\baselineskip]{\linewidth}{0.4pt}}
+}
+\newpagestyle{chapterpage}[\small]{
+  \setheadrule{0pt}%
+  \sethead[]% even-left
+          []% even-center
+          []% even-right
+          {}% odd-left
+          {}% odd-center
+          {}% odd-right
+  %\renewcommand\makeheadrule{\color{lightgray}\rule[-.3\baselineskip]{\linewidth}{0.4pt}}
+}
+\assignpagestyle{\chapter}{chapterpage}
+\pagestyle{main}
+
+
+% ----------------------------------------------------------------------
+% Encadrement des formules
+
+\usepackage{varwidth}
+\tikzset{
+  block/.style = {
+    minimum height=1em,
+    inner xsep=.8em, inner ysep=.45em,
+    draw=black, thick, %rounded corners,
+    execute at begin node={\begin{varwidth}{\linewidth}\begin{center}},
+    execute at end node={\end{center}\end{varwidth}}
+  },
+  inline/.style = {
+    inner sep=.35em, draw=black, thick,
+  }
+}
+\newcommand{\mybox}[1]{\begin{center}\tikz{\node[block]{#1};}\end{center}}
+\newcommand{\myboxinline}[1]{\tikz[baseline=(X.base)]{\node[inline](X){#1};}}
+
+
+% code en ligne (\codeinline)
+\usepackage{listingsutf8}
+\newcommand{\codeinline}[1]{\lstinline!#1!}
+% personalisations pour Python et Sage
+% la package 'textcomp' est necessaire pour 'upquote=true' (il est automatiquement chargé par fancybox, mais fancybox arrive plus tard)
+\usepackage{textcomp}
+\lstset{
+  language=Python,
+  upquote=true,
+  columns=flexible,
+  keepspaces=true,
+  basicstyle=\ttfamily,
+  commentstyle=\color{gray},
+  showspaces=false
+  showstringspaces=false
+}
+
+% \makeatletter
+% \def\lst@outputspace{\lst@bkgcolor\empty\color{white}}
+% \makeatother
+
+\makeatletter
+\def\lst@outputspace{{\ifx\lst@bkgcolor\empty\color{white}\else
+\lst@bkgcolor\fi\lst@visiblespace}}
+\lst@keepspacestrue
+\lst@keepspacestrue 
+\makeatother
+
+% ----------------------------------------------------------------------
+% Constantes pour l'inclusion des figures
+
+\newcommand{\scalebloc}{0.27}
+\newcommand{\scaleecran}{0.35}
+
+
+% ----------------------------------------------------------------------
+% Commandes spécifiques à certaines fiches
+
+% Mise en relief
+\newcommand{\mot}[1]{\textbf{#1}}
+
+% Indentation pour code
+\newcommand{\indentation}{\hspace*{2em}}
+
+% Pour euro
+\usepackage{textcomp}
+
+% Pour Voronoi
+\usepackage{xinttools}
+
+
+% ----------------------------------------------------------------------
+% Package liens hypertexts
+% Attention : hyperref doit être après titletoc !!!
+% En règle général il doit être le dernier package chargé.
+% pdfencoding=auto : d'après http://tex.stackexchange.com/questions/24445
+\usepackage[hypertexnames=false,pdfencoding=auto]{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, urlcolor=blue,
+pdftitle={Exo7 - Cours de mathématiques}, pdfauthor={Exo7}}
+
+% SVG (A VIRER ?)
+% Pour les images
+%\usepackage{svg}    % Conflit avec triangle du mélange des couleurs et package xcolor
+
+%% SVG A VIRER
+
+%\DeclareUnicodeCharacter{2192}{\textrightarrow}
+%\DeclareUnicodeCharacter{2295}{$\oplus$}

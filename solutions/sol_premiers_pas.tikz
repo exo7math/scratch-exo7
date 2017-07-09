@@ -1,0 +1,88 @@
+%\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+
+\tikzstyle{line} = [draw, ultra thick]
+\tikzstyle{arrow} = [->,>=latex, red,very thick]
+
+
+\begin{tikzpicture}
+
+% NSEO
+\begin{scope}[xshift=-1.5cm,yshift=2cm,scale=0.8]
+\draw[<->, >=latex, ultra thick] (-1,0) node[left]{O}--(1,0)node[right]{E};
+\draw[<->, >=latex, ultra thick] (0,-1)node[below]{S}--(0,1)node[above]{N};
+\end{scope}
+
+% Grille
+\draw[step=1.0, black] (1,1) grid (7,7);
+
+% Labels
+\foreach \x/\L in {1/A, 2/B, 3/C, 4/D, 5/E, 6/F}{
+  \node[below] at (\x+0.5,1) {\L};
+}
+\foreach \y/\L in {1/1,2/2,3/3,4/4,5/5,6/6}{
+  \node[left] at (1,\y+0.5) {\L};
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Consignes ligne 1
+
+
+  \node at (4.5,3.5) {\bf E};
+  \draw[arrow] (4.7,3.5)--++(0.7,0);
+
+  \node at (5.5,3.5) {\bf E};
+  \draw[arrow] (5.7,3.5)--++(0.7,0);
+
+  \node at (6.5,3.5) {\bf N};
+  \draw[arrow] (6.5,3.7)--++(0,0.7);
+
+  \node at (6.5,4.5) {\bf N};
+  \draw[arrow] (6.5,4.7)--++(0,0.7);
+
+  \node at (6.5,5.5) {\bf O};
+  \draw[arrow] (6.3,5.5)--++(-0.7,0);
+
+  \node at (5.5,5.5) {\bf O};
+  \draw[arrow] (5.3,5.5)--++(-0.7,0);
+
+
+  \node at (4.5,5.5) {\bf O};
+  \draw[arrow] (4.3,5.5)--++(-0.7,0);
+
+  \node at (3.5,5.5) {\bf N};
+  \draw[arrow] (3.5,5.7)--++(0,0.7);
+
+  \node at (3.5,6.5) {\bf O};
+  \draw[arrow] (3.3,6.5)--++(-0.7,0);
+
+  \node at (2.5,6.5) {\bf O};
+  \draw[arrow] (2.3,6.5)--++(-0.7,0);
+
+  \node at (1.5,6.5) {\bf S};
+  \draw[arrow] (1.5,6.3)--++(0,-0.7);
+
+  \node at (1.5,5.5) {\bf S};
+  \draw[arrow] (1.5,5.3)--++(0,-0.7);
+
+  \node at (1.5,4.5) {\bf S};
+  \draw[arrow] (1.5,4.3)--++(0,-0.7);
+
+  \node at (1.5,3.5) {\bf E};
+  \draw[arrow] (1.7,3.5)--++(0.7,0);
+
+  \node at (2.5,3.5) {\bf S};
+  \draw[arrow] (2.5,3.3)--++(0,-0.7);
+
+ \node at (2.5,2.5) {\bf S};
+  \draw[arrow] (2.5,2.3)--++(0,-0.7);
+
+  \draw[line,red] (2,1)--++(1,1);
+  \draw[line,red] (2,2)--++(1,-1);
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tikzpicture}

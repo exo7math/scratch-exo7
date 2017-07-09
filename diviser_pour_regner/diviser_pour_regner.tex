@@ -1,0 +1,234 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+
+
+
+\titre[F]{Diviser pour régner}
+%===============================
+
+\emph{Divide et impera} : divise et tu régneras ! Il s'agit de séparer un problème compliqué en plusieurs tâches simples, que l'on traite une à une ou bien en même temps.
+
+\bigskip
+\bigskip
+
+\begin{activite}[L'attaque des zombies]
+\sauteligne
+\begin{enumerate}
+  \item Tu es le dernier humain dans une ville envahie par $127$ zombies. Heureusement tu as concocté suffisamment d'antidotes pour tous les sauver. Il faut $5$ minutes pour attraper un zombie, le ligoter, lui faire avaler l'antidote, qu'il redevienne un gentil humain, soit libéré et prêt à t'aider. Au bout de combien de temps n'y aura-t-il plus de zombies ?
+  
+  \item Tu as fabriqué $1024$ boîtes d'antidotes. Malheureusement, tu te rends compte que l'une d'entre elles n'a pas la bonne formule et que son utilisation risque de compromettre ta mission. 
+Heureusement, la mauvaise boîte pèse plus lourd que les autres. Pour la trouver, tu disposes d'une grande balance mais de très peu de temps. Combien de pesées sont nécessaires pour trouver la boîte recherchée ?
+
+Sur la figure de gauche, on a placé le même poids sur le plateau de gauche et celui de droite : la balance est à l'équilibre.
+Sur la figure de droite, le poids sur le plateau de droite est plus lourd : la balance penche vers la droite.
+
+\bigskip
+
+\myfigure{1.2}{
+\tikzinput{diviser-ex1a}
+} 
+
+% \bigskip
+  
+%   \item J'ai inventé un nouveau type de pilule afin de trier les zombies par âge. Si je donne à chaque  zombie d'un groupe la pilule numéro $23$, alors les zombies se séparent en deux sous-groupes : ceux âgés de $23$ ans ou moins à gauche et ceux âgés de plus de $23$ ans à droite (par contre l'ordre des deux nouveaux sous-groupes est le même que dans le groupe d'origine).
+  
+% \myfigure{0.9}{
+% \small\tikzinput{diviser-ex1b}
+% } 
+
+% Je peux ensuite traiter chaque sous-groupe séparément et je sais fabriquer des pilules pour tous les âges. 
+% Je veux trier les zombies du plus jeune au plus vieux en utilisant le moins de pilules possible.
+ 
+% \begin{enumerate}
+%   \item Trouve une méthode pour trier le groupe de zombies, dont voici les âges :
+%   $$[22,21,30,17,20,15,25,19]$$ 
+%   Quelles sont les pilules que tu utilises ? De combien de pilules as-tu besoin en tout ?
+%   En as-tu trouvé moins que ton voisin ?
+  
+%   \item Même question avec $[19,28,24,31,17,16,26,18]$.
+  
+%   \item J'ai $1024$ zombies à trier. Combien me faudra-t-il fabriquer de pilules ?
+
+% \end{enumerate}
+
+
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}[Le jeu des devinettes]
+Tu connais le jeu des devinettes : l'ordinateur tire au hasard un nombre entre $0$ et $64$.
+Le joueur propose un nombre et l'ordinateur répond \og le nombre à trouver est plus grand \fg{} ou \og le nombre à trouver est plus petit \fg{} jusqu'à ce que le joueur trouve le bon nombre.
+
+J'adopte la stratégie suivante : je commence par proposer le nombre $32$ (au milieu entre $0$ et $64$). Ensuite (si ce n'est pas le bon nombre), je propose ou bien le milieu entre $0$ et $32$ ou bien le milieu entre $32$ et $64$. Je recommence jusqu'à trouver le bon nombre.
+
+\begin{enumerate}
+  \item Avec cette stratégie, quels sont les nombres pour lesquels je vais gagner en $2$ propositions ? Et en $3$ propositions ?
+  
+  \item De combien de propositions aurais-je besoin au maximum ? 
+  Quels sont les nombres qui nécessitent le maximum de propositions ?
+  
+  \item Si je devais deviner un nombre entre $0$ et $1\,024$ avec le même principe, de combien de propositions aurais-je besoin au maximum ?
+
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}[Les balles de verre]
+
+Pour tester des balles faites avec un nouveau verre très solide, je les lance depuis les étages d'un gratte-ciel de $100$ étages (numérotés de $1$ à $100$). Je veux savoir exactement à partir de quel étage ce type de balle se brise. Par exemple, si la balle ne se brise pas lorsqu'elle est lâchée du $17$ème étage, je peux ensuite tenter de la lâcher depuis le $22$ème, si elle se brise c'est que 
+%le premier étage où elle se casse 
+l'étage cherché est l'un des suivants : $18$, $19$, $20$, $21$ ou $22$.
+ 
+\begin{enumerate}
+  \item Si je dispose d'une seule balle. Il n'y a qu'une seule stratégie pour être sûr de déterminer à partir de quel étage la balle éclate. Quelle est cette stratégie ? Combien de fois dois-je lancer la balle dans le pire des cas ?
+
+  \item Si je dispose maintenant de deux balles parfaitement identiques. Lorsque la première est brisée, j'utilise la seconde. Cherche une stratégie qui permet de détecter exactement à partir de quel étage les balles se brisent.
+Trouve d'abord une stratégie qui utilise moins de $20$ lâchers (quel que soit l'étage où les balles se brisent).
+Sauras-tu trouver une stratégie à moins de $18$ lâchers ?  
+\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}[La multiplication fantastique de Karatsuba]
+
+\textbf{Première partie. La multiplication habituelle.}
+
+Voici comment on calcule habituellement le produit de deux nombres à deux chiffres. Prenons par exemple $75 \times 43$ :
+\begin{itemize}
+  \item Tout d'abord, on écrit $75 = 7 \times 10 + 5$ et $43 = 4 \times 10 + 3$.
+  
+  \item Ensuite on développe le produit :
+  $$75 \times 43 
+  = (7 \times 10 + 5) \times (4 \times 10 + 3)
+  = 7 \times 4 \times 100 \  + \  (7 \times 3 + 5 \times 4)\times 10 \ + \ 5 \times 3$$
+
+  \item Comptons le nombre de multiplications qu'il reste à faire.
+  On ne va pas compter les multiplications du type $\times 10$ ou $\times 100$.
+  En effet, multiplier un nombre par $10$, $100$, $1000$...  ne nécessite aucun effort.
+  Par exemple $123\times 10$ c'est $1\,230$, il suffit de rajouter un zéro au nombre.
+  Pour $123 \times 100$, on rajoute deux zéros.
+  
+  \item Au final, nous avons donc besoin de calculer $7 \times 4$, $7 \times 3$, $5 \times 4$ et $5 \times 3$. 
+  
+  \item La formule générale est :
+  \mybox{$\displaystyle 
+  (a \times 10 + b) \times (c \times 10 + d)
+  = \underbrace{a \times c}_{\color{gray}\fbox{\text{\scriptsize 1}}} \times 100 \ + \  (\underbrace{a \times d}_{\color{gray}\fbox{\text{\scriptsize 3}}} + \underbrace{b \times c}_{\color{gray}\fbox{\text{\scriptsize 4}}})\times 10 \ + \  \underbrace{b \times d}_{\color{gray}\fbox{\text{\scriptsize 2}}}$}
+  
+  Conclusion : pour multiplier deux nombres ayant deux chiffres, il faut $4$ multiplications de nombres à un seul chiffre (et quelques additions).
+\end{itemize}
+
+\begin{enumerate} 
+  \item Termine les calculs précédents et vérifie à la calculatrice.
+  
+  \item Utilise la formule précédente pour calculer $14 \times 32$ ; $23 \times 61$ ; $85 \times 27$.
+  
+  \item Adapte la formule précédente pour transformer une multiplication de deux nombres à $4$ chiffres en $4$ multiplications de nombres à $2$ chiffres : fais-le avec $1\,234 \times 5\,041$ en commençant par écrire $1\,234 = 12 \times 100 + 34$ et $5\,041 = 50 \times 100 + 41$.
+\end{enumerate}
+
+\medskip
+\bigskip
+
+\textbf{Seconde partie. La multiplication de Karatsuba.}
+
+La méthode de Karatsuba est basée sur le fait que :
+$$(a+b)\times(c+d) = a\times c + b \times d + (a\times d + b \times c)$$
+et donc :
+  \mybox{$\displaystyle 
+  (a \times 10 + b) \times (c \times 10 + d)
+  = \underbrace{a \times c}_{\color{gray}\fbox{\text{\scriptsize 1}}} \times 100 \ + \  
+  \Big(
+  \underbrace{(a +b)\times(c+d)}_{\color{gray}\fbox{\text{\scriptsize 3}}} 
+  - \underbrace{a \times c}_{\color{gray}\fbox{\text{\scriptsize 1}}}
+  - \underbrace{b \times d}_{\color{gray}\fbox{\text{\scriptsize 2}}}  
+  \Big)  \times 10 \ + \  \underbrace{b \times d}_{\color{gray}\fbox{\text{\scriptsize 2}}}
+  $}
+
+Bilan : il n'y a que $3$ multiplications (plus simples) à effectuer :
+\begin{itemize}
+  \item $\color{gray}\fbox{\text{\scriptsize 1}}$ : $a \times c$
+  \item $\color{gray}\fbox{\text{\scriptsize 2}}$ : $b \times d$ 
+  \item $\color{gray}\fbox{\text{\scriptsize 3}}$ : $(a +b)\times(c+d)$
+\end{itemize}
+Ce qui permet de calculer sans multiplications supplémentaires  :
+\begin{itemize}
+  \item $\color{gray}\fbox{\text{\scriptsize 3'}}$ : $(a +b)\times(c+d) - a \times c - b \times d$
+  (qui vaut donc $ a\times c + b \times d$).
+\end{itemize}
+
+Reprenons l'exemple de $75 \times 43$.
+
+\begin{itemize}
+  \item Tout d'abord $75 \times 43  = (7 \times 10 + 5) \times (4 \times 10 + 3)$, on calcule donc :
+  \item $\color{gray}\fbox{\text{\scriptsize 1}}$ : $7 \times 4$
+  \item $\color{gray}\fbox{\text{\scriptsize 2}}$ : $5 \times 3$
+  \item $\color{gray}\fbox{\text{\scriptsize 3}}$ : $(7+5) \times (4+3)$, on remarque que les entiers (somme d'entiers à 1 chiffre) pouvant intervenir dans cette multiplication sont compris entre 1 et 18 (ici $12\times 7$), il ne s'agit donc pas à proprement parler d'une multiplication à 1 chiffre (mais on continuera à dire \og multiplication à $1$ chiffre\fg{}).
+  \item Ce qui donne sans multiplications supplémentaires $\color{gray}\fbox{\text{\scriptsize 3'}}$ :
+  $(7+5) \times (4+3) - 7 \times 4 - 5 \times 3$.
+  \item Et ensuite :
+  $$75 \times 43 = 7 \times 4 \times 100
+  + \Big((7+5) \times (4+3) - 7 \times 4 - 5 \times 3 \Big) \times 10
+  + 5 \times 3$$
+\end{itemize}
+
+  
+\begin{enumerate} 
+  \item Termine les calculs précédents et vérifie avec la première partie.  
+
+  \item Utilise la méthode de Karatsuba pour calculer $14 \times 32$ ; $23 \times 61$ ; $85 \times 27$.
+
+  \item Adapte la formule pour calculer $1\,234 \times 5\,041$ à l'aide de $3$ multiplications à $2$ chiffres.
+\end{enumerate}  
+ 
+\bigskip
+\medskip
+
+\textbf{Troisième partie. Karatsuba itéré.} 
+ 
+Bien sûr, passer de $4$ à $3$ multiplications est un gain important lorsque qu'un ordinateur doit faire des millions de multiplications. Mais l'intérêt principal est d'itérer le processus lorsque l'on fait des calculs avec des grands nombres.
+Par exemple, pour multiplier deux nombres à $4$ chiffres :
+\begin{itemize}
+  \item avec la méthode habituelle :  
+  
+  \centerline{\small
+   $1$ multiplication à $4$ chiffres 
+  $\longrightarrow$ $4$ multiplications à $2$ chiffres
+  $\longrightarrow$ $4 \times 4$ multiplications à $1$ chiffre
+  }
+  
+  Donc au total $16$ multiplications à $1$ chiffre.
+  
+  
+  \item avec Karatsuba itéré :
+   
+    \centerline{\small
+  $1$ multiplication à $4$ chiffres 
+  $\longrightarrow$ $3$ \og multiplications à $2$ chiffres\fg{}
+  $\longrightarrow$ $3 \times 3$ \og multiplications à $1$ chiffre\fg{}
+  }
+  
+  Donc au total $9$ \og multiplications à $1$ chiffre\fg{}.
+  
+\end{itemize}
+
+
+\begin{enumerate} 
+  \item Calcule $1\,234 \times 5\,041$ à l'aide de $9$ \og multiplications à $1$ chiffre\fg{}.
+  \item Calcule $2\,019 \times 1\,021$ et  $4\,107 \times 6\,830$.
+  \item Calcule si tu es courageux : $10\,206\,004 \times 23\,013\,011$.
+\end{enumerate}
+  
+\end{activite}
+
+
+\end{document}
+

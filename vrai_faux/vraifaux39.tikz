@@ -1,0 +1,44 @@
+\def\segment{
+(0,0)--++(1,-1)--++(4,0)--++(1,1)--++(-1,1)--++(-4,0)--cycle;
+}
+\begin{tikzpicture}[scale=0.4]
+\begin{scope}
+\LARGE\bf
+%Segment 1
+\begin{scope}[xshift=0.15cm,yshift=6cm,scale=0.95]
+\path[draw,thick] \segment; 
+\end{scope}
+
+%Segment 2
+\begin{scope}[xshift=0cm,yshift=0.15cm,rotate = 90,scale=0.95]
+\fill[black!50,draw,thick] \segment;
+\end{scope}
+
+%Segment 3
+\begin{scope}[ xshift=6cm,yshift=0.15cm,rotate = 90,scale=0.95]
+\fill[black!50,draw,thick] \segment;
+\end{scope}
+
+%Segment 4
+\begin{scope}[xshift=0.15cm,scale=0.95]
+\path[draw,thick] \segment;
+\end{scope}
+
+%Segment 5
+\begin{scope}[ xshift=0cm,yshift=-5.85cm,rotate = 90,scale=0.95]
+\fill[black!50,draw,thick] \segment;
+\end{scope}
+
+%Segment 6
+\begin{scope}[ xshift=6cm,yshift=-5.85cm,rotate = 90,scale=0.95]
+\fill[black!50,draw,thick] \segment;
+\end{scope}
+
+%Segment 7
+\begin{scope}[xshift=0.15cm,yshift=-6cm,scale=0.95]
+\fill[black!50,draw,thick] \segment;
+\end{scope}
+
+\end{scope}
+
+\end{tikzpicture}

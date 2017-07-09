@@ -1,0 +1,181 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+\titre[F]{Binaire}
+%=============================
+
+\emph{Les ordinateurs ne font pas les calculs avec les chiffres décimaux de 0 à 9. En effet, ce sont des appareils électroniques avec deux états privilégiés : soit il y a du courant, soit il n'y a en a pas. L'ordinateur travaille donc avec seulement deux chiffres 1 et 0.}
+
+\bigskip
+\bigskip
+
+\begin{activite}
+\sauteligne
+\begin{enumerate}
+  \item \textbf{Puissances de 10.}
+
+    On note $10^n$ pour $10 \times 10 \times \cdots \times 10$ (avec $n$ facteurs). Par exemple, $10^3 = 10 \times 10 \times 10 = 1000$. 
+
+    Complète le tableau suivant :
+$$
+\begin{array}{|c|c|c|c|c|c|c|c|}
+  \hline
+  10^7  & 10^6 & 10^5 & 10^4 & 10^3 & 10^2 & 10^1 & 10^0 \\
+  \hline
+  ... & ... & ... & ... & ... & ... & 10 & 1 \\ 
+  \hline
+\end{array}
+$$
+  
+  \item \textbf{Base 10.}
+
+    L'écriture habituelle des entiers se fait dans le système décimal (en base 10). Par exemple, 365 c'est ${\color{blue}3} \times 100 + {\color{blue}6} \times 10 + {\color{blue}5} \times 1$ : 
+$$
+\begin{array}{|c|c|c|}
+  \hline
+  {\color{blue}3} & {\color{blue}6} & {\color{blue}5} \\ 
+  \hline\hline
+  100 & 10 & 1 \\
+  \hline
+\end{array}
+$$   
+(on voit bien que 3 est le chiffre des centaines, 6 celui des dizaines et 5 celui des unités). 
+
+
+
+    
+
+    Autre exemple :
+    $1203 = {\color{blue}1} \times 1000 + {\color{blue}2} \times 100 + {\color{blue}0} \times 10 + {\color{blue}3} \times 1$.
+
+$$
+\begin{array}{|c|c|c|c|}
+  \hline
+  {\color{blue}1} & {\color{blue}2} & {\color{blue}0} & {\color{blue}3} \\ 
+  \hline\hline
+  1000 & 100 & 10 & 1 \\
+  \hline
+\end{array}
+$$
+
+    Décompose 24834 et  129071 en base 10 comme ci-dessus.
+  
+  \item \textbf{Puissances de 2.}
+
+
+    On note $2^n$ pour $2 \times 2 \times \cdots \times 2$ (avec $n$ facteurs). Par exemple, $2^3 = 2 \times 2 \times 2 = 8$. 
+
+    Complète le tableau suivant :
+$$
+\begin{array}{|c|c|c|c|c|c|c|c|}
+  \hline
+  2^7  & 2^6 & 2^5 & 2^4 & 2^3 & 2^2 & 2^1 & 2^0 \\
+  \hline
+  ... & ... & ... & ... & ... & ... & 2 & 1 \\ 
+  \hline
+\end{array}
+$$
+    
+  \item \textbf{Base 2.}
+  
+    Tout entier admet une écriture en base 2. Par exemple, 1.1.0.0.1 (prononce 1, 1, 0, 0, 1) est l'écriture binaire de l'entier 25. Comment fait-on ce calcul à partir de son écriture en base 2 ? C'est comme pour la base 10, mais en utilisant les puissances de 2 ! 
+$$
+\begin{array}{|c|c|c|c|c|}
+  \hline
+  {\color{red}1} & {\color{red}1} & {\color{red}0} & {\color{red}0} & {\color{red}1} \\ 
+  \hline\hline
+  16  & 8 & 4 & 2 & 1 \\
+  \hline
+\end{array}
+$$
+
+
+    Donc l'écriture {\color{red}1}.{\color{red}1}.{\color{red}0}.{\color{red}0}.{\color{red}1} en base 2 représente l'entier : 
+
+    $${\color{red}1} \times 16 + {\color{red}1} \times 8 + {\color{red}0} \times 4 + {\color{red}0} \times 2 + {\color{red}1} \times 1 = 16 + 8 + 1 = 25.$$
+
+    Calcule l'entier dont l'écriture binaire est :
+ \begin{itemize}
+  \item 1.0.1
+  \item 1.0.1.1 
+  \item 1.1.0.0.0 
+  \item 1.0.1.0.1.1
+  \item 1.1.1.0.1.0.1 
+\end{itemize}   
+ 
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}
+\sauteligne
+\begin{enumerate}
+  \item Trouve l'écriture binaire des entiers de 1 à 20. Par exemple, l'écriture binaire de 13 est 1.1.0.1.
+  \item Comment reconnais-tu à partir de son écriture binaire qu'un entier est pair ?
+  \item Explique la blague favorite des informaticiens : \og Il y a 10 catégories de personnes, celle qui connaît le binaire et celle qui ne le connaît pas ! \fg{}.
+\end{enumerate}
+\end{activite}
+
+\bigskip
+\bigskip
+
+Voici une méthode générale pour calculer l'écriture binaire d'un entier :
+\begin{itemize}
+  \item On part de l'entier dont on veut l'écriture binaire.
+  
+  \item On effectue une suite de divisions euclidiennes par 2 : 
+  \begin{itemize}
+    \item à chaque division, on obtient un reste qui vaut 0 ou 1 ; %et qui sera un des chiffres de l'écriture binaire,
+    \item on obtient un quotient que l'on divise de nouveau par 2, on s'arrête quand ce quotient est nul.
+  \end{itemize}
+  
+  \item On lit l'écriture binaire comme la suite des restes, mais en partant du dernier reste.
+\end{itemize}
+
+\begin{exemple}
+Calcul de l'écriture binaire de 13.
+
+\begin{itemize}
+  \item On divise 13 par 2, le quotient est 6, le reste est 1.
+  \item On divise 6 (le quotient précédent) par 2 : le nouveau quotient est 3, le nouveau reste est 0.
+  \item On divise 3 par 2 : quotient 1, reste 1.
+  \item On divise 1 par 2 : quotient 0, reste 1.
+  \item C'est terminé (le dernier quotient est nul).
+  \item Les restes successifs sont 1, 0, 1, 1. On lit l'écriture binaire à l'envers c'est 1.1.0.1.  
+\end{itemize}
+
+\myfigure{1}{
+\tikzinput{binaire1}
+}
+\end{exemple}
+
+\begin{exemple}
+Écriture binaire de 57.
+
+\myfigure{1}{
+\tikzinput{binaire2}
+}
+
+Les restes successifs sont 1, 0, 0, 1, 1, 1, donc l'écriture binaire de 57 est 1.1.1.0.0.1.
+\end{exemple}
+
+\bigskip
+
+\begin{activite}
+Calcule l'écriture binaire des entiers suivants :
+\begin{itemize}
+  \item 28
+  \item 39
+  \item 99
+  \item 175
+  \item 255
+  \item 256  
+\end{itemize}  
+ 
+\end{activite}
+
+\end{document}
+

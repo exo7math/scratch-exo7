@@ -1,0 +1,33 @@
+% Adapted by A. Bodin from : 
+% RGB color mixing
+% Author: Henrik Skov Midtiby <http://midtiby.blogspot.com/>
+\begin{tikzpicture}
+% Create the background in the circle, by drawing several slices
+% each with a constant color given by the angle (which is converted
+
+
+% On top of the background draw three spotlights of the primary colors
+% red, green and blue (they are primary in an additive colorspace where
+% light are mixed)
+
+\definecolor{Coul1}{rgb}{1,0,0};
+\definecolor{Coul2}{rgb}{0.25,0,0.5};
+\definecolor{Coul3}{rgb}{1,0,0.5};
+
+\draw [draw=none, fill=Coul1] (-1,1.5) circle (2cm);
+\draw [draw=none, fill=Coul2] (1,1.5) circle (2cm);
+
+% Draw areas where two of the three primary colors are overlapping.
+% These areas are the secondary colors yellow, cyan and magenta.
+\begin{scope}
+	\clip (1,1.5) circle(2cm);
+	\clip (-1,1.5) circle(2cm);
+	\draw [draw=none, fill=Coul3] (90:1.5) circle (2cm);
+\end{scope}
+
+\node[scale=1.2] at (-2,-1.5) {\bf Rouge};
+\node[scale=1.2] at (0,-1) {\bf Fushia};
+\node[scale=1.2] at (1.8,-1.5) {\bf Bleu violet};
+
+
+\end{tikzpicture}

@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw,  thick]
+\tikzstyle{point} = [black]
+
+\coordinate (A) at (1,4);
+\coordinate (B) at (1,1);
+\coordinate (C) at (5,2);
+\coordinate (D) at (3.5,4);
+
+
+ \draw[line,red] (A)--(B)--(C)--(D)--cycle;
+ \draw[line,red] (B)--(D);
+
+\foreach \point/\position in {A/above left,B/below left,C/below right,D/above right}{
+  \fill[point] (\point) circle (2pt) node[\position]{$\point$};
+}
+
+
+\draw (-0.75,-0.25) rectangle ++(7,6);
+
+\end{tikzpicture}

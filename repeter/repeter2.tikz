@@ -1,0 +1,55 @@
+\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+\tikzstyle{bulle} =  [draw, circle, thick, text centered, minimum width=1.5em, drop shadow, font = \Large, text = white]
+
+
+
+
+\begin{tikzpicture}[scale=1]
+
+\usefont{U}{cmss}{bx}{n}
+
+\begin{scope}
+\node[bulle,  fill = red] at (0,0) {R};
+\node[bulle,  fill = blue] at (1.5,0) {B};
+\node[bulle,  fill = blue] at (3,0) {B};
+\node[bulle,  fill = green] at (4.5,0) {V};
+\node[bulle,  fill = green] at (6,0) {V};
+\node[bulle,  fill = green] at (7.5,0) {V};
+\node[bulle,  fill = blue] at (9,0) {B};
+\node[bulle,  fill = red] at (10.5,0) {R};
+\node[bulle,  fill = red] at (12,0) {R};
+\end{scope}
+
+\begin{scope}[yshift=-10ex]
+\node[bulle,  fill = blue] at (0,0) {B};
+\node[bulle,  fill = blue] at (1.5,0) {B};
+\node[bulle,  fill = green] at (3,0) {V};
+\node[bulle,  fill = red] at (4.5,0) {R};
+\node[bulle,  fill = green] at (6,0) {V};
+\node[bulle,  fill = red] at (7.5,0) {R};
+\node[bulle,  fill = red] at (9,0) {R};
+\node[bulle,  fill = blue] at (10.5,0) {B};
+\node[bulle,  fill = red] at (12,0) {R};
+\node[bulle,  fill = red] at (13.5,0) {R};
+\node[bulle,  fill = red] at (15,0) {R};
+\node[bulle,  fill = red] at (16.5,0) {R};
+\end{scope}
+
+\begin{scope}[yshift=-20ex]
+\node[bulle,  fill = blue] at (0,0) {B};
+\node[bulle,  fill = red] at (1.5,0) {R};
+\node[bulle,  fill = red] at (3,0) {R};
+\node[bulle,  fill = red] at (4.5,0) {R};
+\node[bulle,  fill = red] at (6,0) {R};
+\node[bulle,  fill = green] at (7.5,0) {V};
+\node[bulle,  fill = blue] at (9,0) {B};
+\node[bulle,  fill = green] at (10.5,0) {V};
+\node[bulle,  fill = green] at (12,0) {V};
+\end{scope}
+%\node[bulle, fill = white] at (9,0) {};
+
+\end{tikzpicture}

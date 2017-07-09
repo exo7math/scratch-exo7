@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{border} = [draw, ultra thick, black]
+\tikzstyle{vertex} = [draw] 
+
+  
+% Radius of regular polygons
+  \newdimen\R
+  \R=2cm
+  \draw[border] (0,0)--(60:\R) -- (120:\R)-- cycle;
+
+\begin{scope}[rotate=180,yshift=-1.25 cm]
+  \draw[border] (0,0)--(60:\R) -- (120:\R)-- cycle;
+\end{scope}
+
+  \draw[border] (0,0.1) circle (0.6\R);
+
+\filldraw[border,fill=white] 
+(0.5,0) 
+   arc [radius=0.5, start angle=0, delta angle=90]                  
+-- (0,0.9) arc [radius=0.9, start angle=90, delta angle=-90]
+-- cycle;
+
+\begin{scope}[xshift=-0.5cm,yshift=-0.1cm,rotate=180]
+\filldraw[border,fill=white] (0.5,0) 
+   arc [radius=0.5, start angle=0, delta angle=90]                  
+-- (0,1) arc [radius=1, start angle=90, delta angle=-90]
+-- cycle;
+\end{scope}
+
+\begin{scope}[xshift=0,rotate=20,scale=1.25]
+\filldraw[border,fill=white] 
+(0:0.9) 
+   arc [radius=0.9, start angle=0, delta angle=180]                  
+-- (180:1.1) arc [radius=1.1, start angle=180, delta angle=-180]
+-- cycle;
+\end{scope}
+
+\end{tikzpicture}

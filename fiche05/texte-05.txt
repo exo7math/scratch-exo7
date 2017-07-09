@@ -1,0 +1,229 @@
+
+===============================
+===============================
+Fiche 05 -- Entrée/Sortie
+===============================
+===============================
+
+
+===============================
+Fiche 05 - activité 1 - Nathalie
+===============================
+
+[part 1]
+
+Le but est de programmer Scratch afin qu'il réagisse aux touches appuyées par l'utilisateur.
+
+Voici comment les touches doivent faire réagir Scratch :
+
+- Les touches de flèches dirigent scratch ;
+- la touche ‘m’ lui fait jouer une musique  un son (ici le miaulement du chat);
+- la touche ‘c’ passe au costume suivant ;
+- la touche ‘espace’ change la couleur du stylo de 10 ; 
+- la touche ‘f’ efface tout l'écran ;
+et tu peux imaginer d'autres touches qui font d'autres actions.
+
+[part 2]
+
+[intialisation déjà en place]
+
+Commençons par les déplacements avec les flèches qui produiront des déplacements de 10 pas.
+
+[préparer les 4 séries de blocs pour les 4 flèches]
+
+On a déjà vu que pour la flèche droite, on utilise un :
+‘si flèche droite pressée ? alors
+  ajouter 10 à x’
+
+Il ne faut pas oublier de mettre ce bloc dans un ‘répéter indéfiniment’ pour que le déplacement se fasse à chaque clic de la touche. [rajouter bloc 'répéter' en direct]
+
+J'ai adapté ce ‘si... alors’ pour la flèche gauche en ajoutant -10
+
+Idem pour les fléches haut et bas, avec 'y'.
+
+[part 3]
+
+Il faut maintenant programmer le son qui sera joué si on presse la touche « m »
+On reprend un ‘si touche... pressée ? alors’
+On choisit dans le menu déroulant la lettre ‘m’.
+Pour compléter l’intérieure de la mâchoire, il faut aller dans la catégorie ‘son’ et choisir la brique ‘jouer le son miaou’.
+
+Et voilà, la touche ‘m’ fait miauler Scratch...
+
+Pour changer de costume, on va utiliser la touche « c ».
+On reprend un ‘si touche... pressée ? alors’
+On choisit dans le menu déroulant la lettre ‘c’.
+Et on finit avec un ‘costume suivant’ que l’on trouvera dans la catégorie ‘apparence’.
+
+[part 4]
+
+[tout déjà prêt, juste à insérer les blocs dans la boucle.]
+
+J'ai déjà tout préparer pour la suite :
+  - Pour changer de couleur de stylo, on va utiliser la touche « espace ». [le faire]
+  - Enfin pour tout effacer, on va utiliser la touche « f ». [le faire]
+
+A toi de trouver d’autres instructions qui t'aiderais à tracer de jolis dessins multicolores...
+
+===============================
+Fiche 05 - activité 2 - François
+===============================
+
+[part 1]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Le but de cette activité est de faire dessiner par Scratch un triangle qui suive les indications données par l'utilisateur du programme, comme ceci : 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+[longueur 1 = 200, angle = 30, longueur 2 = 300]
+
+Dans un premier temps, il est demandé à l'utilisateur de donner la longueur d'un premier segment. [200]
+Celui-ci est tracé verticalement vers le bas.
+
+Dans un deuxième temps, il est demandé à l'utilisateur de donner un angle. [30]
+Scratch change alors d'orientation.
+
+Puis finalement, dans un troisième temps, il est demandé à l'utilisateur de donner une seconde longueur. [300]
+
+Scratch dessine le deuxième côté, finit le tracé du triangle en revenant à son point de départ et disparaît.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Il est donc possible de poser au cours de l'exécution d'un programme une question à l'utilisateur, d'attendre la réponse, et d'utiliser la valeur répondue. Voyons comment cela se passe.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Tout d'abord, je remontre Scratch qui avait disparu.
+
+Nous avons à notre disposition dans la catégorie 'Capteurs' 
+- le bloc 'demander... et attendre',
+- ainsi que la variable 'réponse', c'est cette variable qui va contenir ce que l'utilsateur va communiquer.
+
+Je peux par exemple dire "Bonjour" à l'utilisateur et attendre sa réponse puis 'afficher pendant 2 secondes' sa réponse.
+
+Que se passe-t-il ? Si l'utilisateur répond "Salut"... Scratch l'affiche pendant 2 secondes
+
+[part 2] [Les blocs du départ sont préparés de façon classique (0,0) et 90]
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous avons donc à disposition tous les éléments pour faire tracer par Scratch un triangle suivant les indications de l'utilisateur.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Nous reprenons nos blocs d'initialisation habituels que je vais légèrement modifier : 
+- Scratch ne va pas être positionné en (0,0) mais en (0,100) c'est-à-dire avec une ordonnée de 100, soit plus en haut de la scène ;
+- Scratch s'oriente dès maintenant vers le Sud pour effectuer son premier tracé, il s'oriente donc à 180 degrés.
+
+La première étape consiste à 
+- demander à l'utilisateur la longueur du premier côté 
+- puis faire avancer Scratch vers le bas du nombre de pas de la réponse.
+
+J'installe donc la question 'demander... et attendre'. [Quelle première longueur ?]
+
+Puis je fais avancer Scratch d'un nombre de pas égal à la quantité répondue : 'réponse'. Je fais l'hypothèse que l'utilisateur communique bien un nombre pour que la machine comprenne correctement le paramètre du bloc 'avancer'.
+
+
+La deuxième étape consiste à 
+- demander à l'utilisateur un angle, qui sera l'angle pour le sommet du triangle où se trouve actuellement Scartch, 
+- puis orienter Scratch selon la réponse.
+
+J'installe donc la question 'demander... et attendre'. [Quel angle ?]
+
+Puis j'oriente Scratch d'un nombre de degrés égal à la quantité répondue : 'réponse'. Je fais encore une fois l'hypothèse que l'utilisateur communique bien un nombre pour que la machine comprenne correctement le paramètre du bloc 's'orienter'.
+
+
+La troisième étape consiste à 
+- demander à l'utilisateur la longueur du deuxième côté 
+- puis faire avancer Scratch du nombre de pas de la réponse.
+
+J'installe donc la question 'demander... et attendre'. [Quelle seconde longueur ?]
+
+Puis je fais avancer Scratch d'un nombre de pas égal à la quantité répondue : 'réponse'. 
+
+
+Il ne reste plus qu'à compléter le triangle en faisant revenir Scratch à son point de départ, nous avions choisi (0,100). 
+
+
+Et pour n'obtenir à la fin que le triangle, je cache Scratch.
+
+
+Voilà notre programme terminé, testons le. [longueur 1 = 200, angle = 30, longueur 2 = 300]
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Tu peux maintenant réaliser d'autres constructions en laissant à l'utilisateur le soin de choisir des paramètres de longeur ou d'angle.
+
+
+===============================
+Fiche 05 - activité 3 - Arnaud
+===============================
+
+[part 1]
+
+Le but de cette activité est d'interagir avec l'utilisateur.
+Dans un premier temps, Scratch demande le prénom de l'utilisateur, par exemple si je m'appelle Alice, alors le chat répond "Bonjour Alice".
+
+Plus sophistiqué, Scratch me demande mon âge, admettons que j'ai 11 ans.
+Alors Scratch dessine un polygone à 11 côtés. Bien sûr si j'avais répondu 13 ans, Scratch aurait dessiné un polygone à 13 côtés.
+
+C'est très important de pouvoir interagir avec l'utilisateur ! Un programme d'ordinateur n'est pas un automate figé qui fait toujours la même chose. En le programmant correctement, l'ordinateur peut 'réagir' à la situation !
+
+
+[part 2]
+
+On commence par faire parler Scratch. C'est très simple !
+
+Pour que Scratch pose une question, on utilise le bloc 
+"demander qq chose et attendre". C'est un bloc bleu clair de la catégorie "Capteurs". [sortir le bloc]
+
+Une fois que l'utilisateur a répondu, la réponse est stockée dans la variable "réponse". [sortir le bloc]
+
+Donc ici :
+- je fais demander à Scratch "Quel est ton prénom ?"
+- Scratch affiche la réponse ! [bloc dire ... pendant 2 secondes]
+
+Afin que Scratch soit un peu plus poli, je veux qu'il dise 'Bonjour' suivi de mon prénom.
+
+Pour cela je regroupe le mot 'Bonjour ' [attention à l'espace] et la réponse. 
+ 
+
+Et voilà pour cette première partie !
+
+
+[part 3]
+
+On va faire encore mieux en traçant un polygone qui a autant de côtés que ton âge.
+
+[blocs d'initialisation déjà placés]
+
+- Scratch demande cette fois un âge,
+- la réponse va être un nombre, stocké dans la même variable 'réponse'.
+
+Comment tracer le polygone ?
+Pour tracer un polygone à 5 côtés, je répète 5 fois : 
+ - avancer [sortir le bloc]
+ - tourner un peu 
+ - (avancer, tourner un peu,...) 
+
+Pour un polygone à 7 côtés je répète 7 fois : avancer, tourner un peu.
+
+
+Comment tracer un polygone avec le bon nombre de côté ?
+Le nombre de côtés est donné par la réponse, donc on répète 'réponse' fois les instructions.
+
+
+[sortir 'répéter' et placer 'réponse']
+
+
+Ensuite à chaque étape, Scratch commence par avancer, par exemple 'avancer de 50 pas'.
+
+Et ensuite Scratch tourne un peu [bloc 'tourner de ... degrés'].
+
+Mais de quel angle doit-il tourner ? Et bien cela dépend du polygone !
+
+Pour un polygone à 5 côtés : l'angle est 360/5, pour un polygone à 7 côtés, l'angle est 360/7. Et en général pour un polygone à n côtés l'angle est 360/n.
+
+Donc ici je tourne de 360/réponse.
+
+Je calcule 360/réponse et je change l'angle.
+
+
+Si j'ai 11 ans, voilà un polygone à 11 côtés !
+
+
+

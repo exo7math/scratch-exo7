@@ -1,0 +1,39 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{vertex} = [draw] 
+
+\begin{scope}[rotate=0]
+
+
+\coordinate (L) at (0,10);
+\coordinate (P) at (0,8);
+\coordinate (S) at (5,8);
+\coordinate (Ly) at (4,5);
+\coordinate (M) at (4,0);
+\coordinate (T) at (-1,1);
+\coordinate (N) at (-4,7);
+\coordinate (B) at (-4,2);
+
+\foreach \V/\Ville/\pos in {L/Lille/above,P/Paris/below,S/Strasbourg/right,Ly/Lyon/right,M/Marseille/below,T/Toulouse/below,N/Nantes/left, B/Bordeaux/left}{
+  \fill (\V) circle(0.1);
+  \node[\pos] at (\V) {\Ville};
+}
+
+
+\draw[edge] (L)--(P) node[midway,right]{200};
+\draw[edge] (L)--(N) node[midway,above left]{500};
+\draw[edge] (P)--(N) node[midway,below]{400};
+\draw[edge] (P)--(S) node[midway,above]{500};
+\draw[edge] (P)--(Ly) node[midway,right]{500};
+\draw[edge] (Ly)--(M) node[midway,right]{300};
+\draw[edge] (T)--(M) node[midway,above]{400};
+\draw[edge] (T)--(B) node[midway,above]{200};
+\draw[edge] (N)--(B) node[midway,left]{400};
+\draw[edge] (S)--(Ly) node[midway,right]{400};
+\draw[edge] (S)--(L) node[midway,above right]{400};
+
+\end{scope}
+
+\end{tikzpicture}

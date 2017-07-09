@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{border} = [draw, ultra thick, black]
+\tikzstyle{vertex} = [draw] 
+
+  
+% Radius of regular polygons
+  \newdimen\R
+  \R=1cm
+
+  \draw[border] (0,0)--++(2,0)--++(0,1)--++(-2,0)--cycle;
+  \draw[border] (0,0) circle (1.01*\R);
+
+\begin{scope}[xshift=1 cm, yshift=1.5cm,rotate=30]
+  %\draw[border] (0,0)--++(2,0)--++(0,1)--++(-2,0)--cycle;
+  \draw[border] (0,0) circle (1.01*\R);
+\end{scope}
+
+\begin{scope}[xshift=1.5cm, yshift=0cm,rotate=180]
+\filldraw[border,fill=white] 
+(1,0) 
+   arc [radius=1, start angle=0, delta angle=300]                  
+-- (360:1.5) arc [radius=1.5, start angle=360, delta angle=-360]
+-- cycle; 
+\end{scope}
+
+  \draw[border,fill=white] (0,0)--++(2,0)--++(0,1)--++(-2,0)--cycle;
+
+\draw[border, fill=white] (-1,0) circle (0.2\R);
+\draw[border, fill=white] (0,0) circle (0.2\R);
+\draw[border, fill=white] (1,0) circle (0.2\R);
+\draw[border, fill=white] (2,0) circle (0.2\R);
+\draw[border, fill=white] (0,1) circle (0.2\R);
+\draw[border, fill=white] (1,1) circle (0.2\R);
+\draw[border, fill=white] (2,1) circle (0.2\R);
+\draw[border, fill=white] (1,1) circle (0.2\R);
+
+%\fill[white] (0.90,0) rectangle ++(0.2,1);
+\end{tikzpicture}

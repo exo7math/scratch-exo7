@@ -1,0 +1,100 @@
+# Fiche 07
+
+// Warning ! Attention à bien écrire "jusqu’à" et pas "jusqu'à" (problème de l'apostrophe).
+
+# Blocs utiles
+
+si <> alors
+
+sinon
+
+fin
+
+lettre (1) de (nombre)
+
+lettre (2) de (nombre)
+
+lettre (3) de (nombre)
+
+
+
+< ( (x) modulo (2)) = [0] >
+
+
+# Activité 1
+
+
+quand le drapeau vert pressé
+mettre [score v] à [0]
+dire [Date de l'invention de l'imprimerie ?] pendant (2) secondes
+demander [1. 1450  2. 1550  3. 1650] et attendre
+si <(réponse) = [1]> alors
+    ajouter à [score v] (1)
+    dire [Bravo !] pendant (2) secondes
+sinon
+    dire [Mauvaise réponse !] pendant (2) secondes
+fin 
+dire (regroupe [Score = ] (score))
+
+
+
+# Activité 2
+
+quand le drapeau vert pressé
+demander [Choisis un nombre entre 100 et 999 !] et attendre
+mettre [nombre v] à (réponse)
+mettre [u v] à (lettre (3) de (nombre))
+mettre [d v] à (lettre (2) de (nombre))
+mettre [c v] à (lettre (1) de (nombre))
+si <<(u)=[0]> ou <(u)=[5]>> alors
+    dire [Divisible par 5] pendant (2) secondes
+sinon
+    dire [Pas divisible par 5] pendant (2) secondes
+fin 
+mettre [somme v] à ((u) + ( (d)+(c) ) )
+répéter jusqu’à <(somme) < [3]> 
+    mettre [somme v] à ( (somme) - (3) )    
+fin
+si <(somme)=[0]> alors
+    dire [Divisible par 3] pendant (2) secondes
+sinon
+    dire [Pas divisible par 3] pendant (2) secondes
+fin 
+
+
+
+
+# Activité 3
+
+quand le drapeau vert pressé
+mettre [max v] à [50]
+mettre [score v] à [0]
+répéter (3) fois
+    mettre [nb1 v] à (nombre aléatoire entre (1) et (max))
+    mettre [nb2 v] à (nombre aléatoire entre (1) et (max))
+    demander (regroupe (regroupe (nb1) [+])(nb2)) et attendre
+    si <(réponse) = ( (nb1) + (nb2) )> alors
+        ajouter à [score v] (1)
+    sinon 
+        jouer le son [meow v]
+    fin
+fin 
+dire (regroupe [Score = ] (score))
+
+
+
+# Enigme 1
+
+
+quand le drapeau vert pressé
+mettre [x v] à [2017]
+répéter (50) fois
+    si < ( (x) modulo (2)) = [0] > alors
+        mettre [x v] à ( (x) / (2) )
+    sinon 
+        mettre [x v] à ( ( (3) * (x) ) + (1) )
+    fin
+fin 
+dire (x)
+
+

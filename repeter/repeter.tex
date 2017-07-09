@@ -1,0 +1,145 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+\titre[F]{Répéter}
+%===============================
+
+\begin{activite}
+Une suite de couleurs est codée par ses initiales : \mot{R} pour rouge, \mot{V} pour vert, \mot{B} pour bleu. 
+S’il y a 2 rouge à suivre on écrit \mot{2R} au lieu de \mot{R R}, s’il y a 3 bleu on note \mot{3B}.
+
+Voici un exemple :
+
+\myfigure{1}{
+\tikzinput{repeter1}
+}
+
+Cette suite peut se coder \mot{R R R B V V B} ou plus simplement \mot{3R 1B 2V 1B}, pour 3 rouge, 1 bleu, 2 vert, 1 bleu.
+
+\begin{enumerate}
+  \item  Colorie les bulles en suivant le code :
+  \begin{itemize}
+  \item \mot{2B 2V 3R 1V 2B}
+
+\myfigure{0.92}{
+\tikzinput{repeter10}
+}
+  
+  \item \mot{2V 4B 3V 1R}
+  
+\myfigure{0.92}{
+\tikzinput{repeter10}
+}
+
+  \item \mot{5B 1V 4R}
+
+\myfigure{0.92}{
+\tikzinput{repeter10}
+}
+  
+  \end{itemize}
+  
+  \item Trouve le code des suites de couleurs. Quand deux couleurs se suivent, utilise notre raccourci !
+
+ \myfigure{0.91}{
+\tikzinput{repeter2}
+} 
+   
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}
+Les directions sont codées suivant leur initiale : \mot{N} pour nord, \mot{S} pour sud, \mot{E} pour est et \mot{O} pour ouest. Si je fais deux pas de suite vers le nord, j'écris \mot{2N} au lieu de \mot{N N}. Si je fais cinq pas vers l’ouest, j'écris \mot{5O}.
+\begin{enumerate}
+  \item  Je pars du point $A$ et j’avance suivant le code \mot{3E 1N 2O 2N 7E 2S}. Trace mon chemin. À quel point suis-je arrivé ?
+  
+\myfigure{0.84}{
+\tikzinput{repeter4}
+}  
+
+  \item Je repars du point $A$ avec le code \mot{1O 4N 6E 2N 2E 2S 2E 2S}. Trace mon chemin et dis-moi où j’arrive.
+
+ 
+   
+  \item  Écris le code du chemin allant du point $A'$ au point $B'$, puis celui du point $A'$ au point $C'$.
+
+
+\myfigure{0.84}{
+\tikzinput{repeter5}
+}  
+
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}
+Mon chemin est codé selon les instructions suivantes : \mot{1A} pour avancer d’un pas, \mot{2A} pour avancer de deux pas, \mot{3A} pour trois pas... \mot{G} m’indique de pivoter sur la gauche \emph{sans avancer} et \mot{D} m’indique de pivoter sur la droite \emph{sans avancer}. Par exemple, \mot{3A G 2A D 2A} m’indique que je dois avancer de trois pas, pivoter sur la gauche, avancer de deux pas puis pivoter sur la droite et enfin avancer de deux pas.
+\begin{enumerate}
+  \item Je pars du point $P$ en regardant dans la direction de la flèche et j’avance suivant les instructions \mot{3A G 1A D 2A D 2A G 3A}. Trace mon chemin. À quel point suis-je arrivé ?
+  
+  \item Je repars du point $P$ avec les instructions \mot{1A D 3A G 2A G 1A D 2A D 1A}. Trace mon chemin et dis-moi où j’arrive.
+  
+\myfigure{0.86}{
+\tikzinput{repeter6}
+}   
+
+  \item Écris le code d'un chemin qui part du point $P'$ et arrive au point $S'$ sans passer par les cases noires (plusieurs chemins sont possibles !). Est-il possible de trouver un chemin sans jamais tourner à droite ?
+
+\myfigure{0.86}{
+\tikzinput{repeter7}
+} 
+  
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}
+Une couleur est codée par son initiale : \mot{R} pour rouge, \mot{V} pour vert, \mot{B} pour bleu. 
+Comme précédemment, s’il y a 2 rouge à suivre on écrit \mot{2R} au lieu de \mot{R R}, s’il y a 3 bleu on note \mot{3B}.
+Voici un motif avec des répétitions : \mot{R V R V R V} que l’on code par \mot{3(R V)}, c’est-à-dire que l’on répète trois fois le motif \mot{R V}. Voici un autre motif avec des répétitions : \mot{2R B 2R B 2R B} que l’on code par \mot{3(2R B)}, c’est-à-dire que l’on répète trois fois le motif \mot{R R B}.
+
+\begin{enumerate}
+
+  \item Colorie les bulles en suivant le code :
+  \begin{itemize}
+    \item \mot{4(B V) 2B 5(R B)} 
+  
+\myfigure{0.92}{
+\tikzinput{repeter20}
+}    
+
+    
+    \item \mot{2R 3(B V) 2(B R V) 3(B R)}
+    
+\myfigure{0.92}{
+\tikzinput{repeter20}
+}    
+ 
+    
+    \item \mot{2(R V B) 3(2B V) \  B \ 2(V R)}
+
+\myfigure{0.92}{
+\tikzinput{repeter20}
+}    
+
+    
+  \end{itemize}
+    
+  \item Trouve le code des suites de couleurs suivantes. Quand des motifs se répètent, utilise notre raccourci !
+
+ \myfigure{0.91}{
+\tikzinput{repeter3}
+} 
+
+\end{enumerate}
+
+\end{activite}
+
+
+\end{document}
+
+

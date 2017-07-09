@@ -1,0 +1,181 @@
+\documentclass[11pt,twoside]{report}
+%\documentclass[11pt,twoside,openright]{report}
+
+\usepackage[screen]{scratch}
+%\usepackage[print]{scratch}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Titre + préface + sommaire
+\renewcommand{\contentsname}{Sommaire}
+
+% Préface
+\import{divers/}{preface_livre_scratch.tex}
+
+\debutchapitres
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Les feuilles
+
+\clearemptydoublepage
+  
+%======================================
+\part{Activités Scratch}
+
+% 01 - Premiers pas
+\import{fiche01/}{scratch-01.tex}
+
+% 02 - Répéter
+\import{fiche02/}{scratch-02.tex}
+
+% 03 - Coordonnées
+\import{fiche03/}{scratch-03.tex}
+
+% 04 - Si ... alors ...
+\import{fiche04/}{scratch-04.tex}
+
+% 05 - Entrée/Sortie
+\import{fiche05/}{scratch-05.tex}
+
+% 06 - Variables et hasard
+\import{fiche06/}{scratch-06.tex}
+
+% 07 - Si ... alors ... sinon ...
+\import{fiche07/}{scratch-07.tex}
+
+% 08 - Plusieurs lutins
+\import{fiche08/}{scratch-08.tex}
+
+% 09 - Sons
+\import{fiche09/}{scratch-09.tex}
+
+% 10 - Invasion
+\import{fiche10/}{scratch-10.tex}
+
+% 11 - Créer ses blocs
+\import{fiche11/}{scratch-11.tex}
+
+% 12 - Listes
+\import{fiche12/}{scratch-12.tex}
+
+\clearemptydoublepage
+\setcounter{chapter}{0}
+
+
+%======================================
+\part{Énigmes Scratch}
+
+% 01 - Premiers pas
+\import{fiche01/}{enigme-01.tex}
+
+% 02 - Répéter
+\import{fiche02/}{enigme-02.tex}
+
+% 03 - Coordonnées
+\import{fiche03/}{enigme-03.tex}
+
+% 04 - Si ... alors ...
+\import{fiche04/}{enigme-04.tex}
+
+% 05 - Entrée/Sortie
+\import{fiche05/}{enigme-05.tex}
+
+% 06 - Variables et hasard
+\import{fiche06/}{enigme-06.tex}
+
+% 07 - Si ... alors ... sinon ...
+\import{fiche07/}{enigme-07.tex}
+
+% 08 - Plusieurs lutins
+\import{fiche08/}{enigme-08.tex}
+
+% 09 - Sons
+\import{fiche09/}{enigme-09.tex}
+
+% 10 - Invasion
+\import{fiche10/}{enigme-10.tex}
+
+% 11 - Créer ses blocs
+\import{fiche11/}{enigme-11.tex}
+
+% 12 - Listes
+\import{fiche12/}{enigme-12.tex}
+
+% Solutions des énigmes
+\import{solutions/}{solutions_scratch.tex}
+
+
+
+\clearemptydoublepage
+\setcounter{chapter}{0}
+
+%======================================
+\part{Activités sur feuilles}
+
+\import{premiers_pas/}{premiers_pas.tex}
+
+\import{repeter/}{repeter.tex}
+
+\import{operations_algebriques_1/}{operations_algebriques_1.tex}
+
+\import{vrai_faux/}{vrai_faux.tex}
+
+\import{operations_algebriques_2/}{operations_algebriques_2.tex}
+
+\import{si_alors/}{si_alors.tex} 
+
+\import{boucles_1/}{boucles_1.tex} 
+
+\import{chercher/}{chercher.tex}
+
+\import{puissances_de_2/}{puissances_de_2.tex} 
+
+\import{binaire/}{binaire.tex}
+
+\import{boucles_2/}{boucles_2.tex} 
+
+\import{graphe/}{graphe.tex}
+
+\import{base_de_donnees/}{base_de_donnees.tex}
+
+\import{pixels/}{pixels.tex}
+
+\import{diviser_pour_regner/}{diviser_pour_regner.tex}
+
+\import{couleurs/}{couleurs.tex}
+
+\import{crypto/}{crypto.tex}
+
+\import{triangulation/}{triangulation.tex}
+
+\import{distance_mots/}{distance_mots.tex}
+
+\clearemptydoublepage
+\setcounter{chapter}{0}
+
+%======================================
+\part{Énigmes sur feuilles}
+
+% Enigmes
+\import{enigmes_feuilles/}{enigmes_feuilles.tex}
+
+% Solutions des énigmes
+\import{solutions/}{solutions_feuilles.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Postfac
+
+\import{divers/}{postface_livre_scratch.tex}
+
+\vfill
+\bigskip
+\bigskip
+
+\centerline{Version 1.00 -- Juillet 2017}
+
+
+
+\end{document}
+

@@ -1,0 +1,231 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+\titre[F]{Puissances de 2}
+%===============================
+
+\emph{Un nénuphar envahit une mare. Sa surface double chaque jour. Au bout du vingtième jour, le nénuphar recouvre toute la surface de l'eau. Quel jour le nénuphar recouvrait la moitié de la surface ?}
+
+\bigskip
+\bigskip
+
+
+\begin{activite}
+
+On note $2^n$ pour $2 \times 2 \times \cdots \times 2$ (avec $n$ facteurs). Par exemple $2^2 = 2 \times 2  = 4$, $2^3 = 2 \times 2 \times 2 = 8$. 
+
+\begin{enumerate}
+  \item  Complète les tableaux suivants :
+$$
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|c|}
+  \hline  
+  2^0 & 2^1 & 2^2 & 2^3 & 2^4 & 2^5 & 2^6 & 2^7 & 2^8 & 2^9 & 2^{10}  \\
+  \hline  
+   1  &  2  & ... & ... & ... & ... & ... & ... & ... & ... & ...   \\ 
+  \hline
+
+\end{array}
+$$
+$$
+\begin{array}{|c|c|c|c|c|c|c|c|c|c|c|}
+  \hline
+  2^{11} & 2^{12} & 2^{13} & 2^{14} & 2^{15} & 2^{16}  \\
+  \hline
+  ... &  ...   &  ...   &  ...   &  ...   &  ...  \\ 
+  \hline
+\end{array}
+$$  
+
+
+  \item Comment passer de $2^{n}$ à $2^{n+1}$ ?
+  
+  \item Apprends par c\oe ur les puissances de $2$, de $2^1$ à $2^{12}$, de façon à pouvoir les réciter en moins de dix secondes.
+  
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}
+\sauteligne
+\begin{enumerate}
+  \item On remplit des cases avec des 0 et des 1. On énumère toutes les possibilités.
+  Par exemple, avec $2$ cases, on a $4$ possibilités :
+ $$
+\begin{array}{|c|c|}
+  \hline
+    0 &  0  \\ 
+  \hline
+\end{array}\qquad
+\begin{array}{|c|c|}
+  \hline
+    0 &  1  \\ 
+  \hline
+\end{array}\qquad
+\begin{array}{|c|c|}
+  \hline
+    1 &  0  \\ 
+  \hline
+\end{array}\qquad
+\begin{array}{|c|c|}
+  \hline
+    1 &  1  \\ 
+  \hline
+\end{array}
+$$ 
+   \begin{enumerate}
+    \item Trouve toutes les possibilités avec 3 cases :
+    $\begin{array}{|c|c|c|}
+  \hline
+    \ \   &  \ \  & \ \   \\ 
+  \hline
+\end{array}
+$. Combien y en a-t-il ?
+
+    \item Trouve toutes les possibilités avec 4 cases :
+    $\begin{array}{|c|c|c|c|}
+  \hline
+    \ \   &  \ \  & \ \  & \ \  \\ 
+  \hline
+\end{array}
+$. Combien y en a-t-il ?
+
+
+    \item Combien y a-t-il de possibilités lorsqu'il y a $n$ cases ?
+
+  \end{enumerate}
+ 
+  
+  \item On représente l'arbre généalogique d'un ancêtre. Cet ancêtre a deux fils (figure de gauche), chacun de ses fils a aussi deux fils (figure de droite). À chaque fois les enfants ont deux fils.
+  
+\myfigure{1}{
+\tikzinput{arbre_puiss2}
+}  
+  
+
+  
+  \begin{enumerate}
+    \item Représente l'arbre généalogique jusqu'à la quatrième génération.
+    
+    \item Combien y a-t-il de personnes à la première génération ? Et à la deuxième, à la troisième, à la quatrième ? Et à la $n$-ième génération ?
+    
+    \item Combien y a-t-il de personnes en tout, de la première à la quatrième génération ?
+    Et de la première à la dixième génération ?
+ 
+  \end{enumerate}  
+  
+  
+  \item Une sélectionneuse doit former une équipe à partir de plusieurs joueuses. Une équipe peut comporter $1$ ou $2$ ou $3$...  ou toutes les joueuses.
+  Par exemple, si elle dispose de $3$ joueuses, numérotées $1$, $2$ et $3$, elle peut constituer $7$ équipes différentes :
+    \begin{itemize}
+      \item l'équipe $\{1\}$ formée de la seule joueuse numéro $1$ ;
+      \item l'équipe $\{2\}$ formée de la seule joueuse numéro $2$ ;
+      \item l'équipe $\{3\}$ formée de la seule joueuse numéro $3$ ;
+      \item l'équipe $\{1,2\}$ formée de la joueuse numéro $1$ et de la joueuse numéro $2$ ;
+      \item l'équipe $\{1,3\}$ formée de la joueuse numéro $1$ et de la joueuse numéro $3$ ;      
+      \item l'équipe $\{2,3\}$ formée de la joueuse numéro $2$ et de la joueuse numéro $3$ ;     
+      \item l'équipe $\{1,2,3\}$ formée de toutes les joueuses.    
+    \end{itemize}  
+  
+  
+  \begin{enumerate}
+    \item Énumère toutes les équipes possibles en partant de $2$ joueuses. Combien y en a-t-il ?
+    \item Énumère toutes les équipes possibles en partant de $4$ joueuses. Combien y en a-t-il ?
+    \item D'après toi, combien y a-t-il d'équipes possibles en partant de $n$ joueuses ?
+  \end{enumerate}
+  
+  
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}
+Un \emph{octet} est une quantité d'information qui correspond à une zone de stockage de $8$ cases, chaque case pouvant contenir un $0$ ou un $1$ :
+   $$\begin{array}{|c|c|c|c|c|c|c|c|}
+  \hline
+    \ \   &  \ \  & \ \  & \ \  & \ \   &  \ \  & \ \  & \ \ \\ 
+  \hline
+\end{array}
+$$
+Il y a donc $2^8 = 256$ possibilités. 
+\begin{itemize}
+  \item Un octet permet par exemple de coder un entier compris entre $0$ et $255$. 
+  \item Un octet permet aussi de coder un caractère (code ASCII), par exemple le caractère numéro 65 désigne la lettre \og A \fg{}, le numéro 66 la lettre \og B \fg{}... 
+  \item Un octet peut aussi coder $256$ niveaux de gris ($0$ pour le noir, $255$ pour le blanc et entre les deux, des nuances de gris).
+  \item Avec trois octets, on peut coder plus de 16 millions de couleurs différentes :
+  un octet pour le rouge (de $0$ : pas du tout de rouge, à $255$ : le maximum de rouge), un octet pour le vert et un octet pour le bleu (système RVB).
+\end{itemize}  
+
+Comme les quantités de mémoire en jeu sont souvent énormes, on utilise les multiples :
+\begin{itemize}
+  \item le \emph{kilo-octet}, noté ko, pour $1000$ octets ;
+  \item le \emph{méga-octet}, noté Mo, pour un million d'octets (donc $1$ Mo = $1000$ ko) ;
+  \item le \emph{giga-octet}, noté Go, pour un milliard d'octets (donc $1$ Go = $1000$ Mo) ; 
+  \item le \emph{tera-octet}, noté To, pour mille milliards d'octets (donc $1$ To = $1000$ Go).
+\end{itemize}
+
+\begin{enumerate}
+  \item Calcule la quantité de mémoire nécessaire au stockage des données suivantes et exprime-la en utilisant le multiple le plus adapté :
+  \begin{enumerate}
+    \item un texte de 3000 caractères (environ une page) ;
+    
+    \item un dictionnaire de 40 000 mots, un mot étant en moyenne composé de 7 lettres ;
+    
+    \item une image noir et blanc de taille $800 \times 600$ pixels, chaque pixel étant coloré par un niveau de gris (parmi 256) ;
+    
+    \item  une image couleur HD de taille $1024 \times 768$ pixels, chaque pixel étant coloré par un niveau de rouge (parmi 256), un niveau de vert (parmi 256) et un niveau de bleu  (parmi 256) ;
+  
+    \item un film d'1h30, avec 25 images par secondes, chaque image étant une image couleur HD.     
+    
+  \end{enumerate}  
+
+ 
+  
+  \item L'ancien usage était d'utiliser les puissances de $2$ comme multiples des octets.
+  Comme $2^{10}= 1024$ est proche de mille, on appelle \emph{kibi-octet}, noté Kio, un ensemble de $1024$ octets. 
+  De même un \emph{mebi-octet}, noté Mio, c'est $1024$ Kio ; un \emph{gibi-octet} c'est $1024$ Mio ;
+  un \emph{tébi-octet} c'est $1024$ Gio.
+  
+  Exprime les quantités de mémoire de la question précédente à l'aide des multiples Kio, Mio, Gio ou Tio.
+  
+  \item Cherche les quantités de mémoire approximatives, nécessaires pour stocker : une chanson ; un film ;
+  une photo ;  un livre de 300 pages. Cherche la quantité de stockage usuelle contenue dans 
+  un CD, un DVD, une clé USB, la mémoire vive d'un ordinateur, un disque dur.  
+
+\end{enumerate}
+\end{activite}
+
+\begin{activite}
+Pour réduire la taille des fichiers, on cherche souvent à les compresser.
+Par exemple si une image à un coin de ciel bleu, au lieu de répéter mille fois \og pixel bleu, pixel bleu, pixel bleu... \fg{} on enregistre \og toute cette zone est bleue \fg{}. 
+Pour un film, lorsque deux images se suivent et se ressemblent, on enregistre seulement la différence.
+Le \emph{taux de compression} c'est le rapport :
+$$\text{taux de compression} = \frac{\text{taille du fichier compressé}}{\text{taille du fichier non compressé}}.$$
+Par exemple, si l'image de départ était de $10$ Mo et que l'image compressée est de $3,5$ Mo alors le taux de compression est 
+$$\frac{3,5}{10} = 0,35 = 35 \%.$$
+
+\begin{enumerate}
+  \item Calcule les taux de compression suivants :
+  \begin{itemize} 
+    \item un fichier de musique de $7$ Mo est encodé en un fichier mp3 de taille $1,4$ Mo ;
+  
+    \item le contenu d'un disque dur de $256$ Go est archivé en un fichier de $48$ Go ;
+        
+    \item un document texte de $1,2$ Mo est compressé en un fichier de $650$ ko.
+  \end{itemize}
+  
+  \item Une image au format original de $4$ Mo est compressée au taux de $30 \%$. Quelle est la taille du fichier compressé ?
+  
+  \item Une page a été scannée puis compressée au taux de $13 \%$. Le fichier compressé pèse $200$ ko. Quelle est la taille du fichier original ?
+  
+  \item  Un film qui dure 1h20 est composé d'images $1024 \times 768$ pixels, avec les couleurs codées sur $3$ octets. Il y a $25$ images par seconde. Quel doit être le taux de compression pour stocker ce film sur un DVD d'une capacité de $4$ Go ?
+\end{enumerate}
+\end{activite}
+
+
+\end{document}
+
+
+  

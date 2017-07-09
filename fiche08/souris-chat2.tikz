@@ -1,0 +1,12 @@
+\begin{tikzpicture}[scale=1.5]
+
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[scale=0.175]{ecran-08-eg3b}};
+
+
+\begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \draw[black,ultra thick,rounded corners] (0,0) rectangle ++(1,1);
+        \draw[->,>=latex,ultra thick,blue] (0.78,0.2)--++(0.2,0);
+ \end{scope}
+
+
+\end{tikzpicture} 

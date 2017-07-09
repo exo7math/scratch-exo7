@@ -1,0 +1,39 @@
+\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+\tikzstyle{boxstyle} =  [draw, text width=8em, text centered, minimum width=10em,  minimum height=3em, drop shadow]
+
+\tikzstyle{boxinput} = [boxstyle, rounded corners, drop shadow, fill=green!30]
+\tikzstyle{instruction} = [boxstyle,  fill=blue!30]
+\tikzstyle{ifthen} = [boxstyle,  text width=5em, diamond, fill=red!30]
+
+\tikzstyle{line} = [draw, very thick, shorten <=3pt,shorten >=3pt, color=black!70, -latex']
+
+
+
+\begin{tikzpicture}[scale=0.95,every node/.style={transform shape}]
+
+
+% Draw diagram elements
+% \path node(P1)[boxinput] at (10,10) {Input};
+% \path (P1)+(0,-2) node(P2)[instruction] {Instruction};
+% \path (P2)+(0,-2) node(P3)[ifthen] {Test};
+% 
+% % Draw arrows between elements
+% \path[line] (P1.south) -- node [above] {} (P2);
+% \path[line] (P2.south) -- node [above] {} (P3);
+
+
+\path node(P1)[boxinput] {Combien vaut la longueur $a$ ? };
+\path (P1)+(0,-1.8) node(P2)[boxinput] {Combien vaut la largeur $b$ ?};
+\path (P2)+(0,-1.8) node(P3)[instruction] {$S \leftarrow a \times b$};
+\path (P3)+(0,-1.8) node(P4)[boxinput] {Renvoyer $S$};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P2);
+\path[line] (P2.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P4);
+
+\end{tikzpicture}

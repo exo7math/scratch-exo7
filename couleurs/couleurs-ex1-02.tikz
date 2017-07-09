@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+
+\begin{scope}[xshift=0cm]
+  \fill[DarkGoldenrod1] (0,0) rectangle ++(2,2);
+  \fill[DeepSkyBlue1] (.5,.5) rectangle ++(1,1);
+
+  \fill[DodgerBlue3] (0,-2.5) rectangle ++(2,2);
+  \fill[DeepSkyBlue1] (.5,-2) rectangle ++(1,1);  
+\end{scope}
+
+
+\begin{scope}[xshift=3cm]
+  \fill[DeepSkyBlue1] (0,0) rectangle ++(2,2);
+  \fill[Bisque1] (.5,.5) rectangle ++(1,1);
+
+  \fill[Khaki1] (0,-2.5) rectangle ++(2,2);
+  \fill[Bisque1] (.5,-2) rectangle ++(1,1);  
+\end{scope}
+
+\end{tikzpicture}

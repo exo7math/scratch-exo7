@@ -1,0 +1,190 @@
+===============================
+===============================
+Fiche 02 -- Répéter
+===============================
+===============================
+
+
+===============================
+Fiche 02 - activité 1 - Nathalie
+===============================
+
+[part 1]
+
+Le but de cette activité c'est de faire tracer par Scratch un escalier, 
+
+chaque marche doit avoir une hauteur de 10, puis un plat de 20 et il doit y avoir en tout 10 marches. 
+Voyons comment faire cela.
+
+[part 2]
+
+Ouvrons un nouveau fichier et prenons l'habitude de réinitialiser le programme pour avoir à chaque fois que l’on clique sur le drapeau vert le même positionnement :
+
+On commencer comme toujours par la brique "quand le drapeau vert est cliqué".
+
+Qu'est-ce qu'on fait quand le drapeau vert et cliqué :  
+- on se place tout d'abord au centre de l'écran
+- on demande à Scratch de regarder vers la droite (c’est-à-dire s’orienter à 90)
+comme ça tout le monde va avoir la même position à chaque fois qu'on appuiera sur le drapeau vert
+et pour que ce soit propre, on demande d'effacer tout. 
+
+Pour que le dessin s’exécute, on lui demande d'abaisser le stylo et donc le stylo est en position d'écriture.
+
+Maintenant, c'est parti, on peut programmer le dessin de l’escalier !
+
+[part 3]
+
+Qu'est-ce qu'on veut ? Commençons par tracer une première marche. Pour cela, on veut d'abord monter,
+donc pour monter on va demander à Scratch de regarder vers le haut, on utilise  le bloc bleu ‘s’orienter’ de la catégorie 'mouvement'. La position vers le haut correspond à 0.
+Cela fait tourner Scratch vers le haut mais cela ne le fait pas avancer.
+
+Ensuite on lui demande d'avancer un petit peu.
+
+Il faut donc maintenant avancer de 10 pas par exemple. Ce qui fait monter Scratch.
+
+Pour faire la partie plate de la marche, on lui demande maintenant de s'orienter vers la droite, 
+c'est-à-dire à 90, 
+Et on avance ensuite de 20 pas.
+Pour avancer de 20 pas, je change la valeur d'ici je tape 20 au lieu de 10.
+
+
+Voyons voir ce qui se passe quand on exécute tous ces blocs d'instruction en cliquant sur le drapeau vert.
+Je déplace scratch pour voir ce qu'il a dessiné ;
+Scratch a correctement tracé ma première marche :
+10 vers le haut, puis 20 vers la droite pour le plat de la marche.
+
+[part 4]
+
+Alors on veut maintenant les 10 marches.
+
+Comment faire ? On peut bien sûr recommencer ces quatre instructions.
+
+On pourrait les recopier, vers le bas, le nombre de fois souhaitées : Scratch s'oriente vers le haut, il avance de 10, il s'oriente vers la droite, il avance de 20 pour une seconde marche, puis encore les 4 mêmes instructions pour la troisième marche, etc.
+
+Ça va vite devenir pénible !
+
+Mais il existe quelque chose de beaucoup plus astucieux :
+utiliser le bloc 'répéter' de la catégorie 'contrôle' en orange clair.
+
+Repère bien le bloc 'répéter 10 fois'.
+
+[part 5]
+
+Ce bloc 'répéter 10 fois' est un bloc un peu spécial : il a la forme d’une mâchoire. Dans ce bloc on va pouvoir insérer d'autres blocs.
+
+
+Que va-t-on insérer pour que ce soit répété 10 fois ?
+
+Ce qui doit être répété ce sont les instructions qui
+correspondent à la construction d’une marche et que je veux répéter pour chaque marche.
+
+Je prends donc mes instructions qui
+correspondent à une marche et je les insère dans le bloc ‘répèter 10 fois’
+
+Maintenant, quand le programme sera lancé, cette suite d'instructions
+constituée des quatre blocs bleus sera exécutée une première fois, puis une deuxième fois, puis une
+troisième fois et ainsi de suite autant de fois qu’indiqué dans le 'répéter' ; 
+c'est-à-dire ici dix fois.
+
+
+[part 6]
+
+Voyons voir si le programme exécute bien ce qu'on veut ;
+
+Tu peux compter, il a bien exécuté dix fois chacune de ces instructions.
+
+Si tu trouves que cela va trop vite
+tu peux demander d'attendre une seconde à la fin de chaque marche.
+
+Donc maintenant Scratch trace une marche, puis attend une seconde ; trace une marche, attend une seconde, etc.
+
+Voilà ! à toi de refaire cet escalier.
+
+===============================
+Fiche 02 - activité 2 - François
+===============================
+
+[part 1] [Le programme est prêt mais caché. Le polygone est dessiné. Déplacé le chat en direct au départ pour mieux voir.]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Bonjour. Le but de cette activité est de faire dessiner par Scratch un polygone en changeant de couleur à chaque côté. 
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Le polygone souhaité est celui qui est dessiné ici. Comment procéder ?
+
+Je propose de dessiner successivement les arêtes dans le sens des aiguilles d'une montre. Je vais donc essentiellement 'tourner à gauche'. Comme le polygone a 8 côtés, je vais tourner à chaque fois de 45 degrés.
+
+Je vais utiliser le bloc 'tourner à gauche de 45 degrés'.  
+
+Nous allons naturellement alterner les blocs 'avancer' et les blocs 'tourner à gauche'. 
+
+[part 2] [L'initialisation du programme est déjà construite.]
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous partons de nos instructions d'initialisation habituelles.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je fais avancer Scratch d'une certains nombres de pas, par exemple 50, puis je le fais 'tourner à gauche' de 45 degrés. 
+Tu remarques que Scratch ne fait que pivoter sur lui-même : quand il tourne il n'avance pas. 
+
+Par contre Scratch est dans la bonne position pour repartir.
+
+Il doit de nouveau 'avancer' puis 'tourner'. Puis 'avancer' puis 'tourner'. Je peux prendre à chaque fois les deux blocs, (ou bien trois avec la pause) et constituer ainsi mon script. 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Mais tu as compris : l'objectif n'est pas ici de recopier plusieurs fois la même suite de blocs.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Nous allons utiliser le nouveau bloc 'répéter'. Que devons-nous répéter ? Nous avons déjà dit qu'il s'agissait des trois blocs 'avancer', 'tourner' et 'pause'. Regardons ce qui se passe si je répète 3 fois ces 3 blocs.
+
+C'est pas suffisant pour terminer le dessin de mon polygone. Celui-ci a en effet 8 côtés, je dois donc, répéter 8 fois, ma suite de 3 blocs.
+
+Voici mon dessin de polygone achevé. 
+
+[part 3] 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+J'ai envie de changer la couleur de chacun des côtés. Comment modifier la couleur du stylo ? C'est très simple. 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Dans la catégorie 'Stylo' (en vert), je choisis le bloc ‘ajouter 10 à la couleur du stylo’. Il faut juste comprendre que cela modifie un peu la couleur actuelle du stylo. Je ne détaille pas ici comment est calculée cette nouvelle couleur.
+
+Je souhaite modifier la couleur du stylo à chaque côté, je peux donc insérer ce bloc à la fin du tracé de chaque arête, c'est-à-dire après avoir fait la pause par exemple.
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Petit remarque pour finir : nous aurions pu choisir le bloc 'tourner à droite' avec également le même angle 45, nous aurions alors dessiné le polygone dans le sens des aiguilles d'une montre.
+
+À toi maintenant de recommencer cet exercice afin de tracer des polygones avec de plus en plus de côtés et avec de plus en plus de couleurs.
+
+===============================
+Fiche 02 - activité 3 - Arnaud
+===============================
+
+
+[part 1]
+
+
+Voici un nouvel exercice avec la boucle 'répéter'. Le but du jeu va être de dessiner cette figure là. C'est-à-dire, un escalier qui monte de trois marches puis un escalier qui descend de trois marches et on repart avec un nouvel escalier qui monte de trois marches puis un qui descend de trois marches et encore une dernière fois. Et à la fin en prime il nous affiche la valeur de X où il est rendu, c'est-à-dire en fait de combien il a avancé vers la droite.
+
+
+[part 2]
+
+On commence par se placer au centre de l'écran, bien s'orienter et tout effacer On va y aller progressivement. On commence par tracer trois marches bleu, ça on sait faire : on s'oriente vers le haut, on avance un peu, puis on s'oriente vers la droite, on avance un peu pour le plat de la marche 
+
+[montrer] ça c'est une marche.
+
+Pour 3 marche : on répète ceci trois fois. Je prend le bloc répéter, qui vient manger mes instructions. Et je veux quelles soient répétées 3 fois. [changer 10 en 3] [montrer]
+
+
+3 marches qui descendent, ce n'est pas tellement plus compliqué : on s'oriente vers le bas, on avance de 10, on s'oriente vers la droite, on avance de 10, ça cela fait une marche. Donc on répète ceci trois fois : on a maintenant nos trois marches qui montent et nos 3 marches qui descendent.
+
+
+On n'oublie pas de changer de couleur ['stylo'] ; bleu pour les marches qui montent et rouge pour les marches qui descendent. Pour changer de couleur, il faut selectionner le bloc 'choisir la couleur du stylo' puis cliquer sur le carré de la couleur : le pointeur de la souris se change en une petite main et si je veux du rouge, je cherche quelque chose de rouge à l'écran et je clique dessus, puis cela revient à un pointeur de souris normal en forme de flèche.
+
+
+[part 3]
+
+[lancer le programme]
+
+Maintenant, ce que je veux, c'est répéter ces deux escaliers trois fois, donc si on est assez malin, on va utiliser une boucle 'répéter 3 fois' : qu'est-ce qu'on met dans cette boucle 'répéter trois fois' : on met d'abord la boucle qui construit les trois marches bleu qui montent, puis la bouche qui répète les trois marches rouge qui descendent.
+
+
+On veut à la fin, que soit affichée la valeur de l'abscisse x : on va donc dans la catégorie 'apparence' (en violet) pour faire dire à Scratch quelque chose. Ici on veut lui faire dire l'abscisse x, bloc que l’on trouve tout en bas dans la catégorie 'mouvement'. 
+
+Scratch dessine donc bien trois petites montagnes et il dit : 'je suis arrivé à un point d'abscisse 180'.
+
+

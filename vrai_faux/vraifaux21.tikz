@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+
+\Large
+\begin{scope}
+\node at (0,2.6) {$1.0.0$};
+\node at (0,2) {$0.1.0$};
+\node at (0,1) {$1.1.0$};
+\node[left] at (-0.75,2) {$\oplus$};
+\draw[thick] (-1.25,1.5)--++(2,0);
+\end{scope}
+
+\begin{scope}[xshift=4cm]
+\node at (0,2.6) {$0.1.1$};
+\node at (0,2) {$1.1.0$};
+\node at (0,1) {$1.0.1$};
+\node[left] at (-0.75,2) {$\oplus$};
+\draw[thick] (-1.25,1.5)--++(2,0);
+\end{scope}
+\end{tikzpicture}

@@ -1,0 +1,45 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw,  thick]
+\tikzstyle{point} = [black]
+
+\def\R{3}
+
+\coordinate (O) at (0,0);
+\coordinate (A) at (30:\R);
+\coordinate (B) at (120:\R);
+\coordinate (C) at (-90:\R);
+\coordinate (D) at (3.5,-1.4);
+
+
+\def\RR{2.7}
+\coordinate (OO) at (1,-0.8);
+
+\draw[line,black!20] (O) circle (\R);
+\draw[line,black!20] (1,-0.6) circle (2.6);
+
+%\draw[line,black!20] (-0.15,-0.9) circle (3.7);
+%\draw[line,black!20] (0.7,0.2) circle (3.2);
+
+
+\draw[line,red] (A)--(B)--(C)--(D)--cycle;
+%\draw[line,red] (B)--(D);
+\draw[line,red] (A)--(C);
+
+
+
+
+
+\foreach \point/\position in {A/above right,B/above left,C/below left,D/below right}{
+  \fill[point] (\point) circle (2pt) node[\position]{$\point$};
+}
+
+
+
+
+% \draw (O)--($(A)!0.5!(B)$) -- ([turn]0:1cm);
+% \draw (O)--($(A)!0.5!(C)$) -- ([turn]0:1cm);
+% \draw (O)--($(B)!0.5!(C)$) -- ([turn]0:1cm);
+
+
+\end{tikzpicture}

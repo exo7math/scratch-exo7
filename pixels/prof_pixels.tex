@@ -1,0 +1,61 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+\titre[P]{Pixels}
+%===============================
+
+
+
+\section*{Objectifs}
+
+\begin{itemize}
+  \item Comprendre la structure élémentaire d'une image.
+  \item Tracé d'un segment.
+  \item Différents algorithmes pour un même objectif.
+\end{itemize}
+
+
+\section*{Durée}
+
+2 heures (??)
+
+\section*{Les activités}
+
+\begin{itemize}
+  \item La première activité a deux buts. (1) Un peu de culture générale sur la taille et le format des images ou des écrans. (2) Un peu de proportionnalité.
+Cela devrait être assez frappant que des écrans ayant le même rapport d'image
+se situent sur une même droite.
+
+  \item Il n'est peut être pas facile de convaincre les élèves que ce n'est pas évident de tracé un segment sur un écran. Du fait de la discrétisation, il y a des pixels à choisir et le choix est en fait arbitraire. L'algorithme de Bresenham est un tel choix.
+  
+  \item On commence par définir une petite axiomatique de ce que doit être un "bon" segment. Toute la subtilité est dans la règle (d).
+  
+  \item L'algorithme avec les réels peut être sauté, c'est ce qui vient naturellement à l'esprit. C'est l'occasion de voir le passage d'un réel à un entier. On pourra présenter d'autres façons (troncature, arrondi vers le haut). 
+Mais en tout cas manipuler des réels est une mauvaise solutions, les calculs étant énormément plus lents. (Malheureusement il semble difficile de quantifier à quel point les calculs sur les entiers sont plus rapides qu'avec les réels.) 
+  
+  \item Le véritable algorithme de Bresenham est le dernier, celui qui manipule uniquement des entiers.     
+Il est en fait assez facile à manipuler, mais un peu longuet à expliquer par écrit. Le mieux est quand  même de l'expliquer aux élèves sur un exemple. 
+Il y a deux entiers à pré-calculer, puis un entier qui varie.
+
+ \item Exercices complémentaires possibles : cas des segments plus verticaux qu'horizontaux ; Bresenham pour les cercles.
+ 
+ 
+ \end{itemize}
+
+
+
+\section*{Ressources}
+
+
+\section*{People}
+
+\begin{itemize}
+  \item Auteur : Arnaud Bodin
+  \item 
+\end{itemize}
+
+\end{document}
+
+

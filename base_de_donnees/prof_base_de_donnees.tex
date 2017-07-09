@@ -1,0 +1,63 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+\titre[P]{Bases de données}
+%===============================
+
+
+
+\section*{Objectifs}
+
+\begin{itemize}
+  \item Comprendre comment est organisée une base de données.
+  \item En extraire de l'information.
+\end{itemize}
+
+
+\section*{Durée}
+
+1 heure (??)
+
+\section*{Les activités}
+
+\begin{itemize}
+  \item Dès que l'information structurée devient abondante ou complexe on a besoin d'outils puissants pour l'exploiter. Les ordinateur sont évidemment de très bon atouts.
+  
+  
+  \item Le premier obstacle est pourquoi faire 5 tableaux alors qu'en se débrouillant bien on pourrait se contenter de 2. Par exemple sur une ligne on écrit le titre du livre et son auteur. La réponse est la suivante :
+  une donnée ne doit être écrite qu'à un seul endroit (un auteur peut écrire plusieurs livres, vous aurez donc le nom de l'auteur répéter plusieurs fois). Ceci pour des raisons de mémoire et aussi pour des raisons de maintenance. Imaginer que le nom de l'auteur est mal orthographié, vous risquez de le corriger à un endroit et pas à l'autre. 
+  
+  Cela demande donc une autre structure, avec des tables qui font les liens entre des tables. 
+  
+  
+  \item Passer ce petit écueil psychologique, c'est juste un petit jeu de logique d'aller croiser les tables pour obtenir une info.
+  
+  \item Bien souvent on demande de trier les résultats ; c'est l'occasion de voir quelques ordres : croisant, décroissant, lexicographique, des ordres produits (par exemple d'abord l'âge, puis s'il ont le même âge, par ordre alphabétique : ceux qui épluchent les classements de foot feront le lien avec le \emph{goal-average}).
+  
+  \item Bien évidemment les requêtes sont écrites avec une syntaxe bien spécifique. Celle décrite ici est calquée sur la syntaxe \emph{sql}.
+  
+  \item Il y a des questions qui nécessitent de croiser les tables à la main. Mais la syntaxe n'est pas ici décrite pour associer deux tables (c'est la jointure de table).
+  
+  \item Mettre en place une vraie base de données serait sûrement passionnant ! 
+(Avec l'aide d'un prof d'anglais...)
+
+  \item Exemples classiques de base de données : un aéroport (horaires, vols, avions, pilotes, portes d'embarquement,....) ; agenda (nom, prénom, âge, ville, rendez-vous avec autre personne,...) ; météo (villes, coordonnées, température max/min, précipitation, ...) ; ...
+
+\end{itemize}
+
+
+\section*{Ressources}
+
+
+\section*{People}
+
+\begin{itemize}
+  \item Auteur : Arnaud Bodin
+\end{itemize}
+
+
+\end{document}
+
+

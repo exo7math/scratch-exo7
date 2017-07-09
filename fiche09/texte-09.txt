@@ -1,0 +1,313 @@
+
+===============================
+===============================
+Fiche 09 -- Sons
+===============================
+===============================
+
+
+===============================
+Fiche 09 - activité 1 - Loïc
+===============================
+
+
+[part 1]
+ 
+Je vous présenter un exemple d'utilisation de la musique sous SCRATCH, en effet, la chat joue une musique en se déplacant sur un arc en ciel et pour chaque couleur, il joue une note différente.
+
+[test]
+
+
+[part 2]
+
+Je commence par créer l'arrière plan : je me place sur l'arrière plan et je clique sur l'onglet "arrière-plan". 
+
+Je dessine mon arc en ciel en utilisant tout d'abord le crayon : je règle la taille du stylo au maximum, puis je trace de gros trait en couleur.
+
+[faire seulement 2 ou 3 traits de couleurs]
+
+Maintenant je souhaite que le chat se déplace sur l'ensemble de l'écran.
+
+Je commence avec le bloc "quand le drapeau est cliqué" et je place de suite un bloc "avancer de 30" puis "tourner de 10°". Afin que le chat ne sorte pas de l'écran j'ajoute un "rebondir quand le bord est atteint".
+
+Je teste mon programme : [cliquer sur le drapeau]   Le chat n'effectue q'un seul deplacement. On doit répéter ce déplacement indéfinement, on utilise donc la boucle  "répéter indefiniement".
+Je teste à nouveau.
+
+[part 3]
+
+[terminer l'arrière plan avant]
+
+J'ai terminé l'arrière-plan.
+
+Je dois maintenant tester, quelle couleur touche Scratch, ce qui va déterminer quelle ote est jouée.
+
+
+Je place maintenant un test 'si alors', par exemple :
+
+    si < couleur [#FF0000] touchée?> alors
+        jouer la note (60 v) pendant (1) temps
+    fin 
+
+
+[part 4]
+
+[terminer le programme plan avant (sauf duree)]
+
+J'ai terminé tous les tests de couleurs touchée.
+
+[lancer le programme]
+
+Afin que la musique soit moins monotone, ce serait mieux si les notes n'avaient pas toujours la même durée.
+
+Pour cela je vais définir une durée aléatoire pour chaque note.
+
+Je définis une variable 'duree'.
+
+Et j'y affecte une durée aléatoire :
+[placer mettre durée à 0.05 * nombre aléatoire entre 1 et 10.]
+
+Si je place la variable durée ici, alors la note sera jouée pendant le nombre 
+aléatoire contenur dans 'durée'.
+
+[test]
+
+
+
+===============================
+Fiche 09 - activité 2 - Arnaud
+===============================
+
+[part 1]
+
+Le son se propage dans l'air en faisant vibrer les molécules d'air : on parle d'une onde. 
+
+C'est un peu comme lorsque l'on jette un caillou dans l'eau, des vagues se forment à la surface et se propagent.
+
+
+Ces vagues seront ici des *sinus*. Les sommets des vagues seront plus ou moins rapprochés selon la *fréquence*.
+
+
+- Ici j'ai une fréquence qui vaut 2 pour le chat, 
+- ici une fréquence qui vaut 5 pour le chien. 
+
+Plus la fréquence est élevée, plus les sommets des vagues sont proches.
+
+
+Intéressons à la courbe du bas, dessinée par le cheval.
+
+Le chat dessine l'image d'un son régulier, le chien également, mais pas avec la même fréquence. 
+
+Qu'est-ce que l'on entend lorsque ces deux sons sont joués ensembles ?
+Quelle est l'image qui correspond à ce nouveau son ?
+Et bien, c'est exactement ce que représente la courbe dessinée par le cheval !
+
+Si deux sons sont joués en même temps, alors les vagues et les creux "s'ajoutent" en quelque sorte. 
+
+Regarde 
+- ici, on a deux sommets, cela donne un sommet encore plus elevé, 
+- ici on a deux creux cela donne un grand creux, 
+- ici le sommet et le creux s'annulent...
+
+
+Bien sûr je peux changer la fréquence du chat et du chien, et la courbe du cheval change en conséquence !
+[7 et 11]
+
+Bien sûr je peux changer la fréquence du chat et du chien, alors la courbe du cheval change en conséquence !
+
+
+Comment obtenir de belles vagues ? 
+
+Tout simplement avec la fonction 'sinus' que je trouve dans la catégorie 'Opérateurs' :
+par exemple :
+
+[sin v] de ( (x) )
+
+donne l'ordonnée 'y' d'un point d'abscisse 'x'.
+
+
+[part 2]
+
+Je trace d'abord l'image du son dessinée par le chat.
+
+J'ai besoin :
+  - d'une variable 'x' qui sera l'abscisse de mes points,
+  - d'une variable 'y1' qui représentera l'ordonnée du chat,
+  - d'une variable frequence1 qui représentera la fréquence du son dessiné par le chat.
+
+Je commence par l'initialisation :
+
+quand le drapeau vert pressé
+mettre [frequence1 v] à [2]
+mettre [x v] à [-200]
+stylo en position d'écriture
+effacer tout
+
+Maintenant je vais dessiner la courbe point par point en calculant pour chacun d'eux leurs coordonnées : 
+
+
+répéter (200) fois
+
+mettre [y1 v] à ( (40) * ( [sin v] de ( (frequence1) * (x) ) )
+    
+Ca c'est la formule du sinus, où la fréquence intervient, et que je multiplie par 40 pour obtenir de plus hautes vagues. 
+
+aller à x: (x) y: ( (100) + (y1) )
+    
+Je me rends à mon point, note que j'ajoute ici 100 à y1 afin de tracer ma courbe en haut, je dois laisser de la place aux autres courbes.
+    
+
+Et maintenant je passe à un point juste à côté, un petit peu plus à droite, donc par exemple j'augmente l'abscisse de 2  :
+    
+ajouter à [x v] (2)
+
+
+Et voilà notre courbe. Il y a juste un léger problème avec un trait en trop mais ce n'est pas grave !
+
+
+
+[part 3]
+
+Je vous montre, comment faire pour le chien.
+
+Je continue les calculs dans le script du chat :
+- j'ai créé une variable 'y2' et une variable 'frequence2', 
+- je calcule en plus de 'y1', l'ordonnée 'y2' par la même formule, mais cette fois avec la 'frequence2'.
+
+
+Voici le script pour le chien, [déjà fait] c'est tout simple il s'agit de le faire rejoindre le point d'abscisse 'x' et d'ordonnée 'y2'.
+
+
+[revenir au script du chat].
+
+Je préfère regrouper tous les calculs en un seul endroit pour avoir une vision globale
+et réserver aux autres lutins uniquement la partie affichage.
+
+
+Note ce petit bout de code en plus qui permet de supprimer le trait en trop !
+
+Pour le cheval, le script sera le même que pour le chien : 
+j'ai défini une variable 'y3', je stocke dans cette variable la somme 'y1' + 'y2'.
+
+Et je trace la courbe du cheval qui correspond à la superposition des deux vagues.
+
+
+===============================
+Fiche 09 - activité 3 - Nathalie
+===============================
+
+[part 1]
+
+[lancer le fichier 'doppler' pour expliquer l'effet]
+
+Quand une voiture passe à grande vitesse, plus elle se rapproche plus le son devient aigu et quand elle s'éloigne, il devient plus grave : pourtant elle émet toujours le même bruit.
+
+C'est ce qu'on appelle l'effet Doppler.
+
+C'est aussi ce qui se passe avec les sirènes des pompiers.
+
+[Revenir en vue écran]
+
+Le son est une onde qui se propage dans l'air. On peut la schématiser par des cercles qui s'agrandissent.
+
+Quand la voiture est à l'arrêt, les cercles ont le même centre fixe et sont régulièrement espacés. 
+
+
+Quand la voiture se déplace, le centre des cercles se déplace.
+Sous l'effet de la vitesse, l'onde du son est comprimée à l'avant, sa fréquence augmente et le son est plus aigu.
+
+A l'inverse, à l'arrière, l'onde est étirée, la fréquence diminue et le son est plus grave.
+
+Notre activité va nous permettre de schématiser cet effet Doppler.
+
+
+
+[part 2]
+
+Scratch représentera le véhicule.
+Il a ici déjà été réduit et son script initialisé.
+
+On veut schématiser un son émis par scratch qui se propage en étant représenté par un cercle.
+
+Commençons par créer ce lutin 'cercle'.
+Pour cela, on utilise l'icône 'ellipse' en maintenant la touche 'majuscule' enfoncée pour faire un cercle. On le centre.
+Ce cercle sera cloné plusieurs fois et affiché dans des tailles différentes.
+Puis on renomme ce lutin et on le cache.
+
+
+[part 3]
+
+Programmons maintenant son script.
+Il débutera par la brique 'quand je commence comme un clone'
+
+Après avoir attendu un peu, ce cercle ira se centrer sur scratch.
+Il commencera avec une taille à 0% de sa taille initiale.
+Et comme on souhaite que les cercles s'éclaircissent au fur et à mesure qu'ils s'agrandissent. On commence par mettre l'effet fantôme à 0.
+
+Puis on place la brique 'montrer'
+
+On peut alors faire agrandir le cercle
+en répétant 20 fois
+un léger temps d'attente [0.3 s]
+puis un 'ajouter 5 à la taille'
+et puis ajoutant 5 également à l'effet fantôme
+
+
+On va maintenant créer et programmer chacune des souris [???].
+
+On clique sur le petit personnage en bas à gauche près de 'nouveau lutin' pour accéder à la bibliothèque.
+Et on choisit le lutin 'mouse1'.
+On peut le renommer [cliquant sur le i bleu de ce lutin.]
+
+Une fois cette boucle terminée, on cache le lutin et on supprime le clone.
+
+Mais pour que cette partie de programme fonctionne, il faut créer le clone.
+On sélectionne le lutin 'chat' et place la brique 'créer un clone de cercle'
+
+[lancer le programme]
+
+On peut maintenant créer l'onde répétée à l'aide d'un 'répéter indéfiniment' en attendant 1 s entre chaque clone.
+
+
+[part 4]
+
+il reste maintenant à programmer le déplacement de scratch.
+Il doit démarrer au centre gauche donc mettons l'abscisse de départ à -200.
+
+On veut que la vitesse de déplacement puisse varier. On crée donc une variable qu'on appelle 'vitesse'. On l'initiale par exemple à 10.
+
+En faisant un clic droit sur cette variable dans la zone de visionnage, on peut passer à l'affichage 'potentiomètre' pour pouvoir la faire varier manuellement.
+
+Puis dans le 'répéter' on place :
+avancer de vitesse
+et rebondir si bord atteint.
+
+[lancement essai]
+
+
+[part 5] le fait-on car c'est indiquer en bonus ?
+
+[Préparer lutin et briques pour taille]
+
+on peut maintenant placer un micro qui captera les sons émis par scratch.
+
+Pour cela on a été chercher dans la bibliothèque le nouveau lutin 'microphone'.
+Mais il faut que ce lutin soit très petit donc en utilisant les briques préparées on va programmer sa réduction.
+
+On répète 10 fois 'ajouter -10 à la taille' puis attendre 0.5 s
+pour bien voir devenir le micro lilliputien.
+
+Maintenant, il ne reste plus qu'à le faire régir s'il est touché par un cercle de l'onde.
+On utilise un test :
+si cercle touché
+alors 
+jouer la note 60 pendant 0.3 s
+
+le tout que l'on répète indéfiniment.
+
+ 
+A voilà à toi de tester l'effet Doppler...
+
+
+
+
+

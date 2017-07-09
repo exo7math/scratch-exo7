@@ -1,0 +1,105 @@
+\def\allume{
+\draw[thick,draw,fill=white]  (0,0) circle (0.2); 
+ \foreach \i in {0,30,...,330}{
+  \draw[thick] (\i:0.25)--(\i:0.4);
+ }
+}
+\def\eteint{
+\draw[thick,draw,fill=white]  (0,0) circle (0.2); 
+\draw[thick,draw,fill=white]  (0,0)--+(45:0.2)--+(45:-0.2); 
+\draw[thick,draw,fill=white]  (0,0)--+(-45:0.2)--+(-45:-0.2); 
+}
+
+
+
+
+\begin{tikzpicture}[scale=0.8]
+
+\node[left] at (-2.5,3) {1};
+\node[left] at (-0,3) {2};
+\node[left] at (2.5,3) {3};
+\node[left] at (5,3) {4};
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%  HAUT
+
+% OU
+\begin{scope}[xshift=-2.5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\large OU};
+
+\draw[thick] (0.75,1)--++(-1,1.5);
+\draw[thick] (1.25,1)--++(1,1.5);
+
+\draw[thick,draw,fill=white]  (-0.25,2.5) circle (0.2); 
+\draw[thick,draw,fill=white]  (2.25,2.5) circle (0.2); 
+\end{scope}
+
+% OU
+\begin{scope}[xshift=0cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\large OU};
+
+\draw[thick] (0.75,1)--++(-1,1.5);
+\draw[thick] (1.25,1)--++(1,1.5);
+
+\draw[thick,draw,fill=white]  (-0.25,2.5) circle (0.2); 
+\draw[thick,draw,fill=white]  (2.25,2.5) circle (0.2); 
+\end{scope}
+
+
+% OU
+\begin{scope}[xshift=2.5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\large OU};
+
+\draw[thick] (0.75,1)--++(-1,1.5);
+\draw[thick] (1.25,1)--++(1,1.5);
+
+\draw[thick,draw,fill=white]  (-0.25,2.5) circle (0.2); 
+\draw[thick,draw,fill=white]  (2.25,2.5) circle (0.2); 
+\end{scope}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%  MILIEU
+
+% NON
+\begin{scope}[xshift=0.75cm,yshift=-2.5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\large NON};
+
+\draw[thick] (1,1)--++(0,0.75)--++(-0.5,0)--++(0,0.75);
+
+%\draw[thick,draw,fill=white]  (1,1.75) circle (0.2); 
+\end{scope}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%  BAS
+
+% OU
+\begin{scope}[xshift=-1.5cm,yshift=-5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\large OU};
+
+\draw[thick] (0.5,1)--++(-0.5,1.5)--++(0,2.5);
+\draw[thick] (1.5,1)--++(0.75,3.25)--++(0.5,0);
+\draw[thick] (1,0)--++(0,-1.5);
+\draw[thick,draw,fill=white]  (1,-1.5) circle (0.2); 
+\end{scope}
+
+% ET
+\begin{scope}[xshift=1.5cm,yshift=-5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\large ET};
+
+\draw[thick] (0.5,1)--++(-0.25,1.5);
+\draw[thick] (1.5,1)--++(0.5,1.5)--++(0,2.5);
+\draw[thick] (1,0)--++(0,-1.5);
+
+\draw[thick,draw,fill=white]  (1,-1.5) circle (0.2); 
+\end{scope}
+
+
+\end{tikzpicture}

@@ -1,0 +1,40 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{vertex} = [draw] 
+
+\begin{scope}[scale=2]
+
+\coordinate (A) at (-2,1);
+\coordinate (B) at (0,0);
+\coordinate (C) at (2,0);
+\coordinate (D) at (0,2);
+\coordinate (E) at (2,2);
+\coordinate (F) at (1,1);
+\coordinate (G) at (4,1);
+
+
+\foreach \V/\pos in {A/left,B/below,C/below,D/above,E/above,F/below,G/right}{
+  \fill (\V) circle(0.05);
+  \node[\pos] at (\V) {\V};
+}
+
+
+\draw[edge] (A)--(B) node[midway,below]{10};
+\draw[edge] (A)--(D) node[midway,above]{8};
+\draw[edge] (D)--(B) node[midway,left]{3};
+\draw[edge] (B)--(C) node[midway,below]{8};
+\draw[edge] (C)--(E) node[midway,right]{1};
+\draw[edge] (E)--(D) node[midway,above]{12};
+\draw[edge] (C)--(G) node[midway,below]{8};
+\draw[edge] (E)--(G) node[midway,above]{10};
+
+\draw[edge] (B)--(F) node[midway,below right]{5};
+\draw[edge] (C)--(F) node[midway,below left]{4};
+\draw[edge] (D)--(F) node[midway,above right]{3};
+\draw[edge] (E)--(F) node[midway,above left]{2};
+
+\end{scope}
+
+\end{tikzpicture}

@@ -1,0 +1,21 @@
+%\usetikzlibrary{shadows,arrows, shapes}
+
+
+\tikzstyle{line} = [draw, ultra thick,blue]
+\tikzstyle{arrow} = [<->, >=latex, red]
+
+
+\begin{tikzpicture}[scale=0.5]
+
+\draw[line] (0,0) -- ++(10,0)--++(0,-12)--++(-5,0)--++(0,5)--++(-1.5,0)--++(0,-2)--++(-3.5,0)--cycle;
+
+\draw[arrow] (0,0.4)--(10,0.4) node[midway, above] {$100$};
+\draw[arrow] (10.4,0)--(10.4,-12) node[midway, right] {$120$};
+\draw[arrow] (-0.4,0)--(-0.4,-9) node[midway, left] {$90$};
+\draw[arrow] (3.1,-7)--(3.1,-9) node[midway, left] {$20$};
+
+
+\draw[arrow] (0,-9.4)--(3.5,-9.4) node[midway, below] {$?$};
+\draw[arrow] (3.5,-6.6)--(5,-6.6) node[midway, above] {$?$};
+
+\end{tikzpicture}

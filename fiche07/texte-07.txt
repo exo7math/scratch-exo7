@@ -1,0 +1,285 @@
+
+===============================
+===============================
+Fiche 07 -- Si ... alors ... sinon ...
+===============================
+===============================
+
+
+===============================
+Fiche 07 - activité 1 - Nathalie
+===============================
+
+
+[part 1]
+
+Nous allons créer un petit quizz.
+
+Scratch pose une question, puis propose 3 réponses.
+
+L’utilisateur répond alors 1, 2 ou 3
+et Scratch affiche ensuite si la réponse est bonne ou pas.
+
+En plus Scratch compte le score du joueur !
+
+Le nouveau bloc dont tu auras besoin est le bloc 'si... alors... sinon' qui se trouve dans la catégorie 'contrôle'.
+
+[expliquer que c'est version amélioré du bloc 'si... alors']
+
+
+
+[part 2]
+
+Posons une question.
+Par exemple scratch va demander quelle est ‘la date du premier homme dans l’espace’ et proposer 3 réponses.
+
+OCette phrase s'affiche en utilisant la brique ‘dire... pendant 2 s’
+
+[taper la question : 'Gagarine dans l’espace ?']
+
+Scratch pose maintenant vraiment la question, en donnant le choix parmi 3 réponses :
+
+Est-ce que c'est : 1.1941 ; 2.1951 ; 3.1961 ?
+
+
+Pour cela on va utiliser la brique ‘demander... et attendre’ située dans la catégorie ‘capteurs’.
+
+La réponse entrée par l’utilisateur doit être 1, 2 ou 3 est automatiquement stockée dans la variable ‘réponse’.
+
+
+[part 3]
+
+Je teste si la réponse donnée par l’utilisateur est la bonne réponse ou pas.
+
+J'utilise mon nouveau bloc de test ‘si... alors... sinon...’
+
+Ici la bonne date est 1961 c'est-à-dire que la bonne réponse est 3.
+Il faut donc que ‘réponse’ = 3 pour avoir juste.
+On utilise le ‘=’ dans la catégorie ‘opérateurs’
+et on le met dans le ‘si’.
+
+Si la réponse est bien 3
+alors le score augmente de 1
+et on va dire ‘bravo’ pendant 2 s.
+
+Si la réponse n’est pas égale à 3, on passe alors dans le ‘sinon’
+et on dit ‘Mauvaise réponse’ pendant 2 s.
+
+[Lancer essai]
+
+
+Je  pourrai bien sûr répéter toute ces blocs avec d’autres questions sur le même principe.
+
+
+
+[part 4]
+
+
+Pour stocker le score, j'ai aussi d’une variable ‘score’. Je la crée et je l'initialise à 0.
+
+Si la réponse est bonne, j'ajoute 1 au score.
+
+Mais avant de terminer, on souhaite que scratch indique le score final.
+
+Dans un bloc dans un dire je regourpe le texte 'score = ' avec
+la valeur contenue dans la variable 'score'.
+
+
+===============================
+Fiche 07 - activité 2 - François
+===============================
+
+
+[part 1]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Scratch va tester pour nous si un nombre est divisible par 5 ou par 3. 
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Scratch demande un entier à l'utilisateur :
+  - par exemple 456
+  - Scratch répond qu'il n'est pas divisible par 5,
+  - mais il est divisble par 3.
+
+
+[part 2]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+On commence tout de suite par le critère de divisibilité par 5. 
+
+Tu le connais bien sûr : un entier est divisible par 5, si son chiffre des unités est 0 ou 5.
+
+dans cette activité, nous allons nous limiter aux entiers ayant trois chiffres.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+- quand le drapeau vert est cliqué
+Scratch demande à l'utilisateur un nombre à trois chiffres par le bloc : 
+- [demander 'Choisis un nombre entre ... et attendre] [[reponse]]
+
+Si je veux que le nombre ait 3 chiffres, je dois le demander entre 100 et 999.
+
+Je crée ensuite une variable 'nombre' et j'y stocke la réponse.
+
+- mettre [nombre v] à (réponse)
+
+[exécuter le programme avec 492]
+
+Maintenant je m'intéresse aux chiffres de ce nombre.
+
+Ici on utilise une astuce !
+
+Je considère le nombre 492 comme un mot. Et il existe un bloc de la catégorie 'Opérateurs' qui permet de récupérer chaque lettre d'un mot.
+
+ - lettre (1) de (nombre) pour 492, cela renvoie le chiffre des centaines 4 [cliqué]
+ - lettre (2) de (nombre) cela renvoie le chiffre des dizaines 9 [cliqué]
+ - lettre (3) de (nombre) cela renvoie le chiffre des unités 2 [cliqué]
+
+Je vais donc définir trois variables : 'u' pour unité, 'd' pour dizaine et 'c' pour centaine. 
+
+ - mettre [u v] à (lettre (3) de (nombre) : le chiffre des unités
+ - mettre [d v] à (lettre (2) de (nombre) : le chiffre des dizaines
+ - mettre [c v] à (lettre (1) de (nombre) : le chiffres des centaines
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Pour le test de divisibilité par 5, seul le chiffre des unités m'intéresse.
+
+Pour savoir si un nombre est divisible par 5 ou non, je teste si son chiffre des unités est 0 ou 5.
+
+Je vais donc utiliser un bloc 'si ... alors ... sinon ...' : 
+-  si le chiffre des unités = 0 ou 5 
+-  alors le nombre est divisible par 5
+-  sinon il n'est pas divisible par 5
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+Dans la condition, je dois utiliser un 'ou' que je trouve dans la catégorie 'Opérateurs' : 
+-  si <  <(u)=[0]> ou <(u)=[5]>  > 
+-  alors
+-    dire [Divisible par 5] pendant (2) secondes
+-  sinon
+-    dire [Non divisible par 5] pendant (2) secondes
+
+[test] Et voilà : maintenant Scratch sait dire que 785 est divisible par 5 !
+
+
+[part2]
+
+[virer le critère de 5 ?]
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Pour le critère de divisibilité par trois, c'est un tout petit peu plus compliqué.
+
+On sait qu'un entier est divisible par 3 exactement lorsque la somme de ses chiffres est divisible par 3.
+
+Je vais donc avoir besoin d'un variable 'somme' qui va contenir la somme des variables 'u', 'd' et 'c'. 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+Je crée ma variable 'somme', dans laquelle j'affecte u+d+c :
+ mettre [somme v] à ((u) + ( (d)+(c) ) )
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Maintenant je n'ai plus qu'à tester si cette somme est divisible par 3 ou non. 
+
+Quand cela arrive-t-il ? 
+
+La somme peut être 3, , 9, 12, 15 etc., le maximum étant 27 pour 999.
+
+Mais tester tous ces cas un par un serait un peut laborieux.
+
+Une solution plus astucieuse est de se ramener à un nombre plus petit. En effet, si un entier est divisible par 3 alors l'entier moins 3 est aussi divisible par 3 !
+
+L'idée est donc de retirer 3 à la somme autant de fois que possible et j'arrête ce processus lorsque je ne peux plus retirer 3, c'est-à-dire lorsque j'obtiens 0, 1 ou 2. 
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je répéte la soustraction jusqu'à ce que mon entier, ici la variable 'somme', soit strictement plus petite que 3 : 
+- répéter jusqu’à <(somme) < [3]> 
+-     mettre [somme v] à ( (somme) - (3) )    
+- fin
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Arrivé à ce stade, il est très facile de savoir si le nombre contenu dans la variable somme est divisible par 3 : c'est uniquement le cas lorsque ce nombre vaut exactement 0 car ni 1 ni 2 sont divisibles par 3. 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je vais donc tester si la valeur de la somme vaut 0 ou non : 
+- si <(somme)=[0]> alors
+-     dire [Divisible par 3] pendant (2) secondes
+- sinon
+-    dire [Pas divisible par 3] pendant (2) secondes
+
+Terminons par un petit test : 687 est divisble par 3 !
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Voilà. Tu peux, si tu veux, perfectionner cet outil en étudiant d'autres critères de divisibilité ou bien en permettant à l'utilisateur de donner des nombres plus grands. 
+
+
+===============================
+Fiche 07 - activité 3 - Loïc
+===============================
+
+[part 1]
+
+Je vais programmer un petit jeu de calcul mental.
+
+Scratch me demande le résultat d'une addition de deux nombres qu'il a choisi au hasard.
+Je dois donner le résultat. 
+
+Il me pose ainsi trois questions et à la fin il m'affiche le résultat.
+
+[Test : 2 bonnes réponses, 1 mauvaise]
+
+[part 2]
+
+Je commence par définir deux variables : 
+
+- la variable "max" qui est la plus grande valeur possible pour chacun des termes,
+- et le score avec la variable "score". 
+
+Pour le plus grand nombre , je choisis un affichage en potentiometre.
+
+[créer les deux variables]
+
+On initialise la variable max à 50 (c'est-à-dire que les nombre saront tirés au hasard entre 1 et 50).
+
+Et bien sûr la variable score commence à 0.
+
+
+Je vais poser 3 questions donc je place un bloc répéter et j'entre 3.
+
+Je dois maintenant tirer deux nombres aléatoires : je crée deux varables nb1 et nb2 qui vont stocker les deux termes de l'addition.
+
+J'effectue le tirage aléatoire avec deux blocs "nombre alétatoire entre".
+
+Je définis maintenant les bornes : c'est un nombre aléatoire entre 1 et le plus grand nombre possible donc "max".
+
+Enfin , je vais poser la question : 
+j'utilise un bloc 'demander' et je construis la question à partir de blocs "regroupe" et de mes variable. 
+
+demander (regroupe (regroupe (nb1) [+])(nb2)) et attendre
+
+
+[part 3]
+
+J'ai donc défini les nombres et posé chaque question, je teste maintenant si la réponse de l'utilisateur est juste ou fausse.
+
+Pour cela le bloc "si alors sinon" est idéal.
+
+Quelle est la condition pour avoir la bone réponse ?
+C'est exactement lorsque la réponse est bien égale à la somme des deux nombres.
+
+[contruire le bloc doucement reponse = nb1 + nb2]
+
+J'introduis le test dans le bloc 'si...'
+
+Tout d'abord lorsque la condition est vérifiée c'est que la réponse donnée est la bonne,
+
+ce sont donc les instructions de la première machoire qui vont être exécutée,
+
+dans ce cas j'incrémente le score, c'est donc ici que j'ajoute 1 à la variable score
+
+si la condition n'est pas vérifiée, c'est que la réponse donnée est fausse
+
+ce sont donc seulemet les instructions de la seconde machoire qui vont être exécutée,
+
+c'est donc là que je joue le son "meow", pour signifier que ce n'est pas la bonne réponse.
+
+
+Je termine maintenant mon programme en affichant le score !
+
+

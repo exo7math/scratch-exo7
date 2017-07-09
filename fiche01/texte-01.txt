@@ -1,0 +1,177 @@
+===============================
+===============================
+Fiche 01 -- Premiers pas
+===============================
+===============================
+
+
+===============================
+Fiche 01 - activité 1 - Arnaud
+===============================
+
+[part 1]
+
+Commençons par déplacer le chat Scratch.
+
+Commence par chercher le bloc 'Quand le drapeau vert est cliqué', de couleur orange, et dépose le sur la partie droite.
+
+
+Puis cherche le bloc bleu 'Avancer de 10' et colle le juste au-dessous du premier bloc.
+
+Clique plusieurs fois sur le drapeau vert. 
+
+Scratch avance !
+
+Principe : à gauche le chat Scratch se déplace, au milieu c'est la liste des instructions possibles (classées par catégorie, avec une couleur par catégorie) et à droite les instructions à exécuter, qui sont des blocs qui s'aimantent les uns aux autres.
+
+On a eu besoin du bloc 'quand le drapeau vert est cliqué' de la catégorie 'événement', c'est un bloc orange foncé.
+
+On a aussi eu besoin du bloc 'avancer de 10' de la catégorie 'mouvement', c'est un bloc bleu.
+
+
+[part 2]
+
+
+Il y a plusieurs problèmes : 
+- Scratch finit par être coincé à droite de l'écran, 
+- on aimerait qu'il revienne à son point de départ, 
+- on aimerait tracer son chemin.
+  
+  
+Pour que tout le monde démarre dans la même position à chaque fois que le drapeau vert est cliqué, commence toujours par les blocs suivants, avant d'ajouter tes propres instructions :
+  
+- Quand le drapeau vert est cliqué
+- Aller à x = 0, y = 0 [mouvement]
+- S'orienter à 90 degré (vers la droite) [mouvement]
+- Effacer tout l'écran [stylo]
+- Stylo en position d'écriture
+
+Pas de panique, nous comprendrons en détail ce que cela signifie plus tard.
+
+Je positionne ces blocs, puis je fais avancer Scratch de 100 ! 
+
+Scratch est parti du centre de l'écran, il a avancé de 100 et a tracé son chemin.
+[déplacer Scratch]
+
+
+Se je reclique sur le drapeau vert, il refait exactement la même chose.
+
+
+[part 3]
+
+Maintenant voici un objectif un peu plus compliqué : faire avancer scratch ; faire une pause ; faire avancer scratch ; faire une pause et le faire avancer encore une fois. 
+
+Je repars toujours de mes instructions d'initialisation.
+
+Une fois ces blocs placés, je démarre vraiment mon programme : 
+- 'avancer de 50', il faut donc changer le 10 en 50, je clique sur la valeur 10 et je tape au clavier 50.
+- 'attendre une seconde' qui est un bloc orange clair de la catégorie 'contrôle',
+- puis 'avancer de 50' 
+- puis 'attendre une seconde' 
+- et une dernière fois 'avancer de 50'.
+
+Voyons voir... Scratch avance bien en trois fois !
+
+===============================
+Fiche 01 - activité 2 - Nathalie
+===============================
+
+[part 1]
+
+Le but de cette activité est de faire dessiner à Scratch cette lettre G : on avance, on fait une pause, on avance, on fait une pause... Scratch avance puis fait une pause avant de changer de direction. 
+
+Le nouveau bloc dont tu auras besoin est le bloc 's'orienter' c: 'est un bloc de qui se trouve dans la catégorie 'mouvement', il est bleu.
+
+[sortir les blocs et cliquer sur chacun pour montrer]
+On peut s'orienter à 0, c'est-à-dire Scratch regarde alors vers la haut ; 
+on peut s'orienter à 90, scratch regarde vers la droite ;
+on peut s'orienter à 180, scratch regarde vers le bas ;
+on peut s'orienter à -90, scratch regarde vers la gauche.
+
+On parle d'une 'orientation absolue' par rapport à l'écran, car Scratch s'orientera toujours de la même façon, quelque soit son orientation avant l'instruction.
+
+[part 2]
+
+Avant de commencer n'oublie pas les instructions d'initialisation habituelles : [le faire en direct]
+- cliquer sur le drapeau vert, 
+- aller au centre de l'écran, 
+- s'orienter à 90, 
+- effacer tout, 
+- stylo en position d'écriture.
+
+Puis on commence le tracé de notre lettre G : 
+
+Note que comme j'ai déjà placé un bloc 's'orienter à 90' dans l'initialisation, 
+Scratch regarde déjà vers la droite.
+
+On avance donc directement de 50, 
+on attend un peu
+ensuite on veut descendre, il faut donc s'orienter vers le bas, c'est-à-dire à 180 degrés comme nous venons de le voir,
+ensuite on avance de 50,
+puis on veut aller vers la gauche, donc on s'oriente à - 90, et on avance de 100 ;
+ensuite on veut s'orienter vers le haut donc on s'oriente à 0 et on avance de 100 ;
+et pour finir on s'oriente vers la droite donc à 90 et on avance de 50.
+
+===============================
+Fiche 01 - activité 3 - François
+===============================
+
+[part 1] 
+
+[Le programme est prêt mais caché. Le L est dessiné.]
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+[Bonjour]
+
+Le but de cette activité est de tracer cette lettre L. Cette fois-ci, nous ajoutons des contraintes supplémentaires. 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+En effet, je m'interdis d'utiliser le bloc 'S'orienter à tant de degré'. 
+
+Je n'ai le droit qu'aux blocs ‘tourner à gauche’ et ‘tourner à droite’.
+Il ne s'agit plus une orientation globale dans le plan, mais d'une orientation relative par rapport à mon orientation actuelle.
+
+Ainsi, si je mets Scratch en position de départ (c'est-à-dire s'il est prêt à se diriger vers la droite comme ceci ou encore orienté à 90 degrés) et que je veux tracer ce L dans le sens inverse des aiguilles d'une montre, alors j'aurai à avancer, puis à tourner à gauche à angle droit, puis tourner à gauche encore. Dans le creux du L, tourner à droite, puis à gauche et encore à gauche pour finir.
+
+[part 2] [Vide]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous démarrons avec nos instructions d'initialisation habituelles : 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+- Quand drapeau vert cliqué (Événements)
+- Aller à (0,0) (Mouvements)
+- S'orienter à 90 (Mouvements)
+- Effacer tout (Stylo)
+- Stylo en position d'écriture (Stylo)
+
+Ici le bloc 'S'orienter à 90', ne sert pas à se déplacer, mais à fixer l'orientation de départ afin d'avoir les bonnes conditions initiales et à chaque fois que je clique sur le drapeau vert, d'être dans ces mêmes conditions pour les déplacements futurs.
+
+C'est parti pour le tracé du L !
+Je commence par faire avancer Scratch de 100. Je rajoute une petite pause de 1 seconde ce qui nous permettra de suivre facilement le cheminement de Scratch.
+
+Nous devons ensuite tourner à gauche à angle droit (ce qui ne fait pas avancer Scratch) en utilisant ‘tourner à gauche de 90 degrés’ puis ensuite d'avancer de 50, puis nouvelle pause.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Regardons ce que cela donne en cliquant sur le drapeau vert. Cela commence bien.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+Nous devons maintenant tourner à gauche puis avancer de 50, faire une pause.
+
+Nous arrivons dans le creux du L, nous devons donc maintenant tourner à droite et avancer de 100.
+
+Ensuite, tourner à gauche et avancer de 50 puis, dernier segment, tourner à gauche et avancer de 100 + 50, soit 150 pour revenir à notre point de départ.
+
+Regardons si nous n'avons pas commis d'erreur... Parfait.
+
+[part 3] [Suite]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Le personnage de Scratch ou plutôt son costume peut-être modifié. Comment faire pour changer le costume ?
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+Il faut pour cela se rendre dans l'onglet 'Costumes', cliquer sur la petite tête sous 'Nouveau costume' et choisir un des nombreux costumes disponibles dans la bibliothèque fournie avec le logiciel. Je choisis par exemple le perroquet de la rubrique 'Animaux'. 
+
+Tu peux également si tu a des idées originales, dessiner toi-même le costume de Scratch en utilisant les outils de dessin accessibles par le pinceau.
+
+Voilà notre activité terminée. Exécutons un dernière fois le script.
+
+

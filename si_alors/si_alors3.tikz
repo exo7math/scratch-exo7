@@ -1,0 +1,39 @@
+\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+\tikzstyle{boxstyle} =  [draw, text width=8em, text centered, minimum width=10em,  minimum height=3em, drop shadow]
+
+\tikzstyle{boxinput} = [boxstyle, rounded corners, drop shadow, fill=green!30]
+\tikzstyle{instruction} = [boxstyle,  fill=blue!30]
+\tikzstyle{ifthen} = [boxstyle,  text width=5em, diamond, fill=red!30]
+
+\tikzstyle{line} = [draw, very thick, shorten <=3pt,shorten >=3pt, color=black!70, -latex']
+
+
+
+\begin{tikzpicture}[scale=1,every node/.style={transform shape}]
+
+
+%Draw diagram elements
+\path node(P1)[ifthen] {Est-ce que $m \ge 10$ ?};
+\path (P1)+(0,6.5) node(P0)[boxinput] {Demander trois notes $a$, $b$ et $c$};
+\path (P1)+(0,3.5) node(P00)[instruction] {Calculer $m = \frac{a+b+c}{3}$};
+\path (P1)+(0,-4) node(P2)[boxinput] {Afficher 
+
+``Bravo tu as r\'eussi ton examen''};
+\path (P1)+(6,0) node(P3)[boxinput] {Afficher 
+
+``Tu n'as pas suffisamment r\'eussi ton examen.''};
+
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [left,pos=0.3] {\bf oui} (P2);
+\path[line] (P1.east) -- node [above, pos=0.3] {\bf non} (P3);
+\path[line] (P0.south) -- (P00);
+\path[line] (P00.south) -- (P1);
+
+
+
+\end{tikzpicture}

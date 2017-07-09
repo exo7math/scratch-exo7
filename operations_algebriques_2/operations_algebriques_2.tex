@@ -1,0 +1,166 @@
+\documentclass[class=report,crop=false,12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+\titre[F]{Opérations algébriques II}
+%================================
+
+
+\begin{activite}
+
+Voici des instructions pour calculer l'aire d'un rectangle.
+
+\vspace*{-1ex}
+
+\myfigure{0.95}{
+\tikzinput{surface_rectangle}
+}
+
+\vspace*{-1ex}
+
+\begin{itemize}
+  \item On commence par demander la valeur de la longueur,
+  \item puis celle de la largeur,
+  \item on calcule le produit longueur $\times$ largeur, on appelle ce résultat $S$,
+  \item on renvoie ce résultat $S$ qui est l'aire voulue.
+\end{itemize}
+
+\begin{enumerate}
+  \item Écrire les instructions qui demandent les dimensions d'un parallélépipède rectangle et calcule son volume.
+  
+  \emph{Respecte la convention suivante : les boites vertes à coins arrondis sont pour les entrées\slash sorties, les boites bleues rectangulaires sont pour les commandes.}
+  
+  \item Écrire les instructions pour calculer le volume d'un cube. %, après avoir demandé la longueur d'un côté.  
+  
+  \item Même chose pour le volume d'une sphère.
+    
+  \item Calcule le volume du parallélépipède rectangle dont les dimensions sont $a$, $a+1$ et $a+3$, où $a$ est une dimension à demander.  
+  
+  \item Calcule le volume d'un cylindre dont la hauteur est le double du rayon de la base.  
+  
+\end{enumerate}
+
+\vspace*{-2ex}
+\end{activite}
+
+
+\begin{activite}[Nombres flottants I]
+
+\textbf{Les puissances de $10$.}
+
+On rappelle l'écriture des puissances de $10$ et on introduit une nouvelle notation :
+\begin{itemize}
+  \item $10^2 = 10 \times 10 = 100$ que l'on note aussi $1e2$ (pour $1$ suivi de $2$ zéros),
+  \item $10^3 = 10 \times 10 \times 10 = 1000$ que l'on note aussi $1e3$,  
+  \item $10^4 = 10 \times 10 \times 10 \times 10 = 10\,000$ que l'on note aussi $1e4$, 
+  \item mais aussi $10^1 = 10$, noté $1e1$,
+  \item et $10^0 = 1$ noté $1e0$.
+  \item $10^{-1}=\frac{1}{10}=0,1$ noté $1e{-1}$,
+  \item $10^{-2}=\frac{1}{100}=0,01$ noté $1e{-2}$\ldots    
+\end{itemize}
+
+\bigskip
+\textbf{Nombre flottant.}
+
+Un nombre flottant est un nombre qui s'écrit en deux parties : 
+\begin{itemize}
+  \item une première partie, \emph{la mantisse}, qui est un nombre avec un seul chiffre avant la virgule (ce chiffre ne doit pas être $0$ sauf pour le nombre $0$ lui-même),
+  \item et une seconde partie, \emph{l'exposant}, commençant par $e$ et suivie d'un entier relatif qui correspond à l'exposant de la puissance de $10$.
+\end{itemize} 
+Le nombre flottant est le produit de la mantisse multiplié par $10$ à la puissance l'exposant.
+
+
+$$\underbrace{1,234}_{\text{mantisse}} \ e\underbrace{2}_{\text{exposant}}$$
+
+Exemples :
+\begin{itemize}
+  \item $1,234e2$ c'est $1,234 \times 10^2 = 1,234 \times 100$. Autrement dit, c'est le nombre $123,4$ (partant de $1,234$ on décale la virgule de deux positions vers la droite).
+  
+  \item $7,89e-3$ c'est $7,89 \times 10^{-3} = 7,89 \times 1/1000$. Autrement dit, c'est $0,00789$ (partant de $7,89$ on décale la virgule de trois positions vers la gauche).
+
+\end{itemize}
+
+
+\begin{enumerate}
+  \item Écris les nombres flottants suivants en écriture décimale.
+  \begin{enumerate}
+    \item $7,8914e3$
+    \item $7,8e-2$
+    \item $1,2066e5$
+    \item $3,14e-1$
+  \end{enumerate}
+  
+  \item Écris les nombres suivants sous la forme de nombres flottants (attention le premier chiffre de la mantisse ne doit pas être $0$).
+  \begin{enumerate}
+    \item $21,57$
+    \item $71660$
+    \item $0,00625$
+    \item $718,2$
+    \item $0,00005$  
+  \end{enumerate}
+
+  \item Calcule les nombres suivants. Écris le résultat sous la forme décimale et sous la forme d'un nombre flottant.
+  \begin{enumerate}
+    \item $30,75 + 4,699$
+    \item $4,101 + 3,02 + 5,757$
+    \item $3 \times (4,157e2)$
+  \end{enumerate}
+  
+ \end{enumerate} 
+  
+\end{activite}
+
+
+\begin{activite}[Nombres flottants II]
+
+Lorsqu'il est stocké dans la mémoire d'un ordinateur, un nombre flottant ne comporte qu'un nombre fixé de chiffres. Par exemple 10 chiffres pour une calculatrice. Dans cet exercice, on travaille avec une mini-calculatrice qui ne prend seulement en compte que $4$ chiffres pour la mantisse ($1$ chiffre avant la virgule, $3$ chiffres après).  
+
+Par exemple si $x = 12,345$ alors ce nombre est stocké dans la mini-calculatrice sous la forme $nf(x) = 1,234e1$. Note que le $5$ n'est plus présent.
+
+Comme les nombres sont stockés avec un nombre limité de chiffres, cela peut engendrer des erreurs de calculs.
+
+\begin{enumerate}
+  \item \textbf{Erreurs d'arrondi.}
+
+    Soient $a = 1201,3$ ; $b = 2201,4$ ; $c = 3201,5$.
+  \begin{enumerate}
+    \item Calcule $x = a + b + c$ et calcule le nombre flottant associé $nf(x)$.
+    \item Calcule les nombres flottants $nf(a)$, $nf(b)$, $nf(c)$ associés à $a, b, c$ (avec $4$ chiffres pour la mantisse). La mini-calculatrice calcule la somme $nf(a) + nf(b) + nf(c)$.
+    % en harmonisant au préalable l'écriture de chacun des termes en imposant pour tous un même exposant, le plus grand des exposants des termes de la somme.
+    \item Explique la différence entre $nf(x)$ et $nf(a) + nf(b) + nf(c)$.
+  \end{enumerate}
+
+    \textbf{Analogie.} \emph{Si, lors des courses, on oublie de payer les centimes pour chaque article d'un ticket, à la fin, l'erreur totale peut être de plusieurs euros.}
+  
+  \item \textbf{Phénomène d'absorption.}
+
+    Soient $a = 7564$ ; $b = 0,1569$.
+  \begin{enumerate}
+    \item Calcule $nf(a)$ et $nf(b)$, les nombres flottants associés à $a$ et $b$ puis $nf(a) + nf(b)$.
+    \item Calcule $a + b$, et calcule le nombre flottant $nf(a + b)$ associé.
+    \item Explique la différence.
+  \end{enumerate}
+
+  
+    \textbf{Analogie.} \emph{On peut mesurer le volume d'une piscine et aussi celui d'un verre d'eau. Mais si on verse le verre d'eau dans la piscine, le changement de volume n'est pas perceptible.} 
+  
+  \item \textbf{Phénomène d'élimination.}
+
+    Soient $a = 65,2837$ et $b = 65,1258$.
+  \begin{enumerate}
+    \item Calcule $nf(a)$ et $nf(b)$.
+    \item Calcule $a - b$ et $nf(a - b)$.
+    \item Au lieu de calculer $a - b$, la mini-calculatrice calcule d'abord $nf(a) - nf(b)$. Explique la différence avec $nf(a - b)$.
+  \end{enumerate}
+
+    \textbf{Analogie.} \emph{On transvase l'eau d'une piscine dans un bassin qui a presque la même taille. Il est difficile de savoir s'il va y avoir trop ou pas assez d'eau.}
+     
+\end{enumerate}
+
+
+\end{activite}
+
+\end{document}
+

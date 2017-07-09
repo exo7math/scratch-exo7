@@ -1,0 +1,365 @@
+
+===============================
+===============================
+Fiche 04 -- Si ... alors ...
+===============================
+===============================
+
+
+===============================
+Fiche 04 - activité 1 - Arnaud
+===============================
+
+[part 1]
+
+Le but de cette activité est de faire avancer Scratch, de sorte qu'il évite les rectangles bleu et atteigne le rond rouge.
+
+Pour gagner, il faut bien choisir l'angle pour orienter Scratch au départ (ici j'ai caché la fin du programme).
+
+Si je choisis, ici par exemple l'angle 50 degrés, alors Scratch touche une zone bleue et j'ai perdu. Mais si je recommence et que je choisis d'orienter Scratch au départ avec un angle de 30 degrés alors Scratch rebondit sur les bords de l'écran, évite les zones bleues, et atteint la zone rouge : j'ai gagné !
+
+[part 2]
+
+L'objectif principal de cette activité est d'utiliser le bloc "si ... alors ..." : si une certaine condition est réalisée, alors fait quelque chose.
+
+Quelles instructions peut-on demander de faire, si la condition est réalisée ? Ben en fait, n'importe qu'elle instruction !
+
+Par exemple : si la condition est vrai alors alors je lui demande d'avancer de 10 pas. 
+
+Ou bien il doit tourner de 15 degrés.
+
+Ou bien il doit avancer de 10 pas, puis tourner de 15 degrés. Tu pourrais aussi jouer un son, en fait tu peux mettre ce que tu veux !
+
+
+Qu'est ce que c'est qu'une condition et où les trouve-t'on ?
+
+Tu vois qu'une condition prend la forme d'un hexagone, donc on cherche les blocs avec les bords pointus. 
+
+Je les trouves dans catégorie "Capteurs" ce sont les blocs bleu clair.
+Exemple : 
+  - "est-ce que la couleur verte est touchée par Scratch ?" Et hop je l'insère dans zone hexagonale,
+  - autre condition "est ce le bouton de la souris est pressé ?"
+  - 
+
+Une condition est réalisée lorsque la réponse à la question est "oui".
+
+"Est-ce que le bouton de la souris est pressé ?", si la réponse est "oui" alors Scratch doit faire telle ou telle instruction, que l'on a placé après.
+
+
+Je trouve d'autres conditions dans la catégorie "Opérateurs", des blocs vert clair.    
+
+Par exemple : est-ce que tel nombre est plus petit que tel autre, ce sont des conditions logiques, on y reviendra plus tard.
+
+[part 3]
+
+On y va pour la première partie du programme :
+  - quand le drapeau vert est cliqué
+  - tout d'abord je demande à Scratch de se placer à droite de l'écran, donc par exemple "aller en x=-200 et y=0"
+  - puis j'oriente Scratch dans un certaine direction, par exemple ici 45 degré.
+  
+Maintenant je veux que Scratch avance tout le temps : 
+  - pour cela j'utilise une boucle "répéter indéfiniment".
+
+Qu'est ce que je mets dans cette boucle ? Je veux qu'à chaque étape, Scratch avance un petit peu, donc par exemple je lui demande
+  - avance de 5 pas à chaque étape.
+  
+Problème. Scratch a envie de sortir de l'écran. Pour qu'il revienne en jeu, je lui demande de 
+  - rebondir si bord est atteint 
+
+Maintenant Scratch se déplace comme je voulais !
+
+[part 4]
+
+Maintenant je vais réduire la taille de Scratch, afin qu'il soit un peu plus petit.
+
+Je clique sur l'onglet costume, le dessin du chat apparaît, lorsque je clique sur l'image on voit un rectangle avec des poignées. Les poignées sont ces petits carrés là. Je clique sur un des carrés du coin et je redimensionne le chat. 
+
+Une fois à la bonne taille, il est préférable de recentrer le costume, afin que Scratch tourne correctement.
+
+
+
+Maintenant je vais dessiner les zones bleu et rouge.
+
+C'est facile ! 
+
+Je sélectionne, ici à gauche, la zone "Scène/arrière-plan", et pour la modifier, je clique sur l'onglet "arrière-plan" dans la zone du milieu.
+
+Pour dessiner un rectangle bleu,
+  - je choisi la forme d'un rectangle,
+  - je choisis la couleur bleu,
+  - je trace mon rectangle en partant d'un coin pour aller jusqu'au coin opposé,
+  - si on plus je veux remplir mon rectangle, j'utilise l'outil "peinture"
+  
+Je recommence avec un second rectangle bleu.
+  
+Pour le rond rouge,
+  - je choisis la forme rond,
+  - la couleur rouge,
+  - je trace un cercle ou une ellipse,
+  - je le colorie.
+
+Ca y est, j'ai dessiné mon arrière plan !
+
+Je n'oublie pas de revenir à mon lutin : je sélectionne mon lutin dans la zone de gauche, et pour revenir à mon programme je clique sur l'onglet "script".
+
+
+[part 5]
+
+Il nous reste l'essentiel à faire : terminer le programme !
+
+Pour l'instant Scratch passe à travers les zones bleu et rouge comme s'il ne les voyait pas.
+
+Qu'est ce que l'on va faire ?
+
+A chaque étape de la boucle, on va tester si Scratch touche une couleur rouge, si c'est la cas alors c'est gagné. A chaque étape on testera aussi si Scratch touche la couleur bleu, si c'est le cas alors c'est perdu.
+
+Pour tester si la couleur rouge est touchée,
+
+ - on choisit le bloc "si ... alors ...".
+ - on choisit la condition "est-ce que telle couleur est touchée ?"
+ - bien sûr il faut changer la couleur, moi je veux du rouge, donc je clique sur le carré de couleur, le pointeur de la souris devient une petite main, qui me permet de choisir n'importe quelle couleur de l'écran, et bien sûr je choisi du rouge !
+ 
+Quoi faire si Scratch touche du rouge :
+  - on affiche "C'est gagné" pendant 2 secondes,
+  - et comme la partie est finie on arrête tout avec le bloc "stop tout".
+
+
+On insère ce bloc, dans notre boucle "répéter indéfiniment" comme cela à chaque étape, on avance de 5, on rebondit si le bord est atteint puis on teste si Scratch a touché la zone rouge.
+
+
+Bien sûr il faut faire pareil avec les zones bleu, on recommence :
+  - on insère un nouveau bloc "si ... alors ..."
+  - "est-ce que telle couleur est touchée ?"
+  - je change cette fois la couleur en bleu,
+  - et maintenant si le bleu est touché, alors j'affiche "C'est perdu" 
+  - et je stop tout.
+  
+Et voilà, le programme est terminé.
+
+Il faut maintenant trouver le bon angle pour gagner !
+
+===============================
+Fiche 04 - activité 2 - Nathalie
+===============================
+
+[part 1]
+
+Le but de cette activité est de faire se déplacer le chat Scratch dans un tunnel à l'aide des quatre touches 'flèches' du clavier.
+
+Si l'utilisateur appuie sur la flèche du haut scratch monte ; s'il appuie sur la flèche du bas Scratch descend etc.
+
+Pour que Scratch obéisse à l'utilisateur, on utilisera le bloc ‘si touche flèche droite pressée alors’.
+[Montrer le bloc déjà construit ‘si touche flèche droite pressée alors’.]
+
+
+[part 2]
+
+Pour commencer, quand le drapeau vert est cliqué, on met scratch à sa position initiale qui est x=-200 et y= 80.
+
+Tout d’abord il faut programmer :
+si l’utilisateur presse la flèche droite, scratch ajoutera 5 pas à sa position horizontale.
+Pour cela, on va aller chercher dans la catégorie ‘contrôle’ une brique ‘si... alors...’.
+Puis la brique ‘touche espace pressée ?’ dans la catégorie ‘capteurs’ que l’on insère dans la condition du ‘si’.
+Mais on ne veut pas la touche ‘espace’ mais la touche ‘flèche droite’. En cliquant sur le petit triangle noir, on déploie un menu déroulant qui nous permet de choisir la touche voulue.
+
+Il faut maintenant se déplacer :
+On a dit précédemment que l’on voulait ajouter 5 pas à sa position horizontale c’est-à-dire à l'abscisse 'x' pour aller vers la droite.
+On va donc utiliser la brique ‘ajouter 5 à x’ dans la catégorie ‘mouvements’.
+
+[part 3]
+
+Mais si on laisse ce bloc ainsi, en cliquant sur le drapeau vert puis la flèche, il ne se passe rien...
+car le déplacement ne sera exécuté que si au moment du clic du drapeau vert on presse la flèche et si c’est le cas il ne se fera qu’une seule fois,
+or on veut qu’il soit répéter sans fin à chaque fois que l’on presse la flèche droite.
+on va donc utiliser un ‘répéter indéfiniment’
+
+[part 4]
+
+Il faut maintenant programmer les autres directions.
+
+On va commencer par dupliquer le bloc ‘si... alors’ puis le modifier.
+On choisit la flèche gauche dans le menu déroulant
+Pour aller à gauche, il faudrait soustraire 5 à l'abscisse 'x' mais la brique ‘soustraire’ n’existe pas.
+Mais « soustraire c’est ajouter l’opposé du nombre »
+Donc on va donc ajouter -5 à x.
+
+[part 5]
+
+Pour les déplacements verticaux, on duplique ce double bloc de ‘si... alors’.
+Pour la flèche du haut ou ‘ajoute 5 à l'ordonnée y’.
+Pour la flèche du bas ou ‘ajoute -5 à l'ordonnée y’.
+
+Et voilà, Scratch se déplace dans toutes les directions à l’aide des flèches du clavier.
+
+
+[part 6]
+
+Il faut maintenant dessiner le tunnel dans lequel Scratch va se déplacer.
+Pour cela, on sélectionne l’arrière-plan en cliquant en bas à gauche. Puis en cliquant sur l’onglet ‘arrière-plans’.
+
+La zone de script a été remplacée par une zone de dessin dans laquelle on peut modifier l’arrière-plan.
+A l’aide du pot de peinture, on va tout d’abord le peindre en bleu.
+
+Puis on prend l’outil pinceau,
+on met sa taille au maximum,
+on choisit la couleur blanche
+et on dessine le chemin voulu.
+
+Et voilà le tunnel est dessiné !...
+
+
+[part 7]
+
+Mais Scratch est trop grand pour passer dans le tunnel, il faut donc réduire sa taille.
+Pour cela, en haut de l’écran, juste au dessus des onglets, entre les ciseaux et le point d’interrogation, il y a 2 icones ; la première pour agrandir, la seconde pour rétrécir.
+
+Mais attention, pour l’instant, c’est l’arrière-plan qui est sélectionné.
+Donc en bas à gauche, je clique sur scratch pour le resélectionner (entouré de bleu).
+
+Maintenant, on peut modifier sa taille :
+clique sur l’icône ‘réduire’ puis autant de fois que souhaité sur Scratch pour diminuer sa taille.
+Quand elle semble satisfaisante, clique sur l’arrière-plan pour stopper.
+
+Et voilà tu es prêt à jouer...
+
+[part 8]
+
+Si tu veux améliorer le jeu, tu peux jouer un son d’alerte si Scratch touche la zone bleue.
+
+===============================
+Fiche 04 - activité 3 - François
+===============================
+
+[part 1] [Le programme est prêt mais caché. ]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Voici un petit jeu que nous allons programmer.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Scratch est ici sur la gauche de l'écran. Lorsque le drapeau vert sera cliqué, il se déplacera vers la droite.
+
+Au début de son parcours, il sera visible. [Drapeau vert]
+
+Mais après quelques pas, Scratch disparaît, tout en continuant d'avancer.
+
+L'objectif du joueur va alors consister à cliquer sur le bouton de la souris au moment où Scratch est en contact avec la barre veticale noire qui est ici. 
+
+- S'il est trop rapide, qu'il clique trop tôt, Scratch n'aura pas encore atteint la barre, 
+- s'il est trop lent, qu'il clique trop tard, Scratch l'aura déjà dépassée.
+
+Faisons un petit essai. 
+
+Perdu. 
+
+Gagné.
+
+[part 2] 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Au travail. Nous commençons par créer sur l'arrière-plan une barre noire.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je crée un nouvel arrière-plan en cliquant sur le pinceau. 
+Je crée un rectangle allongé verticialement 
+que je positionne approximativement au milieu de la scène et que je remplis de noir.
+
+Puis je positionne Scratch un peu plus à gauche. Cela revient à le positionner en une abscisse négative, par exemple en x=-240. 
+
+[part 3] 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Maintenant que le cadre est posé, abordons la première étape de notre travail : faire avancer Scratch lentement et de façon visible.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Nous utilisons le bloc 'avancer de '. 
+
+Pour simuler un déplacement lent, nous allons faire des pauses entre chaque petit déplacement : 
+- par exemple Scratch avance de 5 pas, 
+- fait une pause d'un dixième de seconde 
+- puis avance à nouveau de 5 pas, 
+- refait une pause et ainsi de suite. 
+
+On répète disons 10 fois ces deux étapes. Je positionne donc 
+- un bloc 'avance de 5' 
+- un bloc 'attendre 0.1 seconde'
+et j'utilise le bloc 'répéter 10 fois' pour envelopper ces deux blocs.
+
+Regardons tout de suite le résultat.
+
+[part 3] 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous allons maintenant aborder la deuxième étape. 
+
+Je dois faire en sorte que Scratch continue son mouvement mais cette fois-ci de façon invisible. 
+
+En ce qui concerne le déplacement, ce n'est pas bien compliqué, il suffit de reprendre ce que nous venons de faire. 
+
+Alors, voyons comment faire disparaître Scratch.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Dans la catégorie 'Apparence', j'ai à ma disposition deux blocs 'montrer' et 'cacher'. 
+
+Nous allons donc immédiatement utiliser le bloc 'cacher' pour faire disparaître Scratch.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Comme nous avons pu le voir dans des activités précédentes, puisque nous allons 'montrer' ou 'cacher' Scratch, 
+nous devons faire attention à ce que les conditions de départ soient toujours identiques 
+(en effet l'outil prend les éléments tels qu'ils sont à la fin de la dernière exécution). 
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je vais donc ajouter dès maintenant un bloc 'montrer' dans l'initialisation.
+
+Poursuivons : une fois caché, Scratch reprend son déplacement, à la même cadence que précédemment bien sûr, sinon le jeu serai très difficile.
+
+Je reprends donc la répétition qui figure déjà dans le programme que je duplique en faisant un clic droit 'dupliquer'.
+Je change ensuite le nombre d'itérations qui peut maintenant être beaucoup plus grand par exemple 70.
+
+Voyons si nous obtenons bien ce que nous souhaitons. Bien.
+
+[part 4] 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Scratch a effectivement disparu en continuant sa route. 
+
+Il nous reste maintenant la dernière étape : gérer ce qui se passe lorsque le joueur clic sur le bouton de la souris. 
+
+Puisque le joueur clique quand il veut, le programme doit attendre ce clic. 
+
+Nous avons découpé le déplacement de Scratch en petits déplacements de 5 pas. 
+
+A chaque déplacement élémentaire nous devons donc nous demander si le joueur a cliqué ou non avec sa souris. Comment faire cela ?
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Dans la catégorie 'Capteurs', j'ai un bloc 'souris pressée ?' avec un point d'interrogation. 
+
+La forme hexagonale m'indique que ce bloc possède la valeur vrai ou faux suivant ici que le bouton de la souris est pressé ou non. 
+
+Je vais donc utiliser bloc 'si ... alors ...' dans lequel j'insère le bloc 'souris pressée ?' et je place ce test à l'intérieur du second bloc de répétitions (lorsque Scratch est caché).
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Que faire si le joueur a cliqué ?
+
+Je vais dans un premier temps faire réapparaître Scratch avec le bloc 'montrer'.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+Regardons le résultat.
+
+Très bien, Scratch réapparait mais il continue sa course. 
+
+Il me reste donc deux choses à faire : 
+- déterminer si le joueur a atteint son objectif c'est-à-dire savoir si Scratch est en contact avec la barre noire,
+- tout arrêter.
+
+
+J'utilise le bloc 'couleur touchée' dans un bloc test. 
+Je modifie la couleur touchée pour avoir le noir de la barre.
+
+Si Scratch touche la barre, alors le joueur a gagné : je le fais donc dire à Scratch pendant 2 secondes. [Bravo !]
+
+Et je place ce bloc test juste après avoir montré Scratch.
+
+J'insère ensuite le bloc de la catégorie 'Contrôle' : 'stop tout', car dans tous les cas la partie est finie.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous avons envisagé la situation dans laquelle le joueur clique. 
+
+S'il ne le fait pas, il faut tout de même lui notifier à la fin du parcours de Scratch qu'il a perdu.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+- Je rends donc Scratch visible avec le bloc 'montrer'
+- J'affiche le message 'Trop tard'.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Tu peux tester ce programme et imaginer plein d'autres situations similaires en créant par exemple différents parcours ou obstacles.
+

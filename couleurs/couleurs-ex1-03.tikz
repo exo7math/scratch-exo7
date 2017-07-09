@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+
+\def\pas{0.21}
+
+
+\foreach \c in {0,2,...,98}{
+  \pgfmathsetmacro\x{(\c*0.1};
+  \fill[blue!\c!green] (\x,0) rectangle ++(\pas,1); 
+}
+
+\foreach \c in {0,10,...,98,100}{
+  \pgfmathsetmacro\x{\c*0.1};
+  \draw (\x,0)--++(0,-0.2);
+}
+
+\foreach \c in {0,20,...,100}{
+ \pgfmathsetmacro\x{\c*0.1+0.01};
+  \node at (\x,-0.4) {\tiny $\c\%$};
+}
+
+
+
+
+\end{tikzpicture}

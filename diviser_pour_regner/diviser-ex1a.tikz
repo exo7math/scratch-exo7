@@ -1,0 +1,43 @@
+\tikzstyle{line} = [draw,gray,ultra thick]
+\begin{tikzpicture}[scale=0.3]
+
+
+%%%%%%%%%% Plateau Ã  l'ÃÂ©quilibre (vide)
+\draw[line] (0,-1) -- (0,1);
+\draw[line] (-5,1)-- (5,1);
+
+% Plateau 1
+\draw[line] (5,1) -- (5,2);
+\draw[line,black] (1.5,2.5)--(2,2) -- (8,2)--(8.5,2.5);
+
+% Plateau 2
+\begin{scope}[xshift=-10cm]
+\draw[line] (5,1) -- (5,2);
+\draw[line,black] (1.5,2.5)--(2,2) -- (8,2)--(8.5,2.5);
+\end{scope}
+%%%%%%%%%%%%
+
+
+%%%%%%%%%% Plateau avec poids diffÃÂ©rents
+
+\begin{scope}[xshift=20cm]
+
+\draw[line] (0,-1) -- (0,1);
+\draw[line] (-5,1.25)-- (5,0.75);
+
+% Plateau 1
+\begin{scope}[yshift=-0.25cm]
+\draw[line] (5,1) -- (5,2);
+\draw[line,black] (1.5,2.5)--(2,2) -- (8,2)--(8.5,2.5);
+\end{scope}
+
+% Plateau 2
+\begin{scope}[xshift=-10cm,yshift=0.25cm]
+\draw[line] (5,1) -- (5,2);
+\draw[line,black] (1.5,2.5)--(2,2) -- (8,2)--(8.5,2.5);
+\end{scope}
+
+\end{scope}
+
+
+\end{tikzpicture}

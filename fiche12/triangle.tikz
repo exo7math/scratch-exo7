@@ -1,0 +1,21 @@
+\tikzstyle{line} = [draw,gray,very thick]
+\tikzstyle{arrow} = [->,>=latex,ultra thick]
+\begin{tikzpicture}[scale=0.5]
+
+
+\coordinate (A) at (2,5);
+\coordinate (B) at (0,15);
+\coordinate (C) at (15,10);
+
+\coordinate (G) at (8,10);
+
+\draw[line] (A) -- (B) -- (C) -- cycle;
+
+\fill[red] (A) circle (7pt) node[below, black] {$A$ (1\,kg)};
+\fill[red] (B) circle (7pt) node[above, black] {$B$ (1\,kg)};
+\fill[red] (C) circle (10pt) node[right = 10pt, black] {$C$ (2\,kg)};
+
+\fill[blue] (G) circle (7pt) node[below = 7pt, black] {$G$};
+
+
+\end{tikzpicture}

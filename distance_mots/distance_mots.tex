@@ -1,0 +1,371 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+% Commande spécifique
+\newcommand{\badletter}[1]{\underline{\textcolor{red}{#1}}}
+
+
+\titre[F]{Distance entre deux mots}
+%===============================
+
+\emph{Pour savoir si un mot est mal orthographié, il suffit de vérifier s'il existe dans un dictionnaire, par contre pour suggérer une correction orthographique, il faut proposer un mot proche. Pour cela, il faut définir une distance entre deux mots.}
+
+\bigskip
+\bigskip
+
+\begin{activite}[Distance de Hamming]
+Prends deux mots de même longueur. La \emph{distance de Hamming}, c'est le nombre 
+d'endroits où les lettres sont différentes.
+
+Par exemple :
+
+\centerline{\mot{
+\badletter{J}A\badletter{P}ON}\qquad \mot{\badletter{S}A\badletter{V}ON}
+}
+
+Les premières lettres sont différentes, les troisièmes aussi. La distance de Hamming entre ces deux mots vaut donc $2$.
+
+\begin{enumerate}
+  \item Calcule la distance de Hamming entre les mots suivants :
+
+\begin{center}
+\begin{tabular}{rcl}
+\mot{LIGNE}&\qquad&\mot{LIANE} \\
+\mot{BOOLE}&\qquad&\mot{MOORE} \\
+\mot{POLICE}&\qquad&\mot{PILOTE} \\
+\mot{PASSION}&\qquad&\mot{RATIONS}\\
+\mot{CRANE}&\qquad&\mot{ECRAN}\\
+\end{tabular}
+\end{center}
+
+  \item Pour chacun des mots de la liste suivante, calcule sa distance de Hamming avec le mot \mot{SIGNE} :
+  
+\centerline{\mot{SUITE \qquad LIGNE \qquad SINGE \qquad DIGNE \qquad MIXTE}}
+
+  
+%  \item  Notons $d_H( \textit{mot}_1, \textit{mot}_2 )$ la distance de Hamming entre deux mots. 
+%  \begin{enumerate}
+%    \item Quand est-ce que cette distance de Hamming est nulle ?
+%    \item Que vaut  $d_H( \textit{mot}_2, \textit{mot}_1 )$ par rapport à $d_H( \textit{mot}_1, \textit{mot}_2 )$ ?
+%     \item Vérifier sur l'exemple des trois mots 
+%     \mot{POULE}, \mot{FONCE}, \mot{PONCE}
+%     que l'on a bien :
+%     $$d_H( \textit{mot}_1, \textit{mot}_3 ) \le d_H( \textit{mot}_1, \textit{mot}_2 ) + d_H( \textit{mot}_2, \textit{mot}_3 )$$
+%   \end{enumerate} 
+  
+\end{enumerate}
+  
+\end{activite}
+
+
+
+\begin{activite}[Distance de Jaccard]
+La \emph{distance de Jaccard} mesure la proximité de deux mots, indépendamment de l'ordre des lettres.
+La formule est :
+$$\text{distance} \quad = \quad 1 \quad  - \quad \frac{\text{nombre de lettres communes}}{\text{nombre total de lettres}}$$
+
+\smallskip
+
+La distance est comprise entre $0$ et $1$. Plus la distance est proche de $0$, plus les mots ont les mêmes lettres. 
+
+\bigskip
+
+\textbf{Exemple 1.} \mot{PAIR} et \mot{SAPIN}.
+
+Les lettres du premier mot sont \mot{[A,I,P,R]}, celles du second sont
+\mot{[A,I,N,P,S]}. Les lettres communes sont donc \mot{[A,I,P]}, il y en a donc $3$. Toutes les lettres sont \mot{[A,I,N,P,R,S]}, il y en a donc $6$.
+La distance de Jaccard entre \mot{PAIR} et \mot{SAPIN} est donc :
+$$d = 1 - \frac{3}{6} = 1 - \frac12 = 1-0,5 = 0,5.$$
+
+\bigskip
+
+\textbf{Exemple 2.} \mot{LETTRE} et \mot{TARTE}.
+
+Les lettres du premier mot sont \mot{[E,E,L,R,T,T]}, 
+celles du second  \mot{[A,E,R,T,T]}. 
+Les lettres \mot{[A,E,E,L,R,T,T]} permettent d'écrire chacun des mots, il y a donc un total de $7$ lettres. Les lettres communes sont \mot{[E,R,T,T]}, il y en a donc $4$.
+La distance de Jaccard entre \mot{LETTRE} et \mot{TARTE} est donc :
+$$d = 1 - \frac{4}{7} \simeq 1-0,57 \simeq 0,43.$$
+
+\bigskip
+
+Calcule la distance de Jaccard entre les mots suivants :
+
+\begin{center}
+\begin{tabular}{rcl}
+\mot{PLACE}& \qquad &\mot{CRAIE} \\
+\mot{AVRIL}& \qquad &\mot{LAIT} \\
+\mot{ESPOIR}& \qquad &\mot{PROIE} \\
+\mot{STATUE}& \qquad &\mot{ETAT}\\
+\mot{NOIR}& \qquad &\mot{BLANC}\\
+\mot{OBTENIR}& \qquad &\mot{ROBINET}\\
+\end{tabular}
+\end{center}
+
+\bigskip
+
+Calcule la distance de Jaccard entre \mot{CHIEN} et \mot{NICHE}. Quand est-ce que deux mots ont une distance de Jaccard égale à $0$ ?
+\end{activite}
+
+
+
+
+\begin{activite}[Distance de Levenshtein]
+
+On définit trois opérations qui permettent de passer d'un mot à un autre :
+\begin{enumerate}
+  \item suppression d'une lettre,
+  \item ajout d'une lettre, 
+  \item remplacement d'une lettre. 
+\end{enumerate}
+Voici un exemple de chaque type :
+\begin{enumerate}
+  \item \mot{PLA\badletter{N}TE} vers \mot{PLATE} (la lettre \mot{N} est supprimée), 
+  \item \mot{RAPE} vers \mot{RA\badletter{M}PE} (la lettre \mot{M} est ajoutée), 
+  \item \mot{RA\badletter{M}ER} vers \mot{RA\badletter{L}ER} (la lettre \mot{M} est remplacée par la lettre \mot{L}). 
+\end{enumerate}
+
+La \emph{distance de Levenshtein} entre deux mots est le nombre minimum d'opérations à effectuer afin de passer du premier mot au second.
+
+Par exemple, la distance entre \mot{PORT} et \mot{PAR} vaut $2$.
+
+\centerline{\mot{PORT} \quad devient \quad \mot{POR} \quad puis devient \quad \mot{PAR}}
+
+On a appliqué l'opération 1, puis l'opération 3. Et pour cet exemple, on ne peut pas faire moins de deux opérations.
+
+\begin{enumerate}
+  \item Trouve quelle opération permet de passer du premier au second mot :
+  \begin{itemize}
+    \item \mot{CLEF} vers \mot{CLE}
+    \item \mot{PILE} vers \mot{PALE}
+    \item \mot{MIEL} vers \mot{CIEL} 
+  \end{itemize}   
+
+ 
+  \item D'après toi, combien vaut la distance de Levenshtein pour les paires de mots suivantes : 
+  \begin{itemize}
+    \item \mot{SPIRE} et \mot{PITRE}
+    \item \mot{POMME} et \mot{POIRE}
+    \item \mot{PILE} et \mot{PLI}     
+    \item \mot{LOUPE} et \mot{POULE} 
+    \item \mot{LAMPE} et \mot{PLACE}    
+    \item \mot{ROIS} et \mot{OIE}
+    \item \mot{PRISE} et \mot{ROSE}  
+    \item \mot{ANANAS} et \mot{BANANE}        
+  \end{itemize}  
+
+  
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}[Algorithme de Levenshtein]
+
+Nous allons voir une méthode systématique pour calculer la distance de Levenshtein et trouver les opérations qui permettent de passer d'un mot à un autre.
+
+
+\begin{enumerate}
+
+\item \textbf{Règle du minimum.}
+
+Nous remplissons la quatrième et dernière case d'un petit tableau (2$\times$2) par la règle suivante :
+\begin{itemize}
+  \item si la quatrième case est blanche : on ajoute $+1$ à tous les nombres et on prend le minimum des trois nombres ;
+  
+  \item si la quatrième case est grise : on ajoute $+1$ seulement aux cases au-dessus et à gauche, puis on prend le minimum des trois nombres.
+\end{itemize}
+
+
+Voici deux exemples : avec une case blanche et avec une case grise.
+
+\myfigure{0.9}{
+\tikzinput{distance-02}
+}
+
+
+Complète les tableaux suivants :
+
+\myfigure{0.9}{
+\tikzinput{distance-03}
+}
+
+
+\item \textbf{Initialisation.}
+
+Pour calculer la distance entre deux mots, nous allons faire les calculs à l'aide d'un tableau. Avant de commencer les calculs, voici la disposition de départ :
+
+\begin{itemize}
+  \item le premier mot est écrit en colonne, le second en ligne ;
+  \item on remplit une colonne et une ligne d'entiers $0,1,2,\ldots$ ;
+  \item on grise les cases lorsque les deux lettres de chaque mot sont identiques.
+\end{itemize}
+
+Exemple simple avec \mot{PAS} et \mot{PLAT} (il y a une case grise pour le \mot{P} commun et une grise pour le \mot{A} commun).
+
+\myfigure{0.7}{
+\tikzinput{distance-04a}\qquad
+\tikzinput{distance-04b}\qquad
+\tikzinput{distance-04c}
+}
+
+Voici un autre exemple avec \mot{VOILE} et \mot{CERISE}.
+
+\myfigure{0.7}{
+\tikzinput{distance-05a}
+}
+
+Trace les grilles, la numérotation et grise les cases pour les paires de mots :
+
+\begin{center}
+\begin{tabular}{rcl}
+\mot{BUS}&\quad et \quad\ &\mot{BRUT}\\
+\mot{FRUIT}&\quad et \quad\ &\mot{CRIS}\\
+\mot{PETITE}&\quad et \quad\ &\mot{LETTRE}\\
+\mot{AVION}&\quad et \quad\ &\mot{BATEAU}\\
+\end{tabular}
+\end{center}
+
+
+
+\item \textbf{Calcul de la distance de Levenshtein.}
+
+Voici un algorithme pour calculer la distance de Levenshtein entre deux mots.
+\begin{itemize}
+  \item Initialise le tableau avec un mot en colonne et l'autre en ligne.
+  \item Remplis une ligne et une colonne à l'aide d'entiers consécutifs en partant de 0.
+  \item Grise les cases lorque deux lettres de chaque mot sont identiques.
+  \item Remplis, une à une, les cases avec la règle des minimums.
+  \item La distance de Levenshtein est la valeur dans la case en bas à droite.
+\end{itemize}
+
+\bigskip
+
+Reprenons l'exemple : de \mot{PAS} à \mot{PLAT}
+
+\myfigure{0.7}{
+\tikzinput{distance-04cc}\qquad
+\tikzinput{distance-04d}
+}
+
+\bigskip
+
+\myfigure{0.7}{
+\tikzinput{distance-04e}\qquad
+\tikzinput{distance-04f}
+}
+
+(a) Le tableau est initialisé comme à la question précédente ; (b) on commence à compléter le tableau en suivant la règle du minimum ; (c) on remplit une à une les cases de la première ligne avant de passer à la suivante ; (d) le tableau est complet ; la distance de Levenshtein est la valeur en bas à droite.
+
+Voici un exemple plus compliqué, qui calcule la distance de Levenshtein entre  \mot{VOILE} et \mot{CERISE} qui vaut $4$.
+
+\myfigure{0.7}{
+\tikzinput{distance-05b}
+}
+
+\bigskip
+
+Calcule la distance de Levenshtein entre les mots suivants :
+\begin{center}
+\begin{tabular}{rcl}
+\mot{BUS}&\quad et \quad\ &\mot{BRUT}\\
+\mot{FRUIT}&\quad et \quad\ &\mot{CRIS}\\
+\mot{PETITE}&\quad et \quad\ &\mot{LETTRE}\\
+\mot{AVION}&\quad et \quad\ &\mot{BATEAU}\\
+\end{tabular}
+\end{center}
+
+\item \textbf{Retrouver les opérations.}
+
+Avec un peu plus d'efforts, on retrouve les opérations nécessaires pour passer d'un mot à l'autre.
+
+\begin{itemize}
+  \item Il faut d'abord trouver un chemin décroissant de la dernière case calculée (qui contient la distance de Levenshtein), vers la première case (qui contient le $0$ en haut à gauche). Pour une case, on va vers 
+  l'une des trois cases qui a permis de réaliser la règle du minimum
+  (donc vers une valeur la plus petite possible).
+
+
+\myfigure{1}{
+\tikzinput{distance-06}
+}
+ 
+\end{itemize}
+
+Ensuite, on passe du mot vertical au mot horizontal, en associant à certaines flèches une opération : 
+\begin{itemize}  
+  \item si la valeur reste la même, on ne réalise aucune opération ;
+  
+  \item si la flèche est $\uparrow$, on supprime une lettre du mot vertical ;
+  
+  \item si la flèche est $\leftarrow$, on insère une lettre du mot horizontal dans le mot vertical ;
+  
+  \item si la flèche est $\nwarrow$, on remplace une lettre du mot vertical par une lettre du mot horizontal.
+\end{itemize}  
+      
+\myfigure{0.7}{
+\tikzinput{distance-07a}\qquad
+\tikzinput{distance-07b}\qquad
+\tikzinput{distance-07c}\qquad
+\tikzinput{distance-07d}
+} 
+
+Comment passer de \mot{PAS} à \mot{PLAT} en $2$ opérations ?
+Tout d'abord, on trouve un chemin décroissant en suivant la règle des minimums.
+
+\myfigure{0.7}{
+\tikzinput{distance-04g}
+}
+
+Ainsi, en partant du bas à droite :
+\begin{itemize}
+  \item on part du mot vertical \mot{PAS} ;
+  \item première flèche $\nwarrow$ : on remplace le \mot{S} par un \mot{T} : \mot{PAT} ;
+  \item seconde flèche $\nwarrow$ : comme on ne change pas de valeur, on ne fait rien ;
+  \item troisième flèche $\leftarrow$ : on insère le \mot{L} après le \mot{P} : \mot{PLAT} ;
+  \item dernière flèche $\nwarrow$ : comme on ne change pas de valeur, on ne fait rien.
+\end{itemize}
+
+On a donc :
+
+\centerline{\mot{PAS} \quad $\rightarrow$ \quad \mot{PAT} \quad $\rightarrow$\quad \mot{PLAT}}
+
+\bigskip
+
+Pour passer de \mot{VOILE} à \mot{CERISE}, voici un chemin (d'autres sont possibles).
+\myfigure{0.7}{
+\tikzinput{distance-05c}
+}
+
+En partant du bas à droite et en ne considérant que les flèches où la valeur change :
+\begin{itemize}
+  \item la deuxième flèche est $\nwarrow$ : \mot{VOILE} devient \mot{VOISE} ;
+  \item la quatrième flèche est $\leftarrow$ : \mot{VOISE} devient \mot{VORISE} ;
+  \item la cinquième flèche est $\nwarrow$ : \mot{VORISE} devient \mot{VERISE} ;
+  \item la sixième flèche est $\nwarrow$ : \mot{VERISE} devient \mot{CERISE}.
+\end{itemize}
+
+\bigskip
+
+
+Trouve les opérations qui permettent de passer d'un mot à l'autre en un minimum d'étapes :
+ \begin{center}
+\begin{tabular}{rcl}
+\mot{BUS}&\quad et \quad\ &\mot{BRUT}\\
+\mot{FRUIT}&\quad et \quad\ &\mot{CRIS}\\
+\mot{PETITE}&\quad et \quad\ &\mot{LETTRE}\\
+\mot{AVION}&\quad et \quad\ &\mot{BATEAU}\\
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+
+
+\end{activite}
+
+
+
+\end{document}
+

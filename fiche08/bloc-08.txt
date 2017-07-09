@@ -1,0 +1,88 @@
+# Fiche 08
+
+
+# Blocs utiles
+
+s'orienter vers [Chat2 v]
+
+créer un clone de [moi-même v]
+
+quand je commence comme un clone
+
+
+# Activité 1
+
+// Chat 1
+quand le drapeau vert pressé
+aller à x: (-150) y:(-150)
+mettre la couleur du stylo à [#FF0000]
+stylo en position d'écriture
+effacer tout
+répéter indéfiniment
+    s'orienter vers [Chat2 v]
+    avancer de (1)
+fin
+
+
+# Activité 2
+
+
+// Chat
+quand le drapeau vert pressé
+mettre [nb1 v] à (nombre aléatoire entre (5) et (15))
+mettre [nb2 v] à (nombre aléatoire entre (5) et (15))
+mettre [produit v] à ( (nb1) * (nb2) )
+mettre [faux1 v] à  ( ((nb1) + (1)) * (nb2) )
+mettre [faux1 v] à ( ((nb1) - (1)) * (nb2) )
+aller à x: (-200) y:(0)
+dire (regroupe (nb1) (regroupe [*] (nb2))
+répéter indéfiniment
+    s'orienter vers [pointeur de souris v]
+    avancer de (3)
+    si < [Souris1 v] touché?> alors
+        dire [Oui] pendant (2) secondes
+        stop [tout v]
+    fin
+fin
+
+
+// Souris 1
+quand le drapeau vert pressé
+aller à x: (nombre aléatoire entre (0) et (150)) y:(nombre aléatoire entre (-150) et (150))
+dire (produit)
+
+
+
+# Activité 3
+
+// Canon
+quand le drapeau vert pressé
+répéter indéfiniment
+    s'orienter à (angle)
+fin
+
+// Balle
+quand [espace v] est pressé
+aller à [Canon v]
+s'orienter à (angle)
+mettre [descente v] à [0]
+montrer
+répéter indéfiniment
+    avancer de ( (0.1) * (puissance) )
+    ajouter à [descente v] (-0.1)
+    ajouter (descente) à y
+    si < couleur [#00FF00 v] touchée?> alors
+        stop [tout v]
+    fin
+    si < [bord v] touché?> alors
+        stop [tout v]
+    fin
+    si < [Chien v] touché?> alors
+        jouer le son [clapping v] jusqu'au bout
+        stop [tout v]
+    fin
+fin
+
+
+
+

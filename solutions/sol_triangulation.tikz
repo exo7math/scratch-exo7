@@ -1,0 +1,39 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw, red, thick]
+\tikzstyle{point} = [black]
+
+\coordinate (A) at (1,2);
+\coordinate (B) at (2,7);
+\coordinate (C) at (5,7);
+\coordinate (D) at (8.7,4.7);
+\coordinate (E) at (9.5,2);
+\coordinate (F) at (8,1);
+\coordinate (G) at (3,0);
+\coordinate (H) at (2.2,3.8);
+\coordinate (I) at (6,4);
+\coordinate (J) at (7,2);
+\coordinate (K) at (5,0.7);
+\coordinate (L) at (4,2);
+\coordinate (M) at (5,5);
+\coordinate (N) at (7,6);
+\coordinate (O) at (4.2,3.2);
+
+
+
+\draw[line,red] (A)--(B)--(C)--(N)--(D)--(E)--(F)--(G)--cycle;
+\draw[line,red] (A)--(L)--(G)--(K)--(F)--(J)--(E);
+\draw[line,red] (A)--(H)--(B)--(M)--(H)--(L)--(O)--(H);
+\draw[line,red] (C)--(M)--(O)--(I)--(M)--(N)--(I)--(D)--(J)--(I);
+\draw[line,red] (J)--(K)--(L)--(J)--(O);
+
+
+\draw (-1,-1) rectangle ++(12,9);
+
+
+\foreach \point in {A,...,O}{
+  \fill[point] (\point) circle (2pt);
+  \node[below] at (\point) {$\point$};
+}
+
+\end{tikzpicture}

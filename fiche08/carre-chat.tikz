@@ -1,0 +1,18 @@
+\tikzstyle{line} = [draw,gray,very thick]
+\tikzstyle{arrow} = [->,>=latex,ultra thick]
+\begin{tikzpicture}[scale=0.5]
+
+\draw[line] (-5,-5) rectangle ++(10,10);
+\draw[arrow,red] (-5,-5) -- ++(0,3);
+\draw[arrow,blue] (-5,5) -- ++(3,0);
+\draw[arrow,orange] (5,5) -- ++(0,-3);
+\draw[arrow,green!70!black] (5,-5) -- ++(-3,0);
+
+\fill[red] (-5,-5)  circle (7pt) node[below left, black] {chat 1};
+\fill[blue] (-5,5)  circle (7pt) node[above left, black] {chat 2};
+\fill[orange] (5,5)  circle (7pt) node[above right, black] {chat 3};
+\fill[green!70!black] (5,-5)  circle (7pt) node[below right, black] {chat 4};
+
+
+
+\end{tikzpicture}

@@ -1,0 +1,52 @@
+\def\allume{
+\draw[thick,draw,fill=white]  (0,0) circle (0.2); 
+ \foreach \i in {0,30,...,330}{
+  \draw[thick] (\i:0.25)--(\i:0.4);
+ }
+}
+\def\eteint{
+\draw[thick,draw,fill=white]  (0,0) circle (0.2); 
+\draw[thick,draw,fill=white]  (0,0)--+(45:0.2)--+(45:-0.2); 
+\draw[thick,draw,fill=white]  (0,0)--+(-45:0.2)--+(-45:-0.2); 
+}
+\begin{tikzpicture}[scale=1.1,every node/.style={transform shape}]
+
+% NON 1
+\begin{scope}[xshift=-1.5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\Large NON};
+
+\draw[thick] (1,1)--++(0,1.5);
+
+\draw[thick,draw,fill=white]  (1,2.5) circle (0.2); 
+\end{scope}
+
+% NON 2
+\begin{scope}[xshift=1.5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\Large NON};
+
+\draw[thick] (1,1)--++(0,1.5);
+
+\draw[thick,draw,fill=white]  (1,2.5) circle (0.2); 
+
+
+\end{scope}
+
+% OU
+\begin{scope}[yshift=-2.5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\Large OU};
+
+\draw[thick] (0.5,1)--++(-1,1.5);
+\draw[thick] (1.5,1)--++(1,1.5);
+\draw[thick] (1,0)--++(0,-1.5);
+
+
+\draw[thick,draw,fill=white]  (0,1.75) circle (0.2); 
+\draw[thick,draw,fill=white]  (2,1.75) circle (0.2); 
+\draw[thick,draw,fill=white]  (1,-1.5) circle (0.2); 
+\end{scope}
+
+
+\end{tikzpicture}

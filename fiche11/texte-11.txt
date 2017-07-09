@@ -1,0 +1,281 @@
+
+
+===============================
+===============================
+Fiche 11 -- Créer ses blocs
+===============================
+===============================
+
+
+===============================
+Fiche 11 - activité 1 - Nathalie
+===============================
+
+
+[part 1]
+
+Nous allons voir comment tu peux créer tes propres blocs !
+
+Créer tes propres blocs a plusieurs avantages : 
+cela évite de recopier du code qui apparaît plusieurs fois.
+Le code devient alors plus court. 
+
+Le programme ne sera pas plus rapide et le résultat sera le même, mais le code sera plus facile à écrire et à lire !
+
+Voici le tracé de plusieurs étoiles.
+
+J'ai créer un bloc 'étoile' qui a chaque fois qu'il est exécuté, dessine une étoile.
+
+Ces 4 étoiles là sont dessinées en utilisant 4 fois le bloc 'étoile'.
+
+Ici c'est un peu plus compliqué, j'ai crée un bloc 'etoile bis' qui permet d'afficher une étoile de la taille voulue : une étoile de la taille 30, une étoile de la taille 40, une étoile de la taille 50...
+
+
+[part 2]
+
+
+C'est très facile de créer un nouveau bloc.
+Dans la catégorie "Ajouter blocs", puis "Créer un bloc".
+Donne lui, comme pour les variables, un nom bien choisi.
+
+Ici je l'appelle 'etoile'.
+
+J'ai maintenant un nouveau bloc 'étoile' disponible, que je peux utiliser 
+comme tous les autres blocs partout dans mon programme.
+
+Mais bien sûr, pour l'instant, ce nouveau bloc ne fait rien du tout !
+
+Tu as ici un un nouveau bloc de départ qui est apparu. "Définir 'étoile'".
+
+Voici comment tracer une étoile :
+
+- stylo en position d'écriture,
+- répéter 5 fois 
+    - avancer de 50, 
+    - tourner de 216 degré,
+- relever le stylo.
+
+Chaque que le bloc 'étoile' sera appelé, toutes les instructions que je vais placer ici seront exécutées une par une.
+
+
+[part 3]
+
+
+J'ai préparé un petit test : 
+
+je vais en bas à gauche, je trace une étoile,
+
+je vais en bas à droite, je trace une étoile,
+
+je change la couleur du stylo, je vais en haut à droite, je trace une étoile,
+
+j'augmente la taille du stylo, je vais en haut à gauche, je trace une étoile !
+
+
+[part 4]
+
+
+Je veux maintenant tracer des étoiles de tailles différentes, mais avec la taille que je souhaite.
+
+Pour cela je vais créer un bloc avec un paramètre.
+
+Je définis un bloc 'etoilebis',
+
+dans 'options' j'ajoute un paramètre. 
+
+Comme le paramètre va être une taille je choisis 'entrée de type nombre'
+et je le renomme 'taille'.
+
+J'ai maintenant un nouveau bloc 'etoilebis' qui effectivement dépend d'une valeur.
+
+Et je dois bien entendu définir ce que fait ce bloc, pour une taille donnée en paramètre.
+
+Le code est presque le même que pour le bloc 'étoile',
+sauf qu'au lieu d'avancer de 50, j'avance de 'taille' à chaque branche.
+
+- stylo en position d'écriture,
+- répéter 5 fois 
+    - avancer de (taille), 
+    - tourner de 216 degré,
+- relever le stylo.
+
+
+[part 5]
+
+
+Un petit test : je trace un étoile de taille 30, puis 40, puis 50, etc...
+
+Tu vois, c'est beaucoup plus sympa d'avoir défini nos propres blocs :
+ - j'ai gagné du temps parce que je n'ai pas recopié plein de fois la même chose 
+ - et en plus c'est beaucoup plus facile de lire le code et de le modifier !
+
+===============================
+Fiche 11 - activité 2 - François
+===============================
+
+
+[part 1] [Mettre un bloc 'quand espace est pressée' pour enchaîner les deux visuels]
+
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous allons dans cette activité produire des dessins mettant en évidence l'effet moiré. 
+
+Tu as certainement rencontré cet effet. C'est un effet de contraste, qui change suivant le point de vue. On peut observer lorsque l'on a deux grillages ou deux rambardes l'un derrière l'autre.
+
+Regarde la première image que nous allons construire. 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Ici ne sont dessinés que des cercles 
+
+mais tu remarques ici et là des formes qui apparaissent. C'est cela l'effet moiré.
+
+Ce deuxième exemple, qui ne contient que des droites, laisse apparaître des courbes et ici des croix. 
+
+Surprenant non ?
+
+[part 2]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Comme nous venons de le voir, les dessins sont constitués de formes élémentaires qui sont répétées un assez grand nombre de fois.
+
+Il va donc être très utile de pouvoir disposer de nouveaux outils qui effectuent ces dessins élémentaires.
+
+Commençons par les cercles. Dessiner un cercle demande plusieurs instructions que je ne souhaite pas répéter un grand nombre de fois. 
+
+Je vais créer mon propre bloc qui va dessiner un cercle.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+Dans la catégorie 'Ajouter blocs' je crée donc le bloc 'cercle'.
+
+Pour dessiner un cercle, j'effectue un certain nombre de petits déplacements en changeant d'orientation après chaque déplacement.
+
+- avancer de 15
+- tourner à gauche de 12
+
+puisque j'ai choisi de touner à chaque étape de 12 degrés, je dois donc effectuer 30 répétitions de ces deux blocs.
+
+Pour terminer mon bloc 'cercle' je prends la précaution de mettre le 'stylo en position d'écriture' au début et de 'relever le stylo' à la fin.
+
+Voilà, mon nouveau bloc 'cercle' est prêt à l'emploi, je vais maintenant l'utiliser. 
+
+[Exemples en déplaçant Scratch à la main]
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Construisons maintenant le scrip pour Scratch qui va intensivement utiliser ce nouveau bloc.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+Je me mets par exemple au départ en -150 ; -50 avec une orientation de 50 degrés. J'efface tout et donne une couleur au stylo.
+
+Puisque c'est la répétition qui crée l'effet moiré, je vais répéter, disons 400 fois, le dessin de cercle en changeant de position à chaque étape de répétition, ici j'avance de 4 et pour obtenir un dessin qui tienne dans ma scène, j'utilise 'rebondir si le bord est atteint'.
+
+Regardons le résultat.
+Les cercles se dessinent assez lentement. Je peux passer en mode 'Turbo' pour finir rapidement le dessin.
+
+
+[part 3] [Dessin des droites]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Construisons maintenant le second dessin que j'ai présenté en introduction, celui avec des droites.
+
+A la différence du bloc 'cercle' que nous venons de construire et qui traçait un cercle à partir du lieu ou se trouvait Scratch, 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+il nous faut maintenant dessiner des segments dont une extrémité est fixe et dont l'autre varie.
+
+Je vais donc créer un nouveau bloc 'segment' mais cette fois-ci, je vais ajouter dans le menu 'option' une entrée nombre que je vais renommer en 'valy' (pour valeur de 'y') car, comme je viens de l'expliquer, ce qui différencie les différents segments, c'est la seconde extrémité et pour êter encore plus précis, c'est l'ordonnée 'y' de la seconde extrémité.
+
+Je pense à 'relever le stylo' au début.
+Je pars de l'extrémité gauche, que je souhaite fixe et dont les coordonnées sont par exemple : -200 ; 0.
+Je mets le 'stylo en position d'écriture' et je vais au point de coordonnées 200 ; valy (je trouve la variable 'valy' dans l'entête de définition de mon bloc 'segment'.
+
+Utilisons maintenant ce nouveau bloc.
+
+Je dépose les bloc habituels : 'effacer tout' et 'mettre couleur du stylo à ???'.
+
+Je crée ensuite un variable qui sera l'ordonnée de l'extrémité droite de mes segments, je l'appelle naturellement 'ordonnée'.
+
+Je l'initialise à -150. Je vais donc répéter, disons 75 fois, le tracé d'un segment avec pour paramètre ma variable 'ordonnée' que je fais évoluer juste après, en lui ajoutant par exemple 4.
+
+Regardons le résultat.
+J'ai beaucoup moins de choses à tracer cette fois-ci. Des courbes étonnantes apparaissent.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Tu peux maintenant, sur le principe que nous venons de mettre en place, construire tes propres blocs de dessins élémentaires et tenter de découvrir de nouveaux effets moirés.
+
+
+
+===============================
+Fiche 11 - activité 3 - Loïc
+===============================
+
+[part 1]
+
+Voici trois blocs d'instructions :
+
+
+voici ce que dessine mes premieres instructions,
+tu vois qu'il y a un bloc 'carre' qui est un bloc que *tu* dois définir.
+
+Pour cette seconde série d'instruction, voici ce que cela donne,
+c'est encore à toit de definir le bloc 'triangle' qui dépend d'une vraiable 'n'.
+
+Pour cette troisieme et dernière série, le dessin est tracé à partir d'un bloc 'segment' qui dépend de deux variables 'position' et 'angle'.
+
+
+
+[part 2]
+
+
+[préparer la partie du programme sans le bloc carré]
+
+[J'ai préparé le programme : j'efface ma scene, je place mon lutin et je l'oriente correctement. 
+
+Je veux définir le bloc "carré". Pour cela je crée un bloc 'carré', dans l'onglet nouveau blocs. J'ai appelé ce bloc 'carré' car ce bloc va tracé un carré à chaque fois qu'il est éxecuté.
+
+Pour le tracé du carré, je place d'abord le bloc "stylo en position d'écriture" afin d'activer les tracés. 
+
+Pour le tracé du carré, je vais tout simplement répéter 4 fois "avancer de 60 puis tourner de 90°".
+
+Je n'oublie pas de relever le stylo quand c'est fini.
+
+Et voilà !
+
+
+
+
+
+[part 3]
+
+[préparer la partie du programme sans le bloc triangle]
+
+Je vous détaille le programme permettant d'obtenir la figure avec les triangles.
+ 
+/// la présenter
+
+Je place correctement le lutin en déposant un "s'orienter de 90" et stylo en position d'écriture.
+
+Cette fois ci je crée un nouveau bloc qui va comporter un paramètre. 
+Je définis ce nouveau bloc, je le nomme 'triangle' et j'ajoute le paramètre 'taille'.
+
+Je veux construire un triangle équilatéral. Je vais tracer chaque côté un à un, donc je vais répéter 3 fois "avancer et tourner". Je dois avancer de "taille" donc je place un bloc avancer et j'ajoute le parametre "taille". Je tourne ensuite d'un angle de 120°.
+
+Je finis en relevant le stylo.
+
+
+ 
+[part 4]
+
+// préparer la partie du programme sans le bloc segment.
+
+Je vais vous détailler le programme permettant d'obtenir cette figure
+ 
+/// le présenter
+
+ Je vais maintenant construire le bloc segment qui prendra 2 paramètre : 'x' qui correspond à la position et 'angle' qui correspond à l'orientation du segment.
+
+On commence par se positioner aux coordonnées voulues : pour l'abscisse x ce sera le paramètre 'x', pour l'ordonnée -100.
+J'oriente alors le lutin à l'aide du bloc 'orienter' et le paramètre angle.
+
+Le lutin est enfin prêt à tracer donc j'abaisse le stylo.
+J'avance de 10
+Je change la couleur du tracé en ajoutant 10 à la couleur du stylo.
+Je finis en relevant le stylo.
+
+

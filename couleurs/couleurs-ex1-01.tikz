@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+
+\def\pas{0.1}
+
+
+%\def\coul{\color[wave]{500}};
+%\colorlet{Coul}{red!10};
+%\colorlet{Coul}[rgb]{0,0,0};
+%\definecolor{Coul}{wave}{500}
+%\definecolor{Coul}{rgb}{1,0,0};
+
+
+%\definecolor{Coul}{wave}{500};
+%\fill[Coul] (0,0) rectangle ++(\pas,1);
+
+\foreach \c in {380,382,...,780}{
+  \definecolor{Coul}{wave}{\c};
+  \pgfmathsetmacro\x{(\c-380)*0.05};
+  \fill[Coul] (\x,0) rectangle ++(\pas,1); 
+}
+
+\foreach \c in {380,390,...,780}{
+  \pgfmathsetmacro\x{(\c-380)*0.05+0.01};
+  \draw (\x,0)--++(0,-0.2);
+}
+
+\foreach \c in {380,400,...,780}{
+  \pgfmathsetmacro\x{(\c-380)*0.05+0.01};
+  \node at (\x,-0.4) {\tiny $\c$};
+}
+
+
+
+
+\end{tikzpicture}

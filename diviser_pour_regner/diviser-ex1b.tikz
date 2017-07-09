@@ -1,0 +1,66 @@
+\tikzstyle{line} = [draw,gray,ultra thick]
+\tikzstyle{arrow} = [->,>=latex,blue,ultra thick]
+\begin{tikzpicture}[scale=0.7]
+
+
+\draw[line] (1,0.25)--(1,-0.5)--(8,-0.5)--++(0,0.75);
+\foreach \i/\z in {1/27,2/21,3/18,4/16,5/23,6/20,7/24}{
+  \node[scale=1.2] at (\i+0.5,0) {$\z$};
+  \draw[line] (\i,-0.5)--++(0,0.5);
+}
+
+\draw[arrow] (8.5,0)--++(3,0) node[midway,above]{pilule $23$};
+
+\begin{scope}[xshift=11cm]
+\draw[line] (1,0.25)--(1,-0.5)--(6,-0.5)--++(0,0.75);
+\foreach \i/\z in {1/21,2/18,3/16,4/23,5/20}{
+  \node[scale=1.2] at (\i+0.5,0) {$\z$};
+  \draw[line] (\i,-0.5)--++(0,0.5);
+}
+\end{scope}
+\begin{scope}[xshift=17cm]
+\draw[line] (1,0.25)--(1,-0.5)--(3,-0.5)--++(0,0.75);
+\foreach \i/\z in {1/27,2/24}{
+  \node[scale=1.2] at (\i+0.5,0) {$\z$};
+  \draw[line] (\i,-0.5)--++(0,0.5);
+}
+\end{scope}
+
+
+\begin{scope}[xshift=0cm,yshift=-2.5cm]
+\draw[line] (1,0.25)--(1,-0.5)--(6,-0.5)--++(0,0.75);
+\foreach \i/\z in {1/21,2/18,3/16,4/23,5/20}{
+  \node[scale=1.2] at (\i+0.5,0) {$\z$};
+  \draw[line] (\i,-0.5)--++(0,0.5);
+}
+
+\draw[arrow] (6.5,0)--++(3,0) node[midway,above]{pilule $20$};
+
+\end{scope}
+
+
+\begin{scope}[xshift=9cm,yshift=-2.5cm]
+\draw[line] (1,0.25)--(1,-0.5)--(4,-0.5)--++(0,0.75);
+\foreach \i/\z in {1/18,2/16,3/20}{
+  \node[scale=1.2] at (\i+0.5,0) {$\z$};
+  \draw[line] (\i,-0.5)--++(0,0.5);
+}
+\end{scope}
+
+\begin{scope}[xshift=13cm,yshift=-2.5cm]
+\draw[line] (1,0.25)--(1,-0.5)--(3,-0.5)--++(0,0.75);
+\foreach \i/\z in {1/21,2/23}{
+  \node[scale=1.2] at (\i+0.5,0) {$\z$};
+  \draw[line] (\i,-0.5)--++(0,0.5);
+}
+\end{scope}
+
+\node[blue,right] at (1,-5.05) {Zombies tri\'es};
+
+\begin{scope}[xshift=4cm,yshift=-5cm]
+\foreach \i/\z in {1/16,2/18,3/20,4/21,5/23,6/24,7/27}{
+  \node[scale=1.2] at (1.5*\i+0.5,0) {$\z$};
+  \draw[line] (1.5*\i,0)--(1.5*\i,-0.5)--++(1,0)--++(0,0.5);
+}
+\end{scope}
+\end{tikzpicture}

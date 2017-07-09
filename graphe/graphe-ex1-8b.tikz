@@ -1,0 +1,15 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{border} = [draw, thick, blue]
+\tikzstyle{vertex} = [draw] 
+
+
+
+ \draw[border] (0,0) ellipse (1 and 2);
+ \draw[border,rotate=60] (0,0) ellipse (0.6 and 2);
+ \draw[border,rotate=70,xshift=-2.2cm] (0,0) ellipse (1 and 0.5);
+ \draw[border,rotate=-80,xshift=-2.3cm] (0,0) ellipse (1 and 0.5);
+
+\end{tikzpicture}

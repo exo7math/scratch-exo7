@@ -1,0 +1,66 @@
+
+\begin{tikzpicture}
+% On each grid, the green value is fix {#1}, red and blue are varying.
+\newcommand{\rgbrectangle}[1]{
+\def\valg{#1}
+\def\n{4};
+\foreach \b in {0,...,\n}{
+  \pgfmathsetmacro\valb{\b/\n};   
+  \foreach \r in {0,...,\n}{
+    \pgfmathsetmacro\valr{\r/\n}; 
+    \definecolor{Coul}{rgb}{\valr,\valg,\valb};
+    \filldraw[fill=Coul] (\r,\b) rectangle ++(1,1); 
+  }
+}
+
+% Horizontal numbers
+\foreach \r in {0,...,\n}{
+  \draw (\r,-1.1) rectangle ++(1,1); 
+  \pgfmathtruncatemacro\x{\r/\n*100};
+  \node at (\r+0.5,-0.6) {$\x\%$};
+  \draw (\r,-2.1) rectangle ++(1,1); 
+  \pgfmathtruncatemacro\x{\r/\n*255+0.75};
+  \node at (\r+0.5,-1.6) {$\x$};
+}
+
+% Vertical numbers
+\foreach \b in {0,...,\n}{
+  \draw (-1.1,\b) rectangle ++(1,1); 
+  \pgfmathtruncatemacro\x{\b/\n*100};
+  \node at (-0.6,\b+0.5) {$\x\%$};
+  \draw (-2.1,\b) rectangle ++(1,1); 
+  \pgfmathtruncatemacro\x{\b/\n*255+0.75};
+  \node at (-1.6,\b+0.5) {$\x$};
+}
+
+\node at (-1,-0.3) {\bf Bleu};
+\node[rotate=90] at (-0.3,-1.1) {\bf Rouge};
+}
+
+
+\begin{scope}[xshift=0cm]
+\node[scale=1.5] at (2.5,6) {\bf Vert \`a 0\%};
+\rgbrectangle{0}
+\end{scope}
+
+\begin{scope}[xshift=8cm]
+\node[scale=1.5] at (2.5,6) {\bf Vert \`a 25\% (64)};
+\rgbrectangle{0.25}
+\end{scope}
+
+\begin{scope}[xshift=16cm]
+\node[scale=1.5] at (2.5,6) {\bf Vert \`a 50\% (128)};
+\rgbrectangle{0.5}
+\end{scope}
+
+\begin{scope}[xshift=3cm,yshift=-10cm]
+\node[scale=1.5] at (2.5,6) {\bf Vert \`a 75\% (192)};
+\rgbrectangle{0.75}
+\end{scope}
+
+\begin{scope}[xshift=13cm,yshift=-10cm]
+\node[scale=1.5] at (2.5,6) {\bf Vert \`a 100\% (255)};
+\rgbrectangle{1}
+\end{scope}
+
+\end{tikzpicture}

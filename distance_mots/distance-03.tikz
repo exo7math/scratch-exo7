@@ -1,0 +1,47 @@
+
+\begin{tikzpicture}
+% Small grid : four values, and the last one to color (or not) the small square.
+\newcommand{\quatre}[5]{
+\fill[black!#5] (1,0) rectangle ++(1,1);
+\draw (0,0) grid ++(2,2);
+
+\node at (0.5,1.5) {$#1$};
+\node at (1.5,1.5) {$#2$};
+\node at (0.5,0.5) {$#3$};
+\node at (1.5,0.5) {$#4$};
+
+}
+
+\begin{scope}[xshift=0cm], yshift=0cm]
+\quatre{2}{1}{2}{}{0};
+\end{scope}
+
+\begin{scope}[xshift=3cm, yshift=0cm]
+\quatre{2}{3}{3}{}{20};
+\end{scope}
+
+\begin{scope}[xshift=6cm, yshift=0cm]
+\quatre{2}{0}{1}{}{20};
+\end{scope}
+
+\begin{scope}[xshift=9cm, yshift=0cm]
+\quatre{0}{1}{1}{}{0};
+\end{scope}
+
+\begin{scope}[xshift=0cm,yshift=-3cm]
+\quatre{5}{4}{6}{}{20};
+\end{scope}
+
+\begin{scope}[xshift=3cm, yshift=-3cm]
+\quatre{4}{3}{2}{}{0};
+\end{scope}
+
+\begin{scope}[xshift=6cm, yshift=-3cm]
+\quatre{2}{3}{2}{}{0};
+\end{scope}
+
+\begin{scope}[xshift=9cm, yshift=-3cm]
+\quatre{4}{4}{4}{}{20};
+\end{scope}
+
+\end{tikzpicture}

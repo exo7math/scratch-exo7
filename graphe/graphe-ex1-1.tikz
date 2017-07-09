@@ -1,0 +1,74 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{vertex} = [draw] 
+
+\begin{scope}[yshift=0.2cm, rotate=0]
+\coordinate (A) at (-1,0);
+\coordinate (B) at (1,0);
+\coordinate (C) at (0,1);
+\coordinate (D) at (0,-1);
+\coordinate (E) at (0,-2.5);
+
+\fill (A) circle (0.1);
+\fill (B) circle (0.1);
+\fill (C) circle (0.1);
+\fill (D) circle (0.1);
+\fill (E) circle (0.1);
+
+\draw[edge] (A) -- (B);
+\draw[edge] (A) -- (C) -- (B) -- (D) -- cycle;
+\draw[edge] (A) to[bend right] (E);
+\draw[edge] (B) to[bend left] (E);
+\draw[edge] (B) to[bend left] (E);
+\draw[edge] ($(D)+(0,-0.4)$) ellipse (0.3 and 0.4);
+
+\draw[<-,>=latex,blue] (-0.1,-2.7) to[bend left=20] (-2,-3) node[left] {sommets};
+\draw[<-,>=latex,blue] (-1.1,-0.1) to[bend right=20] (-2,-3);
+
+\draw[<-,>=latex,blue] (0.4,-1.5) to[bend left=20] (1,-4) node[below] {ar\^etes};
+\draw[<-,>=latex,blue] (1.1,-1) to[bend left=20] (1,-4);
+\end{scope}
+
+\begin{scope}[yshift= 0cm, xshift=4cm]
+\coordinate (A) at (-1,-1);
+\coordinate (B) at (1,-1);
+\coordinate (C) at (1,1);
+\coordinate (D) at (-1,1);
+
+
+\fill (A) circle (0.1);
+\fill (B) circle (0.1);
+\fill (C) circle (0.1);
+\fill (D) circle (0.1);
+
+\draw[edge] (A)--(B) -- (C) -- (D) -- cycle;
+\draw[edge] (A) -- (C);
+\draw[edge] (B) -- (D);
+
+\draw[<-,>=latex,red] (0,-0.2) to[bend left=20] (0,-2) node[below] {interdit};
+\end{scope}
+
+\begin{scope}[yshift= 0cm, xshift=8cm]
+\coordinate (A) at (-1,-1);
+\coordinate (B) at (1,-1);
+\coordinate (C) at (1,1);
+\coordinate (D) at (-1,1);
+
+
+\fill (A) circle (0.1);
+\fill (B) circle (0.1);
+\fill (C) circle (0.1);
+\fill (D) circle (0.1);
+\fill (0,0) circle (0.1);
+
+\draw[edge] (A)--(B) -- (C) -- (D) -- cycle;
+\draw[edge] (A) -- (C);
+\draw[edge] (B) -- (D);
+
+\node at (0,-2) {autoris\'e};
+\end{scope}
+
+
+\end{tikzpicture}

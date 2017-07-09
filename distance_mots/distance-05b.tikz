@@ -1,0 +1,81 @@
+\begin{tikzpicture}
+
+% Lettres communes
+\fill[black!20] (4,-3) rectangle ++(1,1);
+\fill[black!20] (2,-5) rectangle ++(1,1);
+\fill[black!20] (6,-5) rectangle ++(1,1);
+
+% Grille
+\draw (-1,2) grid ++(8,-7);
+
+% Mot 1
+\node at (-0.5,-0.5) {\bf V};
+\node at (-0.5,-1.5) {\bf O};
+\node at (-0.5,-2.5) {\bf I};
+\node at (-0.5,-3.5) {\bf L};
+\node at (-0.5,-4.5) {\bf E};
+
+% Mot 2
+\node at (1.5,1.5) {\bf C};
+\node at (2.5,1.5) {\bf E};
+\node at (3.5,1.5) {\bf R};
+\node at (4.5,1.5) {\bf I};
+\node at (5.5,1.5) {\bf S};
+\node at (6.5,1.5) {\bf E};
+
+% Initialisation
+\foreach \i in {0,...,6}{
+  \node at (\i+0.5,0.5) {$\i$};
+}
+\foreach \i in {1,...,5}{
+  \node at (0.5,-\i+0.5) {$\i$};
+}
+
+
+% Cases intÃ©rieurs
+
+% Ligne 1
+\node at (1.5,-0.5) {$\mathbf{1}$};
+\node at (2.5,-0.5) {$\mathbf{2}$};
+\node at (3.5,-0.5) {$\mathbf{3}$};
+\node at (4.5,-0.5) {$\mathbf{4}$};
+\node at (5.5,-0.5) {$\mathbf{5}$};
+\node at (6.5,-0.5) {$\mathbf{6}$};
+
+
+% Ligne 2
+\node at (1.5,-1.5) {$\mathbf{2}$};
+\node at (2.5,-1.5) {$\mathbf{2}$};
+\node at (3.5,-1.5) {$\mathbf{3}$};
+\node at (4.5,-1.5) {$\mathbf{4}$};
+\node at (5.5,-1.5) {$\mathbf{5}$};
+\node at (6.5,-1.5) {$\mathbf{6}$};
+
+% Ligne 3
+\node at (1.5,-2.5) {$\mathbf{3}$};
+\node at (2.5,-2.5) {$\mathbf{3}$};
+\node at (3.5,-2.5) {$\mathbf{3}$};
+\node at (4.5,-2.5) {$\mathbf{3}$};
+\node at (5.5,-2.5) {$\mathbf{4}$};
+\node at (6.5,-2.5) {$\mathbf{5}$};
+
+% Ligne 4
+\node at (1.5,-3.5) {$\mathbf{4}$};
+\node at (2.5,-3.5) {$\mathbf{4}$};
+\node at (3.5,-3.5) {$\mathbf{4}$};
+\node at (4.5,-3.5) {$\mathbf{4}$};
+\node at (5.5,-3.5) {$\mathbf{4}$};
+\node at (6.5,-3.5) {$\mathbf{5}$};
+
+% Ligne 5
+\node at (1.5,-4.5) {$\mathbf{5}$};
+\node at (2.5,-4.5) {$\mathbf{4}$};
+\node at (3.5,-4.5) {$\mathbf{5}$};
+\node at (4.5,-4.5) {$\mathbf{5}$};
+\node at (5.5,-4.5) {$\mathbf{5}$};
+%\node at (6.5,-4.5) {$4$};
+
+\node[scale=1.2,red] at (6.5,-4.5) {$\mathbf{4}$};
+\draw[red,thick] (6.5,-4.5) circle (0.4);
+
+\end{tikzpicture}

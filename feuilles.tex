@@ -1,0 +1,80 @@
+\documentclass[12pt]{report}
+
+\usepackage[screen]{scratch}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Titre + préface + sommaire
+\renewcommand{\contentsname}{Sommaire}
+
+% Préface
+\import{divers/}{preface_feuilles.tex}
+
+\debutchapitres
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Les feuilles
+
+\import{premiers_pas/}{premiers_pas.tex}
+
+\import{repeter/}{repeter.tex}
+
+\import{operations_algebriques_1/}{operations_algebriques_1.tex}
+
+\import{vrai_faux/}{vrai_faux.tex}
+
+\import{operations_algebriques_2/}{operations_algebriques_2.tex}
+
+\import{si_alors/}{si_alors.tex} 
+
+\import{boucles_1/}{boucles_1.tex} 
+
+\import{chercher/}{chercher.tex}
+
+\import{puissances_de_2/}{puissances_de_2.tex} 
+
+\import{binaire/}{binaire.tex}
+
+\import{boucles_2/}{boucles_2.tex} 
+
+\import{graphe/}{graphe.tex}
+
+\import{base_de_donnees/}{base_de_donnees.tex}
+
+\import{pixels/}{pixels.tex}
+
+\import{diviser_pour_regner/}{diviser_pour_regner.tex}
+
+\import{couleurs/}{couleurs.tex}
+
+\import{crypto/}{crypto.tex}
+
+\import{triangulation/}{triangulation.tex}
+
+\import{distance_mots/}{distance_mots.tex}
+
+\newpage
+\ 
+\vfill
+
+\vspace*{5cm}
+
+
+\textbf{Auteur :} Arnaud Bodin
+
+\textbf{Relecture :} Stéphanie Bodin, François Recher
+
+%L'idée de faire une feuille sur le thème \og{}diviser pour régner\fg{} fait suite à une discussion avec Martin Quinson sur son \og{}crêpier psycho-rigide\fg{}.
+%
+%Merci à Éric Wegrzynowski pour son idée d'activité sur le distance de Levensthein !
+
+\vspace*{1cm}
+
+\centerline{Version 0.91 -- Mai 2017}
+
+\vspace*{1cm}
+
+\end{document}
+

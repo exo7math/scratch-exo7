@@ -1,0 +1,49 @@
+\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+\tikzstyle{boxstyle} =  [draw, text width=8em, text centered, minimum width=10em,  minimum height=3em, drop shadow]
+
+\tikzstyle{boxinput} = [boxstyle, rounded corners, drop shadow, fill=green!30]
+\tikzstyle{instruction} = [boxstyle,  fill=blue!30]
+\tikzstyle{ifthen} = [boxstyle,  text width=5em, diamond, fill=red!30]
+
+\tikzstyle{line} = [draw, very thick, shorten <=3pt,shorten >=3pt, color=black!70, -latex']
+
+
+
+\begin{tikzpicture}[scale=1,every node/.style={transform shape}]
+
+
+%Draw diagram elements
+\path node(P1)[ifthen] {Est-ce que la boule est rouge ?};
+
+\path (P1)+(0,3.5) node(P0)[boxinput] {Tirer une boule};
+\path (P0)+(0,2.5) node(P00)[instruction] {$r = 0$};
+\path (P1)+(0,-3.5) node(P2)[instruction] {$r \leftarrow r + 1$};
+\path (P2)+(0,-3.5) node(P4)[ifthen] {Est-ce que $r = 3$ ?};
+\path (P1)+(6,0) node(P3)[ifthen] {Est-ce que la boule est bleue ?};
+\path (P3)+(6,0) node(P5)[boxinput] {Afficher 
+
+"C'est perdu !"};
+\path (P4)+(6,0) node(P6)[boxinput] {Afficher "C'est gagn\'e !"};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [left,pos=0.3] {\bf oui} (P2);
+\path[line] (P1.east) --  node [above, pos=0.3] {\bf non} (P3);
+
+
+\path[line,-] (P3.south) -- node [left,pos=0.3] {\bf oui} ++(0,-1)--++(-2.8,0)--(3.2,0);
+\path[line] (3.2,0)--++(0,3.5)--(P0);
+
+\path[line] (P3.east) --  node [above, pos=0.3] {\bf non} (P5);
+
+\path[line] (P0.south) -- (P1);
+\path[line] (P00.south) -- (P0);
+
+\path[line] (P2.south) -- (P4);
+\path[line] (P4.west) -- node [above, pos=0.3] {\bf non}++(-1.5,0) -- ++(0,10.5)--(P0.west);
+
+\path[line] (P4.east) -- node [above,pos=0.3] {\bf oui}(P6);
+\end{tikzpicture}

@@ -1,0 +1,27 @@
+\tikzstyle{line} = [draw,gray,thick]
+\tikzstyle{arrow} = [->,>=latex,thick]
+\begin{tikzpicture}[scale=0.45,scale=0.95]
+
+\draw[gray] (0,0) grid (12,15);
+
+\draw[arrow,orange] (-2,0)--(14.5,0) node[below]{$x$};
+\draw[arrow,blue] (0,-2)--(0,17) node[left]{$y$};
+
+\node[below left] at (0,0) {$(0,0)$};
+
+\foreach \x/\L in {2/20,4/40,6/60,8/80,10/100,12/120}{
+    \node[below, orange] at (\x,0) {$\L$};
+}
+
+\foreach \y/\L in {2/20,4/40,6/60,8/80,10/100,12/120,14/140}{
+    \node[left, blue] at (0,\y) {$\L$};
+}
+
+\fill (0,0) circle (0.15);
+
+% Chiffre 7
+
+% \draw[blue,ultra thick] (12,12) node[left]{$(120,120)$}--(20,12)node[right]{$(200,120)$}--(12,2)node[below]{$(120,20)$};
+% \draw[blue,ultra thick] (14,7)node[left]{$(140,70)$}--(18,7)[right]node{$(180,70)$};
+
+\end{tikzpicture}

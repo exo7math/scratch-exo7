@@ -1,0 +1,25 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{vertex} = [draw] 
+
+\begin{scope}[rotate=0]
+
+%\draw[edge] (0:1)--(120:1)--(-120:1)--cycle;
+\draw[edge] (0:1) to[bend right] (120:1) to[bend right] (-120:1) to[bend right]  (0:1) ;
+
+\foreach \x in {0,120,-120}{
+  \draw[edge] (0,0) -- (\x:1);
+  %\draw[fill=white] (\x:1) circle (0.15);
+  \fill (\x:1) circle (0.1);
+ % \draw[fill=white] (\x+60:2) circle (0.15);
+
+}
+
+
+\fill (0,0) circle (0.1);
+
+\end{scope}
+
+\end{tikzpicture}

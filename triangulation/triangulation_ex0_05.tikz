@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw,  thick]
+\tikzstyle{point} = [black]
+
+
+\coordinate (A) at (1,2);
+\coordinate (B) at (3,1);
+\coordinate (C) at (1,0.5);
+\coordinate (D) at (2,3);
+\coordinate (E) at (3,2);
+\coordinate (F) at (6,3);
+\coordinate (G) at (5,2);
+\coordinate (H) at (2,1);
+\coordinate (I) at (5,4);
+
+\foreach \point/\position in {A,B,C,D,E,F,G,I}{
+  \fill[point] (\point) circle (2pt);
+}
+
+\draw (0,0) rectangle ++(7,5);
+
+\end{tikzpicture}

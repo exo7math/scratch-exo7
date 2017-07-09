@@ -1,0 +1,384 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+
+
+
+\titre[F]{Pixels}
+%===============================
+
+Un \emph{pixel} est le plus petit élément qui compose une image ou un écran. Il peut être noir, blanc ou en couleur.
+
+\bigskip
+\bigskip
+
+\begin{activite}
+La \emph{taille} d'un écran ou d'une image est la donnée de sa largeur et de sa hauteur, exprimées en pixels, que l'on écrit sous la forme : largeur $\times$ hauteur. Le \emph{rapport d'image}, c'est le quotient de la largeur par la hauteur :
+$$\text{rapport d'image} = \frac{\text{largeur}}{\text{hauteur}}.$$
+
+Par exemple, si un écran est de taille $1024 \times 768$, cela signifie que chaque ligne contient $1\,024$ pixels et que chaque colonne contient $728$ pixels. Le rapport d'image est
+$$r = \frac{1024}{768} = \frac{4}{3} \simeq 1,33.$$
+
+
+\myfigure{0.75}{
+  \tikzinput{pixels-ex1a}
+} 
+
+\begin{enumerate}
+   \item Complète le tableau suivant qui répertorie  des tailles d'écrans ou d'images classiques.
+   
+   
+\begin{tabular}{|l|c|c|c|c|} 
+\hline
+Nom du format & largeur & hauteur & rapport (fraction) & rapport (approché) \\ \hline \hline
+XGA & $1024$ & $768$ & $4/3$ & $1,33$ \\ \hline
+Full HD & $1920$ & $1080$ & & \\ \hline
+VGA &  & $480$ & $4/3$ & \\ \hline
+SXGA & $1280$ & & $5/4$ & \\ \hline 
+CGA & $320$ & $200$ & & \\ \hline
+HD720 & & $720$ & $16/9$ & \\ \hline 
+SVGA & $800$ & & $4/3$ &  \\ \hline
+Image format Cinemascope & $1024$ & $430$ & & \\ \hline  
+\end{tabular}
+ 
+ 
+\item Reporte les tailles du tableau précédent sur un même graphique. Chaque taille sera représentée par un point, avec en abscisse la largeur et en ordonnée la hauteur. 
+Comment reconnaît-on sur ce graphique les écrans qui ont le même rapport d'image ?
+
+\myfigure{1}{
+\footnotesize \tikzinput{pixels-ex1b}
+} 
+
+\end{enumerate}
+
+\end{activite}
+
+
+\bigskip
+\medskip
+
+
+\emph{Le reste de cette fiche est consacré au tracé d'une droite sur un écran composé de pixels en utilisant l'algorithme de Bresenham.}
+
+\bigskip
+
+Nous allons voir quels pixels il faut colorier pour représenter un segment qui relie le point $A(0,0)$ au point $B(a,b)$. On se place dans la situation où le segment est \og plus horizontal que vertical \fg{} (c'est-à-dire $a \ge b \ge 0$).
+Un pixel est représenté par un petit carré. On repère un pixel par les coordonnées de son centre.
+
+\myfigure{0.9}{
+\tikzinput{pixels-ex2-01}
+} 
+
+
+\begin{activite}[Algorithme de Bresenham graphique]
+\sauteligne
+\begin{enumerate}
+   \item Sur les dessins suivants, trace au crayon fin le segment $[AB]$. Colorie en gris clair tous les pixels traversés par ce segment.
+  \begin{itemize}
+    \item Premier segment : $A=(0,0)$, $B_1=(6,2)$.
+    \item Deuxième segment : $A=(0,0)$, $B_2=(9,5)$.    
+    \item Troisième segment : $A=(0,0)$, $B_3=(14,4)$.   
+  \end{itemize}  
+
+\myfigure{0.7}{
+\tikzinput{pixels-ex2-02}\quad
+\tikzinput{pixels-ex2-03}
+
+\tikzinput{pixels-ex2-04}
+} 
+
+  \item Nous allons découvrir une nouvelle façon de représenter le segment $[AB]$ en introduisant les règles suivantes :
+  
+  \begin{itemize}
+    \item \textbf{Règle a.} Le pixel colorié doit être traversé par le segment $[AB]$.
+    \item \textbf{Règle b.} Chaque colonne doit contenir exactement un pixel colorié.
+    \item \textbf{Règle c.} En suivant les pixels du segment, on ne peut monter (ou descendre) que d'un pixel colorié à la fois.
+  \end{itemize}
+
+Ces règles sont illustrées ci-dessous :
+\myfigure{0.5}{
+\tikzinput{pixels-ex2-05}\quad
+\tikzinput{pixels-ex2-06}
+\tikzinput{pixels-ex2-07}
+} 
+
+
+  
+\begin{enumerate}
+  \item Reprends les trois exemples de la question précédente en appliquant ces trois règles.
+
+\myfigure{0.7}{
+\tikzinput{pixels-ex2-02}\quad
+\tikzinput{pixels-ex2-03}
+
+\tikzinput{pixels-ex2-04}
+} 
+  
+
+  \item Trouve un exemple de segment que l'on peut pixeliser de deux façons différentes en respectant cependant les trois règles.
+
+\myfigure{0.55}{
+\tikzinput{pixels-ex2-08}\qquad
+\tikzinput{pixels-ex2-08}
+} 
+
+   
+  \end{enumerate}
+
+
+  \item Pour avoir une unique façon d'afficher les pixels d'un segment, il faut une quatrième règle.
+  
+   \begin{itemize}
+    \item \textbf{Règle d.} En cas de choix, le pixel colorié est celui qui contient le point d'intersection du segment $[AB]$ avec la droite verticale passant par son centre.
+  \end{itemize}
+ 
+\begin{minipage}{0.55\textwidth}   
+\myfigure{0.7}{
+\tikzinput{pixels-ex2-09}\qquad
+}
+\end{minipage}
+\begin{minipage}{0.39\textwidth}   
+\myfigure{0.7}{
+\tikzinput{pixels-ex2-10}\qquad
+}
+\end{minipage}
+
+\textbf{Ajout à la règle d.} Dans le cas où l'intersection est située exactement sur le bord des deux pixels, on choisit celui du bas.
+
+
+En fait, la règle {\bf d} contient, à elle toute seule, les trois autres règles {\bf a}, {\bf b} et {\bf c}.
+La règle {\bf d} est naturelle : elle stipule que si, sur une même colonne, le segment $[AB]$ coupe deux pixels, alors il faut colorier celui qui contient la plus grande portion du segment $[AB]$.
+
+\medskip
+
+Colorie les pixels qui permettent de représenter le segment $[AB]$ en respectant les quatre règles.
+  \begin{itemize}
+    \item Premier segment : $A=(0,0)$, $B_1=(4,3)$.
+    \item Deuxième segment : $A=(0,0)$, $B_2=(9,6)$.    
+    \item Troisième segment : $A=(0,0)$, $B_3=(10,7)$.   
+  \end{itemize} 
+  
+\myfigure{0.7}{
+\tikzinput{pixels-ex2-11}\quad
+\tikzinput{pixels-ex2-13}
+
+\tikzinput{pixels-ex2-12}
+}
+
+\end{enumerate}
+\end{activite}
+
+
+
+\begin{activite}[Algorithme de Bresenham à l'aide de réels]
+
+Une équation de la droite qui passe par $A(0,0)$ et $B(a,b)$ est 
+\mybox{$\displaystyle y = cx$ \qquad où \qquad $\displaystyle c = \frac{b}{a}.$}
+
+L'équation permet de calculer les coordonnées des points de la droite.
+Quelle est l'ordonnée $y$ du point d'abscisse $x$ qui se trouve sur cette droite ? C'est tout simplement $y=cx$ !
+
+\bigskip
+\begin{exemple}
+$A(0,0)$ et $B(8,2)$. Alors $c = \frac{2}{8} = \frac14 = 0,25$.
+On veut savoir quel point de la droite $(AB)$ de coordonnées $(x,y)$ a pour abscisse $x=3$. On calcule 
+$y=cx$ : $y = 0,25 \times 3 = 0,75$. Le point cherché est donc le point de coordonnées $(3 ; 0,75)$.
+
+\myfigure{1}{
+\tikzinput{pixels-ex3-1}\qquad
+}
+\end{exemple}
+
+
+\bigskip
+
+\begin{enumerate}
+   \item On fixe $A(0,0)$ et $B(10,6)$.
+   \begin{enumerate}
+     \item Calcule le coefficient $c$ et donne l'équation de la droite $(AB)$.
+     \item Quel point $P_1$ de la droite $(AB)$ a pour abscisse $x=3$ ?
+     \item Quel point $P_2$ de la droite $(AB)$ a pour abscisse $x=4,6$ ?  
+     \item Trace la droite $(AB)$ et place les points $P_1$ et $P_2$.   
+   \end{enumerate}
+  
+  
+    \item Les coordonnées des pixels sont des entiers et non des réels. Pour approcher un réel par un entier, on utilise la fonction \og arrondi \fg{}. L'\emph{arrondi} d'un réel, c'est l'entier le plus proche du réel. Par exemple :
+\begin{itemize}
+  \item l'arrondi de $x=2,7$ est $3$ (car $3$ est l'entier le plus proche de $2,7$) ;
+  \item l'arrondi de $x=4,2$ est $4$ ;
+  \item si le réel est exactement entre deux entiers, par exemple $x=6,5$, alors on choisit l'entier le plus petit : $\text{arrondi}(6,5)=6$.    
+\end{itemize}    
+      
+\myfigure{1}{
+\tikzinput{pixels-ex3-2}
+} 
+
+    
+    Calcule les arrondis des nombres suivants :
+    $$1,3 \qquad 7,8 \qquad 10,45 \qquad 45,076 \qquad \frac{7}{3} \qquad \frac{3}{8} \qquad 5,8 \times 7
+\qquad 1,3 \times 2,4$$
+
+
+   \item Les pixels qui représentent le segment $[AB]$ sont les pixels de coordonnées $(i,j)$ où
+   \mybox{$j = \text{arrondi}(c\times i)$ \qquad \text{ pour } \qquad $i=0,1,2,\ldots,a$.}
+   On colorie donc pour chaque abscisse (ou colonne) $i$ entre $0$ et $a$, un seul pixel d'ordonnée $j$.
+   
+   \begin{enumerate}
+     \item Pour $c = 0,7$, quel pixel faut-il colorier pour la colonne $i=4$ ? Et pour la colonne $i=5$ ? Et pour $i=6$ ?
+     \item Pour $B=(5,3)$, calcule $c$. Calcule $j=\text{arrondi}(c\times i)$ pour $i=0$, puis $i=1$, $i=2$,..., $i=5$, c'est-à-dire calcule $\text{arrondi}(c\times 0)$, $\text{arrondi}(c\times 1)$, $\text{arrondi}(c\times 2)$... Colorie les pixels $(i,j)$ correspondants.
+     
+     \item Pour $B=(10,7)$ colorie les pixels représentant le segment $[A,B]$. Compare avec l'exercice précédent.
+   \end{enumerate}   
+\end{enumerate}
+
+\end{activite}
+
+\bigskip
+
+\emph{Dans l'exercice précédent, les calculs sont faits en utilisant des nombres réels. Lorsqu'il faut afficher beaucoup de segments, cette méthode est trop lente. Une méthode plus rapide est d'utiliser uniquement des entiers. C'est le véritable algorithme de Bresenham !}
+
+\bigskip
+
+\begin{activite}[Algorithme de Bresenham avec des entiers]
+
+Voici comment les ordinateurs tracent le segment allant de $A(0,0)$ à $B(a,b)$, où $a \ge b$ sont des entiers positifs. Les calculs se font uniquement avec des nombres entiers.
+
+\myfigure{1}{
+\tikzinput{pixels-ex4-01}
+} 
+
+
+On commence par définir deux valeurs fixes :
+
+\mybox{$p = 2b$ \qquad et \qquad  $m = 2a-2b$.}
+
+On initialise une variable $d$ à 
+
+\mybox{$d=2b-a$.}
+
+On va ensuite faire varier la valeur de $d$ et on affichera tel ou tel pixel selon le signe de $d$ ;
+$p$ servira à augmenter $d$ lorsque $d$ sera négatif ;
+$m$ servira à diminuer $d$ lorsque $d$ sera positif.
+
+\bigskip
+
+On commence en coloriant le pixel $(0,0)$ (celui du point $A$), on initialise la variable $d$ à $d=2b-a$, puis on répète le processus suivant :
+\begin{itemize}
+  \item Si $d \le 0$ :
+  \begin{itemize}
+    \item on colorie le pixel à droite (à l'est) de l'actuel sans changer de hauteur et on s'y déplace, 
+    \item puis on change la valeur de $d$, on l'augmente de $p$, c'est-à-dire : $d \leftarrow d + p$.
+  \end{itemize}
+  \item Sinon, on est dans le cas $d > 0$ :
+  \begin{itemize}
+    \item on colorie le pixel en haut à droite (au nord-est) de l'actuel et on s'y déplace, 
+    \item puis on change la valeur de $d$, on la diminue de $m$, c'est-à-dire : $d \leftarrow d - m$.
+      % puis on fait $d \leftarrow d - m$, c'est-à-dire on diminue $d$.
+  \end{itemize}  
+\end{itemize} 
+
+
+
+On s'arrête lorsque l'on atteint le point $B$.
+
+Voici comment mettre en place l'algorithme. On écrit $d$ dans la case déjà coloriée.
+\begin{itemize}
+  \item Si $d \le 0$, le pixel suivant sera celui juste à droite et pour obtenir la nouvelle valeur de $d$, on lui ajoute $p$.
+  \item Si $d > 0$, le pixel suivant sera celui au-dessus à droite et pour obtenir la nouvelle valeur de $d$, on lui retire $m$.
+\end{itemize}
+
+\myfigure{1}{
+\tikzinput{pixels-ex4-15}\qquad\qquad\qquad
+\tikzinput{pixels-ex4-16}
+}  
+
+
+
+\bigskip
+
+\textbf{Exemple.} 
+
+
+Traçons le segment de $A(0,0)$ à $B(5,3)$.
+On a donc $a=5$, $b=3$ puis
+\mybox{$p = 2b = 6$ \qquad et \qquad $m = 2a-2b = 4$.}
+
+\begin{itemize}
+  \item On place la valeur initiale $d=2b-a=1$ dans le pixel $(0,0)$. Comme $d$ est positif le prochain pixel sera au-dessus à droite. On trace une flèche vers ce pixel avec $-m$ sur la flèche, car on va calculer $d-m$.
+ 
+ \smallskip
+ 
+\myfigure{0.7}{
+\footnotesize
+\tikzinput{pixels-ex4-03}
+\tikzinput{pixels-ex4-04}
+\tikzinput{pixels-ex4-05}
+}  
+  
+  \item Dans cette nouvelle case, on place $d-m=1-4=-3$. La valeur de $d$ est donc négative, le prochain pixel sera juste à droite et on va calculer $d+p$. 
+  
+ \smallskip
+  
+\myfigure{0.7}{
+\tikzinput{pixels-ex4-06}\qquad
+\tikzinput{pixels-ex4-07}
+}   
+
+  \item Le nouveau $d$ est donc $d=-3+6 = +3$. Le prochain pixel sera donc celui au nord-est et on va diminuer $d$ en calculant $d-m$.
+   
+ \smallskip
+ 
+\myfigure{0.7}{
+\tikzinput{pixels-ex4-08}\qquad
+\tikzinput{pixels-ex4-09}
+} 
+
+  \item On continue ainsi jusqu'au point $B$.
+   
+ \smallskip
+ 
+\myfigure{0.7}{
+\tikzinput{pixels-ex4-10}\qquad
+\tikzinput{pixels-ex4-11}
+} 
+ 
+\end{itemize}
+
+On colorie tous les pixels visités. 
+
+\myfigure{0.7}{
+\tikzinput{pixels-ex4-02}
+} 
+
+
+
+\begin{enumerate}
+   \item Utilise l'algorithme de Bresenham pour tracer les pixels du segment $A(0,0)$ à $B(8,3)$.
+   
+\myfigure{1}{
+\tikzinput{pixels-ex4-12}
+} 
+   
+   \item Même question avec $B(7,5)$.
+   
+\myfigure{1}{
+\tikzinput{pixels-ex4-13}
+}    
+  
+   \item Même question avec $B(13,9)$.
+   
+\myfigure{0.8}{
+\tikzinput{pixels-ex4-14}
+}    
+       
+   
+\end{enumerate}
+
+\end{activite}
+
+\end{document}
+
+

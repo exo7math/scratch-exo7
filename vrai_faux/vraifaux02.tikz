@@ -1,0 +1,128 @@
+
+\def\allume{
+\draw[thick,draw,fill=white]  (0,0) circle (0.2); 
+ \foreach \i in {0,30,...,330}{
+  \draw[thick] (\i:0.25)--(\i:0.4);
+ }
+}
+
+\def\eteint{
+\draw[thick,draw,fill=white]  (0,0) circle (0.2); 
+\draw[thick,draw,fill=white]  (0,0)--+(45:0.2)--+(45:-0.2); 
+\draw[thick,draw,fill=white]  (0,0)--+(-45:0.2)--+(-45:-0.2); 
+}
+
+\begin{tikzpicture}
+
+% OU 1
+\begin{scope}
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\Large OU};
+
+\draw[thick] (0.5,1)--++(-1,1.5);
+\draw[thick] (1.5,1)--++(1,1.5);
+\draw[thick] (1,0)--++(0,-1.5);
+
+
+% Entree 1
+\begin{scope}[xshift=0cm, yshift = 1.75cm]
+  \allume
+\end{scope}
+
+% Entree 2
+\begin{scope}[xshift=2cm, yshift = 1.75cm]
+  \eteint
+\end{scope}
+
+% Sortie
+\begin{scope}[xshift=1cm, yshift = -0.75cm]
+  \allume
+\end{scope}
+
+\end{scope}
+
+
+% OU 2
+\begin{scope}[xshift=4cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\Large OU};
+
+\draw[thick] (0.5,1)--++(-1,1.5);
+\draw[thick] (1.5,1)--++(1,1.5);
+\draw[thick] (1,0)--++(0,-1.5);
+
+
+% Entree 1
+\begin{scope}[xshift=0cm, yshift = 1.75cm]
+  \eteint
+\end{scope}
+
+% Entree 2
+\begin{scope}[xshift=2cm, yshift = 1.75cm]
+  \allume
+\end{scope}
+
+% Sortie
+\begin{scope}[xshift=1cm, yshift = -0.75cm]
+  \allume
+\end{scope}
+
+\end{scope}
+
+
+% OU 3
+\begin{scope}[xshift=8cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\Large OU};
+
+\draw[thick] (0.5,1)--++(-1,1.5);
+\draw[thick] (1.5,1)--++(1,1.5);
+\draw[thick] (1,0)--++(0,-1.5);
+
+
+% Entree 1
+\begin{scope}[xshift=0cm, yshift = 1.75cm]
+  \allume
+\end{scope}
+
+% Entree 2
+\begin{scope}[xshift=2cm, yshift = 1.75cm]
+  \allume
+\end{scope}
+
+% Sortie
+\begin{scope}[xshift=1cm, yshift = -0.75cm]
+  \allume
+\end{scope}
+
+\end{scope}
+
+
+% OU 4
+\begin{scope}[xshift=12cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {\Large OU};
+
+\draw[thick] (0.5,1)--++(-1,1.5);
+\draw[thick] (1.5,1)--++(1,1.5);
+\draw[thick] (1,0)--++(0,-1.5);
+
+
+% Entree 1
+\begin{scope}[xshift=0cm, yshift = 1.75cm]
+  \eteint
+\end{scope}
+
+% Entree 2
+\begin{scope}[xshift=2cm, yshift = 1.75cm]
+  \eteint
+\end{scope}
+
+% Sortie
+\begin{scope}[xshift=1cm, yshift = -0.75cm]
+  \eteint
+\end{scope}
+
+\end{scope}
+
+\end{tikzpicture}

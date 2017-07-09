@@ -1,0 +1,146 @@
+# Blocs utiles
+
+créer un clone de [Balle v]
+
+quand je commence comme un clone
+
+
+# Activité 1
+
+// Chat
+quand le drapeau vert pressé
+répéter indéfiniment
+    si <touche [flèche droite v] pressée ?> alors
+        ajouter (5) à x
+    fin
+    si <touche [flèche gauche v] pressée ?> alors
+        ajouter (-5) à x
+    fin
+
+    si <touche [flèche haut v] pressée ?> alors
+        créer un clone de [Balle v]
+        attendre (0.3) secondes        
+    fin
+fin
+
+
+// Balle (début)
+quand le drapeau vert pressé
+cacher
+
+// Balle (suite)
+quand je commence comme un clone
+aller à [Chat v]
+montrer
+répéter indéfiniment
+    ajouter (5) à y
+fin 
+
+
+
+
+# Activité 2
+
+// Chat
+quand le drapeau vert pressé
+répéter indéfiniment
+    si <touche [flèche droite v] pressée ?> alors
+        ajouter (5) à x
+    fin
+    si <touche [flèche gauche v] pressée ?> alors
+        ajouter (-5) à x
+    fin
+
+    si <touche [flèche haut v] pressée ?> alors
+        créer un clone de [Balle v]
+        attendre (0.3) secondes        
+    fin
+    si <[Bombe v] touché ?> alors
+        jouer le son [miaou v] jusqu'au bout
+        stop [tout v]
+    fin
+fin
+
+// Balle : comme auparavant
+
+//Mechant1
+quand le drapeau vert pressé
+répéter indéfiniment
+    avancer de (5)
+    rebondir si le bord est atteint
+    si <[Balle v] touché ?> alors
+        cacher
+        stop [ce script v]
+    fin
+    si < (nombre aléatoire entre (1) et (20)) = [1]> alors
+        créer un clone de [Bombe v]
+        attendre (0.1) secondes
+    fin
+fin
+
+
+// Bombe 
+quand le drapeau vert pressé
+cacher
+
+
+quand je commence comme un clone
+aller à [Méchant1 v]
+s'orienter à (180)
+montrer
+répéter indéfiniment
+    avancer de (3)
+fin 
+
+
+
+# Activité 3
+
+// Chat,  Mechant1 : comme auparavant
+
+// Balle 
+quand le drapeau vert pressé
+cacher
+
+
+quand je commence comme un clone
+aller à [Chat v]
+montrer
+répéter indéfiniment
+    ajouter (5) à y
+    si <[PareBombe v] touché ?> alors
+        cacher
+        stop [ce script v]
+    fin 
+fin 
+
+// Bombe
+quand le drapeau vert pressé
+cacher
+
+
+quand je commence comme un clone
+aller à [Méchant1 v]
+s'orienter à (180)
+montrer
+répéter indéfiniment
+    avancer de (3)
+    si <[PareBombe v] touché ?> alors
+        s'orienter à (0)
+    fin
+fin 
+
+
+// PareBombe
+quand le drapeau vert pressé
+montrer
+mettre [vie v] à [5]
+répéter indéfiniment
+    
+    si <[Bombe v] touché ?> alors
+        ajouter à [vie v] (-1)
+    fin
+    si < (vie) = [0]> alors
+        cacher
+    fin
+fin

@@ -1,0 +1,68 @@
+
+# Blocs utiles
+
+
+
+
+# Activité 1
+
+quand le drapeau vert pressé
+aller à x:(50) y:(-100)
+s'orienter à (90)
+mettre la taille du stylo à (1)
+mettre la couleur du stylo à [#0000FF] 
+effacer tout
+stylo en position d'écriture
+répéter (110) fois
+    avancer de (6)
+    tourner gauche de (3) degrés
+    ajouter (1) à la taille du stylo    
+    ajouter (1) à la couleur du stylo
+fin
+
+
+# Activité 2
+
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+attendre (1) secondes
+stylo en position d'écriture
+répéter indéfiniment
+    aller à [pointeur de souris]
+    dire (abscisse x) pendant (1) secondes
+    penser à (ordonnée y) pendant (1) secondes
+    ajouter (10) à la couleur du stylo
+fin
+
+dire (regroupe (abscisse x) (ordonnée y))  pendant (2) secondes
+
+
+# Activité 3
+
+quand le drapeau vert pressé
+cacher
+effacer tout
+mettre la taille du stylo à (5)
+relever le stylo
+aller à x:(40) y:(120)  // début du chiffre 4
+stylo en position d'écriture 
+aller à x:(0) y:(40)
+aller à x:(80) y:(40)
+relever le stylo
+aller à x:(60) y:(20)
+stylo en position d'écriture 
+aller à x:(60) y:(60)
+
+relever le stylo
+aller à x:(120) y:(120)  // début du chiffre 7
+stylo en position d'écriture 
+aller à x:(200) y:(120)
+aller à x:(120) y:(20)
+relever le stylo
+aller à x:(140) y:(70)
+stylo en position d'écriture 
+aller à x:(180) y:(70)
+
+

@@ -1,0 +1,30 @@
+\tikzstyle{border} = [draw, ultra thick, black]
+\begin{tikzpicture}
+% Radius of regular polygons
+  \newdimen\R
+  \R=2cm
+  \coordinate (center) at (0,0);
+ \draw[border] (0:\R)
+     \foreach \x in {60,120,...,360} {  -- (\x:\R) }
+              -- cycle (300:\R) 
+              -- cycle (240:\R)
+              -- cycle (180:\R)
+              -- cycle (120:\R) 
+              -- cycle (60:\R) 
+              -- cycle (0:\R) ;
+ % \draw[border] { (60:\R) -- (120:\R) -- (center) -- (60:\R) };
+  \draw[border]  (60:\R)-- (60:\R/1.7) ; 
+  \draw[border]  (-60:\R)-- (-60:\R/1.7) ; 
+  \draw[border]  (center)-- (120:\R/1.7) ;
+  \draw[border]  (center)-- (-120:\R/1.7) ;
+  \draw[border]  (center)-- (0:\R/1.7) ;
+
+%   \draw[border] { (180:\R) -- (240:\R) -- (center) -- (180:\R) };
+%   \draw[border] { (0:\R) -- (300:\R) -- (center) -- (0:\R) } ;
+   \R=1.2cm
+  \draw[border] (0:\R) \foreach \x in {60,120,...,360} { -- (\x:\R) }   -- cycle (center);
+   \R=0.4cm
+  \draw[border] (0:\R) \foreach \x in {60,120,...,360} { -- (\x:\R) }[fill=white]    -- cycle (center);
+
+
+\end{tikzpicture}

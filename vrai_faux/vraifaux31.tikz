@@ -1,0 +1,42 @@
+\def\segment{
+\path[draw,thick] (0,0)--++(1,-1)--++(4,0)--++(1,1)--++(-1,1)--++(-4,0)--cycle;
+}
+\begin{tikzpicture}
+
+%Segment 1
+\begin{scope}[yshift=6cm]
+\segment;
+\end{scope}
+
+%Segment 2
+\begin{scope}[xshift=0cm,yshift=0cm,rotate = 90]
+\segment;
+\end{scope}
+
+%Segment 3
+\begin{scope}[ xshift=6cm,yshift=0cm,rotate = 90]
+\segment;
+\end{scope}
+
+%Segment 4
+\begin{scope}[]
+\segment;
+\end{scope}
+
+%Segment 5
+\begin{scope}[ xshift=0cm,yshift=-6cm,rotate = 90]
+\segment;
+\end{scope}
+
+%Segment 6
+\begin{scope}[ xshift=6cm,yshift=-6cm,rotate = 90]
+\segment;
+\end{scope}
+
+%Segment 7
+\begin{scope}[yshift=-6cm]
+\segment;
+\end{scope}
+
+
+\end{tikzpicture}

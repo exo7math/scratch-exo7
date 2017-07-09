@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+
+
+\begin{scope}
+\draw[gray, thick] (0,1)--(0,-1.5);
+\draw[gray, thick] (0,0)--(1,0);
+
+\node at (-0.5,0.5) {$136$};
+\node at (0.5,0.5) {$21$};
+
+\node at (0.5,-0.5) {$6$};
+\node[red] at (-0.5,-0.5) {$10$};
+
+
+\draw[->,>=latex,thick] (1.5,-0.5)--++(1,0);
+
+
+\node[right] at (2.75,-0.5) {$136 \pmod{21} = \color{red}10$};
+\end{scope}
+
+\begin{scope}[xshift=8cm]
+\draw[gray, thick] (0,1)--(0,-1.5);
+\draw[gray, thick] (0,0)--(1,0);
+
+\node at (-0.5,0.5) {$a$};
+\node at (0.5,0.5) {$n$};
+
+\node at (0.5,-0.5) {$q$};
+\node[red] at (-0.5,-0.5) {$r$};
+
+
+\draw[->,>=latex,thick] (1.5,-0.5)--++(1,0);
+
+
+\node[right] at (2.75,-0.5) {$a \pmod{n} = \color{red}r$};
+\end{scope}
+
+\end{tikzpicture}

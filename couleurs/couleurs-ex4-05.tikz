@@ -1,0 +1,43 @@
+\begin{tikzpicture}[scale=1,every node/.style={transform shape}]
+\tiny
+\newcommand\triple[3]{
+$\begin{array}{c}
+#1\\#2\\#3
+\end{array}$
+}
+
+
+\draw (0,0) grid (9,9);
+
+\node at (0+0.5,0+0.5) {\triple{128}{255}{255}};
+\node at (1+0.5,0+0.5) {\triple{255}{255}{0}};
+\node at (7+0.5,0+0.5) {\triple{255}{0}{255}};
+\node at (8+0.5,0+0.5) {\triple{255}{128}{255}};
+
+\node at (1+0.5,1+0.5) {\triple{0}{128}{0}};
+\node at (2+0.5,1+0.5) {\triple{128}{128}{128}};
+\node at (6+0.5,1+0.5) {\triple{128}{128}{128}};
+\node at (7+0.5,1+0.5) {\triple{0}{0}{128}};
+
+\node at (2+0.5,2+0.5) {\triple{255}{128}{0}};
+\node at (3+0.5,2+0.5) {\triple{128}{128}{0}};
+\node at (4+0.5,2+0.5) {\triple{0}{0}{0}};
+\node at (5+0.5,2+0.5) {\triple{128}{0}{128}};
+\node at (6+0.5,2+0.5) {\triple{128}{0}{255}};
+
+\node at (3+0.5,3+0.5) {\triple{128}{255}{0}};
+%\node at (4+0.5,3+0.5) {$0$};
+\node at (5+0.5,3+0.5) {\triple{255}{0}{128}};
+
+\node at (3+0.5,4+0.5) {\triple{0}{0}{255}};
+\node at (4+0.5,4+0.5) {\triple{0}{255}{0}};
+\node at (5+0.5,4+0.5) {\triple{255}{0}{0}};
+
+
+
+\node at (4+0.5,5+0.5) {\triple{0}{0}{0}};
+\node at (4+0.5,6+0.5) {\triple{0}{0}{255}};
+\node at (4+0.5,7+0.5) {\triple{0}{255}{0}};
+\node at (4+0.5,8+0.5) {\triple{255}{0}{0}};
+
+\end{tikzpicture}

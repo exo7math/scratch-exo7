@@ -1,0 +1,57 @@
+\tikzstyle{arrow} = [->,>=latex,thick]
+\begin{tikzpicture}[scale=1]
+
+\def\xmax{5}
+\def\ymax{3}
+\pgfmathsetmacro\xmaxplus{int(\xmax +1)}
+\pgfmathsetmacro\ymaxplus{int(\ymax +1)}
+
+\newcommand{\pixel}[2]{\fill (#1-0.48,#2-0.48) rectangle ++(0.96,0.96);}
+
+\newcommand{\cross}[3]{
+\draw[black,very thick] (#1-0.2,#2)--++(0.4,0);
+\draw[black,very thick] (#1,#2-0.2)--++(0,0.4);
+\node[black, below right] at (#1,#2) {#3};
+}
+
+\begin{scope}
+\draw[thin,xshift=-0.5cm,yshift=-0.5cm] (0,0) grid (\xmaxplus,\ymaxplus);
+
+% Pixel of the segments from (0,0) to (a,b)
+\pgfmathsetmacro\a{\xmax}
+\pgfmathsetmacro\b{\ymax}
+
+\cross{0}{0}{};
+\cross{\a}{\b}{};
+
+\begin{scope}[color=green!60!black]
+\pixel{4}{2};
+\end{scope}
+
+\draw[blue,very thick] (0,0)--(\a,\b);
+
+\node at (2.5,-1.5) {{\bf R\`egle a. respect\'ee.}};
+
+\end{scope}
+
+\begin{scope}[yshift=-7cm]
+\draw[thin,xshift=-0.5cm,yshift=-0.5cm] (0,0) grid (\xmaxplus,\ymaxplus);
+
+% Pixel of the segments from (0,0) to (a,b)
+\pgfmathsetmacro\a{\xmax}
+\pgfmathsetmacro\b{\ymax}
+
+\cross{0}{0}{};
+\cross{\a}{\b}{};
+
+\begin{scope}[color=red]
+\pixel{4}{1};
+\end{scope}
+
+\draw[blue,very thick] (0,0)--(\a,\b);
+
+\node at (2.5,-1.5) {{\bf R\`egle a. non respect\'ee.}};
+
+\end{scope}
+
+\end{tikzpicture}

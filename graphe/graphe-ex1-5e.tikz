@@ -1,0 +1,17 @@
+% From tex.stackexchage
+\tikzstyle{border} = [draw, very thick, black]
+\def\spiral#1{%
+  \pgfmathparse{int(#1)}%
+  \ifnum\pgfmathresult>0
+    \draw [border] (0,0) rectangle ++(1,1);
+    \begin{scope}[shift={(1,1)}, rotate=-90, scale=1/1.6180339887]
+      \spiral{#1-1}
+    \end{scope}
+    \draw [border] (0,0) arc (270:360:1);
+  \fi
+}
+\begin{tikzpicture}
+
+\tikz[scale=5]{\spiral{6}}
+
+\end{tikzpicture}

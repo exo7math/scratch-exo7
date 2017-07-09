@@ -1,0 +1,80 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+
+\titre[E]{Premiers pas}
+%===============================
+
+
+\begin{enigme}
+Dans cette énigme, Scratch ne se déplace qu'horizontalement et verticalement. De plus, il ne peut avancer que de multiples de 50 pas : 50, 100, 150, 200...
+J'ai déjà positionné les instructions suivantes :
+\begin{itemize}
+  \item S'orienter à 90\textdegree\ (vers la droite)
+  \item Avancer de 100
+  \item S'orienter à 180\textdegree\  (vers le bas)
+  \item Avancer de 100
+  \item S'orienter à 90\textdegree\  (vers la droite)
+  \item Avancer de 50  
+\end{itemize}
+
+\bigskip
+
+\textbf{Question.} Je souhaite retourner à ma position de départ sans jamais passer deux fois au même endroit (c'est-à-dire sans couper mon propre chemin). Combien de pas devrais-je faire, au minimum, pour retourner au départ ? 
+
+
+%\begin{solution}
+%Réponse : 350 pas.
+%\end{solution}
+
+
+\end{enigme}
+
+
+\begin{enigme}
+
+J'ai suivi le parcours suivant. 
+Je me souviens de certaines dimensions (mesurées en pas), il y en a d'autres que je peux retrouver par le calcul, mais malheureusement il y a des dimensions dont je ne me souviens pas.
+
+Programme ce parcours en choisissant des valeurs pour les dimensions inconnues.
+
+\myfigure{1}{
+\tikzinput{parcours1}
+}
+
+\bigskip
+
+\textbf{Question.} Quelle est  la longueur (mesurée en pas) du parcours complet ?
+
+
+%\begin{solution}
+%Réponse : $480$ quelle que soit la longueur des segments inconnus.
+%\end{solution}
+
+\end{enigme}
+
+
+\begin{enigme}
+Je trace des segments en suivant les instructions que voici :
+\begin{itemize}
+  \item \textbf{\'Etape 1.} Avancer de 50. Tourner de 10\textdegree.
+  \item \textbf{\'Etape 2.} Avancer de 50. Tourner de 20\textdegree. 
+  \item \textbf{\'Etape 3.} Avancer de 50. Tourner de 30\textdegree.   
+  \item \ldots
+  \item \ldots
+\end{itemize}
+
+\bigskip
+
+\textbf{Question.} À quelle étape vais-je recouper le parcours que je suis en train de tracer ?
+
+
+%\begin{solution}
+%Réponse : à l'étape numéro 12.
+%\end{solution}
+
+\end{enigme}
+\end{document}
+

@@ -1,0 +1,201 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+\titre[F]{Si ... alors ...}
+%================================
+
+Le test \emph{si ... alors ... sinon ...} permet d’exécuter des instructions différentes suivant la réalisation ou non d'une condition.
+%selon que la condition est réalisée ou pas.
+
+On schématise ce test par un diagramme avec un losange (à gauche) ; on peut aussi écrire les instructions ligne par ligne (à droite).
+
+\begin{center}
+\begin{minipage}{0.45\textwidth} 
+\footnotesize\myfigure{0.85}{
+\tikzinput{si_alors1}
+}
+\end{minipage}
+\qquad
+\qquad
+\begin{minipage}{0.4\textwidth}
+Si la condition est réalisée, alors :\\
+\indentation on effectue des instructions \\
+sinon :\\
+\indentation on effectue d'autres instructions \\
+\end{minipage}
+\end{center}
+
+Par exemple : voici des instructions qui, à partir des nombres $a$ et $b$, testent si $a$ est supérieur ou égal à $b$, et renvoient le plus grand. 
+
+\begin{center}
+\begin{minipage}{0.45\textwidth} 
+\footnotesize\myfigure{0.75}{
+\tikzinput{si_alors2}
+}
+\end{minipage}
+\qquad
+\qquad
+\begin{minipage}{0.4\textwidth}
+Demander $a$ et $b$ \\
+Si $a \ge b$, alors :\\
+\indentation renvoyer $a$ \\
+sinon :\\
+\indentation renvoyer $b$ \\
+\end{minipage}
+\end{center}
+
+
+
+\begin{activite}
+\sauteligne
+\begin{enumerate}
+  \item Comprends et explique ce que font les instructions suivantes.
+\myfigure{0.9}{
+\footnotesize\tikzinput{si_alors3}
+}
+  
+  \item Comprends les instructions suivantes et dresse la table des valeurs renvoyées pour $x=1$, puis $x=2,3,\ldots, 10$.
+  
+\myfigure{0.9}{
+\footnotesize\tikzinput{si_alors4}
+}  
+  
+    $$\begin{array}{|l||c|c|c|c|c|c|c|c|c|c|c}
+  \hline
+  \text{entrée } x & 1&2&3&4&5&6&7&8&9&10 \\
+  \hline
+  \text{sortie } & &&&&&&&&& \\
+  \hline
+  \end{array}  
+  $$ 
+  
+  
+  \item Explique la réduction calculée par cet algorithme en fonction de l'âge.
+  
+\myfigure{0.8}{
+\footnotesize\tikzinput{si_alors5}
+} 
+
+
+
+  \item Écris les instructions des questions précédentes sous la forme \og ligne par ligne \fg{}. 
+  
+  
+\end{enumerate}
+\end{activite}
+
+\begin{activite}
+Écris le diagramme des commandes qui permet de répondre aux problèmes suivants.
+\begin{enumerate}
+  \item On demande l'âge d'une personne. Soit elle est majeure et alors l'ordinateur répond \og Vous êtes majeur \fg{} ;
+  soit il dit \og Vous serez majeur dans ... années \fg{}. 
+  
+  \item On demande deux durées de course d'une nageuse (en secondes). 
+  \begin{itemize}
+    \item L'ordinateur affiche sa meilleure performance ;
+    
+    \item si sa meilleure performance est inférieure ou égale à $100$, il affiche en plus \og Bravo, tu bats le record ! \fg{} ;
+    
+    \item sinon il affiche \og Tu es à ... secondes du record\fg{}.
+  \end{itemize}
+  
+  Refais le même exercice avec trois durées.
+  
+  \item On demande un entier $x$, l'ordinateur renvoie un autre entier. Tu trouves ci-dessous les premiers exemples d'entrée/sortie de ce programme : 
+%, sachant que les premières entrées/sorties sont les suivantes :
+  $$\begin{array}{|l||c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+  \hline
+  \text{entrée } x & 1&2&3&4&5&6&7&8&9&10&11&12\\
+  \hline
+  \text{sortie } & 2&3&6&5&10&7&14&9&18&11&22&13\\
+  \hline
+  \end{array}  
+  $$
+  
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}
+\sauteligne
+\begin{enumerate}
+  \item  
+  \begin{enumerate}
+    \item On considère l'initialisation $x \leftarrow 7$, puis les instructions suivantes :
+
+ 
+\indentation si $x \ge 10$ alors : \\ 
+\indentation\indentation $x \leftarrow x - 3$ \\
+\indentation sinon : \\
+\indentation\indentation $x \leftarrow 2 \times x$
+ 
+Combien vaut $x$ maintenant ?
+  
+    \item Reprends la même question en partant de $x \leftarrow 12$.
+  
+    \item Trouve deux valeurs initiales de $x$ qui donnent le même résultat final.
+  
+  \end{enumerate}  
+  \item
+  \begin{enumerate}
+
+    \item On considère l'initialisation $x \leftarrow 7$, puis les instructions suivantes :
+    
+\indentation si $x$ est impair et $x \ge 10$ alors : \\ 
+\indentation\indentation $x \leftarrow x + 4$ \\
+\indentation si $x$ est impair et $x < 10$ alors : \\ 
+\indentation\indentation $x \leftarrow x + 3$ \\
+\indentation si $x$ est pair et $x \ge 10$ alors : \\ 
+\indentation\indentation $x \leftarrow x + 2$ \\
+\indentation si $x$ est pair et $x < 10$ alors : \\ 
+\indentation\indentation $x \leftarrow x + 1$ 
+ 
+Combien vaut $x$ maintenant ?
+
+    \item Reprends la même question en partant de $x \leftarrow 12$.
+  
+    \item Trouve deux valeurs initiales de $x$ qui donnent le même résultat final.  
+  
+  \end{enumerate}   
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}
+Quelle sera la valeur de $x$ à la fin de chacune des instructions suivantes ? 
+
+\begin{enumerate}
+  \item ~ \\
+  \begin{minipage}{0.3\textwidth}
+$x \leftarrow 1$ \\
+répéter $10$ fois : \\
+\indentation $x \leftarrow x + 1$
+\end{minipage}
+  
+  \item ~ \\
+  \begin{minipage}{0.3\textwidth}
+$x \leftarrow 1$ \\
+répéter $10$ fois : \\
+\indentation $x \leftarrow 2 \times x$
+\end{minipage}
+
+  \item ~ \\
+  \begin{minipage}{0.3\textwidth}
+$x \leftarrow 1$ \\
+répéter $10$ fois : \\
+\indentation si $x$ est pair alors : \\ 
+\indentation\indentation $x \leftarrow x + 1$ \\
+\indentation sinon : \\
+\indentation\indentation $x \leftarrow x + 3$
+\end{minipage}
+  
+\end{enumerate}
+
+
+
+\end{activite}
+\end{document}
+

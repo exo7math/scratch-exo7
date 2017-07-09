@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw,  thick]
+\tikzstyle{point} = [black]
+
+\coordinate (A) at (0,2);
+\coordinate (B) at (1,7);
+\coordinate (C) at (5,6);
+\coordinate (D) at (9,4);
+\coordinate (E) at (10,2);
+\coordinate (F) at (9,1);
+\coordinate (G) at (3,0);
+\coordinate (H) at (2,4);
+\coordinate (I) at (6,4);
+\coordinate (J) at (7,2);
+\coordinate (K) at (5,1);
+\coordinate (L) at (3,3);
+
+
+%\draw[line,red] (A)--(B)--(C)--(D)--(E)--(F)--(G)--cycle;
+
+\draw (-1,-1) rectangle ++(12,9);
+
+
+\foreach \point in {A,...,L}{
+  \fill[point] (\point) circle (2pt);
+}
+
+\end{tikzpicture}

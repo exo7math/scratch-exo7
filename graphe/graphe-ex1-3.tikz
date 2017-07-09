@@ -1,0 +1,52 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{border} = [draw, thick, blue]
+\tikzstyle{vertex} = [draw] 
+
+
+\begin{scope}[yshift=0cm]
+
+\draw[border] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;
+\draw[border] (0,2) -- (0,-2);
+\draw[border] (2,0) -- (-2,0);
+
+\end{scope}
+
+
+\begin{scope}[yshift= 0cm, xshift=6.5cm]
+\coordinate (A) at (-1,-1);
+\coordinate (B) at (1,-1);
+\coordinate (C) at (1,1);
+\coordinate (D) at (-1,1);
+
+\fill (A) circle (0.1);
+\fill (B) circle (0.1);
+\fill (C) circle (0.1);
+\fill (D) circle (0.1);
+
+\draw[border] (-2,-2) -- (2,-2) -- (2,2) -- (-2,2) -- cycle;
+\draw[border] (0,2) -- (0,-2);
+\draw[border] (2,0) -- (-2,0);
+\end{scope}
+
+
+\begin{scope}[yshift= 0cm, xshift=12cm]
+\coordinate (A) at (-1,-1);
+\coordinate (B) at (1,-1);
+\coordinate (C) at (1,1);
+\coordinate (D) at (-1,1);
+
+\fill (A) circle (0.1);
+\fill (B) circle (0.1);
+\fill (C) circle (0.1);
+\fill (D) circle (0.1);
+
+\draw[edge] (A) -- (B) -- (C) -- (D) -- cycle;
+\end{scope}
+
+\draw[->,>=latex,ultra thick,red] (2.7,0)--++(1,0);
+\draw[->,>=latex,ultra thick,red] (9.5,0)--++(1,0);
+
+\end{tikzpicture}

@@ -1,0 +1,287 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+% Commande spécifique
+\newcommand{\hexa}{\text{hex}}
+
+
+\titre[F]{Couleurs}
+%===============================
+
+
+
+\begin{activite}[Perception des couleurs]
+
+%\sauteligne
+%
+%\begin{enumerate}
+%\item \textbf{Spectre visible.} 
+
+
+La lumière est une onde. La couleur de la lumière dépend de 
+sa longueur d'onde. Les longueurs d'ondes visibles par l'\oe il humain  vont de $400$ à $700$ nanomètres environ (un nanomètre c'est $0,000 \, 000 \,001$ mètre).
+
+\myfigure{0.7}{
+\tikzinput{couleurs-ex1-01}
+} 
+
+  \begin{enumerate}
+    \item Quelle couleur a pour longueur d'onde $510$ nanomètres ? Et pour $600$ nanomètres ?
+    
+    \item Trouve une longueur d'onde possible pour le rouge, le jaune, le violet, le bleu, le bleu ciel.
+    
+  \end{enumerate}
+  
+%  \item La perception des couleurs est très variable d'une personne à une autre, selon que l'on regarde un écran ou une feuille imprimée... Dans beaucoup de langues il n'y a qu'un seul mot pour toutes les nuances du bleu au vert. Sur cette palette du vert au bleu, où places-tu la limite ?
+%  
+%\myfigure{1}{
+%\tikzinput{couleurs-ex1-03}
+%}   
+%  \item \textbf{Illusions d'optique.}
+%  
+%\myfigure{1}{
+%\tikzinput{couleurs-ex1-02}
+%} 
+
+%\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}[Niveaux de gris]
+
+Une image en \og noir et blanc \fg{} est en fait souvent composée de différents niveaux de gris.
+
+\myfigure{1.2}{
+\tikzinput{couleurs-ex2-01}
+} 
+
+
+Il existe plusieurs façons de coder ce niveau de gris :
+\begin{itemize}
+  \item par le pourcentage de blanc : $0\%$ c'est le noir, $100\%$ c'est le blanc ;
+  \item par un nombre réel entre $0$ et $1$ : $0$ c'est noir, $1$ c'est blanc ;
+  \item par un nombre entier entre $0$ et $255$ : $0$ c'est noir, $255$ c'est blanc.
+\end{itemize}
+
+Voici un exemple de conversion : $25\% = \frac{25}{100} = 0,25$.
+Pour la conversion d'une représentation par un réel à une représentation par un entier, on multiplie par $256$ (et pas par $255$ !) et on prend l'entier le plus proche. Par exemple
+$0,25 \times 256 = 64$ (sauf $1$ qui devient $255$).
+
+Parmi ces niveaux de gris, retenons uniquement le noir, le blanc et $7$ niveaux intermédiaires.
+\myfigure{0.9}{
+\footnotesize\tikzinput{couleurs-ex2-02}
+}
+
+Colorie le dessin suivant avec le niveau de gris inscrit dans la case.
+Toutes les cases sans inscription sont à colorier en gris clair ($0,87$ ou $87 \%$ ou $224$).
+
+\myfigure{0.8}{
+\footnotesize\color{black!80}\tikzinput{couleurs-ex2-03}
+}
+
+\end{activite}
+
+
+
+\begin{activite}[Hexadécimal]
+
+L'écriture hexadécimale est une autre façon de représenter les entiers. Cette écriture utilise $16$ symboles :
+$$0 \quad 1 \quad 2 \quad 3 \quad 4 \quad 5 \quad 6 \quad 7 \quad 8 \quad 9 \quad 
+A \quad B \quad C \quad D \quad E \quad F$$
+
+Pour différencier l'écriture hexadécimale de l'écriture décimale habituelle, on rajoute en indice \og hex \fg{} à la fin de l'écriture.
+Le symbole $A_\hexa$ représente $10$ en écriture décimale, le symbole $B_\hexa$ c'est $11\ldots$ jusqu'au symbole $F_\hexa$ qui représente $15$.
+
+  \begin{center}
+    \begin{tabular}[ht]{r|r}
+       
+      $0$ & $0_\hexa$\\
+      $1$ & $1_\hexa$\\
+      $2$ & $2_\hexa$\\
+      $3$ & $3_\hexa$\\
+      $4$ & $4_\hexa$\\
+      $5$ & $5_\hexa$\\
+      $6$ & $6_\hexa$\\
+      $7$ & $7_\hexa$\\
+
+    \end{tabular}\qquad\qquad
+    \begin{tabular}[ht]{r|r}
+    
+      $8$ & $8_\hexa$\\
+      $9$  & $9_\hexa$\\
+      $10$ & $A_\hexa$\\
+      $11$ & $B_\hexa$\\
+      $12$ & $C_\hexa$\\
+      $13$ & $D_\hexa$\\
+      $14$ & $E_\hexa$\\
+      $15$ & $F_\hexa$\\    
+    
+    \end{tabular}
+  \end{center}
+
+
+Nous allons apprendre à écrire tous les nombres de $0$ à $255$ en écriture hexadécimale.
+Tu vas voir que deux symboles suffisent !
+
+\begin{enumerate}
+  \item \textbf{Hexadécimal vers décimal.}
+  
+  Pour un nombre écrit avec deux symboles, la formule de conversion de l'écriture hexadécimale en écriture décimale est \myboxinline{$xy_\hexa = 16 \times x +y$}.
+  
+  
+  Exemples :
+  \begin{itemize}
+    \item $27_\hexa = 16 \times 2 + 7 =  39$,
+    
+    \item $A3_\hexa = 16 \times 10 + 3 = 163$ (car $A_\hexa$ représente $10$),
+    
+    \item $2F_\hexa = 16 \times 2 + 15 = 47$ (car $F_\hexa$ représente $15$).
+  \end{itemize}
+ 
+ \bigskip
+  
+  Calcule l'écriture décimale des nombres dont voici l'écriture hexadécimale :
+  $$A1_\hexa \quad 2D_\hexa \quad  AC_\hexa \quad  CA_\hexa \quad  B0_\hexa \quad  21_\hexa \quad  
+  FF_\hexa \quad  80_\hexa \quad  10_\hexa \quad  AA_\hexa$$ 
+  
+  \item \textbf{Décimal vers hexadécimal.}
+  
+  Pour trouver l'écriture hexadécimale d'un entier $n$ compris entre $0$ et $255$, on effectue la division euclidienne de 
+  $n$ par $16$ : $n = 16 \times q + r$ avec $0 \le r<16$. L'écriture hexadécimale de $n$ est alors $qr_\hexa$ : le premier symbole est le quotient, le second le reste.
+  
+   Exemples :
+   \begin{itemize}
+     \item $n=55$. On divise $55$ par $16$ : le quotient est $3$, le reste est $7$. L'écriture hexadécimale de $55$ est donc $37_\hexa$.
+     
+     \item $n=44$. On divise $44$ par $16$ : le quotient est $2$, le reste est $12$. L'écriture hexadécimale de $44$ est donc $2C_\hexa$ (car $12$ s'écrit $C_\hexa$.)         
+   \end{itemize}   
+   
+\myfigure{1}{
+  \tikzinput{couleurs-ex3}
+}  
+ 
+ \bigskip
+  Calcule l'écriture hexadécimale des entiers :  
+  $$14 \quad 33 \quad 74 \quad 61 \quad 171 \quad 186 \quad 197 \quad 208 \quad 221$$
+  
+  Calcule et retient l'écriture hexadécimale de $16$, $32$, $64$, $128$, $192$ et $255$.
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}
+Le système de couleur RVB décrit une couleur à partir de trois nombres : un pour le niveau de rouge, un pour le niveau de vert et un pour le niveau de bleu.
+\`A partir du mélange des trois couleurs rouge, vert et bleu, on obtient les autres couleurs.
+
+\begin{minipage}{0.49\textwidth}
+\myfigure{0.7}{
+  \tikzinput{couleurs-ex4-01}
+}
+\end{minipage}
+\begin{minipage}{0.49\textwidth}
+\myfigure{0.7}{
+  \tikzinput{couleurs-ex4-02}
+} 
+\end{minipage}
+
+
+Chaque ton de rouge, vert ou bleu sera ici codé par un nombre :
+\begin{itemize}
+  \item soit un nombre réel entre $0$ et $1$, souvent écrit sous la forme d'un pourcentage,
+  \item soit un nombre entier entre $0$ et $255$, qui peut aussi être écrit en hexadécimal par un nombre entre $0_\hexa$ et $FF_\hexa$.
+\end{itemize}
+
+Voici les couleurs que l'on obtient lorsque l'on se limite aux niveaux $0\%$, $25\%$,
+$50\%$, $75\%$ et $100\%$ (soit $0$, $64$, $128$, $192$ ou $255$, ou encore 
+$0_\hexa$, $40_\hexa$, $80_\hexa$, $C0_\hexa$ ou $FF_\hexa$).
+
+\myfigure{0.6}{
+\tiny\tikzinput{couleurs-ex4-04}
+} 
+
+
+
+\begin{enumerate}
+
+  \item Colorie le dessin suivant (le code RVB  est écrit dans chaque case de haut en bas) :
+  
+\myfigure{0.8}{
+\color{black!80}\tikzinput{couleurs-ex4-05}
+}  
+
+  \item Complète le tableau suivant: 
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Couleur & Nom & Niveau de rouge & Niveau de vert & Niveau de bleu \\ \hline
+\cellcolor{red}  & rouge  & 100\% & 0\% & 0\% \\ \hline
+\cellcolor{green}& vert  & 0 & 255 & 0 \\ \hline
+\cellcolor{blue} & bleu   & $0_\hexa$ & $0_\hexa$ & $FF_\hexa$ \\ \hline
+                 & blanc  &  &  &   \\ \hline
+                 & noir   &  &  &   \\ \hline
+                 & orange &  &  & 0\% \\ \hline  
+                 & gris   &  &  &     \\ \hline
+                 &        & 255 & 255 & 0 \\ \hline
+                 &        & $C0_\hexa$ & $0_\hexa$ & $FF_\hexa$ \\ \hline
+                 & rose   &  &  &   \\ \hline
+                 &        & 100\% & 100\% & 75\% \\ \hline
+\end{tabular}
+\end{center} 
+  
+  \item Si on a $5$ choix de niveau pour le rouge, $5$ choix de niveau pour le vert, $5$ choix de niveau pour le bleu, combien cela fait-il de couleurs possibles ? (Tu peux t'aider des cinq grilles de couleurs ci-dessus.) Si on a maintenant $256$ choix de niveau pour le rouge, pour le vert et pour le bleu, combien cela fait-il de couleurs possibles ?
+  
+  
+  \item Lorsque l'on superpose deux couleurs, on obtient une troisième couleur. La formule est simplement une formule d'addition : $\text{nouveau niveau} = \text{niveau couleur 1} + \text{niveau couleur 2}$.
+Par contre, on ne peut pas dépasser la valeur limite de $100\%$ (qui s'écrit aussi $1$ ou $255$ 
+ou $FF_\hexa$ selon l'écriture choisie).
+La formule exacte est donc (avec des pourcentages) :
+\mybox{$\text{nouveau niveau} = \min\big( \text{niveau couleur 1} + \text{niveau couleur 2}, 100\% \Big)$}
+ La fonction \og $\min$ \fg{} renvoie le plus petit élément d'une liste : $\min(75,100)= 75$, $\min(125,100)=100$.
+
+Exemple : lorsque l'on ajoute du rouge (code RVB $(100\%,0\%,0\%)$) et du bleu-violet (code RVB $(25\%,0\%,50\%)$)
+on obtient :
+\begin{itemize}
+  \item pour le niveau de rouge : $100\%$ (car si on ajoute $100\%$ et $25\%$, on dépasse $100\%$) ;
+  
+  \item pour le niveau de vert : $0\%$ (car il n'y a pas de vert dans les deux couleurs) ;
+  
+  \item pour le niveau de bleu : $50\%$ (c'est $0+50$).
+\end{itemize}
+Le code RVB de la couleur obtenue est donc $(100\%, 0\%,50\%)$ : c'est du fushia.
+
+\myfigure{0.8}{
+\footnotesize\color{black!80}\tikzinput{couleurs-ex4-06}
+} 
+
+
+Complète le tableau suivant dans lequel les couleurs 1 et 2 s'additionnent pour donner une nouvelle couleur :
+
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Coul. 1 &  RVB Couleur 1  & Coul. 2 & RVB Couleur 2 & Addition RVB & Couleur \\ \hline
+\cellcolor{red}  & $(100\%,0\%,0\%)$ & \cellcolor{green} & $(0\%,100\%,0\%)$ &  & \cellcolor{yellow} \\ \hline
+\cellcolor{red}  & $(255,0,0)$       & \cellcolor{blue}   & $(0,0,255)$       &   & \\ \hline
+                 & $(0,FF_\hexa,0)$  &                    & $(0,0,FF_\hexa)$   &   & \\ \hline
+ & $(25\%,75\%,0\%)$ & & $(50\%,50\%,50\%)$ & & \\ \hline                   
+ & $(0,64,0)$ &  & & $(255,192,0)$ & \\ \hline
+ &  &  & $(0,64,0)$ & $(128,128,0)$ & \\ \hline     
+ & $(0,80_\hexa,C0_\hexa)$ & & $(FF_\hexa,C0_\hexa,40_\hexa)$ & & \\ \hline            
+\end{tabular}
+\end{center} 
+\end{enumerate}
+
+\end{activite}
+
+
+
+\end{document}
+

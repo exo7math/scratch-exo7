@@ -1,0 +1,72 @@
+\usetikzlibrary{shadows,arrows}
+
+% Define block styles
+
+
+\tikzstyle{boxstyle} =  [draw, text width=8em, text centered, minimum width=10em,
+  minimum height=3em, drop shadow]
+
+\tikzstyle{boxinput} = [boxstyle, rounded corners, drop shadow, fill=green!30]
+\tikzstyle{instruction} = [boxstyle,  fill=blue!30]
+\tikzstyle{ifthen} = [boxstyle,  fill=red!30]
+
+\tikzstyle{line} = [draw,  thick]
+
+
+
+\begin{tikzpicture}[scale=1.2,every node/.style={transform shape}]
+
+\path node(P1) {$3$ };
+\path (P1)+(1,0) node(P2) {$a$};
+\path (P1)+(0.5,-1.5) node(P3){$\times$};
+\path (P3)+(2,0) node(P4) {$\times$};
+\path (P3)+(1,-1.5) node(P5){$+$};
+\path (P1)+(2,0) node(P6) {$a$};
+\path (P6)+(1,0) node(P7) {$4$};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P2.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P5);
+\path[line] (P4.south) -- node [above] {} (P5);
+\path[line] (P6.south) -- node [above] {} (P4);
+\path[line] (P7.south) -- node [above] {} (P4);
+
+\begin{scope}[xshift=6cm]
+\path node(P1) {$a$ };
+\path (P1)+(1,0) node(P2) {$5$};
+\path (P1)+(0.5,-1.5) node(P3){$\times$};
+\path (P3)+(2,0) node(P4) {$\times$};
+\path (P3)+(1,-1.5) node(P5){$-$};
+\path (P1)+(2,0) node(P6) {$15$};
+\path (P6)+(1,0) node(P7) {$a$};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P2.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P5);
+\path[line] (P4.south) -- node [above] {} (P5);
+\path[line] (P6.south) -- node [above] {} (P4);
+\path[line] (P7.south) -- node [above] {} (P4);
+\end{scope}
+
+\begin{scope}[xshift=12cm]
+\path node(P1) {$a-1$ };
+\path (P1)+(1,0) node(P2) {$3$};
+\path (P1)+(0.5,-1.5) node(P3){$\times$};
+\path (P3)+(2,0) node(P4) {$-$};
+\path (P3)+(1,-1.5) node(P5){$+$};
+\path (P1)+(2,0) node(P6) {$a+1$};
+\path (P6)+(1,0) node(P7) {$2$};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P2.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P5);
+\path[line] (P4.south) -- node [above] {} (P5);
+\path[line] (P6.south) -- node [above] {} (P4);
+\path[line] (P7.south) -- node [above] {} (P4);
+\end{scope}
+
+
+\end{tikzpicture}

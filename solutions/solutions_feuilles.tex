@@ -1,0 +1,251 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+%\newcommand{\hexa}{\text{hex}}
+
+
+\titre[E]{Solutions -- \'Enigmes sur feuilles}
+%===============================
+
+
+
+%------------------------------------
+%\section*{Feuilles 1-2-3}
+
+\begin{enigme}[Premiers pas]
+
+Réponse : la case B1 (en partant de D3).
+\myfigure{0.8}{
+  \tikzinput{sol_premiers_pas}
+}  
+
+\end{enigme}
+
+
+
+
+\begin{enigme}[Répéter]
+
+Réponse : \mot{RBBV}.
+
+\mot{X} = \mot{V} \quad \mot{Y}=\mot{B} \quad \mot{Z}=\mot{R}
+
+\myfigure{0.5}{
+  \tikzinput{sol_repeter}
+}  
+
+\end{enigme}
+
+
+
+\begin{enigme}[Opérations algébriques I]
+
+Réponse : $x=9$.
+
+Vérifions que $x=9$ marche.
+    \begin{itemize}
+      \item $x \leftarrow x-3$, maintenant $x$ vaut $9-3$ donc vaut $6$.
+      \item $x \leftarrow x \times x$ , maintenant $x$ vaut $6 \times 6$, donc vaut $36$.
+      \item $x \leftarrow x - 27$, et enfin $x$ vaut $36-27$ donc vaut $9$ !
+    \end{itemize}
+    
+\end{enigme}
+
+
+
+%------------------------------------
+%\section*{Feuilles 4-5-6}
+
+
+\begin{enigme}[Vrai et faux]
+
+Réponse : $14$ (lampes $1$ et $4$). 
+
+\end{enigme}
+
+
+\begin{enigme}[Opérations algébriques II]
+
+Réponse : $2$.
+
+\begin{itemize}
+  \item $x_1 = 31,500 = 3,1500e1$
+  \item $nf(a)=142,88 = 1,4288e2$
+  \item $nf(b) = 142,87 = 1,4287e2$
+  \item $nf(nf(a)-nf(b)) = 0,0300 = 3e-2$
+  \item $x_2 = nf(\frac{1}{0,0300}) = 33,333 = 3,3333e1$
+  \item $x_2-x_1 = 33,333-31,500 = 1,8333 \simeq 2$ 
+\end{itemize}
+
+
+\end{enigme}
+
+
+\begin{enigme}[Si ... alors ...]
+Réponse : $n=7$.
+\end{enigme}
+
+
+%------------------------------------
+%\section*{Feuilles 7-8-9}
+
+
+\begin{enigme}[Boucles I]
+
+Réponse : $70$.
+
+\end{enigme}
+
+
+
+\begin{enigme}[Chercher et remplacer]
+
+Réponse : 6. Liste : \mot{crise}, \mot{miracle}, \mot{miette}, \mot{casser}, \mot{rail}, \mot{crasse}.
+
+\end{enigme}
+
+
+\begin{enigme}[Puissances de 2]
+
+Réponse : $\frac{1}{100} \times 2^{20} = 10485,76$ cm, donc la réponse est $10485$ ou $10486$.
+
+\end{enigme}
+
+
+%------------------------------------
+%\section*{Feuilles 10-11-12}
+
+
+\begin{enigme}[Binaire]
+
+Réponse : $55$, car $a = 1101100$, $b = 1011001$,
+$a \otimes b = 1001000$, $\text{NON}(a\otimes b) = 0110111 = 55$.
+
+\end{enigme}
+
+
+
+\begin{enigme}[Boucles II]
+
+Réponse : 263514.
+
+\begin{center}
+\begin{minipage}{0.8\textwidth}
+\textbf{2.}\indentation Tant que $n\ge4$:\\
+\textbf{6.}\indentation\indentation $n \leftarrow n - 4$\\
+\textbf{3.}\indentation Si (($n=1$) ou  ($n=3$)):\\
+\textbf{5.}\indentation\indentation Afficher "Ce nombre est impair."\\
+\textbf{1.}\indentation Sinon:\\
+\textbf{4.}\indentation\indentation Afficher "Ce nombre est pair."\\
+\end{minipage}
+\end{center} 
+
+
+\end{enigme}
+
+
+\begin{enigme}[Graphe]
+
+
+Réponse : RVRR.
+
+\myfigure{0.9}{
+  \tikzinput{sol_graphe}
+}  
+
+
+\end{enigme}
+
+
+%------------------------------------
+%\section*{Feuilles 13-14-15-16}
+
+
+\begin{enigme}[Bases de données]
+
+Réponse : 1250 (lignes 1,2,5,6,9 de la table 4).
+
+\end{enigme}
+
+
+
+
+\begin{enigme}[Pixels]
+
+Réponse : 4
+
+\myfigure{0.7}{
+  \tikzinput{sol_pixels}
+} 
+
+\end{enigme}
+
+
+
+
+\begin{enigme}[Diviser pour régner]
+
+Réponse : $169$. En effet, les gaulois \textbf{0}, \textbf{3}, \textbf{5}, \textbf{7} n'ont pas de pouvoirs magiques, donc la bouteille porte le numéro
+$n = 2^\mathbf{0}+2^\mathbf{3}+2^\mathbf{5}+2^\mathbf{7} = 169$.
+
+\end{enigme}
+
+
+
+\begin{enigme}[Couleurs]
+
+\newcommand{\hexa}{\text{hex}}
+
+Réponse : $B7_\hexa = 183$. ($R = 206$, $V = 182$, $B = 125$, $G = 183.05$, $G' = 183 = B7_\hexa$)
+
+\end{enigme}
+
+
+%------------------------------------
+%\section*{Feuilles 17-18-19}
+
+
+\begin{enigme}[Cryptographie]
+
+\definecolor{coul_prive}{rgb}{0.93,0.26,0}
+\definecolor{coul_public}{rgb}{0.06,0.63,0}
+
+\newcommand{\prive}[1]{\relax\ifmmode{\color{coul_prive} #1}\else{\bf\color{coul_prive} #1}\fi}
+\newcommand{\public}[1]{\relax\ifmmode{\color{coul_public} #1}\else{\bf\color{coul_public} #1}\fi}
+
+
+Réponse : $11$.
+
+Clé = $(4, 11, 7)$
+
+\prive{A VAINCRE SANS PERIL ON TRIOMPHE SANS GLOIRE}
+
+\end{enigme}
+
+
+
+\begin{enigme}[Triangulation]
+
+Réponse : 17 ($4$ arêtes partent de $A$, $7$ partent de $J$ et $6$ partent de $M$).
+
+\myfigure{1.1}{
+  \tikzinput{sol_triangulation}  
+}
+
+\end{enigme}
+
+
+\begin{enigme}[Distance entre deux mots]
+Réponse : 6.
+
+\myfigure{0.7}{
+  \tikzinput{sol_distance}  
+}
+
+\end{enigme}
+
+\end{document}
+
+

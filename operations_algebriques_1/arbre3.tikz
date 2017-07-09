@@ -1,0 +1,98 @@
+\usetikzlibrary{shadows,arrows}
+
+% Define block styles
+
+
+\tikzstyle{boxstyle} =  [draw, text width=8em, text centered, minimum width=10em,
+  minimum height=3em, drop shadow]
+
+\tikzstyle{boxinput} = [boxstyle, rounded corners, drop shadow, fill=green!30]
+\tikzstyle{instruction} = [boxstyle,  fill=blue!30]
+\tikzstyle{ifthen} = [boxstyle,  fill=red!30]
+
+\tikzstyle{line} = [draw,  thick]
+
+
+
+\begin{tikzpicture}
+
+\path node(P1) {$7$ };
+\path (P1)+(2,0) node(P2) {$5$};
+\path (P1)+(1,-1.5) node(P3){$+$};
+\path (P3)+(2,0) node(P4) {$4$};
+\path (P3)+(1,-1.5) node(P5){$\times$};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P2.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P5);
+\path[line] (P4.south) -- node [above] {} (P5);
+
+\begin{scope}[xshift=6cm]
+\path node(P1) {$4$ };
+\path (P1)+(2,0) node(P2) {$7$};
+\path (P1)+(1,-1.5) node(P3){$\times$};
+\path (P3)+(2,0) node(P4) {$5$};
+\path (P3)+(1,-1.5) node(P5){$+$};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P2.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P5);
+\path[line] (P4.south) -- node [above] {} (P5);
+\end{scope}
+
+\begin{scope}[xshift=12cm]
+\path node(P1) {$3$ };
+\path (P1)+(1,0) node(P2) {$9$};
+\path (P1)+(0.5,-1.5) node(P3){$\times$};
+\path (P3)+(2,0) node(P4) {$+$};
+\path (P3)+(1,-1.5) node(P5){$\times$};
+\path (P1)+(2,0) node(P6) {$5$};
+\path (P6)+(1,0) node(P7) {$6$};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P2.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P5);
+\path[line] (P4.south) -- node [above] {} (P5);
+\path[line] (P6.south) -- node [above] {} (P4);
+\path[line] (P7.south) -- node [above] {} (P4);
+\end{scope}
+
+\begin{scope}[xshift=2cm, yshift=-5cm]
+\path node(P1) {$3$ };
+\path (P1)+(2,0) node(P2) {$2$};
+\path (P1)+(1,-1.5) node(P3){$\times$};
+\path (P3)+(2,0) node(P4) {$2$};
+\path (P3)+(1,-1.5) node(P5){$+$};
+\path (P5)+(2,0) node(P6) {$2$};
+\path (P5)+(1,-1.5) node(P7){$\times$};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P2.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P5);
+\path[line] (P4.south) -- node [above] {} (P5);
+\path[line] (P5.south) -- node [above] {} (P7);
+\path[line] (P6.south) -- node [above] {} (P7);
+\end{scope}
+
+\begin{scope}[xshift=10cm, yshift=-5cm]
+\path node(P1) {$4$ };
+\path (P1)+(1,0) node(P2) {$6$};
+\path (P1)+(0.5,-1.5) node(P3){$\times$};
+\path (P3)+(2,0) node(P4) {$-$};
+\path (P3)+(1,-1.5) node(P5){$\div$};
+\path (P1)+(2,0) node(P6) {$11$};
+\path (P6)+(1,0) node(P7) {$3$};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P2.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P5);
+\path[line] (P4.south) -- node [above] {} (P5);
+\path[line] (P6.south) -- node [above] {} (P4);
+\path[line] (P7.south) -- node [above] {} (P4);
+\end{scope}
+\end{tikzpicture}

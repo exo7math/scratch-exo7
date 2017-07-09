@@ -1,0 +1,64 @@
+%\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+
+\tikzstyle{line} = [draw, ultra thick]
+\tikzstyle{arrow} = [->,>=latex, red,very thick]
+
+
+\begin{tikzpicture}
+
+% NSEO
+\begin{scope}[xshift=-1.5cm,yshift=2cm,scale=0.8]
+\draw[<->, >=latex, ultra thick] (-1,0) node[left]{O}--(1,0)node[right]{E};
+\draw[<->, >=latex, ultra thick] (0,-1)node[below]{S}--(0,1)node[above]{N};
+\end{scope}
+
+% Grille
+\draw[step=1.0, black] (1,1) grid (7,7);
+
+% Labels
+\foreach \x/\L in {1/A, 2/B, 3/C, 4/D, 5/E, 6/F}{
+  \node[below] at (\x+0.5,1) {\L};
+}
+\foreach \y/\L in {1/1,2/2,3/3,4/4,5/5,6/6}{
+  \node[left] at (1,\y+0.5) {\L};
+}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Consignes ligne 1
+% \foreach \x/\L in {1/S, 2/E, 3/O, 4/N, 5/E, 6/N}{
+%   \node at (\x+0.5,1.5) {\bf \L};
+% }
+% 
+% % Consignes ligne 2
+% \foreach \x/\L in {1/N, 2/N, 3/E, 4/E, 5/S, 6/E}{
+%   \node at (\x+0.5,2.5) {\bf \L};
+% }
+% 
+% % Consignes ligne 3
+% \foreach \x/\L in {1/N, 2/E, 3/N, 4/O, 5/N, 6/S}{
+%   \node at (\x+0.5,3.5) {\bf \L};
+% }
+% 
+% % Consignes ligne 4
+% \foreach \x/\L in {1/E, 2/E, 3/N, 4/E, 5/E, 6/S}{
+%   \node at (\x+0.5,4.5) {\bf \L};
+% }
+% 
+% % Consignes ligne 5
+% \foreach \x/\L in {1/N, 2/S, 3/N, 4/O, 5/E, 6/E}{
+%   \node at (\x+0.5,5.5) {\bf \L};
+% }
+
+% % Consignes ligne 6
+% \foreach \x/\L in {1/S, 2/, 3/, 4/, 5/, 6/}{
+%   \node at (\x+0.5,6.5) {\bf \L};
+% }
+
+%\draw[arrow] (1.5,6.35)--++(0,-0.7);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{tikzpicture}

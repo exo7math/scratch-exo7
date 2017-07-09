@@ -1,0 +1,51 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{border} = [draw, ultra thick, black]
+\tikzstyle{vertex} = [draw] 
+
+
+\begin{scope}[]
+
+\draw[border, fill=red] (0,0) -- ++(2,0) -- ++(0,2) -- ++(-2,0) -- cycle;
+
+\draw[border, fill=green!70!black] (0,2) -- ++(3,0) -- ++(0,1) -- ++(-3,0) -- cycle;
+
+\draw[border, fill=yellow] (-1,-1) -- ++(3,0) -- ++(0,1) -- ++(-3,0) -- cycle;
+
+\draw[border, fill=blue!50] (2,2) -- ++(1,0) -- ++(0,-3) -- ++(-1,0) -- cycle;
+
+\draw[border, fill=blue!50] (-1,3) -- ++(1,0) -- ++(0,-3) -- ++(-1,0) -- cycle;
+
+\node at (1,1) {Rouge};
+\node at (1.5,2.5) {Vert};
+\node at (0.5,-0.5) {Jaune};
+\node at (2.5,0.5) {Bleu};
+\node at (-0.5,1.5) {Bleu};
+
+\end{scope}
+
+
+\begin{scope}[xshift=7cm]
+\draw[border] (0,0) -- ++(2,0) -- ++(0,2) -- ++(-2,0) -- cycle;
+
+\draw[border, fill=yellow] (0,2) -- ++(3,0) -- ++(0,1) -- ++(-3,0) -- cycle;
+
+\draw[border, fill=blue!50] (-1,-1) -- ++(3,0) -- ++(0,1) -- ++(-3,0) -- cycle;
+
+\draw[border, fill=red] (2,2) -- ++(1,0) -- ++(0,-3) -- ++(-1,0) -- cycle;
+
+\draw[border, fill=green!70!black] (-1,3) -- ++(1,0) -- ++(0,-3) -- ++(-1,0) -- cycle;
+
+\node[scale=3] at (1,1) {?};
+\node at (1.5,2.5) {Jaune};
+\node at (0.5,-0.5) {Bleu};
+\node at (2.5,0.5) {Rouge};
+\node at (-0.5,1.5) {Vert};
+\end{scope}
+
+
+
+
+\end{tikzpicture}

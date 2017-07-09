@@ -1,0 +1,39 @@
+
+\begin{tikzpicture}
+
+\draw[thick] (0,0) rectangle (2,1);
+%\node  at (1,0.5)  {\Large OU};
+
+\draw[thick] (0.5,1)--++(-1,1.5);
+\draw[thick] (1.5,1)--++(1,1.5);
+\draw[thick] (1,0)--++(0,-1.5);
+
+\draw[thick,draw,fill=white]  (1,-0.75) circle (0.2); 
+\draw[thick,draw,fill=white]  (0,1.75) circle (0.2); 
+\draw[thick,draw,fill=white]  (2,1.75) circle (0.2); 
+
+\node[left] at (-0.5,2.5) {entr\'ee 1};
+\node[right] at (2.5,2.5) {entr\'ee 2};
+\node[right] at (1,-1.5) {sortie};
+
+\begin{scope}[xshift=7cm, yshift = 0cm]
+
+% Eteint
+\draw[thick,draw,fill=white]  (0,0) circle (0.2); 
+\draw[thick,draw,fill=white]  (0,0)--+(45:0.2)--+(45:-0.2); 
+\draw[thick,draw,fill=white]  (0,0)--+(-45:0.2)--+(-45:-0.2); 
+\node[right] at (0.5,0) {\'eteint};
+
+% Allume
+\begin{scope}[yshift = 1cm]
+\draw[thick,draw,fill=white]  (0,0) circle (0.2); 
+\foreach \i in {0,30,...,330}{
+  \draw[thick] (\i:0.25)--(\i:0.4);
+}
+
+\node[right] at (0.5,0) {allum\'e};
+\end{scope}
+
+\end{scope}
+
+\end{tikzpicture}

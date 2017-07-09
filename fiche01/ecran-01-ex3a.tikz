@@ -1,0 +1,15 @@
+\tikzstyle{line} = [draw, ultra thick,blue]
+\tikzstyle{arrow} = [<->, >=latex, red]
+
+
+\begin{tikzpicture}[scale=0.5]
+
+\draw[line] (0,0) -- ++(10,0)--++(0,5)--++(-5,0)--++(0,10)--++(-5,0)--++(0,-15)--cycle;
+
+\draw[arrow] (0,-0.4)--(10,-0.4) node[midway, below] {$100$};
+\draw[arrow] (10.4,0)--(10.4,5) node[midway, right] {$50$};
+\draw[arrow] (5,5+0.4)--(10,5+0.4) node[midway, above] {$50$};
+
+\draw[arrow] (5-0.4,5)--(5-0.4,15) node[midway, left] {$100$};
+
+\end{tikzpicture} 

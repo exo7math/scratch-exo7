@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+
+    \node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[height=5cm]{ecran-09-eg2.png}};
+    \begin{scope}[x={(image.south east)},y={(image.north west)}]
+        \coordinate (O) at (0.45,0.75);
+  \draw[<-,>=latex,ultra thick,red] (O)--++(0.1,0.15);
+
+    \end{scope}
+
+\end{tikzpicture} 

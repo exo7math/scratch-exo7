@@ -1,0 +1,383 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+% Commades spécifiques
+\newcommand{\ducode}[1]{\textsf{#1}}
+
+
+\titre[F]{Bases de données}
+%===============================
+
+\textbf{Première partie. La bibliothèque.}
+
+Voici les tables qui contiennent les informations sur les livres, les lecteurs et les emprunts d'une bibliothèque.
+
+\bigskip
+
+{\footnotesize
+% Livres
+\begin{minipage}{0.7\textwidth}
+
+\textbf{Table 1 : Livres}\\
+\emph{Titre avec année de parution.} \\
+
+\begin{tabular}{|l|l|l|} \hline
+\textbf{Identifiant} & \textbf{Titre} & \textbf{Année} \\ \hline\hline
+L1 & Harry Cover 1 & 2005 \\ \hline
+L2 & Anselme Lupin, le cambrioleur & 1965 \\ \hline
+L3 & L'énigme de la chambre verte & 1912 \\ \hline
+L4 & Le voleur des anneaux 1 & 1984 \\ \hline
+L5 & Harry Cover 2 & 2007 \\ \hline 
+L6 & Convergente & 2014 \\ \hline
+L7 & L'aiguille vide & 1956 \\ \hline
+L8 & Le jeu de la fin & 2012 \\ \hline 
+L9 & Bilboquet le hobbit & 1991 \\ \hline
+L10 & Le voleur des anneaux 2 & 1987 \\ \hline 
+\end{tabular}
+\end{minipage}
+%
+%
+% Auteurs
+\begin{minipage}{0.25\textwidth}
+
+\textbf{Table 2 : Auteurs}\\
+\emph{Nom et année de naissance.} \\
+
+\begin{tabular}{|l|l|l|} \hline
+\textbf{Identifiant} & \textbf{Nom} & \textbf{Année} \\ \hline\hline
+A1 & Lenoir & 1905 \\ \hline
+A2 & Rolling & 1974 \\ \hline
+A3 & Levert & 1912 \\ \hline
+A4 & Colline & 1990 \\ \hline
+A5 & Trollquin & 1942 \\ \hline
+A6 & Rosse & 1990 \\ \hline 
+\end{tabular}
+\end{minipage}
+}
+%
+%
+
+\bigskip
+
+{\footnotesize
+% Emprunteurs
+\begin{minipage}{0.4\textwidth}
+
+\textbf{Table 3 : Emprunteurs}\\
+\emph{Prénom et année de naissance.} \\
+
+\begin{tabular}{|l|l|l|} \hline
+\textbf{Identifiant} & \textbf{Prénom} & \textbf{Année} \\ \hline\hline
+E1 & Amandine & 2005 \\ \hline
+E2 & Valentin & 2003 \\ \hline
+E3 & Victor & 2007 \\ \hline
+E4 & Sonia & 2006 \\ \hline
+E5 & Benjamin & 2006 \\ \hline
+E6 & Junior & 2001 \\ \hline
+E7 & Clémence &  2003 \\ \hline
+E8 & Nadia & 2003 \\ \hline
+\end{tabular}
+\end{minipage}
+%
+%
+% Table Livres-Auteurs
+\begin{minipage}{0.25\textwidth}
+
+\textbf{Table 4 : Livres--Auteurs}\\
+
+\begin{tabular}{|l|l|} \hline
+\textbf{Id. livre} & \textbf{Id. auteur}  \\ \hline\hline
+L2 & A1 \\ \hline
+L4 & A5\\ \hline
+L1 & A2 \\ \hline
+L8 & A6 \\ \hline
+L7 & A1 \\ \hline
+L10 & A5 \\ \hline
+L8 & A4 \\ \hline
+L6 & A4 \\ \hline
+L3 & A3 \\ \hline
+L5 & A2 \\ \hline
+L6 & A6 \\ \hline
+L9 & A5 \\ \hline 
+\end{tabular}
+\end{minipage}
+%
+%
+% Table Livres-Emprunteurs
+\begin{minipage}{0.25\textwidth}
+
+\textbf{Table 5 : Livres--Emprunteurs}\\
+
+\begin{tabular}{|l|l|} \hline
+\textbf{Id. livre} & \textbf{Id. emprunteur}  \\ \hline\hline
+L4 & E1 \\ \hline
+L5 & E4 \\ \hline
+L8 & E7 \\ \hline
+L7 & E3 \\ \hline
+L10 & E7 \\ \hline
+L1 & E4 \\ \hline
+L6 & E2 \\ \hline
+L9 & E1 \\ \hline 
+\end{tabular}
+\end{minipage}
+}
+
+
+\begin{activite}
+\emph{Dans cet exercice on utilise seulement les tables 1, 2 et 3.}
+
+\begin{enumerate}
+   \item Quel est le titre du livre paru en dernier ?
+   \item Quels sont les livres parus à 100 ans d'écart ?
+   \item Combien de livres ont été publiés après 1980 ?
+   \item Quel est l'identifiant de l'auteur né juste après Trollquin ?   
+   \item Quel est le prénom de l'emprunteur le plus jeune.    
+   \item Quels sont les prénoms des emprunteurs nés après 2004, classés par ordre alphabétique ?
+   \item Quels sont les emprunteurs filles, classées par âge croissant ?
+   
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}
+
+\emph{Dans cet exercice on utilise aussi les tables 4 et 5.}
+
+
+\medskip
+
+\begin{itemize}
+  \item Les données de la première ligne de la table 4 signifient que le livre \og L2 \fg{} a pour auteur \og A1 \fg{}.
+  Un livre peut avoir plusieurs auteurs et un auteur peut écrire plusieurs livres.
+ 
+  \item Les données de la première ligne de la table 5 signifient que le livre \og L4 \fg{} est emprunté par \og E1 \fg{}.
+  Un livre ne peut être emprunté que par une personne, mais il est possible d'emprunter plusieurs livres !
+\end{itemize}
+
+
+ \begin{enumerate}
+  \item Quel est le nom de l'auteur du livre \og L7 \fg{} ?
+  \item Quel est le titre du livre écrit par \og Levert\fg{} ?
+  \item Combien de livres a écrit \og Trollquin \fg{} ?
+  \item Quels livres ont plusieurs auteurs ? 
+  
+  \item Quels livres a empruntés Amandine (classés par ordre ordre alphabétique du titre) ? 
+  \item Quels livres ne sont pas empruntés (classés par date de parution) ?
+  \item Qui est fan d'Harry Cover ?
+  
+  \item Qui a emprunté le livre le plus récent ?
+  
+  \item Classe les emprunteurs, en commençant par celui qui a le plus de livres, si deux personnes ont emprunté le même nombre de livres, commence par le plus jeune.
+  
+\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}
+
+On utilise un langage spécifique pour obtenir des réponses à partir des tables.
+Par exemple la requête :
+
+  \indentation\ducode{sélectionner \textbf{Titre} dans la table \textbf{Livres}}
+
+renvoie toute la colonne \emph{Titre} de la table \emph{Livres}.
+  
+  
+ \begin{enumerate}
+  \item  Écris le résultat de la requête :
+  
+  \indentation\ducode{sélectionner \textbf{Nom} dans la table \textbf{Auteurs}}
+    
+  \item Écris le résultat de la requête dans laquelle on impose une condition :
+  
+  \indentation\ducode{sélectionner \textbf{Prénom} dans la table \textbf{Emprunteurs}}\\
+  \indentation\indentation\ducode{avec \textbf{Année} $\ge 2005$}
+   
+  \item Écris le résultat de la requête dans laquelle on demande de trier les résultats :
+  
+  \indentation\ducode{sélectionner \textbf{Titre} dans la table \textbf{Livres}}\\
+  \indentation\indentation\ducode{avec \textbf{Année} $\le 1980$}\\
+  \indentation\indentation\ducode{trier par ordre alphabétique}    
+  
+  
+\end{enumerate}
+
+\end{activite}
+
+
+\bigskip
+\bigskip
+\textbf{Seconde partie. Le cinéma.}
+
+
+Voici les tables qui contiennent les informations sur l'activité d'un cinéma : films, salles, horaires et séances.
+
+\bigskip
+
+{\footnotesize
+% Films
+\begin{minipage}{0.6\textwidth}
+
+\textbf{Table 1 : Films}\\
+\emph{Titre et durée (en minutes).} \\
+
+\begin{tabular}{|l|l|l|} \hline
+\textbf{Identifiant} & \textbf{Titre} & \textbf{Durée} \\ \hline\hline
+F1 & L'homme scarabée & 120 \\ \hline
+F2 & La guerre des planètes & 90 \\ \hline
+F3 & Superfemme & 100 \\ \hline
+F4 & Le retour du Jedaï & 120 \\ \hline
+F5 & La vengeance du Jedaï & 100 \\ \hline
+F6 & Le monde préhistorique perdu & 110 \\ \hline
+F7 & Bateau contre iceberg & 130 \\ \hline
+F8 & Rapide et pas content & 100 \\ \hline
+F9 & L'homme fer à repasser & 90 \\ \hline
+F10 & Jacques Bon & 90 \\ \hline
+\end{tabular}
+\end{minipage}
+%
+%
+% Salles
+\begin{minipage}{0.4\textwidth}
+
+\textbf{Table 2 : Salles}\\
+\emph{Salle avec le nombre de personnes qu'elle peut accueillir.} \\
+
+\begin{tabular}{|l|l|} \hline
+\textbf{Identifiant} & \textbf{Capacité} \\ \hline\hline
+S1 & 210 \\ \hline
+S2 & 180 \\ \hline
+S3 & 170 \\ \hline
+S4 & 200 \\ \hline
+S5 & 210 \\ \hline
+S6 & 180 \\ \hline
+\end{tabular}
+\end{minipage}
+}
+%
+
+\bigskip
+
+%
+{\footnotesize
+% Livres
+\begin{minipage}{0.4\textwidth}
+
+\textbf{Table 3 : Créneaux}\\
+\emph{Jour et heure d'ouverture.} \\
+
+\begin{tabular}{|l|l|l|} \hline
+\textbf{Identifiant} & \textbf{Jour} & \textbf{Heure} \\ \hline\hline
+C1 & Mardi & 18h00 \\ \hline
+C2 & Mardi & 21h00 \\ \hline
+C3 & Mercredi & 14h00 \\ \hline
+C4 & Mercredi & 19h00 \\ \hline
+C5 & Samedi & 19h00 \\ \hline
+C6 & Samedi & 20h00 \\ \hline
+C7 & Dimanche & 11h00 \\ \hline
+C8 & Dimanche & 18h00 \\ \hline
+C9 & Dimanche & 21h00 \\ \hline
+\end{tabular}
+\end{minipage}
+%
+%
+% Livres
+\begin{minipage}{0.4\textwidth}
+
+\textbf{Table 4 : Séances}\\
+\emph{Une séance est définie par un créneau, une salle et un film} \\
+
+\begin{tabular}{|l|l|l|} \hline
+\textbf{Id. créneau} & \textbf{Id. salle} & \textbf{Id. film} \\ \hline\hline
+C1 & S3 & F3 \\ \hline
+C2 & S6 & F7 \\ \hline
+C2 & S1 & F3 \\ \hline
+C3 & S3 & F1 \\ \hline
+C4 & S5 & F6 \\ \hline
+C4 & S2 & F7 \\ \hline
+C5 & S5 & F2 \\ \hline
+C6 & S1 & F4 \\ \hline
+C6 & S5 & F10 \\ \hline
+C7 & S2 & F3 \\ \hline
+C8 & S6 & F7 \\ \hline
+C8 & S3 & F3 \\ \hline
+C9 & S5 & F4 \\ \hline
+\end{tabular}
+\end{minipage}
+}
+
+\bigskip
+
+Voici, par exemple, ce que signifient les données de la première ligne de la table 4 :
+le mardi à 18h00 (créneau C1) dans la salle 3 (salle S3) est projeté le film \og Superfemme \fg{} (film F3).
+
+
+\bigskip
+
+\begin{activite}
+À l'aide des tables ci-dessus, réponds aux questions suivantes :
+ \begin{enumerate}
+  \item Quels jours passe le film \og Bateau contre iceberg \fg{} ?
+  \item Quels sont les films projetés le mercredi ?
+  \item Quel est le film le plus long passant à 19h00 ?
+  \item Quelle salle n'est jamais utilisée ?
+  \item Quel film est projeté le plus souvent ?
+  \item Quels films sont projetés le samedi et le dimanche (classés par ordre alphabétique du titre) ?
+  \item Quels films ne sont pas projetés (classés par ordre alphabétique inverse de leur titre) ?
+  
+\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}
+\sauteligne
+
+\begin{enumerate}
+  \item  Écris le résultat de la requête qui renvoie deux colonnes :
+  
+  \indentation\ducode{sélectionner \textbf{Jour} et \textbf{Heure} dans la table \textbf{Créneaux}} \\
+      \indentation\indentation\ducode{avec \textbf{Heure} = 21h00}
+          
+          
+  \item Écris le résultat de la requête qui renvoie deux colonnes :
+  
+  \indentation\ducode{sélectionner \textbf{Identifiant} et \textbf{Capacité} dans la table \textbf{Salles}}  \\
+  \indentation\indentation\ducode{trier par ordre croissant de \textbf{Capacité}}  
+    
+   
+  \item Écris une requête (ainsi que le résultat) qui permet de sélectionner les films et leur durée, classés par durée croissante.
+  
+  \item Écris une requête (ainsi que le résultat) qui permet de sélectionner l'identifiant et la capacité des salles pouvant accueillir au moins 200 personnes.
+    
+\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}
+\sauteligne
+
+\begin{enumerate}
+  \item Complète la table 4 pour ajouter une séance : le film \og La vengeance du Jedaï \fg{} dans la salle 6 dimanche à 11h00.
+  
+  \item Complète la table 4 pour ajouter une séance : le film \og Le monde préhistorique perdu \fg{} dans la salle 3 mardi à 21h00.  
+  
+  \item Complète la table 1 et la table 4 pour ajouter la projection du film 
+  \og Avatariendutou \fg{} d'une durée de 1h40 le samedi à 20h00 en salle 7.
+  
+\end{enumerate}
+
+\end{activite}
+
+\end{document}
+
+

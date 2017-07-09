@@ -1,0 +1,208 @@
+% From http://tex.stackexchange.com/questions/194361/producing-delaunay-triangulations
+\begin{tikzpicture}[y=0.80pt,x=0.80pt,yscale=-1, inner sep=0pt, outer sep=0pt]
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (39.9691,-90.7908) -- (43.3652,-100.6640);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (43.3652,-100.6640) -- (98.7641,-39.0366);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (98.7641,-39.0366) -- (39.9691,-90.7908);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (80.9286,65.0406) -- (-16.1836,36.7579);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-16.1836,36.7579) -- (98.7641,-39.0366);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (98.7641,-39.0366) -- (80.9286,65.0406);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-16.1836,36.7579) -- (39.9691,-90.7908);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (39.9691,-90.7908) -- (98.7641,-39.0366);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (98.7641,-39.0366) -- (-16.1836,36.7579);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-43.1652,96.4547) -- (-16.1836,36.7579);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-16.1836,36.7579) -- (35.5692,80.1023);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (35.5692,80.1023) -- (-43.1652,96.4547);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-98.9747,37.4920) -- (-48.7898,13.8156);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-48.7898,13.8156) -- (-43.1652,96.4547);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-43.1652,96.4547) -- (-98.9747,37.4920);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-78.9290,-89.2327) -- (-49.1180,-92.8069);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-49.1180,-92.8069) -- (-48.7898,13.8156);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-48.7898,13.8156) -- (-78.9290,-89.2327);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-98.9747,37.4920) -- (-78.9290,-89.2327);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-78.9290,-89.2327) -- (-48.7898,13.8156);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-48.7898,13.8156) -- (-98.9747,37.4920);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (77.7164,83.1456) -- (35.5692,80.1023);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (35.5692,80.1023) -- (80.9286,65.0406);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (80.9286,65.0406) -- (77.7164,83.1456);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (35.5692,80.1023) -- (-16.1836,36.7579);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-16.1836,36.7579) -- (80.9286,65.0406);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (80.9286,65.0406) -- (35.5692,80.1023);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-43.1652,96.4547) -- (-48.7898,13.8156);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-48.7898,13.8156) -- (-16.1836,36.7579);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-16.1836,36.7579) -- (-43.1652,96.4547);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (39.9691,-90.7908) -- (-49.1180,-92.8069);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-49.1180,-92.8069) -- (43.3652,-100.6640);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (43.3652,-100.6640) -- (39.9691,-90.7908);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-43.1652,96.4547) -- (35.5692,80.1023);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (35.5692,80.1023) -- (77.7164,83.1456);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (77.7164,83.1456) -- (-43.1652,96.4547);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-16.1836,36.7579) -- (-48.7898,13.8156);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-48.7898,13.8156) -- (39.9691,-90.7908);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (39.9691,-90.7908) -- (-16.1836,36.7579);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-48.7898,13.8156) -- (-49.1180,-92.8069);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (-49.1180,-92.8069) -- (39.9691,-90.7908);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[draw=black,line join=round,line cap=round,miter limit=10.04,line
+      width=0.401pt] (39.9691,-90.7908) -- (-48.7898,13.8156);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (43.3652,-100.6640) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (35.5692,80.1023) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (80.9286,65.0406) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (-49.1180,-92.8069) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (77.7164,83.1456) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (-78.9290,-89.2327) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (39.9691,-90.7908) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (-48.7898,13.8156) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (98.7641,-39.0366) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (-43.1652,96.4547) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (-98.9747,37.4920) circle (0.0425cm);
+  \end{scope}
+  \begin{scope}[cm={{1.0,0.0,0.0,1.0,(157.101,156.23)}}]
+    \path[fill=red] (-16.1836,36.7579) circle (0.0425cm);
+  \end{scope}
+
+\end{tikzpicture}

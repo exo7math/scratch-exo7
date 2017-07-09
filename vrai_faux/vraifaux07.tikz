@@ -1,0 +1,92 @@
+\def\allume{
+\draw[thick,draw,fill=white]  (0,0) circle (0.2); 
+ \foreach \i in {0,30,...,330}{
+  \draw[thick] (\i:0.25)--(\i:0.4);
+ }
+}
+\def\eteint{
+\draw[thick,draw,fill=white]  (0,0) circle (0.2); 
+\draw[thick,draw,fill=white]  (0,0)--+(45:0.2)--+(45:-0.2); 
+\draw[thick,draw,fill=white]  (0,0)--+(-45:0.2)--+(-45:-0.2); 
+}
+\begin{tikzpicture}[scale=0.8]
+
+% Entrees
+\draw[thick] (-1,9)--++(0,-1);
+\draw[thick] (3,9)--++(0,-1);
+
+\draw[thick] (-2.,8)--++(2,0);
+\draw[thick] (4,8)--++(-2,0);
+
+\draw[thick] (-2,8)--++(0,-5.5);
+\draw[thick] (4,8)--++(0,-5.5);
+
+\draw[thick,draw,fill=white]  (-1,9) circle (0.2); 
+\draw[thick,draw,fill=white]  (3,9) circle (0.2); 
+
+\draw[thick] (2,8)--++(-1.75,-1.75);
+\draw[thick] (0,8)--++(.75,-.75);
+\draw[thick] (1.25,6.75)--++(.75,-.75);
+
+% NON 1
+\begin{scope}[xshift=-0.75cm,yshift = 4cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {NON};
+
+\draw[thick] (1,1)--++(0,1.25);
+\draw[thick] (1,0)--++(0,-1.5);
+
+\end{scope}
+
+% NON 2
+\begin{scope}[xshift=1cm,yshift = 2.5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {NON};
+
+\draw[thick] (1,1)--++(0,2.5);
+
+\end{scope}
+
+% ET 1
+\begin{scope}[xshift=-1.5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {ET};
+
+\draw[thick] (0.5,1)--++(-1,1.5);
+\draw[thick] (1.25,1)--++(0.5,1.5);
+
+\draw[thick,draw,fill=white]  (1.75,2.5) circle (0.2); 
+
+
+\end{scope}
+
+% ET 2
+\begin{scope}[xshift=1.5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {ET};
+
+\draw[thick] (1,1)--++(-0.5,1.5);
+\draw[thick] (1.5,1)--++(1,1.5);
+
+\draw[thick,draw,fill=white]  (0.75,1.75) circle (0.2); 
+
+
+\end{scope}
+
+% OU
+\begin{scope}[yshift=-2.5cm]
+\draw[thick] (0,0) rectangle (2,1);
+\node  at (1,0.5)  {OU};
+
+\draw[thick] (0.5,1)--++(-1,1.5);
+\draw[thick] (1.5,1)--++(1,1.5);
+\draw[thick] (1,0)--++(0,-1.5);
+
+
+\draw[thick,draw,fill=white]  (0,1.75) circle (0.2); 
+\draw[thick,draw,fill=white]  (2,1.75) circle (0.2); 
+\draw[thick,draw,fill=white]  (1,-1.5) circle (0.2); 
+\end{scope}
+
+
+\end{tikzpicture}

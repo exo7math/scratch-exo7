@@ -1,0 +1,237 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+\titre[F]{Opérations algébriques I}
+%===============================
+
+On représente les calculs par des arbres :
+
+\myfigure{0.6}{
+\tikzinput{arbre1}
+}
+
+Par exemple, l'arbre de gauche représente l'opération $2 + 3$, alors que l'arbre de droite représente l'opération $5 - 4$.
+
+Pour un arbre plus grand, on effectue les opérations en partant du haut.
+
+\myfigure{0.6}{
+\tikzinput{arbre2}
+}
+
+Par exemple, pour effectuer le calcul de l'arbre de gauche, on commence par faire le calcul de $5 \times 4$, ce qui donne l'arbre de droite. Il reste alors à calculer $20 + 3$. L'arbre de droite représente donc le calcul $5 \times 4 + 3$. Ainsi le résultat est $23$.
+
+\bigskip
+\bigskip
+
+\begin{activite}
+\sauteligne 
+\begin{enumerate}
+  \item Effectue les calculs suivants (si possible de tête).
+
+\myfigure{0.6}{
+\tikzinput{arbre3}
+}
+
+  
+  \item Représente sous forme d'un arbre les expressions suivantes (et calcule le résultat).
+  
+  $$
+  12 \times 7 + 9
+  \qquad
+  12 + (3 - 5)
+  \qquad
+  8 \times (7 + 5)
+  \qquad
+  8 \times 7 + 8 \times 5
+  \qquad
+  (6 \times 8) \div (13 - 9)
+  $$
+ 
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}[niveau 5e et plus]
+\sauteligne
+\begin{enumerate}
+  \item Effectue les calculs suivants.
+  
+\myfigure{0.6}{
+\tikzinput{arbre4}
+}
+
+  
+  \item Écris pour chaque arbre l'expression algébrique correspondante, puis développe-la.
+
+\myfigure{0.6}{
+\tikzinput{arbre5}
+}
+
+  
+  \item Écris pour chaque arbre l'expression algébrique correspondante, puis développe-la.
+  
+\myfigure{0.6}{
+\tikzinput{arbre6}
+}
+ 
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}[niveau 4e et plus]
+\sauteligne
+\begin{enumerate}
+  \item Effectue les calculs suivants.
+
+\myfigure{0.6}{
+\tikzinput{arbre7}
+}
+  
+  \item Écris pour chacune des expressions algébriques l'arbre correspondant et effectue les calculs.
+  
+  $$
+  \frac 74 + \frac 83
+  \qquad
+  \frac{7 + 8}{12 \times 5}
+  \qquad
+  \frac{ \frac 23 }{ \frac 74 }
+  \qquad
+  \frac{ 2 + \frac 27 }{ \frac 14 - 9 }
+  $$
+
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}[niveau 3e et plus]
+
+On note $a \wedge 2$ pour $a \times a$, on note $a \wedge 3$ pour $a \times a \times a$, 
+on note $a \wedge 4$ pour $a \times a \times a \times a$...
+
+\begin{enumerate}
+  \item Effectue les calculs suivants.
+  
+\myfigure{0.6}{
+\tikzinput{arbre8}
+}
+  
+  \item  Simplifie les expressions suivantes (exprimées sous forme d'arbre) à l'aide de la notation \og $\wedge$ \fg{}.
+
+\myfigure{0.6}{
+\tikzinput{arbre9}
+}  
+
+  \item 
+  \begin{enumerate}
+    \item Écris l'arbre de $(a+b)^2$ et de son développement.
+    \item Écris l'arbre de $(a-b)^2$ et de son développement.
+    \item Écris l'arbre de $(a+b)(a-b)$ et de son développement.
+  \end{enumerate}  
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}
+\sauteligne
+\begin{itemize}
+  \item L'expression $x \leftarrow 2$, signifie que la variable $x$ prend la valeur $2$.
+  \item Si, ensuite, on rencontre l'instruction $x \leftarrow x + 1$, cela signifie que la nouvelle valeur de $x$ est l'ancienne valeur de $x$ plus $1$. Comme ici $x$ valait d'abord $2$, alors après l'instruction $x \leftarrow x + 1$, la nouvelle valeur de $x$ est $3$.
+  \item Si on exécute encore une fois l'instruction $x \leftarrow x + 1$, alors $x$ vaudra $4$.
+\end{itemize}
+
+\begin{enumerate}
+  \item Calcule la valeur finale de $x$.
+  \begin{enumerate}
+    
+    \item 
+    \begin{itemize}
+      \item $x \leftarrow 3$
+      \item $x \leftarrow x - 1$
+      \item $x \leftarrow x + 3$
+    \end{itemize}
+    
+    \item
+    \begin{itemize}
+      \item $x \leftarrow 3$
+      \item $x \leftarrow 3 \times x$ 
+      \item $x \leftarrow x + 1$
+    \end{itemize}
+    
+    \item 
+    \begin{itemize}
+      \item $x \leftarrow 3$
+      \item $x \leftarrow x + 1$
+      \item $x \leftarrow 3 \times x$
+    \end{itemize}
+    
+    \item 
+    \begin{itemize}
+      \item $x \leftarrow 3$
+      \item $x \leftarrow 7 - x$
+      \item $x \leftarrow x \times x$
+    \end{itemize}     
+  \end{enumerate}    
+  
+  \item Recommence les calculs en partant de l'instruction $x \leftarrow 4$ (au lieu de $x \leftarrow 3$).
+ 
+ 
+  \item Calcule la valeur de finale de $x$.
+  
+  \begin{enumerate}
+    \item
+    \begin{itemize}
+      \item $a \leftarrow 5$
+      \item $b \leftarrow 7$
+      \item $x \leftarrow a + b$
+      \item $x \leftarrow x + 1$
+    \end{itemize}
+    
+    \item 
+    \begin{itemize}
+      \item $a \leftarrow 5$   
+      \item $b \leftarrow 7$
+      \item $x \leftarrow a \times b$
+      \item $x \leftarrow x + a$
+    \end{itemize}
+    
+    \item
+    \begin{itemize}
+      \item $a \leftarrow 5$   
+      \item $b \leftarrow 7$
+      \item $x \leftarrow a \times (2 \times b - a)$
+      \item $x \leftarrow 3 \times x + b$
+    \end{itemize}
+    
+  \end{enumerate}  
+  
+  \item Recommence les calculs en partant des instructions 
+$a \leftarrow 4$ et $b \leftarrow 9$ (au lieu de $a \leftarrow 5$ et $b \leftarrow 7$).   
+  
+\end{enumerate}
+ 
+\end{activite}
+
+
+\begin{activite}
+Tu as deux variables $a$ et $b$. Tu dois mettre le contenu de la variable $b$ dans la variable $a$ et celui de la variable $a$ dans la variable $b$.
+
+Par exemple partant de $a \leftarrow 5$ et $b \leftarrow 7$, on veut qu'à la fin des instructions, la variable $a$ contienne $7$ et la variable $b$ contienne $5$. Bien sûr, la façon de procéder ne doit pas dépendre des valeurs initiales données à $a$ et $b$ (dans l'exemple $5$ et $7$).
+% cela doit marcher avec toutes les valeurs initiales (pas seulement avec $5$ et $7$).
+
+\begin{enumerate}
+  \item Pourquoi la suite d'instructions suivantes ne convient-elle pas ?
+\begin{itemize}
+  \item $a \leftarrow 5$
+  \item $b \leftarrow 7$
+  \item $a \leftarrow b$ 
+  \item $b \leftarrow a$ 
+\end{itemize}
+  
+  \item Cherche une méthode qui fonctionne !
+\end{enumerate}
+\end{activite}
+
+\end{document}

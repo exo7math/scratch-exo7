@@ -1,0 +1,214 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{border} = [draw, thick, blue]
+\tikzstyle{vertex} = [draw] 
+
+
+\begin{scope}[]
+
+% France
+\draw[border] (0,0) -- ++(2,0) -- ++(0,2) -- ++(-2,0) -- cycle;
+
+% Espagne
+\draw[border] (-1,-2) -- ++(2,0) -- ++(0,2) -- ++(-2,0) -- cycle;
+
+% Portugal
+\draw[border] (-2,-2.5) -- ++(1,0) -- ++(0,2) -- ++(-1,0) -- cycle;
+
+% Belgique
+\draw[border] (1.5,2) -- ++(1.5,0) -- ++(0,1) -- ++(-1.5,0) -- cycle;
+
+% Allemagne
+\draw[border] (2,0.5) -- ++(2,0) -- ++(0,1.5) -- ++(-2,0) -- cycle;
+
+% Pays-Bas
+\draw[border] (3,2) -- ++(1,0) -- ++(0,1.5) -- ++(-2,0) --++(0,-0.5) -- ++(1,0)-- cycle;
+
+% Suisse
+\draw[border] (2,0) -- ++(1,0) -- ++(0,0.5) -- ++(-1,0) -- cycle;
+
+% Italie
+\draw[border] (1.5,0) -- ++(1,0) -- ++(0,-3) -- ++(-1.5,0) --++(0,0.5) --++(0.5,0) -- cycle;
+
+\coordinate (F) at (1,1);
+\coordinate (E) at (0,-1);
+\coordinate (P) at (-1.5,-1.5);
+\coordinate (I) at (2,-1.5);
+\coordinate (B) at (2.25,2.5);
+\coordinate (PB) at (3.5,3);
+\coordinate (A) at (3,1.25);
+\coordinate (S) at (2.5,0.25);
+
+\node at (F) {France};
+\node at (E) {Espagne};
+\node at (P) {Portugal};
+\node at (I) {Italie};
+\node at (B) {Belgique};
+\node at (PB) {Pays-Bas};
+\node at (A) {Allemagne};
+\node at (S) {Suisse};
+\end{scope}
+
+
+\begin{scope}[xshift=8cm]
+\tikzstyle{border} = [draw, thick, blue!40]
+% France
+\draw[border] (0,0) -- ++(2,0) -- ++(0,2) -- ++(-2,0) -- cycle;
+
+% Espagne
+\draw[border] (-1,-2) -- ++(2,0) -- ++(0,2) -- ++(-2,0) -- cycle;
+
+% Portugal
+\draw[border] (-2,-2.5) -- ++(1,0) -- ++(0,2) -- ++(-1,0) -- cycle;
+
+% Belgique
+\draw[border] (1.5,2) -- ++(1.5,0) -- ++(0,1) -- ++(-1.5,0) -- cycle;
+
+% Allemagne
+\draw[border] (2,0.5) -- ++(2,0) -- ++(0,1.5) -- ++(-2,0) -- cycle;
+
+% Pays-Bas
+\draw[border] (3,2) -- ++(1,0) -- ++(0,1.5) -- ++(-2,0) --++(0,-0.5) -- ++(1,0)-- cycle;
+
+% Suisse
+\draw[border] (2,0) -- ++(1,0) -- ++(0,0.5) -- ++(-1,0) -- cycle;
+
+% Italie
+\draw[border] (1.5,0) -- ++(1,0) -- ++(0,-3) -- ++(-1.5,0) --++(0,0.5) --++(0.5,0) -- cycle;
+
+\coordinate (F) at (1,1);
+\coordinate (E) at (0,-1);
+\coordinate (P) at (-1.5,-1.5);
+\coordinate (I) at (2,-1.5);
+\coordinate (B) at (2.25,2.5);
+\coordinate (PB) at (3.5,3);
+\coordinate (A) at (3,1.25);
+\coordinate (S) at (2.5,0.25);
+
+
+
+\fill (F) circle (0.1);
+\fill (E) circle (0.1);
+\fill (P) circle (0.1);
+\fill (I) circle (0.1);
+\fill (B) circle (0.1);
+\fill (PB) circle (0.1);
+\fill (A) circle (0.1);
+\fill (S) circle (0.1);
+
+
+\node[left] at (F) {F};
+\node[below] at (E) {E};
+\node[below] at (P) {P};
+\node[below] at (I) {I};
+\node[left] at (B) {B};
+\node[above] at (PB) {PB};
+\node[right] at (A) {A};
+\node[right] at (S) {S};
+\end{scope}
+
+
+
+\begin{scope}[xshift=0cm, yshift=-7cm]
+\tikzstyle{border} = [draw, thick, blue!40]
+% France
+\draw[border] (0,0) -- ++(2,0) -- ++(0,2) -- ++(-2,0) -- cycle;
+
+% Espagne
+\draw[border] (-1,-2) -- ++(2,0) -- ++(0,2) -- ++(-2,0) -- cycle;
+
+% Portugal
+\draw[border] (-2,-2.5) -- ++(1,0) -- ++(0,2) -- ++(-1,0) -- cycle;
+
+% Belgique
+\draw[border] (1.5,2) -- ++(1.5,0) -- ++(0,1) -- ++(-1.5,0) -- cycle;
+
+% Allemagne
+\draw[border] (2,0.5) -- ++(2,0) -- ++(0,1.5) -- ++(-2,0) -- cycle;
+
+% Pays-Bas
+\draw[border] (3,2) -- ++(1,0) -- ++(0,1.5) -- ++(-2,0) --++(0,-0.5) -- ++(1,0)-- cycle;
+
+% Suisse
+\draw[border] (2,0) -- ++(1,0) -- ++(0,0.5) -- ++(-1,0) -- cycle;
+
+% Italie
+\draw[border] (1.5,0) -- ++(1,0) -- ++(0,-3) -- ++(-1.5,0) --++(0,0.5) --++(0.5,0) -- cycle;
+
+\coordinate (F) at (1,1);
+\coordinate (E) at (0,-1);
+\coordinate (P) at (-1.5,-1.5);
+\coordinate (I) at (2,-1.5);
+\coordinate (B) at (2.25,2.5);
+\coordinate (PB) at (3.5,3);
+\coordinate (A) at (3,1.25);
+\coordinate (S) at (2.5,0.25);
+
+\draw[edge] (F)--(E)--(P);
+\draw[edge] (F)--(B)--(PB)--(A)--(S)--(I) to[bend right=20] (F);
+\draw[edge] (B)--(A)--(F)to[bend right=20](S);
+
+\fill (F) circle (0.1);
+\fill (E) circle (0.1);
+\fill (P) circle (0.1);
+\fill (I) circle (0.1);
+\fill (B) circle (0.1);
+\fill (PB) circle (0.1);
+\fill (A) circle (0.1);
+\fill (S) circle (0.1);
+
+
+\node[left] at (F) {F};
+\node[below] at (E) {E};
+\node[below] at (P) {P};
+\node[below] at (I) {I};
+\node[left] at (B) {B};
+\node[above] at (PB) {PB};
+\node[right] at (A) {A};
+\node[right] at (S) {S};
+\end{scope}
+
+
+\begin{scope}[yshift= -7cm, xshift=7cm];
+
+\coordinate (F) at (1,1);
+\coordinate (E) at (0,-1);
+\coordinate (P) at (-1.5,-1.5);
+\coordinate (I) at (2,-1.5);
+\coordinate (B) at (2.25,2.5);
+\coordinate (PB) at (3.5,3);
+\coordinate (A) at (3,1.25);
+\coordinate (S) at (2.5,0.25);
+
+\draw[edge] (F)--(E)--(P);
+\draw[edge] (F)--(B)--(PB)--(A)--(S)--(I) to[bend right=20] (F);
+\draw[edge] (B)--(A)--(F) to[bend right=20](S);
+
+\fill (F) circle (0.1);
+\fill (E) circle (0.1);
+\fill (P) circle (0.1);
+\fill (I) circle (0.1);
+\fill (B) circle (0.1);
+\fill (PB) circle (0.1);
+\fill (A) circle (0.1);
+\fill (S) circle (0.1);
+
+
+\node[left] at (F) {F};
+\node[below] at (E) {E};
+\node[below] at (P) {P};
+\node[below] at (I) {I};
+\node[left] at (B) {B};
+\node[above] at (PB) {PB};
+\node[right] at (A) {A};
+\node[right] at (S) {S};
+
+\end{scope}
+
+\draw[->,>=latex,ultra thick,red] (4.5,0)--++(1,0);
+\draw[->,>=latex,ultra thick,red] (-3,-7)--++(1,0);
+\draw[->,>=latex,ultra thick,red] (5,-7)--++(1,0);
+
+\end{tikzpicture}

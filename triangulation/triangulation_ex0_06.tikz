@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw,  thick]
+\tikzstyle{point} = [black]
+
+
+\coordinate (A) at (2,2);
+\coordinate (B) at (2,3);
+\coordinate (C) at (4,1);
+\coordinate (D) at (5,4);
+\coordinate (E) at (1,4);
+\coordinate (F) at (6,3);
+\coordinate (G) at (4,2);
+\coordinate (H) at (3.5,3.1);
+\coordinate (I) at (5,4);
+
+\foreach \point/\position in {A,B,C,D,E,F,G,H}{
+  \fill[point] (\point) circle (2pt);% node[below]{\point};
+}
+
+%\draw[line] (A)--(C)--(F)--(D)--(E)--cycle;
+\draw (0,0) rectangle ++(7,5);
+
+\end{tikzpicture}

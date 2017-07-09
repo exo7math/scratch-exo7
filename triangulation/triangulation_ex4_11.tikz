@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw,  thick]
+\tikzstyle{point} = [black]
+
+\coordinate (A) at (0.5,1);
+\coordinate (B) at (0,3);
+\coordinate (C) at (2,3);
+\coordinate (D) at (4,2);
+\coordinate (E) at (4,1);
+\coordinate (F) at (2,0);
+\coordinate (G) at (2,2);
+\coordinate (H) at (3,0.9);
+%\coordinate (I) at (1.7,0.7);
+
+\draw[line,red] (A)--(B)--(C)--(D)--(E)--(F)--cycle;
+\draw[line,red] (A)--(G)--(C);
+\draw[line,red] (F)--(H)--(E);
+\draw[line,red] (D)--(H)--(G)--(D);
+\draw[line,red] (B)--(G)--(C);
+\draw[line,red] (G)--(F);
+
+\draw (-1,-1) rectangle ++(6,5);
+
+
+\foreach \point in {A,...,H}{
+  \fill[point] (\point) circle (2pt); node[below]{\point};
+}
+
+\end{tikzpicture}

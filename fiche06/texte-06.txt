@@ -1,0 +1,334 @@
+
+===============================
+===============================
+Fiche 06 -- Variables et hasard
+===============================
+===============================
+
+
+===============================
+Fiche 06 - activité 1 - François
+===============================
+
+
+[part 1]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Tu vas programmer le jeu par par lequel sans doute tous les programmeurs du monde ont commencé !
+
+- L'ordinateur choisit au hasard un nombre entre 1 et 50 qu'il ne dévoile pas au joueur.
+
+- Le joueur tente de deviner ce nombre en proposant une réponse. 
+ 
+- L'ordinateur répond "le nombre à trouver est plus grand" ou bien "le nombre à trouver est plus petit" jusqu'à ce que ce que le joueur trouve la bonne réponse !
+
+Je suis certain que tu a déjà jouer à ce type de jeu...
+
+Nous aurons donc besoin, puisque ce sera l'ordinateur qui possèdera le secret, d'un outil permettant de tirer des nombres au hasard.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+C'est exactement ce que fait le bloc dans la catégorie 'Opérateurs' : "nombre aléatoire entre (1) et (10)".
+
+A chaque fois qu'on fait appel à ce bloc on obtient un nombre au hasard : un nombre entier entre 1 et 10. [[double cliqué sur le bloc plusieurs fois]]
+
+
+[part 2]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+La notion la plus importante de cette activité, c'est la notion de variable !
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Tu auras besoin de créer tes propres variables. 
+
+Dans une variable on peut mettre par exemple un nombre, on peut changer ce nombre au cours du temps et on peut utiliser la variable n'importe où dans le code. 
+
+Voici un exemple. Dans la catégorie "Données", j'ai ici la possibilité de "Créer une variable" à laquelle je dois impérativement donner un nom.
+
+Je lui donne par exemple le nom de 'mavariable'.
+
+Le bloc 'mettre [mavariable v] à (7)' permet de stocker une valeur, ici par exemple 7, dans cette variable 'mavariable'.
+
+Je peux retrouver à tout moment la valeur stockée dans une variable pour l'afficher ou l'utiliser ailleurs dans le programme. 
+
+Par exemple : dans la catégorie 'Apparence' : 'dire (mavariable) pendant (2) secondes' a l'effet suivant. [Montrer le 7 sur Scratch]
+
+Je peux modifier la valeur contenue dans un variable. Je peux par exemple lui ajouter un nombre avec le bloc 'ajouter à [mavariable v] (3)'. 
+
+Si j'affiche de nouveau le contenu de 'mavariable', je devrais avoir 10. C'est bien ce qui arrive.
+
+[part 3]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Lançons nous dans la programmation de ce jeu.
+
+Tout d'abord l'ordinateur va choisir un nombre au hasard entre 1 et 50.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+L'ordinateur doit se souvenir de cette valeur. Je vais donc créer une variable, que je vais appeler 'NombreMystere', qui va stocker cette valeur. Il est important de donner à vos variables des noms qui reflètent leur rôle ou leur utilisation : ici le nom de 'NombreMystere' est suffisamment explicite.
+
+Je stocke donc dans cette variable le nombre qui sera tiré au hasard avec le bloc 'mettre "NombreMystere" à "nombre aléatoire entre 1 et 10"'.
+
+Maintenant, abordons le dialogue avec l'utilisateur : on lui demande de faire des propositions avec le bloc 'demander ... et attendre' : "Quel est le nombre mystère ?" et 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+nous allons répéter cette question jusqu'à ce que le joueur trouve le nombre mystère. 
+
+Le jeu s'arrêtera donc lorsque deux quantités seront égales : à savoir notre nombre mystère (connu de l'ordinateur seul) et le nombre proposé par l'utilisateur. 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Le premier de ces nombres est contenu dans la variable nommée 'NombreMystere' et le second dans la variable nommée 'reponse' [Opérateurs] dont le nom est imposé et qui contient successivement les réponses de l'utilisateur. 
+
+J'utilise le bloc d'égalité de la catégorie 'Opérateurs' : avec ces deux variables.
+
+Je vais répéter la question à l'utilisateur jusqu'à ce que cette égalité soit vraie. 
+J'installe donc le bloc 'répéter jusqu'à ...' de la catégorie 'Contrôles' et je place l'égalité préparé. 
+
+Comme ce bloc 'répéter' utilise la variable 'réponse', je dois donc au préalable poser une première fois la question.
+
+[part 4]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Je sais ce que doit faire le programme en cas de succès, c'est-à-dire en sortant de cette boucle de répétitions : il doit dire au joueur qu'il a gagné. Je peux dire : Bravo, le nombre mystère était bien 8 par exemple.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je place donc à la fin le bloc 'dire ... pendant 2 secondes' : avec comme message composé de deux morceaux que je dois regrouper avec le bloc 'regroupe' de la catégorie 'Opérateurs' : le texte 'Bravo, le nombre mystère était bien ' que je regroupe avec la variable 'NombreMystere'.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous venons de traiter le cas où le joueur trouve le nombre mystère. Que reste-t-il à faire maintenant ? 
+Eh bien, il faut informer le joueur lors de ses propositions non valides, 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+cela se passe à l'intérieur de la boucle 'répéter' : il faut lui dire si le nombre mystère est plus grand ou plus petit que le nombre proposé. 
+
+Premier cas : le nombre mystère est inférieur à la réponse. Je place un bloc de test : 
+- Si... alors...
+- avec comme contenu l'opérateur 'inférieur' entre les variables 'NombreMystere' et 'reponse'
+- et comme action : 'dire "Le nombre mystère est plus petit."'
+
+Second cas : le nombre mystère est supérieur à la réponse. Il ressemble beaucoup au précédent, je peux dans un premier temps le dupliquer puis le modifier : 
+- l'opérateur est maintenant 'supérieur'
+- et l'action : 'dire "Le nombre mystère est plus grand."'
+
+
+Je place comme convenu ces deux tests avant de reposer la question.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Et voilà !
+
+N'hésiste pas à modifier et à améliorer ce programme en informant par exemple le joueur de son nombre d'essais !!
+
+===============================
+Fiche 06 - activité 2 - Arnaud
+===============================
+
+[part 1]
+
+Tu vas tracer point par point le triangle de Sierpinski. C'est une figure fractale.
+
+A chaque étape, on trace un point. Ce qui est rigolo, c'est que chaque point est déterminé au hasard et que malgré cela, des zones sombres apparaissent.
+
+Je recommence ; les points tirés au hasard ne sont pas les mêmes et pourtant la figure qui se dessine est semblable. Pour aller plus vite, je peux activer le 'mode turbo'. [Menu 'édition']
+
+Le triangle de Sierpinski est une fractale, elle peut s'obtenir en découpant une infinité de petits triangles dans le grand triangle.
+
+
+Nous allons détailler le processus, mais auparavant voyons ce qui est décidé au hasard.
+
+Pour construire un nouveau point, on choisit un des trois sommets au hasard. 
+Comment faire ?
+
+Pour choisir un des trois sommets, on tire tout simplement un nombre au hasard entre 1 et 3 [sortir le bloc 'opérateurs']
+
+- si le nombre tiré est 1, je choisis le premier sommet,
+- si c'est 2, je choisis le deuxième,
+- si c'est 3, le troisième !
+
+
+[part 2]
+
+Expliquons la construction géométrique point par point !
+
+J'ai numéroté mes sommets du triangle 1, 2 et 3.
+
+Imaginons que Scratch parte du centre de l'écran.
+
+Si je choisis par exemple le sommet 2. Alors Scratch se dirige vers le sommet 2, *mais il s'arrête à la moitié du chemin*.
+
+Et je recommence d'où je suis arrivé. Si maintenant je choisis le sommet 1, alors Scratch repart d'où il était, va cette fois vers le sommet 1, *mais* s'arrête encore pile à la moitié du chemin.
+
+Si je rechoisis le sommet 1, alors à l'étape d'après il se trouve ici,
+
+et si à l'étape suivante je choisis le sommet 3 alors Scratch se retrouve là...
+
+Et je recommence indéfiniment. Tous les points que j'ai obtenu forment ce que l'on appelle le triangle de Sierpinski.  
+
+Bien sûr ce n'est pas moi qui vais choisir vers quel sommet se diriger, mais c'est le hasard !
+
+
+[part 3]
+
+Avant de passer au programme, je t'explique comment calculer chaque point.
+
+Tout d'abord voici les coordonnées des trois sommets.
+  - (-200,-170)
+  - (+200,-170)
+  - (0,+170)
+  
+Scratch, lui, se trouve en un point quelconque, je récupère ses coordonnées par les blocs 'abscisse x' et 'ordonnée y', ce sont les deux variables qui m'indique où est Scratch.
+
+Elles changent automatiquement quand Scratch se déplace.
+
+Maintenant il faut une formule pour dire à Scratch de se rendre au milieu, entre
+  - la position où il se trouve,
+  - et par exemple le premier sommet.
+  
+C'est très facile : la nouvelle abscisse est donnée par la moyenne entre l'abscisse de Scratch et l'abscisse du sommet numéro 1.
+
+Et de même, la nouvelle ordonnée est obtenue par la moyenne entre l'ordonnée de Scratch et l'ordonnée du sommet numéro 1.
+
+Donc :
+'abscisse x' + [-200], puis diviser par 2 pour avoir la moyenne, et ça c'est la nouvelle valeur de x.
+
+De même 'ordonnée y' + [-170], puis diviser par 2 pour avoir la moyenne, et ça c'est la nouvelle valeur de y.
+  
+Regarde cela fonctionne ! Si Scratch par d'ici, alors il se retourve bien au milieu entre son ancienne position et le sommet 1. 
+
+
+[part 4]
+
+[garder les blocs de calcul moyenne]
+
+C'est parti pour l'écriture du programme :
+
+une fois le drapeau cliqué, on efface tout.
+
+J'ai besoin d'une variable 'point' qui prendra la valeur 1,2, ou 3 et me dira vers quel sommet me diriger.
+
+J'ai aussi besoin d'une variable 'x' qui sera l'abscisse du point où je dois me rendre, et d'une variable 'y' pour l'ordonnée.
+
+Je commence avec une boucle qui va répéter sans fin les instructions suivantes :
+
+Tout d'abord on tire au hasard un nombre entre 1 et 3, on met cette valeur dans la variable 'point'.
+
+Maintenant, je teste si la valeur de 'point' vaut 1, si c'est la cas alors je dois me diriger vers le sommet 1.
+
+C'est ce que l'on avait fait juste avant :
+Je calcule la somme 'abscisse x' + [-200], puis je divise par 2 pour avoir la moyenne ; c'est la nouvelle valeur de x.
+
+Je calcule la somme 'ordonnée y' + [-170], puis je divise par 2 ;  c'est la nouvelle valeur de y.
+
+Je recommence pour le sommet 2 puis le sommet 3 [dupliquer avec clic droit ou tampon]. J'ai juste à copier les formules en changeant les valeurs données par les coordonnées des sommets.
+
+Une fois ces calculs faits, je me rends au point d'abscisse donné par la variable x et d'ordonnée donnée par la variable y. Je donne un coup de tampon ['stylo'] (ici j'ai changé le costume de Scratch en un tout petit carré).
+
+Et c'est parfait !
+
+===============================
+Fiche 06 - activité 3 - Nathalie
+===============================
+
+[part 1]
+
+Dans cette activité, nous allons programmer un jeu de ping-pong. 
+
+La balle se déplace au hasard sur l’écran. Et le joueur déplace la raquette (ce rectangle noir) de gauche à droite et de droite à gauche pour empêcher la balle de toucher la partie rouge en bas de l’écran.
+
+Si la balle touche la partie rouge, c’est perdu.
+
+De plus, à chaque fois que la balle touche la raquette, sa vitesse augmente.
+
+[part 2]
+
+Commençons par créer l’arrière-plan avec la partie rouge.
+
+Je sélectionnee l’arrière-plan (entouré de bleu) puis l’onglet ‘arrière-plans’.
+
+Dans la zone de dessin, je choisis la couleur rouge, puis l’outil ‘rectangle’, je dessine un fin rectangle en bas de l'écran sur toute la largeur.
+
+On va maintenant créer notre raquette.
+
+Pour cela, je sélectionnee le lutin Scratch puis je clique sur l’onglet ‘costumes’.
+
+Je dessine un nouveau costume en cliquant sur le pinceau ici [dans la partie centrale en haut].
+
+Je dessine un petit rectangle noir au centre de l’écran. [Cliquez dans la zone quadrillé pour le valider.]
+
+Dans la zone de visionnage à gauche, place ce rectangle un peu au dessus de la zone rouge.
+
+Je n'ai pas besoin des autres costumes, je les supprime en cliquant sur la petite croix noire.
+
+[part 3]
+
+[déjà prêt, juste à insérérer les blocs si ... alors dans boucle répéter']
+
+On programme maintenant le déplacement de la raquette [, comme cela à déjà été fait plusieurs fois.]
+
+On répéte indéfiniment :
+‘si touche flèche droite pressée ? alors
+  ajouter 10 à x’
+
+Et de même avec la touche flèche gauche et ajouter -10 à x.
+
+[part 4]
+
+Il faut maintenant créer un nouveau lutin pour la balle.
+
+Sous l’écran de visionnage, on clique sur le petit personnage à côté de l’écriture 'nouveau lutin' pour accéder à la bibliothèque des lutins.
+
+Dans celle-ci, on choisit le ballon de basket par exemple. 
+
+On réduit sa taille pour l’adapter à la taille de la raquette.
+
+
+Ce lutin aura son propre script.
+
+Lorsque le drapeau vert est cliqué, on donne la valeur 180 à l’ordonnée y de la balle (c-à-d qu'il part du haut)
+et pour x, on prend un nombre aléatoire entre -150 et 150.
+
+On oriente également cette balle avec un angle aléatoire entre 160 et 200.
+
+La balle aura une vitesse qui va changer au cours du jeu, il faut pouvoir stocker cette valeur.
+
+On crée donc une variable ‘vitesse’.
+Puis on fixe la vitesse de départ à 5.
+
+[part 5]
+
+On va pouvoir maintenant programmer le déplacement de la balle qui sera dans une boucle sans fin.
+
+Elle avance de la variable ‘vitesse’, donc si vitesse vaut 5, la balle avance de 5 pas à chaque fois, elle va donc doucement. 
+
+Par contre si 'vitesse' vaut 10, alors la balle avance de 10 pas à chaque fois, elle va donc plus vite.
+
+Puis elle rebondit si le bord est atteint.
+
+Programmons maintenant la fin de partie :
+Si la couleur rouge est touchée? alors
+  on veut [[jouer le son ‘pop’ ]] 
+  et stopper tout
+
+[[Mais quand on prend la brique ‘jouer le son...’ il n’y a aucun son dans le menu déroulant. Cliquez l’onglet ‘sons’ puis sur le premier icône au centre pour accéder à la bibliothèque.
+Choisir le son ‘pop’ puis valider.
+Cliquez sur l’onglet ‘scripts’ pour revenir à la programmation 
+puis terminer la fin de partie.]]
+
+[part 6]
+
+Il nous reste maintenant à programmer le rebond sur la raquette.
+Si la balle touche la couleur noire de la raquette, elle doit rebondir.
+Mais comment rebondir ?
+
+On ne peut pas utiliser la brique ‘rebondir si le bord est atteint’ car nous ne sommes pas au bord de l’écran.
+
+La balle arrive sur la raquette avec un certain angle. Cet angle est automatiquement stocké par le logiciel dans une variable appelé ‘direction’.
+
+Quand elle repart, elle a une nouvelle direction et la formule qui donne cette nouvelle direction en fonction de la direction d'arrivée est 
+ 'nouvelle direction = 180 – ancienne direction.'
+
+La variable direction se trouve dans la catégorie ‘mouvement’ tout en bas...
+
+Il suffit donc de programmer :
+s’orienter à 180 – direction.
+
+La balle avançant indéfiniment, elle repartira dans la nouvelle direction.
+
+Quand la balle touche la raquette, la vitesse doit également être augmentée de 1.
+
+Et voilà c’est terminé. A vous de jouer !!!
+
+
+
+

@@ -1,0 +1,346 @@
+
+
+===============================
+===============================
+Fiche 12 -- Listes
+===============================
+===============================
+
+
+===============================
+Fiche 12 - activité 1 - Arnaud
+===============================
+
+
+[part 1]
+
+Tu dois coder une petit programme qui calcule la moyenne de trois notes.
+
+Voici comment il doit fonctionner :
+  - Scratch te demande les notes une par une, [15,12,17]
+  - et il affiche la moyenne !
+  
+[part 2]  
+  
+Pour cela, une méthode simple est d'utiliser une liste :
+
+Je crée une liste 'notes' (dans la catégorie 'Données').
+Une liste, c'est une sorte de super-variable, car elle peut contenir une, deux, trois, quatre... autant de valeurs que je souhaite.
+  
+Par exemple, pour nous, ce sera nos 3 notes, mais cela pourrait être la liste des âges de toute une classe ou bien la liste des prénoms...
+
+  - Au départ la liste est vide.
+  - Avec le bloc 
+    - 'ajouter [15] à [notes v]', j'ajoute la note 15, maintenant ma liste possède un seul élément.  
+    - 'ajouter [12] à [notes v]' : ma liste a deux éléments,
+    - 'ajouter [16] à [notes v]' : ma liste possède trois éléments.
+   
+   
+Ca y est, nous avons stocké tous nos résultats dans la liste 'notes'. 
+
+Mais maintenant je souhaiterais les récupérer un par un. 
+
+Aucun problème : les éléments de la liste sont implicitement numérotés 1, 2 et 3
+  - si je demande '(élément (1) de [notes v])' alors cela renvoie 15
+  - si je demande '(élément (2) de [notes v])' alors cela renvoie 12
+  - si je demande '(élément (3) de [notes v])' alors cela renvoie 16
+  
+
+Tu sais déjà assez de choses pour calculer la moyenne !
+
+Je te rappelle que la formule de la moyenne, c'est juste la somme de trois notes diviser par 3.
+
+Dernière chose : 
+pour démarrer à chaque fois en partant d'une liste vide, commence ton programme avec le bloc :
+'supprimer l'élément (tout v) de la liste [notes v]'
+
+Ma liste est vide je peux attaquer l'écriture du programme !
+
+[part 3]
+
+Revenons donc à notre programme interactif de calcul de moyenne.
+
+Je commence par définir une nouvelle fois une liste que j'appelle 'notes' et qui va contenir mes 3 notes.
+
+Je m'assure au départ que la liste est bien vide.
+
+quand le drapeau vert pressé
+supprimer l'élément (tout v) de la liste [notes v]
+
+Tout d'abord Scratch demande successivement les 3 notes à l'utilisateur. Le programme va les ajouter à ma liste : 
+
+
+répéter [3] fois
+    demander [Une note ?] et attendre
+    ajouter (réponse) à [notes v]
+fin
+
+Testons le programme : Ok, les 3 notes sont stockées dans la liste.
+
+Pour la moyenne, j'ai d'abord besoin de calculer la somme des 3 notes.  
+
+Je définis une variable 'somme',
+
+que j'initialise à 0.
+
+mettre [somme v] à [0]
+
+J'extrais le premier élément de la liste, que j'ajoute à 'somme',
+
+ajouter à [somme v] (élément (1) de [notes v])
+
+puis j'extrais le deuxième élément de la liste, que j'ajoute à 'somme',
+
+et même chose pour le troisième.
+
+Maintenant la variable 'somme' contient bien la somme des trois notes.
+
+
+Je calcule la moyenne, pour cela je définis une variable 'moyenne'.
+
+La moyenne vaut 'somme'/3 
+
+mettre [moyenne v] à ( (somme) / (3) )
+
+C'est cette valeur que j'affiche.
+
+C'est parfait !
+
+
+[part 4]
+
+Mais pourquoi devrais-je me limiter à 3 notes ? Si j'en ai 4, faut-il récrire tout le programme ?
+
+Le plus malin c'est d'utiliser une variable 'nbnotes' pour stocker le nombre de notes sur lesquelles nous allons travailler;
+
+Modifions un peu notre programme précédent :
+
+- il faut définir la variable 'nbnotes', (pour 'nombre de notes') et on fixe au départ dans le code combien il va y avoir de notes. Ici je veux par exemple 4 notes.
+
+- il faut ensuite demander 'nbnotes' fois une note.
+
+Je veux maintenant parcourir toute la liste pour faire la somme des notes.
+
+Je vais créer une variable 'n' qui jouera le rôle d'un *compteur*, 'n' va prendre successivement la valeur 1, 2, 3... jusqu'à 'nbnotes', [je n'ai d'ailleurs pas besoin de savoir quelle est la valeur contenue dans 'nbnotes'.]
+
+Je commence par mettre 'n' à 0 et 
+je répète 'nbnotes' fois,
+  - ajouter 1 à (n)
+  - j'extrais l'élément 'n' de la liste : (élément (n) de [notes v])
+  - que j'ajoute à la somme
+  
+Ainsi dans ma boucle 'n' va prendre la valeur 1, 2.. ce qui fait que je vais récupérer le premier élément de la liste, puis le second... que j'ajoute à 'somme'.
+
+Pour la moyenne, je divise 'somme' par 'nbnotes', ce qui correspond bien à la définition de la moyenne !
+
+Comme il commence à y avoir beaucoup de variables, pour t'aider à écrire le programme, tu peux afficher tout ce que contiennent les variables.
+
+Je teste mon programme avec 4 notes.
+[mettre 'nbnotes' à 4, test avec 14, 13, 15, 17]
+
+Pour aller plus loin, tu peux améliorer ce programme en interrogeant directement l'utilisateur sur le nombre de notes qu'il a à traiter.
+
+
+
+===============================
+Fiche 12 - activité 2 - Nathalie
+===============================
+[part 1]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous allons créer un générateur automatique de phrases, c'est un jeu qui s'appelle le jeu du 'cadavre exquis'.
+
+Chaque joueur pense à un morceau de phrase, on met bout à bout les contributions de chacun et cela donne des phrases, le plus souvent surprenantes.
+
+Nous simulons ce type de jeu avec Scratch.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+[test]
+
+J'obtiens à chaque fois une phrase rigolote. 
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Afin de structurer les phrases produites, donnons un rôle à chacun des joueurs :
+- Le premier proposera un sujet
+- Le deuxième un verbe (à la troisième personne)
+- Le troisième un complément de lieu
+- Le quatrième et dernier un complément de manière
+
+[part 2] [Drapeau vert]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Je construis plusieurs listes :
+- une liste qui contient des sujets
+- une listes qui content des verbes
+- et deux listes de compléments
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Créons la liste des sujets : 
+- initialisation : 
+  - 'créer une liste "sujets" [non visible]
+  - 'supprimer l'élément "tout" de la liste "sujets"
+- ajout d'éléments dans la liste (singulier) : 
+  - 'ajouter ??? à "sujets"
+
+  - Le Chat
+  - Dark Vador
+  - Ma voisine
+  - Mickey Mouse
+
+J'ai donc à ma disposition 4 sujets différents.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Ma phrase va commencer par un sujet, tiré au hasard parmi la liste des sujets.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je crée une variable : 'monsujet' 
+que j'initialise grâce au bloc 'mettre "monsujet" à ???' 
+avec un 'élément "au hasard" de "sujets".
+
+Et je commence la construction de ma phrase : 
+
+je crée une variable 'phrase' qui contiendra au début le sujet contenu dans 'monsujet' : 
+- 'mettre "phrase" à ???'
+- et insérer le contenu de 'monsujet'
+
+J'affiche dès maintenant ma phrase même si pour le moment elle est incomplète : 
+- 'dire ???' où je place ici 'phrase"
+
+A chaque clic sur le drapeau vert, Scratch me propose un sujet tiré au hasard dans la liste des sujets que j'ai construite.
+
+[part 3]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Je pense que tu sais exactement ce qu'il nous reste à faire !
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+J'ai déjà mis en place trois listes que j'ai appelées : 
+- 'verbes', 
+- 'lieux' 
+- et 'manieres' 
+et je les ai remplies chacune de 4 éléments.
+
+Je crée une variable 'monverbe', que j'initialise avec un élément au hasard de la liste 'verbes'
+
+De même pour les deux compléments : 
+- 'monlieu'
+- 'mamaniere'
+
+Pour finir, je dois construire ma phrase que j'avais ici commencée avec 'monsujet' en y ajoutant les nouveaux éléments.
+
+Je regroupe donc les quatres éléments [3 blocs 'regroupe'] :
+- 'monsujet'
+- 'monverbe'
+- 'monlieu'
+- 'mamaniere'
+
+[test]
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Compléte les listes et laisse Scratch inventer d'autres drôles de phrase !
+
+
+===============================
+Fiche 12 - activité 3 - François
+===============================
+
+[part 1]
+
+[préparer dessin arrière-plan urne + boules]
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous allons programmer un mini-jeu de loto.
+
+J'ai fait ici un dessin pour présenter la situation.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+- Une urne contiendra 6 boules de 3 couleurs différentes
+- un premier tirage sera effectué et la boule sera remise
+- pour un second tirage.
+
+Le joueur sera déclaré gagnant s'il a tiré une boule rouge et une boule bleu.
+
+Soit rouge puis bleu, soit bleu puis rouge.
+
+Nous allons modéliser ce jeu et voir s'il est fréquent de gagner ou pas en recommençant le tirage de nombreuses fois.
+
+
+[part 2]
+
+Pour représenter l'urne qui contient les boules de couleur, j'utilise une liste.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je crée une variable que j'appelle 'boules'. 
+
+Par mesure de précaution, je commence par supprimer tous les éléments de la liste.
+
+J'initialise le contenu de cette liste.
+Je remplis la liste avec la première lettre des couleurs des 6 boules : 
+- 3 'N' pour noire
+- 2 'R' pour rouge
+- 1 'B' pour bleu
+
+
+[part 3]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Le travail suivant est de procéder au tirage aléatoire de deux éléments dans la liste 'boules'. 
+
+Pour me souvenir des deux tirages, j'utilise deux variables,
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+que je nomme : 'boule1' et 'boule2'.
+
+Ces deux variables reçoivent ('mettre ... à ...') le résultat du tirage aléatoire d'un 'élément ??? de ...' : 'boules'.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Il faut maintenant que je teste maintenant si la combinaison obtenue au hasard est gagnante.
+
+Le joueur a gagné lorsqu'il obtient une boule rouge et une boule bleue et cela indépendamment de l'ordre du tirage.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je prends donc un bloc 'si ??? alors ???' qui va avoir comme condition : 
+- boule1=R  --et-- boule2=B [ou bien je mets un "ou" ???]
+Mais je ne dois pas oublier non plus le cas dans lequel l'ordre de tirage est d'abord une boule bleue puis une boule rouge.
+Je prends donc un nouveau bloc 'si ??? alors ???' avec la condition : 
+- boule1=B  --et-- boule2=R
+
+En cas de succès, j'informe le joueur qu'il a gagné : 
+[rajouter dire 'gagné' + tests]
+
+Voyons le résultat : ...
+
+[part 4]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Je vais compliquer le programme afin qu'il réalise plusieurs parties et qu'à la fin il communique au joueur le nombre de fois où il a été vainqueur.
+
+Ce travail nous permettra d'aller encore plus loin et d'observer le comportement de tels tirages aléatoires pour un grand nombre de répétitions, 
+
+Par exemple, aurais-tu une idée approximative du nombre de parties gagnées sur 10 000 jouées ?
+Ce serait laborieux à faire sans ordinateur ! 
+
+Alors allons-y.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je prends donc le bloc 'répéter ??? fois' pour simuler 10 000 parties. 
+
+Puisque nous souhaitons comptabiliser le nombre de parties gagnées, 
+je crée une variable 'bonstirages' qui comptera le nombre de parties gagnées.
+Je l'initialise à 0. Je place ce bloc avant le 'répéter'.
+
+A chaque partie gagnée, je vais 'ajouter 1' à ma variable 'bonstirages'.
+
+A la fin de toutes ces parties, j'affiche le contenu de la variable pour lire le nombre de parties gagnées sur les 10 000 jouées.
+
+Lançons une première fois le programme. 
+
+Je vois sur la gauche le contenu de mes variables évoluer avec le temps... ce qui ralentit fortement l'exécution du programme.
+
+J'arrête le programme et je les rends invisible. 
+
+Je clique de nouveau sur le drapeau vert. 
+Le résultat est alors presque immédiat. Je trouve environ ... parties gagnées sur 10 000 jouées.
+
+[tu peux aussi activer le 'mode turbo']
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Clique maintenant plusieurs fois sur le drapeau vert, tu vois que le nombre de tirages gagnants est toujours autour de 1 100. 
+C'est la 'loi des grands nombres' qui affirme alors 
+qu'il y a environ 1 100 chances sur 10 000 de gagner, soit un peu moins de 10% !
+
+

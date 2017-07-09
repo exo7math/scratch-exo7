@@ -1,0 +1,151 @@
+\begin{tikzpicture}
+
+% Lettres communes
+\fill[black!20] (3,-1) rectangle ++(1,1);
+\fill[black!20] (1,-2) rectangle ++(1,1);
+\fill[black!20] (3,-4) rectangle ++(1,1);
+\fill[black!20] (8,-8) rectangle ++(1,1);
+\fill[black!20] (2,-9) rectangle ++(1,1);
+\fill[black!20] (9,-9) rectangle ++(1,1);
+
+% Grille
+\draw (-1,2) grid ++(11,-11);
+
+% Mot 1
+\node at (-0.5,-0.5) {\bf C};
+\node at (-0.5,-1.5) {\bf R};
+\node at (-0.5,-2.5) {\bf O};
+\node at (-0.5,-3.5) {\bf C};
+\node at (-0.5,-4.5) {\bf O};
+\node at (-0.5,-5.5) {\bf D};
+\node at (-0.5,-6.5) {\bf I};
+\node at (-0.5,-7.5) {\bf L};
+\node at (-0.5,-8.5) {\bf E};
+
+
+% Mot 2
+\node at (1.5,1.5) {\bf R};
+\node at (2.5,1.5) {\bf E};
+\node at (3.5,1.5) {\bf C};
+\node at (4.5,1.5) {\bf T};
+\node at (5.5,1.5) {\bf A};
+\node at (6.5,1.5) {\bf N};
+\node at (7.5,1.5) {\bf G};
+\node at (8.5,1.5) {\bf L};
+\node at (9.5,1.5) {\bf E};
+
+
+% Initialisation
+\foreach \i in {0,...,9}{
+  \node at (\i+0.5,0.5) {$\i$};
+}
+\foreach \i in {1,...,9}{
+  \node at (0.5,-\i+0.5) {$\i$};
+}
+
+
+% Cases interieurs
+
+% Ligne 1
+\node at (1.5,-0.5) {$\mathbf{1}$};
+\node at (2.5,-0.5) {$\mathbf{2}$};
+\node at (3.5,-0.5) {$\mathbf{2}$};
+\node at (4.5,-0.5) {$\mathbf{3}$};
+\node at (5.5,-0.5) {$\mathbf{4}$};
+\node at (6.5,-0.5) {$\mathbf{5}$};
+\node at (7.5,-0.5) {$\mathbf{6}$};
+\node at (8.5,-0.5) {$\mathbf{7}$};
+\node at (9.5,-0.5) {$\mathbf{8}$};
+
+% Ligne 2
+\node at (1.5,-1.5) {$\mathbf{1}$};
+\node at (2.5,-1.5) {$\mathbf{2}$};
+\node at (3.5,-1.5) {$\mathbf{3}$};
+\node at (4.5,-1.5) {$\mathbf{3}$};
+\node at (5.5,-1.5) {$\mathbf{4}$};
+\node at (6.5,-1.5) {$\mathbf{5}$};
+\node at (7.5,-1.5) {$\mathbf{6}$};
+\node at (8.5,-1.5) {$\mathbf{7}$};
+\node at (9.5,-1.5) {$\mathbf{8}$};
+
+
+
+% Ligne 3
+\node at (1.5,-2.5) {$\mathbf{2}$};
+\node at (2.5,-2.5) {$\mathbf{2}$};
+\node at (3.5,-2.5) {$\mathbf{3}$};
+\node at (4.5,-2.5) {$\mathbf{4}$};
+\node at (5.5,-2.5) {$\mathbf{4}$};
+\node at (6.5,-2.5) {$\mathbf{5}$};
+\node at (7.5,-2.5) {$\mathbf{6}$};
+\node at (8.5,-2.5) {$\mathbf{7}$};
+\node at (9.5,-2.5) {$\mathbf{8}$};
+
+% Ligne 4
+\node at (1.5,-3.5) {$\mathbf{3}$};
+\node at (2.5,-3.5) {$\mathbf{3}$};
+\node at (3.5,-3.5) {$\mathbf{2}$};
+\node at (4.5,-3.5) {$\mathbf{3}$};
+\node at (5.5,-3.5) {$\mathbf{4}$};
+\node at (6.5,-3.5) {$\mathbf{5}$};
+\node at (7.5,-3.5) {$\mathbf{6}$};
+\node at (8.5,-3.5) {$\mathbf{7}$};
+\node at (9.5,-3.5) {$\mathbf{8}$};
+
+% Ligne 5
+\node at (1.5,-4.5) {$\mathbf{4}$};
+\node at (2.5,-4.5) {$\mathbf{4}$};
+\node at (3.5,-4.5) {$\mathbf{3}$};
+\node at (4.5,-4.5) {$\mathbf{3}$};
+\node at (5.5,-4.5) {$\mathbf{4}$};
+\node at (6.5,-4.5) {$\mathbf{5}$};
+\node at (7.5,-4.5) {$\mathbf{6}$};
+\node at (8.5,-4.5) {$\mathbf{7}$};
+\node at (9.5,-4.5) {$\mathbf{8}$};
+
+% Ligne 6
+\node at (1.5,-5.5) {$\mathbf{5}$};
+\node at (2.5,-5.5) {$\mathbf{5}$};
+\node at (3.5,-5.5) {$\mathbf{4}$};
+\node at (4.5,-5.5) {$\mathbf{4}$};
+\node at (5.5,-5.5) {$\mathbf{4}$};
+\node at (6.5,-5.5) {$\mathbf{5}$};
+\node at (7.5,-5.5) {$\mathbf{6}$};
+\node at (8.5,-5.5) {$\mathbf{7}$};
+\node at (9.5,-5.5) {$\mathbf{8}$};
+
+% Ligne 7
+\node at (1.5,-6.5) {$\mathbf{6}$};
+\node at (2.5,-6.5) {$\mathbf{6}$};
+\node at (3.5,-6.5) {$\mathbf{5}$};
+\node at (4.5,-6.5) {$\mathbf{5}$};
+\node at (5.5,-6.5) {$\mathbf{5}$};
+\node at (6.5,-6.5) {$\mathbf{5}$};
+\node at (7.5,-6.5) {$\mathbf{6}$};
+\node at (8.5,-6.5) {$\mathbf{7}$};
+\node at (9.5,-6.5) {$\mathbf{8}$};
+
+% Ligne 8
+\node at (1.5,-7.5) {$\mathbf{7}$};
+\node at (2.5,-7.5) {$\mathbf{7}$};
+\node at (3.5,-7.5) {$\mathbf{6}$};
+\node at (4.5,-7.5) {$\mathbf{6}$};
+\node at (5.5,-7.5) {$\mathbf{6}$};
+\node at (6.5,-7.5) {$\mathbf{6}$};
+\node at (7.5,-7.5) {$\mathbf{6}$};
+\node at (8.5,-7.5) {$\mathbf{6}$};
+\node at (9.5,-7.5) {$\mathbf{7}$};
+
+% Ligne 9
+\node at (1.5,-8.5) {$\mathbf{8}$};
+\node at (2.5,-8.5) {$\mathbf{7}$};
+\node at (3.5,-8.5) {$\mathbf{7}$};
+\node at (4.5,-8.5) {$\mathbf{7}$};
+\node at (5.5,-8.5) {$\mathbf{7}$};
+\node at (6.5,-8.5) {$\mathbf{7}$};
+\node at (7.5,-8.5) {$\mathbf{7}$};
+\node at (8.5,-8.5) {$\mathbf{7}$};
+\node[red] at (9.5,-8.5) {$\mathbf{6}$};
+
+\draw[red,thick] (9.5,-8.5) circle (0.37);
+\end{tikzpicture}

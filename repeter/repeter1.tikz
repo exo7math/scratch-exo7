@@ -1,0 +1,25 @@
+\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+\tikzstyle{bulle} =  [draw, circle, thick, text centered, minimum width=2em, drop shadow, font = \huge, text = white]
+
+
+
+
+\begin{tikzpicture}[scale=1]
+
+\usefont{U}{cmss}{bx}{n}
+
+\node[bulle,  fill = red] at (0,0) {R};
+\node[bulle,  fill = red] at (1.5,0) {R};
+\node[bulle,  fill = red] at (3,0) {R};
+\node[bulle,  fill = blue] at (4.5,0) {B};
+\node[bulle,  fill = green] at (6,0) {V};
+\node[bulle,  fill = green] at (7.5,0) {V};
+\node[bulle,  fill = blue] at (9,0) {B};
+
+%\node[bulle, fill = white] at (9,0) {};
+
+\end{tikzpicture}

@@ -1,0 +1,91 @@
+# Blocs utiles
+
+(notes) 
+
+ajouter [15] à [notes v]
+
+
+(élément (1) de [notes v])
+(élément (n) de [notes v])
+
+
+supprimer l'élément (tout v) de la liste [notes v]
+
+
+(élément (au hasard v) de [sujets v])
+
+# Activité 1
+
+quand le drapeau vert pressé
+supprimer l'élément (tout v) de la liste [notes v]
+mettre [nbnotes v] à [3]
+répéter (nbnotes) fois
+    demander [Une note ?] et attendre
+    ajouter (réponse) à [notes v]
+fin
+mettre [somme v] à [0]
+mettre [n v] à [0]
+répéter (nbnotes) fois
+    ajouter à [n v] (1)
+    ajouter à [somme v] (élément (n) de [notes v])
+fin
+mettre [moyenne v] à ( (somme) / (nbnotes) )
+dire ( regroupe [Moyenne =] (moyenne) )
+
+
+
+# Activité 2
+
+quand le drapeau vert pressé
+supprimer l'élément (tout v) de la liste [sujets v]
+
+// Idem pour verbes, lieux, complements
+ajouter [Le chat ] à [sujets v]
+ajouter [Dark Vador ] à [sujets v]
+
+// Etc.
+mettre [monsujet v] à (élément (au hasard v) de [sujets v])
+mettre [monverbe v] à (élément (au hasard v) de [verbes v])
+mettre [monlieu v] à (élément (au hasard v) de [lieux v])
+mettre [moncomplement v] à (élément (au hasard v) de [complements v])
+mettre [phrase v] à (regroupe (monsujet) (regroupe (monverbe) (regroupe (monlieu) (complement))))
+dire (phrase) 
+
+
+# Activité 3
+
+quand le drapeau vert pressé
+supprimer l'élément (tout v) de la liste [boules v]
+ajouter [N] à [boules v]
+ajouter [N] à [boules v]
+
+// Idem pour 6 boules
+
+mettre [bonstirages v] à [0]
+répéter (10000) fois
+    mettre [boule1 v] à (élément (au hasard v) de [boules v])
+    mettre [boule2 v] à (élément (au hasard v) de [boules v])
+    si < <(boule1) = [R]> et <(boule2) = [B]> > alors
+        ajouter à [bonstirages v] (1)
+    fin
+    si < <(boule1) = [B]> et <(boule2) = [R]> > alors
+        ajouter à [bonstirages v] (1)
+    fin    
+fin
+dire (bonstirages)
+
+
+# Enigme 2
+
+quand le drapeau vert pressé
+demander [Dis une phrase !] et attendre
+mettre [n v] à [0]
+mettre [verlan v] à [ ]
+répéter (longueur de (réponse)) fois
+    ajouter à [n v] (1)
+    mettre [verlan v] à ( regroupe (lettre (n) de (réponse)) (verlan) )
+fin
+dire (verlan)
+
+
+

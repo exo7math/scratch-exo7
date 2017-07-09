@@ -1,0 +1,145 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+\titre[F]{Chercher et remplacer}
+%============================
+
+\emph{Dans cette fiche, on ne tiendra pas compte des accents dans les chaînes de caractères écrites en gras. Par exemple \og e \fg{}, \og é \fg{}, \og è \fg{} et \og ê \fg{} désigneront la même lettre.}
+
+\bigskip
+\bigskip
+
+\begin{activite}
+
+Dans un mot, on cherche une lettre et on la remplace par une autre. Par exemple \og s → x \fg{} signifie que l'on cherche toutes les lettres \og s \fg{} pour les remplacer par la lettre \og x \fg{}, ainsi :
+  
+\begin{itemize}
+  \item \mot{rois} devient \mot{roix},
+  \item \mot{piscines} devient \mot{pixcinex} (deux \og s \fg{} sont remplacés),
+  \item \mot{pile} reste \mot{pile} (rien n'est remplacé).
+\end{itemize}
+
+\begin{enumerate}
+  \item Trouve les mots qui conviennent.
+
+  \begin{enumerate}
+    \item \mot{malade} avec  \og m → s \fg{} devient \mot{ . . . . . . } qui avec \og d → g \fg{} devient \mot{ . . . . . . }
+    \item \mot{lapin} avec \og l → s \fg{} devient \mot{ . . . . . } qui avec \og p → t \fg{} devient \mot{ . . . . . }
+    \item \mot{ . . . . . . } avec \og n → r \fg{} devient \mot{ . . . . . } qui avec \og d → t \fg{} devient \mot{tortue} 
+  \end{enumerate}  
+  
+  \item Trouve les remplacements qui conviennent.
+  \begin{enumerate}
+    \item \mot{fauve} devient \mot{faute} qui devient \mot{flûte}
+    \item \mot{course} devient \mot{courbe} qui devient \mot{fourbe}
+    \item \mot{mami} devient \mot{papi} qui devient \mot{kaki}
+  \end{enumerate}  
+  
+\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}
+
+Dans un mot, on cherche un groupe de lettres et on le remplace par un autre. Par exemple \og at → aud \fg{} signifie que l'on cherche tous les groupes de lettres \og at \fg{} et qu'on les remplace par \og aud \fg{} :
+
+\begin{itemize}
+  \item \mot{chat} devient \mot{chaud}
+  \item \mot{tata} devient \mot{tauda}
+\end{itemize}
+
+\begin{enumerate}
+  \item Trouve les mots qui conviennent.
+  \begin{enumerate}
+    \item \mot{digitale} avec \og dig → cap \fg{} devient \mot{ . . . . . . . . } qui avec \og al → ain \fg{} devient \mot{ . . . . . . . . . }
+    \item \mot{ . . . . . . } avec \og g → ch \fg{} devient \mot{chateau} qui avec \og eau → on \fg{} donne \mot{ . . . . . . }
+    \item \mot{ . . . . . } avec \og ss → rt \fg{} devient \mot{ . . . . . } qui avec \og ar → en \fg{} devient \mot{tente}
+  \end{enumerate}  
+
+  \item Trouve un remplacement qui convient.
+  \begin{enumerate}
+    \item Quel remplacement transforme \mot{tata} en \mot{tonton} et transforme \mot{pat} en \mot{pont} ?
+    \item Quels remplacements transforment \mot{malle} en \mot{ville} puis en \mot{vinyle} ?
+    \item Quel remplacement transforme \mot{bonbon} en \mot{coco} ?
+  \end{enumerate}  
+\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}
+
+On s'occupe maintenant seulement de chercher si un groupe de lettres apparaît dans un mot. On s'autorise une lettre joker symbolisée par \og ? \fg{}. Par exemple si on cherche le groupe de lettres \og c\!?r \fg{} alors :
+
+\begin{itemize}
+  \item \mot{car}, \mot{cure}, \mot{cire}, \mot{icare}, \mot{accord} contiennent ce groupe (par exemple pour \mot{car} le point d'interrogation joue le rôle de \mot{a}),
+  \item  mais pas les mots \mot{par}, \mot{race}, \mot{coeur}, \mot{cri}. 
+\end{itemize}
+
+\begin{enumerate}
+  \item Dire pour chaque mot de la liste si on peut trouver le groupe de lettres. S'il y a plusieurs \og ? \fg{}, ils peuvent jouer les rôles de lettres différentes.
+  \begin{enumerate}
+    \item Groupe de lettres \og t\!?l \fg{} dans les mots \mot{lit}, \mot{police}, \mot{installer}, \mot{étaler}, \mot{attabler}, \mot{hôtel}, \mot{atteler}.
+    \item Groupe de lettres \og \!?t\!?t \fg{} dans les mots \mot{patate}, \mot{pépite}, \mot{petite}, \mot{tétine}, \mot{entêter}, \mot{enterrement}, \mot{tartiner}.
+    \item Groupe de lettres \og p\!?\!?s \fg{} dans les mots \mot{épouser}, \mot{apprivoiser}, \mot{purs}, \mot{épars}, \mot{aspirer}, \mot{souper}, \mot{pas}.
+  \end{enumerate}
+  
+     
+  \item Pour chaque groupe de lettres, trouve au moins trois autres mots qui le contiennent.
+\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}
+
+On cherche toujours des groupes de lettres, on s'autorise maintenant plusieurs options. Par exemple \og [cv] \fg{} signifie \og c \fg{} ou \og v \fg{}. Ainsi le groupe de lettres \og [cv]o \fg{} correspond aux groupes de lettres \og co \fg{} ou \og vo \fg{}. Ce groupe est donc contenu dans \mot{voter}, \mot{côte}, \mot{haricot}, mais pas dans \mot{tocard}. De même \og [abc] \fg{} désignerait \og a \fg{} ou \og b \fg{} ou \og c \fg{}.
+
+\begin{enumerate}
+  \item Dire pour chaque mot de la liste si on peut trouver le groupe de lettres.
+  \begin{enumerate}
+    \item Groupe de lettres \og [lp]a \fg{} dans les mots \mot{larve}, \mot{étaler}, \mot{reparler}, \mot{applaudir}, \mot{épater}, \mot{stupéfiant}, \mot{palabrer}.
+    \item Groupe de lettres \og c[aio] \fg{} dans les mots \mot{action}, \mot{accord}, \mot{exciter}, \mot{craquer}, \mot{coeur}, \mot{cercle}, \mot{chance}.
+    \item Groupe de lettres \og [lt]a[cst] \fg{} dans les mots \mot{lait}, \mot{établir}, \mot{tacler}, \mot{élastique}, \mot{salade}, \mot{enlacer}, \mot{cartable}.    
+    \item Groupe de lettres \og [cp]\!?[st] \fg{} dans les mots \mot{chaton}, \mot{tacot}, \mot{papyrus}, \mot{chapitre}, \mot{eucalyptus}, \mot{cachottier}, \mot{charpente}.
+  \end{enumerate}
+  
+  
+  \item Pour chaque groupe de lettres, trouve au moins trois autres mots qui le contiennent.
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}
+
+On cherche maintenant des groupes de lettres qui ne contiennent pas certaines lettres données. Un point d'exclamation devant une lettre signifie que l'on ne veut pas cette lettre. Par exemple \og p\!!a \fg{} correspond à un groupe de lettres avec un \og p \fg{} suivi d'une lettre \emph{qui n'est pas} un \og a \fg{}. Par exemple \mot{pitre} contient  \og p\!!a \fg{} mais pas \mot{papa}. Par contre \mot{papi} le contient grâce aux deux lettres \og pi \fg{}. Autre exemple avec \og \!!ap \fg{} : on cherche une lettre qui n'est pas un \og a \fg{} et qui est suivie d'un \og p \fg{}.
+
+
+\begin{enumerate}
+  \item Dire pour chaque mot de la liste si on peut trouver le groupe de lettres.
+  \begin{enumerate}
+    \item Groupe de lettres \og c\!!h \fg{} dans les mots \mot{enchanter}, \mot{hibou}, \mot{chouette}, \mot{éclore}, \mot{hache}, \mot{cochon}, \mot{coq}, \mot{accent}, \mot{bonheur}, \mot{chahuter}.
+    \item Groupe de lettres \og \!!ch \fg{} dans la même liste.
+    \item Groupe de lettres \og t\!!er \fg{} dans la liste de mots \mot{sentir}, \mot{rentrer}, \mot{tordre}, \mot{épurer}, \mot{étendre}, \mot{éternuer}, \mot{étirer}, \mot{attarder}, \mot{tondre}.
+    \item Groupe de lettres \og [bcf]\!!a\!?[mnv] \fg{} dans les mots \mot{fauve}, \mot{ferme}, \mot{cerner}, \mot{bonté}, \mot{frange}, \mot{découverte}, \mot{bien}, \mot{bosse}.
+  \end{enumerate}  
+  
+  \item \og \!![ab] \fg{} signifie que l'on ne veut ni de \og a \fg{}, ni de \og b \fg{}. Dire pour chaque mot de la liste si on peut trouver le groupe de lettres.
+  \begin{enumerate}
+    \item Groupe de lettres \og s\!![ae] \fg{} dans les mots \mot{super}, \mot{assez}, \mot{salut}, \mot{estomac}, \mot{radis}, \mot{salsifis}.
+    \item Groupe de lettres \og [tp]e\!![st] \fg{} dans les mots \mot{petite}, \mot{venin}, \mot{serviette}, \mot{pestes}, \mot{tétine}, \mot{épines}.
+  \end{enumerate}
+
+\end{enumerate}
+\end{activite}
+
+
+\end{document}

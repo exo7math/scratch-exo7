@@ -1,0 +1,59 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+\begin{document}
+
+\titre[P]{Cryptographie}
+%===============================
+
+
+
+\section*{Objectifs}
+
+\begin{itemize}
+  \item Code de César : codage, décodage.
+  \item Chiffre de Vigenère.
+  \item Attaque statistique.
+  \item Codage des caractères.
+  \item Modulo.
+\end{itemize}
+
+
+\section*{Durée}
+
+2 à 3 heures (??)
+
+\section*{Les activités}
+
+\begin{itemize}
+  \item Le code de César est archi-classique et amusant. On peut même réaliser les doubles anneaux mobiles, maintenus par une attache parisienne.
+  
+  \item Un moyen rapide d'attaquer le code de César, à l'aide d'un ordinateur, est d'énumérer les 26 possibilités.
+  
+  \item Mais l'attaque statistique est beaucoup plus intelligente.
+  
+  \item On présente ici une partie du code \textsc{ascii}. On pourra s'amuser aussi avec l'unicode/utf8 et ses caractères issus de toutes les langues.
+  Les fichiers textes ne stockent pas des caractères mais des entiers qui représentent un caractère.
+  
+  \item Les modulos sont peut-être un peu compliqués pour les collégiens, 
+  Pour le code de César on n'est pas obligés de détailler tout, mais les modulos servent en fait à plein d'endroits (test de parité, test de divisibilité, récupérer le chiffre des unités, les deux derniers chiffres d'un entier,...)
+  
+  \item Le chiffre de Vigenère est une variante de César qui n'est plus sûre qu'en apparence. Pour un texte assez long (par rapport à la longueur du bloc) on fait une attaque statistique sur les premières lettres de chaque bloc, puis sur les secondes,... 
+  
+  \item La morale de cette fiche est que le code de César ou celui de Vigenère est une simple opération mathématique : l'addition. Pour décoder, il ne reste plus qu'à soustraire ! Toutes les techniques de cryptographie modernes sont basées sur les maths. 
+\end{itemize}
+
+
+\section*{Ressources}
+
+
+\section*{People}
+
+\begin{itemize}
+  \item Auteur : Arnaud Bodin
+\end{itemize}
+
+
+\end{document}
+
+

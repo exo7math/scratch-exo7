@@ -1,0 +1,99 @@
+# Fiche 05
+
+
+# Blocs utiles
+
+
+si <touche [flèche droite v] pressée ?> alors
+    
+fin 
+
+demander [Quelle longueur ?] et attendre
+
+(réponse)
+
+
+dire [Coucou] pendant (1) secondes
+dire [le monde] pendant (1) secondes
+
+dire (regroupe [Coucou] [le monde]) pendant (2) secondes
+
+
+# Activité 1
+
+
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+stylo en position d'écriture
+répéter indéfiniment
+    si <touche [flèche droite v] pressée ?> alors
+        ajouter (10) à x
+    fin
+     si <touche [flèche gauche v] pressée ?> alors
+        ajouter (-10) à x
+    fin   
+    si <touche [flèche haut v] pressée ?> alors
+        ajouter (10) à y
+    fin
+    si <touche [flèche bas v] pressée ?> alors
+        ajouter (-10) à y
+    fin 
+    si <touche [m v] pressée ?> alors
+        jouer le son [miaou v]
+    fin
+    si <touche [c v] pressée ?> alors
+        costume suivant
+        attendre (0.1) secondes
+    fin
+    si <touche [espace v] pressée ?> alors
+        ajouter (10) à la couleur du stylo
+    fin           
+    si <touche [f v] pressée ?> alors
+        effacer tout
+    fin       
+fin
+
+# Activité 2
+
+quand le drapeau vert pressé
+aller à x:(0) y:(100)
+s'orienter à (180)
+effacer tout
+stylo en position d'écriture
+montrer
+demander [Quelle première longueur ?] et attendre
+avancer de (réponse)
+demander [Quel angle ?] et attendre
+s'orienter à (réponse)
+demander [Quelle seconde longueur ?] et attendre
+avancer de (réponse)
+aller à x:(0) y:(100)
+cacher
+
+
+
+# Activité 3
+
+quand le drapeau vert pressé
+aller à x:(0) y:(-100)
+s'orienter à (90)
+effacer tout
+demander [Quel est ton prénom ?] et attendre
+dire (regroupe [Bonjour] (réponse)) pendant (2) secondes
+demander [Quel âge as-tu?] et attendre
+répéter (réponse) fois
+    avancer de (50)
+    tourner gauche de ((360)/(réponse)) degrés
+fin
+
+
+
+# Enigme 1
+
+quand le drapeau vert pressé
+demander [Quel entier ?] et attendre
+dire ((153)+((17)*(réponse)))
+
+

@@ -1,0 +1,361 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+
+\begin{document}
+
+% Commande spécifique
+
+\definecolor{coul_prive}{rgb}{0.93,0.26,0}
+\definecolor{coul_public}{rgb}{0.06,0.63,0}
+
+\newcommand{\prive}[1]{\relax\ifmmode{\color{coul_prive} #1}\else{\bf\color{coul_prive} #1}\fi}
+\newcommand{\public}[1]{\relax\ifmmode{\color{coul_public} #1}\else{\bf\color{coul_public} #1}\fi}
+
+
+\titre[F]{Cryptographie}
+%===============================
+
+
+
+\begin{activite}[Le code de César]
+
+Jules César transmettait ses messages de façon cachée. Par exemple, le message
+\prive{ALLEZ ASTERIX} est transformé en \public{DOOHC DVWHULA}.
+Chaque lettre est décalée de $3$ lettres : \prive{A} devient \public{D},
+\prive{B} devient \public{E}, \prive{C} devient \public{F}\ldots \,
+Lorsque l'on arrive à la fin de l'alphabet (\prive{W} devient \public{Z}), on repart du début :
+ \prive{X} devient \public{A},
+\prive{Y} devient \public{B} et \prive{Z} devient \public{C}.
+
+La roue ci-dessous t'aide pour coder le message, une lettre sur l'anneau extérieur est codée en la lettre associée sur l'anneau intérieur.
+
+\myfigure{0.75}{
+\tikzinput{crypto-cesar-01}
+}
+
+Pour décoder un message, on recule de trois lettres : \public{D} se décode en \prive{A},
+\public{E} se décode en \prive{B}...  Autrement dit, on passe de l'anneau intérieur à l'anneau extérieur.
+ 
+
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Code la phrase \prive{ABC DE L INFO DEPUIS ZERO}.
+    \item Trouve le nom de la première femme informaticienne en décodant \public{DGD ORYHODFH}.
+  \end{enumerate}
+  
+  \item Bien sûr, on peut changer le décalage.
+  Avec un décalage de $10$ : \prive{A} devient \public{K}, \prive{B} devient \public{L}\ldots (roue de gauche). Avec un décalage de $13$ : \prive{A} devient \public{N}, \prive{B} devient \public{O}\ldots (roue de droite).
+  
+ \myfigure{0.7}{
+\tikzinput{crypto-cesar-02}\qquad
+\tikzinput{crypto-cesar-03}
+}  
+    
+  \begin{enumerate}
+    \item Pour un décalage de $10$ : code \prive{CHARLES BABBAGE} ; décode \public{WKMRSXO WOMKXSAEO}.
+    \item Pour un décalage de $13$ : code \prive{ZEROS ET UNS} ; décode \public{TRBETR OBBYR}.
+    Quelle est la particularité du codage et du décodage lorsque le décalage vaut $13$ ?
+  \end{enumerate}  
+ 
+  
+\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}[Attaque du code de César]
+On se place dans la peau d'un espion qui vient d'intercepter le message : 
+
+\centerline{\public{NCAN XD WN YJB NCAN}}
+mais qui ne connaît pas le décalage qui a servi à le coder.
+
+Il existe seulement $26$ décalages possibles : le code de César n'est pas très sécurisé... C'est un peu long à tester pour un humain, mais très facile pour un ordinateur.
+
+Il existe une autre façon d'attaquer le message codé, car une même lettre est toujours codée de la même façon. Par exemple, pour un décalage de $3$, la lettre \prive{A} devient toujours \public{D} et \prive{E} devient toujours \public{H}. Hors dans un long texte, les lettres n'apparaissent pas toutes avec la même fréquence.
+Pour la langue française, les lettres les plus rencontrées sont dans l'ordre : \\
+\centerline{E S A I N T R U L O D C P M V Q G F H B X J Y Z K W}
+avec les fréquences :
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+{E}&{S}&{A}&{I}&{N}&{T}\\
+\hline
+14,5\%&8\%&7,5\%&7\%&7\%&7\%\\
+\hline
+\end{tabular}
+\end{center}
+
+Si la lettre \prive{E} apparaît très souvent dans le message de départ, alors pour un décalage de $3$, la lettre \public{H} apparaîtra très souvent dans le message codé.
+
+Voici donc la méthode pour décrypter un message :
+\begin{itemize}
+  \item On cherche la lettre la plus fréquente dans le message codé (imaginons que c'est le \public{K}).
+  \item On suppose que cette lettre correspond au \prive{E}.
+  \item On calcule le décalage (pour aller de \prive{E} à \public{K} c'est $6$).
+  \item On essaie de décoder le message sur la base de ce décalage.
+  \item Si on obtient un message incohérent, on recommence en supposant que la lettre la plus fréquente correspond à l'une des lettres suivantes \prive{S}, \prive{A}, \prive{I}, \prive{N}, \prive{T}.
+\end{itemize}
+
+Avec cette méthode, décrypte les messages suivants (chaque message a été codé avec un décalage différent) :
+
+\begin{enumerate}
+  \item \public{NCAN XD WN YJB NCAN}
+  \item \public{DFC WPD PALFWPD OPD RPLYED}
+  \item \public{QSMRW KVERH IX TPYW MRXIPPMKIRX}
+\end{enumerate}
+
+\end{activite}
+
+
+
+\begin{activite}[Codage des caractères]
+
+Les ordinateurs préfèrent les nombres aux lettres ! Chaque caractère est numéroté.
+Voici la table \textsc{ascii} des premiers caractères.
+
+\myfigure{0.8}{
+\small
+  \tikzinput{crypto-unicode-01}
+} 
+
+Par exemple, le caractère numéro $37$ est le symbole \og \% \fg{}.
+Le caractère $65$ est la lettre majuscule \og A \fg{}. Le caractère $107$ est la lettre minuscule \og k \fg{}. Les numéros $0$ à $32$ ne sont pas des caractères imprimables.
+
+\begin{enumerate}
+  \item Quelles phrases sont codées par les nombres suivants ?
+  \begin{enumerate}
+    \item 66-111-110-106-111-117-114-33
+   
+  %  [\symbol{66}\symbol{111}\symbol{110}\symbol{106}\symbol{111}\symbol{117}\symbol{114}\symbol{33}]
+
+    \item 50-43-51-61-53 
+    
+  %  [\symbol{50}\symbol{43}\symbol{51}\symbol{61}\symbol{53}]
+    
+    \item 83-101-114-118-105-114 \quad 101-110  \quad 115-105-108-101-110-99-101-46 (La devise de la \textsc{nsa}.)
+   
+ %   [\symbol{83}\symbol{101}\symbol{114}\symbol{118}\symbol{105}\symbol{114}\     \symbol{101}\symbol{110}\ \symbol{115}\symbol{105}\symbol{108}\symbol{101}\symbol{110}\symbol{99}\symbol{101}\symbol{46}]
+  \end{enumerate}
+
+  \item Trouve l'équivalent numérique des caractères des noms suivants :
+  Boole, Godel, Turing.
+  
+  \item 
+  \begin{itemize}
+    \item On note \codeinline{chr} la fonction qui à un nombre associe le caractère correspondant.
+  Par exemple \codeinline{chr(65)} renvoie le caractère \og A \fg{}.
+    \item On note \codeinline{ord} la fonction qui à un caractère associe son numéro dans la table ci-dessus. Par exemple \codeinline{ord('a')} renvoie l'entier $97$.
+  \end{itemize}
+  \begin{enumerate}
+    \item Que donnent les instructions suivantes :
+    \codeinline{chr(100)}, \codeinline{ord('H')}, \codeinline{chr(65+10)}, 
+     \codeinline{ord(chr(77))}, \codeinline{chr(ord('\#'))} ?
+     
+    \item  Que fait la suite d'instructions suivantes ? (Essaye d'abord avec la lettre 'a'.)     
+    \begin{itemize}
+      \item Entrée : un caractère, noté \codeinline{car}, parmi 'a', 'b',\ldots, 'z'
+      \item \codeinline{n} $\leftarrow$ \codeinline{ord(car)}
+      \item \codeinline{n} $\leftarrow$ \codeinline{n - 32}
+      \item Sortie : \codeinline{chr(n)}
+    \end{itemize}
+    
+  \end{enumerate}  
+  
+\end{enumerate}
+\vspace*{-1ex}
+\end{activite}
+
+
+\begin{activite}[Modulo]
+Compter modulo $n$, c'est compter uniquement avec les entiers $0$, $1$, $2$,\ldots, $n-1$.
+\begin{itemize}
+  \item \textbf{Exemple modulo $60$.} 
+  Compter modulo $60$, c'est compter comme les minutes d'une montre : $0$, $1$, $2$,\ldots, $59$. Quand on arrive à $60$, on repart immédiatement à $0$.
+On va noter : 
+$$60 \pmod{60} = 0 \qquad 61 \pmod{60} = 1 \qquad  62 \pmod{60} = 2 \qquad \ldots $$
+
+  \item \textbf{Exemple modulo $12$.} 
+  Si on compte modulo $12$, alors on se ramène à un entier parmi $0$, $1$,\ldots, $11$.
+  On peut s'aider d'une roue pour visualiser :
+  $$16 \pmod{12} = 4 \qquad 29 \pmod{12} = 5 \qquad  34 \pmod{12} = 10$$
+ 
+\myfigure{0.8}{
+\small
+  \tikzinput{crypto-modulo-01}
+}  
+  
+\end{itemize}
+
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Calcule $21 \pmod{12}$ ; $32 \pmod{12}$ ; $50 \pmod{12}$ ; $100 \pmod{12}$.
+    \item Calcule $75 \pmod{60}$ ; $128 \pmod{60}$ ; $666 \pmod{60}$.
+    \item Calcule $32 \pmod{26}$ ; $42 \pmod{26}$ ; $111 \pmod{26}$.
+  \end{enumerate}
+  
+  \item On calcule $a \pmod{n}$ comme le reste de la division euclidienne de $a$ par $n$.
+  Par exemple pour calculer $136 \pmod{21}$, on écrit la division euclidienne de $136$ par $21$ : $136 =  6 \times 21 + 10$. Donc $136 \pmod{21} = 10$.
+
+\myfigure{1}{
+  \tikzinput{crypto-modulo-02}
+}  
+
+  \begin{enumerate}
+    \item Calcule $1\,254 \pmod{12}$.
+    \item Calcule $5\,678 \pmod{60}$.
+    \item Calcule $32\,158 \pmod{26}$.
+  \end{enumerate}  
+  
+%  \item L'addition et la multiplication sont compatibles avec les modulos.
+%  Par exemple pour calculer $18+32 \pmod{12}$ il y a deux façon de faire :
+%  \begin{itemize}
+%    \item d'abord $18+32 = 50$, puis $50 \pmod{12} = 2$,
+%    \item mais c'est plus efficace de calculer d'abord $18 \pmod{12} = 6$
+%    et $32 \pmod{12} = 8$ et donc 
+%    $$18 + 32 \pmod{12} = 6 + 8 \pmod {12} = 14 \pmod{12} = 2$$
+%  \end{itemize}
+  \begin{enumerate}
+    \item \textbf{Modulo $2$.}
+    
+    Calcule $3 \pmod{2}$ ; $4 \pmod{2}$ ; $5 \pmod{2}$\ldots
+    Complète et retiens les énoncés suivants :
+    
+    \mybox{$a \pmod{2} = 0$ lorsque $a$ est \ \ \underline{\qquad\qquad\qquad}}
+    
+    \mybox{$a \pmod{2} = 1$ lorsque $a$ est \ \ \underline{\qquad\qquad\qquad}}
+           
+    \item \textbf{Modulo $10$.}
+    
+    Calcule $21 \pmod{10}$ ; $39 \pmod{10}$ ; $2345 \pmod{10}$.
+    Complète et retiens l'énoncé suivant :
+    
+    \mybox{$a \pmod{10}$ est le \ \ \underline{\qquad\qquad\qquad\qquad\qquad\qquad} de l'entier $a$.}
+    
+    \item \textbf{Modulo $n$.}
+    
+    Calcule $(12\times 7) \pmod{7}$ ; $66 \pmod{11}$ ; $72 \pmod{9}$.
+    Complète et retiens :
+    \mybox{$n$ divise $a$ exactement lorsque \ \ \underline{\qquad\qquad\qquad\qquad\qquad\qquad}}
+    
+    
+   \end{enumerate}
+   
+   
+   \item \textbf{Retour au code de César.}  
+   
+   Le code de César est en fait une simple addition ! Numérotons les lettres par leur rang :
+   \og A \fg{} est de rang $0$, \og B \fg{} est de rang $1$,\ldots, \og Z \fg{} est de rang $25$.
+   Le code de César de décalage $3$ consiste simplement à ajouter $3$ au rang de la lettre. Comme le rang de la lettre ne peut atteindre $26$, il faut calculer le résultat modulo $26$.
+   La formule pour un décalage de $3$ est donc :
+   $$\text{rang codé} = \text{rang} + 3 \pmod{26}$$
+   Pour le code de César de décalage $k$, la formule est :
+   \mybox{$\text{rang codé} = \text{rang} + k \pmod{26}$}
+
+\myfigure{0.8}{
+\footnotesize
+  \tikzinput{crypto-modulo-03}
+} 
+  
+   \begin{enumerate}
+     \item Calcule le rang codé par un décalage de $8$ pour les lettres de rang $7$, $15$, $23$.
+     \item Complète les lignes du tableau ci-dessous
+     en suivant le modèle de la première ligne :
+     la lettre \og C \fg{} est de rang $2$ ; avec un décalage de $3$, le rang codé est $2+3\pmod{26}=5$ ; la lettre codée est donc le \og F \fg{}. Attention ! le plus petit rang est $0$ (lettre \og A \fg{}).
+     
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Lettre & Rang & Décalage $k$ & Rang codé & Lettre codée \\ \hline\hline
+C & 2 & 3  & 5 & F \\ \hline
+F &   & 3  &   &   \\ \hline
+Y &   & 3  &   &   \\ \hline
+H &   & 15 &   &   \\ \hline
+  & 10&    &   & R \\ \hline
+T &   &    & 2 &  \\ \hline
+  &   & 10   &   & E \\ \hline  
+\end{tabular}
+\end{center}
+     
+  \end{enumerate}  
+   
+   \item \textbf{Algorithme du code de César.}
+   
+   \'Ecris un algorithme qui, pour un décalage $k$ fixé, prend en entrée une lettre majuscule et renvoie en sortie la lettre codée par le code de César de décalage $k$.
+   Par exemple si $k=3$ et si la lettre entrée est \og A \fg{} alors la sortie doit être \og D \fg{}.
+   Les étapes de l'algorithme sont :
+   \begin{itemize} 
+     \item prends le caractère en entrée et transforme-le en un entier compris entre $65$ et $90$ (voir l'activité précédente) ;
+     \item transforme cet entier en un nombre entre $0$ et $25$ ;
+     \item applique la formule du décalage de César sur cet entier ;
+     \item revient à un entier entre $65$ et $90$, puis à un caractère.
+   \end{itemize}    
+   
+   
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}[Le chiffrement de Vigenère]
+Le code de César n'est pas assez sûr, le chiffrement de Vigenère en est une version plus sophistiquée. Par exemple pour coder : 
+
+\centerline{\prive{ALLEZ ASTERIX}}
+
+\begin{itemize}
+  \item on commence par découper notre texte en blocs de même longueur, par exemple de longueur $3$ :
+  
+\centerline{\prive{A\ L\ L \qquad E\ Z\ A \qquad S\ T\ E \qquad R\ I\ X}}
+ 
+ \item on choisit une clé, composée de $3$ nombres, par exemple $(3,6,5)$ ;
+ 
+ \item on décale de $3$ la première lettre de chaque bloc (le \prive{A} du premier bloc devient \public{D}) ; 
+ 
+ \item on décale de $6$ la deuxième lettre de chaque bloc (le premier \prive{L} du premier bloc devient \public{R}) ;
+ 
+ \item on décale de $5$ la troisième lettre de chaque bloc (le second \prive{L} du premier bloc devient \public{Q}) ;
+ 
+ \item on obtient par blocs \public{DRQ\  HFF\  VZJ\ UOC} et le message codé est alors :
+ 
+\centerline{\public{DRQHF FVZJUOC}}
+\end{itemize}
+
+\bigskip
+
+Note les deux améliorations par rapport au code de César classique :
+\begin{itemize}
+  \item une même lettre peut être codée de plusieurs façons (par exemple le premier 
+  \prive{L} est codé en  \public{R} alors que le second est codé en \public{Q}) ;
+  
+  \item une même lettre du message codé peut correspondre à différentes lettres du message initial (par exemple le premier \public{F} code un \prive{Z} alors que le second \public{F} code un \prive{A}).
+\end{itemize}
+ 
+\bigskip
+ 
+
+\begin{enumerate}
+  \item Code la phrase \prive{RIEN NE SE PERD} avec la clé $(3,6,5)$.
+  
+  \item Décode la phrase \public{WUZW YJ WXFQYKRXRH} codée avec la clé $(3,6,5)$.
+  
+  \item Code la phrase \prive{EQUATEUR} avec la clé $(1,25,10,5)$.
+  
+  \item Décode la phrase \public{NDBNEHOS}, codée avec la clé $(1,25,10,5)$.  
+  
+  \item Décode la phrase suivante d'Albert Einstein, par une attaque par fréquence, sachant qu'elle a été codée par un chiffrement de Vigenère avec une clé de longueur $3$ :
+  
+  \centerline{\public{NE CKI J GWA ESTOI BPI IKGFEPLVXL}}
+   \centerline{\public{KP MCYA CZHPGLT TVWV UG THU TLTHYG P LSYPNMITI}}
+  
+\end{enumerate}
+
+\end{activite}
+
+
+
+
+\end{document}
+

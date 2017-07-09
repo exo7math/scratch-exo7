@@ -1,0 +1,239 @@
+
+===============================
+===============================
+Fiche 03 -- Coordonnées x,y
+===============================
+===============================
+
+
+===============================
+Fiche 03 - activité 1 - François
+===============================
+
+
+[part 1] [Le programme est prêt mais caché. La spirale est dessinée.]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Le but de cette activité est de faire dessiner à Scratch une forme spiralée pleine de couleurs.
+
+Analyser ce que nous voyons et
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+essayons de deviner comment Scratch l'a tracée.
+
+Nous observons que la couleur change progressivement, sans doute parce que Scratch avance par petits déplacements. 
+
+Il n'y a pas que la couleur qui change, la taille du stylo également. 
+
+Ensuite, les déplacements semblent être réguliers, à savoir 
+- un déplacement, 
+- un changement d'orientation, 
+- un déplacement, 
+- un changement d'orientation...
+
+[part 2] [Les 5 premiers blocs sont en place.]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Les étapes élémentaires qui vont permettre de réaliser petit à petit cette figure sont :
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+- pour les déplacements : 
+  - Scratch avance de 6 pas : bloc 'avancer' avec pour contenu 6 ; 
+  - puis tourne à gauche de 3 degrés : bloc 'tourner à gauche' avec pour contenu 3 ; 
+
+- pour le côté esthétique, c'est-à-dire concernant le stylo : 
+  - la taille est augmentée de 1 ;
+  - la couleur est également augmentée de 1.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Toutes ces étapes sont alors à répéter un certain nombre de fois afin de créer cet effet de spirale.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+Je pars comme d'habitude du point de coordonnées (0,0).
+
+Je mets en place le bloc de répétition qui accueille les 4 blocs déjà déposés.
+
+Regardons le résultat produit.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Le nombre de répétitions est largement insuffisant. Essayons 100 répétitions... 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+Avant toute chose, je remarque, avec ce deuxième essai, que 
+- ni la taille du stylo, 
+- ni la couleur, 
+n'ont été réinitialisées. 
+
+J'ajoute donc en tout début de programme deux blocs : 
+- mettre la taille du stylo à 1
+- mettre la couleur du stylo à bleu (en cliquant par exemple sur la couleur de la catégorie 'Mouvement')
+blocs que je place juste avant 'tout effacer'.
+
+Je fais un nouvel essai avec 110 répétitions... très bien.
+
+Je remarque alors que le dessin sort de l'espace visible : 
+- ici en haut 
+- et ici . 
+
+Je dois donc modifier le point de départ de Scratch pour éviter cela.
+
+[part 3]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Je vais commencer par me donner des repères en affichant une grille de coordonnées en arrière-plan.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Pour cela, je clique sur 'Scène' à gauche du lutin  puis sur 'Arrière-plans' et je choisis un nouvel arrière-plan dans la bibliothèque : dans le répertoire 'Autre' je trouve ce que je cherche.
+
+Je reviens au script et à Scratch.
+
+Je peux lire sur la grille que 
+- si je change la valeur de l'abscisse 'x' (en orange), 
+  . cela correspond à un déplacement à droite ou à gauche 
+- et que si je change la valeur de l'ordonnée 'y' (en bleu), 
+  . cela correspond à un déplacement vers le haut ou vers le bas. 
+
+Je dois donc maintenant déplacer le point de départ de Scratch (nous l'avions mis en x=0 et y=0). 
+Je vais modifier la valeur de 'y' : je veux partir de plus bas donc je démarre avec -100 pour y.
+Je vais décaler ma spirale un peu vers la droite, donc je démarre avec 50 pour la valeur de 'x'.
+
+C'est très bien ! Je n'ai plus qu'à retirer la grille qui m'a aidé à positionner correctement Scratch.
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+A toi maintenant de concervoir d'autres déplacements et d'autres effets de couleur.
+
+===============================
+Fiche 03 - activité 2 - Arnaud
+===============================
+
+
+[part 1]
+
+Tu vas programmer ton premier logiciel de dessin.
+
+Scratch se déplace jusqu'à l'endroit où pointe la souris, en dessinant un segment, il affiche les coordonnées x,y du point, puis il repart vers le nouvel endroit où pointe la souris !
+
+C'est un peu rudimentaire, mais après un peu d’entraînement, essaie de dessiner un escargot, une maison, une fusée...
+
+
+[sortir 'abscisse x', 'ordonnée y' de 'mouvement'] 
+Le but c'est surtout de bien comprendre que l'abscisse x, détermine la position droite/gauche :
+
+  - 0 au centre,
+  - plus x est grand, plus on va vers la droite,
+  - la partie gauche, correspond aux x négatifs
+  
+De même pour l'ordonnée y, le deuxième nombre, détermine la position haut/bas :
+  - 0 au centre de l'écran,
+  - plus y est grand plus on va vers le haut,
+  - vers le bas ce sont les y négatifs.
+    
+
+[part 2]
+
+C'est assez simple :
+
+on démarre avec notre initialisation habituelle : 
+
+[
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+**(attendre (1) secondes)**
+stylo en position d'écriture
+]
+
+Puis on enchaîne avec une boucle qui va répéter indéfiniment 
+
+  - Aller au pointeur de la souris, ['mouvement']
+  - Afficher l'abscisse x pendant *1* seconde, ['apparence'+'mouvement']
+[sortir 'abscisse x', 'ordonnée y' de 'mouvement'] 
+  - Et pour le distinguer de l'abscisse, on utiliser le bloc 'Penser' à l'ordonnée y pendant *1* seconde.
+ 
+Et voilà c'est fini !
+  
+[part 3] 
+
+Je vous explique quelques petites améliorations :
+
+- tout d'abord on a utilisé deux variables 'abscisse x' et 'ordonnée y' (bloc 'mouvement' bleu). Il y a un moyen simple d'afficher les variables c'est de cocher la case devant. Et maintenant la valeur de 'x' et la valeur de 'y', qui donnent la position de Scratch, apparaissent automatiquement !
+
+- ensuite, c'est plus joli de changer la couleur du trait à chaque fois, je le fais tout simplement à l'aide du bloc 'ajouter 10 à la couleur du stylo'.
+
+- un peu plus compliqué : j'aimerais que Scratch dise en même temps l'abscisse 'x' et l'ordonnée 'y'. Pour cela j'utilise le bloc 'regroupe' ['opérateur'] :
+
+regroupe (abscisse x) (ordonnée y)
+
+Mais tu vois qu'il colle les deux entiers !
+
+Pour les séparer il faut ajouter une virgule entre les deux. En utilisant un autre 'regroupe' :
+
+regroupe (abscisse x) ( regroupe [ , ](ordonnée y))
+
+C'est un peu tordu mais ça marche !
+
+Amuse-toi à dessiner, mais surtout comprends bien le repérage des points par les coordonnées (x,y), c'est super important et tu en auras besoin tout le temps !
+
+Une nouvelle fois (0,0) est ici au centre ; 'x' contrôle droite-gauche et 'y' contrôle haut-bas.
+
+
+===============================
+Fiche 03 - activité 3 - Nathalie
+===============================
+
+[part 1]
+
+Le but de cetteactivité est de dessiner un chiffre à partir de coordonnées déterminées à l'avance.
+On va tracer tout d’abord le chiffre 4, dont on donne les coordonnées des extrémités de chaque segments.
+
+Mais avant de commencer la programmation, on va changer l’arrière-plan pour mettre la grille des coordonnées qui se trouve dans la bibliothèque du logiciel.
+Pour cela il faut cliquer sur la petite icône ‘paysage’ qui se situe en bas à gauche de l’écran.
+La fenêtre de la bibliothèque s’ouvre alors, il ne reste plus qu’à sélectionner l’arrière-plan souhaité, ici il s’appelle ‘xy-grid’ et est situé en dernière position. 
+Une fois sélectionné, on clique sur OK pour le faire apparaître à l’écran.
+On remarquera que les abscisses 'x' vont de -240 à +240 et que les ordonnées 'y' vont eux de -180 à +180. Les coordonnées de notre lutin doivent donc toujours être entre ces bornes...
+
+[part 2]
+
+Avant de commencer la programmation, resélectionne le lutin scratch (entouré de bleu) et l’onglet ‘script’ en haut au centre pour bien programmer le lutin et non l’arrière-plan.
+
+Avant d’effectuer la programmation du tracé, effectuons une initialisation:
+- quand drapeau vert cliqué
+- cacher (pour ne plus voir le lutin)
+- effacer tout
+- mettre la taille 5 pour le stylo
+
+
+[part 3]
+
+Ensuite, je prépare les briques ‘aller à x = y =’ puis ‘stylo en position d'écriture’ et ‘relever le stylo’. 
+
+Pour utiliser une brique préparée, on peut la dupliquer.
+Pour cela, on clique droit sur cette brique, puis on clique sur ‘dupliquer’ et la brique est copiée.
+
+Il ne reste alors qu’à utilisé mes coordonnées :
+relever le stylo
+aller à x: 40 y: 120
+stylo en position d’écriture
+aller à x: 0 y: 40
+aller à x: 80 y: 40
+relever le stylo (car on veut se déplacer sans tracer pour aller en bas de la barre verticale du 4)
+aller à x: 60 y: 20
+stylo en position d’écriture (car on veut recommencer à tracer)
+aller à x: 60 y: 60
+
+[part 3]
+
+Pour faire le 7, c’est le même principe en changeant les nombres.
+Si on veut garder la programmation du chiffre 4.
+il suffit de dupliquer les blocs à partir de la première brique ‘relever le stylo’ et de la garder sur le côté (non attachée)
+
+Puis on change les valeurs pour dessiner le chiffre 7.
+relever le stylo
+aller à x: 120 y: 120
+stylo en position d’écriture
+aller à x: 200 y: 1200
+aller à x: 120 y: 20
+relever le stylo (car on veut se déplacer sans tracer pour aller en bas de la barre horizontale du 7)
+aller à x: 140 y: 70
+stylo en position d’écriture (car on veut recommencer à tracer)
+aller à x: 180 y: 70
+
+A toi de faire maintenant, dessine par exemple la première lettre de ton prénom en majuscule...
+
+
+

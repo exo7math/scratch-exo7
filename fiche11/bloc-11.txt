@@ -1,0 +1,264 @@
+# Blocs utiles
+
+définir etoile
+
+définir etoilebis (taille)
+
+# Activité 1
+
+quand le drapeau vert pressé
+effacer tout
+aller à x:(-150) y:(-100)
+etoile
+aller à x:(150) y:(-100)
+etoile
+aller à x:(150) y:(-100)
+etoile
+mettre la couleur du stylo à [#FF0000]
+aller à x:(150) y:(100)
+etoile
+mettre la taille du stylo à (5)
+aller à x:(-150) y:(100)
+etoile
+aller à x:(0) y:(0)
+etoilebis(30)
+etoilebis(40)
+etoilebis(50)
+
+
+définir etoile
+stylo en position d'écriture
+répéter (5) fois
+    avancer de (50)
+    tourner droite de (216) degrés
+fin
+relever le stylo
+
+
+définir etoilebis (taille)
+stylo en position d'écriture
+répéter (5) fois
+    avancer de (taille)
+    tourner droite de (216) degrés
+fin
+relever le stylo
+
+
+
+
+# Activité 2
+
+
+// Les cercles
+quand le drapeau vert pressé
+aller à x:(-150) y:(-50)
+s'orienter à (50)
+effacer tout
+répéter (400) fois
+    cercle
+    avancer de (4)
+    rebondir si le bord est atteint
+fin
+
+définir cercle
+stylo en position d'écriture
+répéter (30) fois
+    avancer de (15)
+    tourner gauche de (12) degrés
+fin
+relever le stylo
+
+
+
+// Les droites
+quand le drapeau vert pressé
+effacer tout
+mettre [y v] à [-150]
+répéter (75) fois
+    droite (y)
+    ajouter à [y v] (4)
+fin
+
+
+définir droite (valy)
+relever le stylo
+aller à x:(-200) y:(0)
+stylo en position d'écriture
+aller à x:(-200) y:(valy)
+
+
+# Activité 3
+
+// Les carrés
+quand le drapeau vert pressé
+effacer tout
+aller à x:(-100) y:(50)
+s'orienter à (90)
+répéter (10) fois
+    tourner gauche de (5) degrés  
+    carre
+fin
+
+
+définir carre
+stylo en position d'écriture
+répéter (4) fois
+    avancer de (60)
+    tourner gauche de (90) degrés
+fin
+relever le stylo
+
+
+// Les triangles
+quand le drapeau vert pressé
+effacer tout
+aller à x:(50) y:(0)
+mettre [n v] à [0]
+répéter (20) fois
+    s'orienter à (60)
+    avancer de (5)
+    ajouter à [n v] (5)
+    triangle (n)
+fin
+
+
+définir triangle (taille)
+s'orienter à (90)
+stylo en position d'écriture
+répéter (3) fois
+    avancer de (taille)
+    tourner gauche de (120) degrés    
+fin
+relever le stylo
+
+
+// Les segments
+quand le drapeau vert pressé
+effacer tout
+mettre [position v] à [-200]
+mettre [angle v] à [0]
+répéter (100) fois
+    ajouter à [position v] (4)
+    ajouter à [angle v] (10)
+    segment (position) (angle)
+fin
+
+
+définir segment (x) (angle)
+aller à x:(x) y:(-100)
+s'orienter à (angle)
+stylo en position d'écriture
+avancer de (50)
+ajouter (10) à la couleur du stylo
+relever le stylo
+
+// Blocs utiles exo 3
+
+
+répéter (10) fois
+    tourner gauche de (5) degrés  
+    carre :: custom
+fin
+
+répéter (20) fois
+    s'orienter à (60)
+    avancer de (5)
+    ajouter à [n v] (5)
+    triangle (n) :: custom
+fin
+
+répéter (100) fois
+    ajouter à [position v] (4)
+    ajouter à [angle v] (10)
+    segment (position) (angle) :: custom
+fin
+
+// Enigme 1
+
+
+quand le drapeau vert pressé
+aller à x:(0) y:(-100)
+s'orienter à (90)
+stylo en position d'écriture
+effacer tout
+
+monbloc1 :: custom
+
+monbloc2 :: custom
+
+monbloc3 :: custom
+
+monbloc4 :: custom
+
+
+
+définir monbloc1
+s'orienter à (90)
+avancer de (50)
+s'orienter à (0)
+avancer de (50)
+
+
+définir monbloc2
+s'orienter à (-90)
+avancer de (50)
+ajouter (50) à y
+
+
+définir monbloc3
+ajouter (50) à x
+tourner gauche de (90) degrés
+avancer de (50)
+
+
+définir monbloc4
+avancer de (50)
+tourner droite de (90) degrés
+avancer de (50)
+
+
+
+// Enigme 2
+
+
+quand le drapeau vert pressé
+mettre [n v] à [???]
+répéter (20) fois
+    monbloc (n) :: custom
+    avancer de (40)
+    tourner gauche de (15) degrés
+    ajouter à [n v] (1)
+fin
+
+
+définir monbloc (n)
+répéter (n) fois
+    avancer de (10)
+    tourner gauche de ( (360)/(n) ) degrés    
+fin
+
+
+
+// Enigme 3
+
+
+quand le drapeau vert pressé
+aller à x:(0) y:(-150)
+s'orienter à (0)
+stylo en position d'écriture
+effacer tout
+branche(???) :: custom
+
+
+définir branche(n)
+si < (n) > (0) > alors
+    avancer de ( (n) * (10) )
+    tourner gauche de (15) degrés
+    branche ( (n) - (1) ) :: custom
+    tourner droite de (45) degrés
+    branche ( (n) - (1) ) :: custom
+    tourner gauche de (30) degrés
+    avancer de ( (n) * (-10) )
+fin
+
+

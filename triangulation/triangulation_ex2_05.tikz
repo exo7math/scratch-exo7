@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw,  thick]
+\tikzstyle{point} = [black]
+
+
+\coordinate (A) at (1,2);
+\coordinate (B) at (6,0);
+\coordinate (C) at (3,-1);
+\coordinate (D) at (0,0);
+
+
+\draw[line,red] (A)--(B)--(C)--(D)--cycle;
+
+%\draw[line,red] (B)--(D);
+%\draw[line,red] (A)--(C);
+
+
+
+
+\foreach \point/\position in {A/above,B/right,C/below,D/left}{
+  \fill[point] (\point) circle (2pt) node[\position]{$\point$};
+}
+
+
+
+\end{tikzpicture}

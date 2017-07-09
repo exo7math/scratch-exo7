@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+
+\tikzstyle{line} = [draw,  thick]
+\tikzstyle{point} = [black]
+
+\coordinate (A) at (-1.5,1);
+\coordinate (B) at (1.5,-0.5);
+
+%\draw[line,dashed,black!20] (A)--(B);
+
+\foreach \point/\position in {A/below,B/below}{
+  \fill[point] (\point) circle (2pt) node[\position]{$\point$};
+}
+
+\draw (-3,-2.5) rectangle ++(6,5);
+
+\end{tikzpicture}

@@ -1,0 +1,14 @@
+\tikzstyle{line} = [draw,gray,very thick]
+\tikzstyle{arrow} = [->,>=latex,ultra thick]
+\begin{tikzpicture}[scale=0.7]
+
+\draw[line] (-5,10) -- ++(8,0);
+\draw[line,dashed] (0,0) -- (-5,10);
+\draw[arrow,red] (0,0) -- ++(-1,2);
+\draw[arrow,blue] (-5,10) -- ++(3,0);
+
+
+\fill[red] (0,0)  circle (7pt) node[below, black] {chat};
+\fill[blue] (-5,10)  circle (7pt) node[above, black] {chien};
+
+\end{tikzpicture}

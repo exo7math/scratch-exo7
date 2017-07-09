@@ -1,0 +1,454 @@
+
+===============================
+===============================
+Fiche 08 -- Plusieurs lutins
+===============================
+===============================
+
+
+===============================
+Fiche 08 - activité 1 - Arnaud
+===============================
+
+
+[part 1] 
+
+Avec Scratch, tu peux contrôler plusieurs lutins en même temps.
+
+Voici une course poursuite entre 4 chats. Le premier court après le second, le deuxième court après le troisième, le troisième suit le quatrième et le quatrième poursuit le premier !
+
+Chacun part depuis son coin, et à la fin ils se retrouvent tous au centre. 
+Mais en chemin, ils dessinent de belles courbes de poursuite.
+
+
+[part 2] 
+
+Tout d'abord je commence par donner un nom à mon lutin, pour l'instant il s'appelle 'Lutin1'. Je clique sur le costume avec le bouton droit de la souris, et je sélectionne 'info'. Je l'appelle 'Chat1'.
+
+J'en profite pour réduire un peu sa taille !
+
+
+Ensuite je crée des clones de mon premier chat. 
+
+Je pourrais cliquer sur l'icône 'nouveau lutin', pour définir un nouveau lutin.
+
+J'utilise ici une autre méthode, je clique avec le bouton droit de la souris, et je sélectionne 'dupliquer'. 
+
+Un nouveau lutin apparaît, je l'appelle 'Chat2'.
+Et hop voici 'Chat3' et 'Chat4'.
+
+Occupons nous du premier chat, [clic sur Chat1] je le fais partir du bas à gauche
+ - quand le drapeau vert cliqué
+ - aller à x: (-150) y:(-150)
+ - mettre la couleur du stylo à 'rouge'
+ - stylo en position d'écriture
+ - effacer tout
+ 
+Pour l'instant notre chat ne fait rien du tout, je veux maintenant le faire avancer !
+
+Je choisis une boucle infinie pour déplacer 'Chat1' petit à petit :
+  - je veux que le 'Chat1' poursuive le 'Chat2', je  
+demande donc à mon 'Chat1' de s'orienter vers le 'Chat2'. 
+
+  - et ensuite je fais avancer 'Chat1' d'un seul pas : 'avancer de (1)'
+
+
+Et voilà mon premier chat est programmé !
+
+[part 3]
+
+Chaque lutin, ici chaque chat, a ses propres instructions.
+
+Deux possibilités pour écrire les programmes des trois autres chats : 
+- soit on recommence tout pour le chat2, le chat3, le chat4 ; 
+- ou alors on glisse le code du 'chat1' vers le costume du 'chat2', cela copie directement les blocs.
+
+
+Il faut bien sûr que je modifie un peu ce code pour le chat2 : 
+  - je change la position de départ (en haut à gauche), [-150,+150]
+  - je change la couleur [bleu]
+  - et surtout le 'Chat2' court après le 'Chat3'.
+  
+Il faut qu tu fasses le même travail avec le 'Chat3' et le 'Chat4', et moi je l'ai déjà fait. 
+
+Il ne reste plus qu'à admirer les courbes produites.
+
+===============================
+Fiche 08 - activité 2 - Nathalie
+===============================
+
+[part 1]
+
+Dans cette activité nous allons programmer un petit jeu de calcul mental avec un chat et 3 souris.
+Deux nombres sont choisis au hasard dont on doit calculer le produit. 
+
+Une des souris annonce le bon résultat, les deux autres des résultats faux.
+En dirigeant Scratch à l’aide du pointeur de la souris d’ordinateur, l’utilisateur doit retrouver le bon résultat.
+
+
+
+[part 2]
+
+Pour stocker les 2 nombres, leur produit ainsi que les 2 résultats faux nous aurons besoin de 5 variables. 
+
+Créons-les [
+- nb1, 
+- nb2, 
+- produit, 
+- faux1, 
+- faux2].
+
+Voilà qui est fait.
+
+Il faut maintenant initialiser ces variables.
+
+On stocke dans la variable ‘nb1’ un nombre aléatoire entre 5 et 15.
+
+On fait de même pour ‘nb2’ en dupliquant la brique.
+
+On stocke maintenant dans la variable ‘produit’ le résultat de ‘nb1 * nb2’.
+
+Pour les deux réponses fausses, on peut par exemple choisir de calculer
+‘(nb1 + 1)* nb2’
+et ‘(nb – 1) * nb2’.
+[on les programme]
+
+
+[part 3]
+
+On va maintenant créer et programmer chacune des souris.
+
+On clique sur le petit personnage en bas à gauche près de ‘nouveau lutin’ pour accéder à la bibliothèque.
+Et on choisit le lutin ‘mouse1’.
+On peut le renommer cliquant sur le i bleu de ce lutin.
+
+Puis on programme sa position :
+la souris1 se place au hasard dans la moitié droite de l’écran avec une abscisse 'x' entre 0 et 150 et une ordonnée 'y' entre -150 et 150.
+
+Puis après un petit temps d’attente, elle dit la valeur de la variable produit.
+
+On duplique ensuite cette souris. Pour cela on clique droit sur le lutin ‘mouse1’ en bas à gauche et on duplique.
+
+Un nouveau lutin apparaît avec la même programmation que le précédent.
+
+Il ne reste plus qu’à modifier la brique ‘dire’ avec la variable ‘faux1’.
+
+Puis on recommence une seconde fois pour la 3ème souris qui dira ‘faux2’.
+
+
+[part 4]
+
+Il reste maintenant à programmer le déplacement de scratch.
+On commence par le sélectionner de nouveau.
+Il doit démarrer à gauche donc faisons le par exemple partir du point de coordonnée (-200 ; 0).
+Puis il annonce la multiplication à effectuer.
+On va pour cela devoir utiliser des ‘regroupe’
+
+Scratch va ensuite s’orienter vers le pointeur de la souris de l’ordinateur et avancer de 3.
+Ce bloc sera répété indéfiniment.
+
+
+[part 5]
+
+Pour terminer, il faut tester si scratch touche la bonne souris.
+
+On a choisi dans nos règles du jeu que ce serait la souris 1 qui dirait le bon résultat.
+
+Il faut donc programmer un test ‘si souris1 touchée’
+Alors 
+scratch dira ‘Bravo’ pendant 2 secondes
+et on arrêtera tout les scripts (dans la catégorie contrôle).
+
+Et voilà à toi de t’entrainer au calcul mental.
+
+ 
+===============================
+Fiche 08 - activité 3 - François
+===============================
+
+
+[part 1] 
+
+[Le programme est prêt mais caché.]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous allons simuler un jeu de lancer de balle, le but étant d'atteindre un lutin.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+Je vais lancé une balle en suivant la flèche.
+
+Je dois passer au dessus de la colline verte ici, et atteindre le un chien bleu là.
+
+J'ai deux réglages possible par des curseurs :
+  -  l'angle [montrer]
+  - la puissance.
+
+C'est parti : 
+  - je clique sur le drapeau vert, 
+  - je règle l'angle [30]
+  - la puissance [47]
+
+Je clique sur la barre espace du clavier :cela déclenche le lancer de la balle. 
+
+
+La direction prise au départ par la balle est bien celle de la flèche. 
+Bon, je n'ai pas réussi à toucher le chien.
+
+J'augmente la puissance : [92] : oups cette fois, c'est un peu trop fort !
+
+
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+
+[part 2] 
+
+Préparons le décor et les lutins.
+
+Je dessine une sorte de colline. Je clique sur 'Scène' et avec les outils de dessin, je trace en vert le contour de la colline, que je remplis ensuite de cette même couleur.
+
+Nous aurons besoin de trois lutins : le flèche du lanceur, la balle et le chien. 
+Je choisis dans la bibliothèque les costumes dont j'ai besoin :
+- Le chien bleu que je réduis légèrement.
+- La flèche pour simuler le lanceur.
+- La balle.
+
+C'est plus commode de les renommé : Lanceur, Balle, Chien.
+
+
+
+[part 3] 
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+L'action du lanceur est assez simple. 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je crée une variable 'angle' que je rends visible.
+
+Pour que cette variable puisse être modifiée par l'utilisateur sous la forme d'un curseur, j'ai juste à cliquer sur ce qui apparaît sur la scène. Sont alors proposées plusieurs présentations : 
+- la valeur contenue dans la variable avec son nom,
+- sans son nom, 
+- et enfin le contenu et le nom de la variable ainsi que le petit curseur qui permet d'en modifier la valeur.
+
+Je crée dès maintenant une variable 'puissance' que je présente en mode 'curseur'.
+
+L'action de la flèche consiste à s'orienter en permanence suivant la valeur contenue dans la variable 'angle'. 
+Je pose donc mon bloc de départ et je répète indéfiniment 's'orienter à ' et je glisse à la place de la valeur numérique, le bloc de la variable 'angle'. 
+
+
+
+[part 4]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Prenons quelques instants pour modéliser le mouvement de la balle en fonction de l'angle et de la puissance du lanceur.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+Nous allons décomposer ce mouvement en petits déplacements, pour simuler un tir parabolique.
+
+A chaque étape il y a en fait deux petits déplacements :
+  - la balle va avancer un petit peu dans la direction donnée par lanceur,
+le nombre dépend de la puissance,
+
+  - mais juste après la balle tomber un peu vers le bas, et au cours du temps elle tombera de plus en plus.
+
+Tout d'abord, le point de départ de la balle est le lanceur et son orientation est également celle du lanceur. 
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Nous pouvons donc disposer les blocs 'aller à' et choisir 'Lanceur' et le bloc 's'orienter à' et choisir 'angle'. 
+
+Je mets en place la première partie d'un petit déplacement, celui selon l'angle du lanceur : je fais avancer la balle de 0,1 fois la puissance.
+
+Ce déplacement doit se répéter indéfiniment et être déclenché lorsque la barre 'espace' est pressée. Voici. Nous pouvons déjà faire un petit test...
+
+
+quand [espace v] est cliqué
+aller à [Canon v]
+s'orienter à (angle)
+répéter indéfiniment
+    avancer de ( (0.1) * (puissance) )
+fin
+
+
+Tu constates comme moi que la trajectoire de la balle est rectiligne, nous allons la modifier en  en simulant la pesanteur, ce qui ramènera la balle au sol.
+
+
+[part 5]
+
+Je crée une variable 'descente', que je rends invisible pour l'utilisateur et que je commence par mettre à 0. Je diminue petit à petit la valeur contenue dans 'descente' en lui retirant à chaque étape par exemple 0.1 pas.
+
+    ajouter à [descente v] (-0.1)
+
+
+Je déplace la balle verticalement, pour cela j'ajoute le nombre négatif contenu dans descente à 'y'.
+
+    ajouter (descente) à y
+
+
+Regardons ce que cela donne... voilà une trajectoire qui simule bien la trajectoire parabolique d'une balle !
+
+
+
+[part 6]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Terminons le jeu : est-ce que le chien est touché ou pas ?
+
+
+- Si la balle touche le bord : le jeu s'arrête.
+- si la balle touche le sol vert : le jeu s'arrête aussi.
+- si la balle touche le chien : le jeu doit s'arrête et on félicite le joueur par des applaudissements.
+
+Mettons en place ces trois possibilités.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Premièrement, si le bord est touché : 'stop(tout)'
+
+    si < [bord v] touché?> alors
+        stop [tout v]
+    fin
+
+Deuxièmement, si la couleur du sol est touchée, même chose : 'stop(tout)'
+
+    si < couleur [#00FF00 v] touchée?> alors
+        stop [tout v]
+    fin
+
+Troisièmement, si le 'Chien' est touché, j'utilise alors le capteur 'touché ?' avec le lutin 'Chien'. J'ajoute un son avec le bloc 'jouer un son jusqu'au bout'. 
+
+Je choisis le son des applaudissements dans la bibliothèque.
+
+[rubrique 'Sons' à côté de 'Scripts' et 'Costumes', puis retour dans la partie 'Scripts' pour la 'Balle']
+
+Et je n'oublie pas le bloc : 'stop(tout)'
+
+    si < [Chien v] touché?> alors
+        jouer le son [clapping v] jusqu'au bout
+        stop [tout v]
+    fin
+
+
+[test]
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Voilà, notre jeu est terminé ! 
+
+
+
+OLD -- OLD -- OLD
+
+===============================
+Fiche 08 - activité 3 - François
+===============================
+
+
+[part 1] 
+[Le programme est prêt mais caché.]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Le but de notre activité est de simuler un lancer de balle, et de proposer au joueur de toucher un lutin en procédant lui-même à quelques réglages.
+
+Je te montre tout de suite ce à quoi nous souhaitons arriver.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Tout d'abord, regardons le décor et les lutins. Nous voyons une colline verte ici, un chien bleu là et à gauche une flèche et une balle jaune.
+
+Il y a en plus en haut à gauche deux curseurs : l'un nommé angle et l'autre puissance. Nous devinons déjà à quoi ils vont servir.
+
+Lorsque je clique sur le drapeau vert, le chien bleu se met à bouger. Je peux modifier l'angle et voir ce qui se passe visuellement : la flèche s'oriente suivant la valeur de l'angle choisie. Je peux également modifier la puissance. [[ 30 - 47 ]]
+
+Lorsque j'ai fait mes choix, je clique sur la barre espace du clavier. 
+Cela déclenche le lancer de la balle. 
+
+La direction prise au départ par la balle est bien celle de la flèche. 
+Bon, je n'ai pas réussi à toucher le chien. 
+J'essaie de nouvelles valeurs... encore d'autres... [[ 30 - 60 ]] voilà, j'ai réussi à atteindre le chien, ce qui provoque quelques applaudissements bien mérités.
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Maintenant que nous avons clairement pris connaissance des objectifs, mettons nous au travail.
+
+Nous allons dans un premier temps mettre en place le décor et les lutins.
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+
+
+[part 2] 
+Nous devons dessiner une sorte de colline. Je clique sur 'Scène' et avec les outils de dessin, je trace en vert le contour de la colline, que je remplis ensuite de cette même couleur.
+
+Nous avons ensuite trois lutins : le flèche du lanceur, la balle et le chien. 
+Allons donc choisir dans la bibliothèque de costumes ceux dont j'ai besoin.
+- Le chien bleu que je réduis légèrement.
+- La flèche pour simuler le lanceur.
+- La balle.
+Pour plus de commodité, je vais donner à chacun un nom différent de celui de la bibliothèque ce qui sera plus pratique pour nous : Lanceur, Balle, Chien.
+
+Une dernière chose pour ces lutins, je vais ajuster le 'centre du costume' afin notamment que le pivotement de la flèche soit comme nous l'entendons : je dois prendre la base de celle-ci comme centre, nous la verrons ainsi pivoter autour de sa base.
+
+
+
+
+[part 3] 
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous sommes maintenant prêt à programmer les actions de chacun.
+
+L'action du lanceur est assez simple, elle suit ce que le curseur qui était nommé angle lui demande. 
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Je crée donc une variable 'angle' que je rends visible en cochant en cochant la petite case à côté de ce bloc qui porte son nom.
+
+Pour que cette variable puisse être modifiée par l'utilisateur sous la forme d'un curseur, j'ai juste à cliquer sur ce qui apparaît sur la scène. Sont alors proposées plusieurs présentations : 
+- la valeur contenue dans la variable avec son nom,
+- sans son nom, 
+- et enfin le contenu et le nom de la variable ainsi que le petit curseur qui permet d'en modifier la valeur.
+
+L'action de la flèche consiste à s'orienter en permanence suivant la valeur contenue dans la variable 'angle'. 
+Je pose donc mon bloc de départ et je répète indéfiniment 's'orienter à ' et je glisse à la place de la valeur numérique, le bloc de la variable 'angle'. 
+
+
+[part 4]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Avant de nous lancer dans la programmation du mouvement de la balle, prenons quelques instants pour modéliser ce mouvement en fonction des deux variables proposées : l'angle de lancer et la puissance du lanceur.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Créons tout de suite une variable 'puissance' que je présente en mode 'curseur'.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Nous allons, sans rentrer dans les détails, suivre quelques règles simplifiées de mouvements, tu pourras si tu connais les règles de la mécanique être plus fidèle à la réalité.
+
+Nous allons décomposer ce mouvement en petits mouvements. 
+
+A chaque étape nous supposons que la balle va avancer dans la direction du lanceur d'un nombre de pas fonction de la puissance mais va également subir une action de pesanteur et donc va avancer vers le bas mais cette fois-ci en fonction du temps.
+
+Tout d'abord, le point de départ de la balle est la base du lanceur et son orientation est également celle du lanceur. 
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Nous pouvons donc disposer les blocs 'aller à' et choisir 'Lanceur' et le bloc 's'orienter à' et choisir 'angle'. 
+
+Je vais mettre en place la première partie d'un petit déplacement, celui selon l'angle du lanceur : je fais avancer la balle de 0,1 fois la puissance.
+
+Ce déplacement doit se répéter indéfiniment et être déclenché lorsque la barre 'espace' est pressée. Voici. Nous pouvons déjà faire un petit test...
+
+Tu constates comme moi que la trajectoire de la balle est pour l'instant rectiligne, nous devons la corriger en faisant intervenir ou en simulant un effet de pesanteur, ce qui ramènera inévitablement la balle au sol.
+
+Nous allons pour cela créer une troisième variable 'descente', que je rends invisible pour l'utilisateur et que je commence par mettre à 0. Je propose de changer petit à petit la valeur contenue dans cette variable en lui retirant à chaque étape par exemple 0.1 pas.
+
+Je souhaite déplacer la balle verticalement, cela revient à ajouter le nombre négatif contenu dans descente à 'y'.
+
+Regardons ce que cela donne... voilà une trajectoire qui simule assez correctement la trajectoire d'une balle.
+
+[part 5]
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Il ne nous reste plus qu'à mettre en place la fin du scénario, c'est-à-dire de savoir si la cible est atteinte ou non. 
+Nous avons trois cas de figure : 
+- si la balle touche le bord (comme dans lors de ma première tentative) : le jeu doit s'arrêter
+- si la balle touche le sol que j'ai mis en vert : le jeu doit s'arrêter
+- si la balle touche le chien : le jeu doit s'arrêter non sans avoir féliciter le joueur par quelques applaudissements.
+
+Mettons en place ces trois possibilités.
+
+VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
+Premièrement, si le bord est touché : 'stop(tout)'
+Deuxièmement, si la couleur du sol est touchée, même chose : 'stop(tout)'
+Troisièmement, si le 'Chien' est touché, j'utilise alors le capteur 'touché ?' avec le lutin 'Chien'. J'ajoute un son avec le bloc 'jouer un son jusqu'au bout'. Je n'ai pour l'instant qu'un seul son à ma disposition. Je dois aller dans la rubrique 'Sons' à côté de 'Scripts' et 'Costumes' et je choisis le son des applaudissements dans la bibliothèque. De retour dans la partie 'Scripts' pour la 'Balle', j'ai maintenant la possibilité de jouer les applaudissements. et je n'oublie pas le bloc : 'stop(tout)'
+
+Un test pour vérifier que tout est en ordre.
+
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+Voilà, le petit jeu est enfin réalisé, cela nous a demandé d'identifier finement à la fois les rôles et les tâches de chacun.
+
+Tu peux bien entendu perfectionner les règles de mouvement de la balle et complexifier les objectifs du joueur.
+

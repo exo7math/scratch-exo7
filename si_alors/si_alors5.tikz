@@ -1,0 +1,44 @@
+\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+\tikzstyle{boxstyle} =  [draw, text width=8em, text centered, minimum width=10em,  minimum height=3em, drop shadow]
+
+\tikzstyle{boxinput} = [boxstyle, rounded corners, drop shadow, fill=green!30]
+\tikzstyle{instruction} = [boxstyle,  fill=blue!30]
+\tikzstyle{ifthen} = [boxstyle,  text width=5em, diamond, fill=red!30]
+
+\tikzstyle{line} = [draw, very thick, shorten <=3pt,shorten >=3pt, color=black!70, -latex']
+
+
+
+\begin{tikzpicture}[scale=1,every node/.style={transform shape}]
+
+
+%Draw diagram elements
+\path node(P1)[ifthen] {Est-ce que $a \le 20$  ?};
+\path (P1)+(0,4) node(P0)[boxinput] {Entr\'ee : \^age $a$};
+\path (P1)+(0,-4) node(P2)[boxinput] {Afficher 
+
+''R\'eduction  $50 \%$''};
+\path (P1)+(6,0) node(P3)[ifthen] {Est-ce que $a \ge 60$  };
+\path (P3)+(0,-4) node(P4)[boxinput] {Afficher 
+
+''R\'eduction  $30 \%$''};
+\path (P3)+(6,0) node(P5)[boxinput] {Afficher 
+
+''Pas de 
+
+r\'eduction''};
+
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [left,pos=0.3] {\bf oui} (P2);
+\path[line] (P1.east) -- node [above, pos=0.3] {\bf non} (P3);
+\path[line] (P0.south) -- (P1);
+\path[line] (P3.south) -- node [left,pos=0.3] {\bf oui} (P4);
+\path[line] (P3.east) -- node [above, pos=0.3] {\bf non} (P5);
+
+
+\end{tikzpicture}

@@ -1,0 +1,249 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen]{../scratch}
+
+%\usepackage[print]{../scratch}
+
+\begin{document}
+
+\titre[F]{Boucles I}
+%===============================
+
+\emph{Tu connais déjà les boucles du type \emph{répéter 10 fois}. 
+Nous allons voir que plus généralement une \emph{boucle} est la répétition de plusieurs instructions, 
+avec à chaque répétition une condition qui permet d'arrêter ou de continuer le processus.}
+
+\bigskip
+\bigskip
+
+Voici un exemple d'algorithme avec une boucle. À gauche cet algorithme sous forme de diagramme, à droite le même algorithme sous forme d'instructions ligne par ligne.
+
+\begin{center}
+\begin{minipage}{0.7\textwidth} 
+\myfigure{0.9}{
+\footnotesize\tikzinput{boucles1_1}
+}
+\end{minipage}
+\begin{minipage}{0.29\textwidth}
+Tant que $x \ge 10$, faire :\\
+\indentation $x \leftarrow x-10$.\\
+Renvoyer $x$
+\end{minipage}
+\end{center}
+
+
+Partons par exemple de $x=59$ :
+\begin{itemize}
+  \item Lors du premier passage, la proposition \og $x\ge10$ \fg{} est bien sûr vraie. On effectue donc une première fois l'instruction $x \leftarrow x-10$. Maintenant $x=49$. 
+  \item Et on recommence. La proposition \og $x\ge10$ \fg{} est encore vraie. On effectue une seconde fois l'instruction 
+ $x \leftarrow x-10$. Maintenant $x=39$.  
+  \item Après le troisième passage, on a $x=29$.
+  \item Après la quatrième passage, on a $x=19$.
+  \item Après le cinquième passage, on a $x = 9$.
+  \item La proposition \og $x \ge 10$ \fg{} est maintenant fausse. La boucle s'arrête donc ici. On passe à d'autres instructions : ici, on affiche la valeur de la variable $x$ qui est $9$.
+\end{itemize}
+
+On résume ceci sous la forme d'un tableau :
+  $$
+  \begin{array}{l}
+  \text{Entrée : $x=59$}    \\
+  \begin{array}{|c|c|c|}
+  \hline  
+   x & \text{\og $x\ge10$ \fg{} ?} & \text{nouvelle valeur de } x \\
+  \hline\hline 
+  59 & \text{oui} & 49 \\
+  49 & \text{oui} & 39 \\
+  39 & \text{oui} & 29 \\
+  29 & \text{oui} & 19 \\
+  19 & \text{oui} & 9 \\
+  9 & \text{non} &  \\ 
+  \hline
+  \end{array} \\
+  \text{Sortie : $9$}  
+  \end{array} 
+  $$ 
+
+
+Essaie de voir ce que cela donne avec $x=125$.
+
+De façon plus générale, à partir d'un entier $x$, on teste s'il est plus grand que $10$. Si c'est le cas, on lui soustrait $10$. Et on recommence avec la nouvelle valeur de $x$. Lorsque la valeur de $x$ est plus petite que $10$ alors on arrête et on renvoie cette valeur. 
+
+Au final, cet algorithme très simple renvoie le chiffre des unités d'un entier positif.
+
+\bigskip
+\bigskip
+
+
+\begin{activite}
+Voici un algorithme sous forme de diagramme.
+
+\myfigure{0.9}{
+\footnotesize\tikzinput{boucles1_2}
+} 
+
+\begin{enumerate}
+    \item Quelle valeur est renvoyée si en entrée on part avec $x = 28$ ?
+    
+    Tu peux compléter le tableau suivant pour t'aider :
+  $$
+  \begin{array}{l}
+  \text{Entrée : $x=28$}    \\
+  \begin{array}{|c|c|c|}
+  \hline  
+   x & \text{\og $x$ pair \fg{} ?} & \text{nouvelle valeur de } x \\
+  \hline\hline 
+  28 &  &  \\
+   &  &  \\
+   &  &  \\
+  \hline
+  \end{array} \\
+  \text{Sortie : }  
+  \end{array} 
+  $$ 
+    
+    
+    
+    
+    
+    \item Complète le tableau des entrées/sorties : 
+        $$\begin{array}{|l||c|c|c|c|c|c|c|c|}
+  \hline
+  \text{entrée } x & 6&12&28&35&70&72\\
+  \hline
+  \text{sortie } & &&&&& \\
+  \hline
+  \end{array}  
+  $$ 
+    \item Quelle propriété a toujours l'entier renvoyé par cet algorithme ? Décris par une phrase l'utilité de cet algorithme (c'est-à-dire ce qu'il renvoie comme résultat, pas comment il le fait).
+    
+    
+    \item Réécris cet algorithme sous la forme d'instructions ligne par ligne.
+
+    \item Quels sont les nombres pour lesquels l'algorithme ne s'arrête pas ?
+\end{enumerate}
+
+\end{activite}
+
+
+\begin{activite}
+Voici un algorithme sous forme de diagramme.
+  
+
+\myfigure{0.9}{
+\footnotesize\tikzinput{boucles1_3}
+}   
+  
+\begin{enumerate}
+    \item Quelle valeur $S$ est renvoyée si en entrée on part avec $n = 5$ ?
+      
+    Tu peux compléter le tableau suivant pour t'aider :
+     
+  $$
+  \begin{array}{l}
+  \text{Entrée : $n=5$}    \\
+  \text{Initialisation : $S=0$}    \\  
+  \begin{array}{|c|c|c|c|}
+  \hline  
+   n & \text{\og $n \ge 1$ \fg{} ?} & \text{nouvelle valeur de } S &  \text{nouvelle valeur de } n\\
+  \hline\hline 
+   5 & \text{oui} & S = 0+5 = 5 & 4 \\
+   4 &  &  & \\
+     &  &  & \\   
+     &  &  & \\
+     &  &  & \\      
+     &  &  & \\
+  \hline
+  \end{array} \\
+  \text{Sortie : $S = $}  
+  \end{array} 
+  $$ 
+    
+    \item Complète le tableau des entrées/sorties  : 
+        $$\begin{array}{|l||c|c|c|c|c|c|c|c|c|c|}
+  \hline
+  \text{entrée } n & 1&2&3&4&5&6&7&8&9&10 \\
+  \hline
+  \text{sortie } S & &&&&&&&&& \\
+  \hline
+  \end{array}  
+  $$ 
+    \item Décris par une phrase ce que fait cet algorithme.
+        
+    \item Récris cet algorithme sous la forme d'instructions ligne par ligne.
+    
+    \item Dans cet algorithme, $n$ joue le rôle d'un \emph{compteur}. 
+    Écris un algorithme (sous forme de diagramme ou ligne par ligne) qui demande une valeur $n$ et exécute ensuite une instruction $n$ fois (par exemple \og avancer de $10$ pas \fg{}). Bien sûr, tu n'as pas le droit d'utiliser la commande \og répéter $n$ fois \fg{}, mais inspire-toi des exemples ci-dessus.
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}
+Voici un algorithme qui aide à payer une somme $S$ à l'aide de billets de $20$~€, de billets de $5$~€ et de pièces de $1$~€.
+
+
+\begin{center}
+\begin{minipage}{0.6\textwidth}
+Entrée : somme $S$ \\
+$n \leftarrow 0$ (initialisation du compteur) \\
+Tant que $S \ge 20$, faire :\\
+\indentation $S \leftarrow S - 20$, \\
+\indentation $n \leftarrow n + 1$. \\
+Tant que $S \ge 5$, faire :\\
+\indentation $S \leftarrow S - 5$, \\
+\indentation $n \leftarrow n + 1$. \\
+Tant que $S \ge 1$, faire :\\
+\indentation $S \leftarrow S - 1$, \\
+\indentation $n \leftarrow n + 1$. \\
+Sortie : renvoyer $n$
+\end{minipage}
+\end{center}
+
+\begin{enumerate}
+  \item Teste l'algorithme pour $S = 47$, puis pour $S = 203$.
+  
+  \item Que compte $n$ ? Combien vaut $S$ à la fin du programme ?
+  
+  \item Que se passe-t-il si on échange les boucles \og tant que $S \ge 20$... \fg{} et \og tant que $S \ge 5$... \fg{} ?
+  
+  \item Dessine l'algorithme sous la forme d'un diagramme d'instructions.
+  
+  \item Si $S \le 100$, quelle est la valeur maximale possible pour la sortie $n$ ? Pour quelle valeur de $S$, ce maximum est-il atteint ?
+  
+  \item Améliore l'algorithme pour qu'à la fin il renvoie trois entiers $n_{20}$, $n_5$, et $n_1$ qui correspondent (respectivement) aux nombres de billets de $20$~€, de billets de $5$~€ et de pièces de $1$~ €. 
+  
+\end{enumerate}
+\end{activite}
+
+
+\begin{activite}
+Voici un jeu où l'on tire au hasard des boules dans une urne. Il y a trois couleurs de boules : rouge, bleu, noir (codé par R, B, N). Il faut tirer suffisamment de boules d'une certaine couleur pour gagner. Les autres couleurs, soit font perdre immédiatement, soit permettent de rejouer.
+
+
+\myfigure{0.8}{
+\footnotesize\tikzinput{boucles1_4}
+}
+\begin{enumerate}
+  \item Teste l'algorithme selon les tirages suivants et dis si le joueur gagne ou perd (il peut y avoir plus de boules tirées que nécessaires, dans ce cas, le jeu s'arrête sans utiliser toutes les boules) :
+  
+  \begin{itemize}
+    \item R R B R N B N R N R
+    \item B R B B R B N R R R
+    \item R B B B N R R B R R
+  \end{itemize}
+  
+  \item  
+  \begin{enumerate}
+    \item Que compte $r$ ? Quelle couleur fait gagner ? Combien faut-il de boules de cette couleur pour gagner ?
+    
+    \item Quelle couleur fait perdre immédiatement ? Quelle couleur permet de continuer à jouer ?  Pourquoi le test \og Est-ce que la boule est noire ? \fg{} n'apparaît-il pas ?
+  
+  \end{enumerate}
+  
+
+\end{enumerate} 
+\end{activite}
+
+
+\end{document}
+
+
+  

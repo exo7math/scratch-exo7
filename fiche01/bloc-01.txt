@@ -1,0 +1,87 @@
+# Blocs utiles
+
+quand le drapeau vert pressé
+
+avancer de (10)
+
+s'orienter à (0)
+
+s'orienter à (180)
+
+s'orienter à (90)
+
+s'orienter à (-90)
+
+tourner gauche de (90) degrés
+
+tourner droite de (90) degrés
+
+
+# Pour initialisation
+
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+stylo en position d'écriture
+
+
+# Activité 1
+
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+stylo en position d'écriture
+avancer de (50)
+attendre (1) secondes
+avancer de (50)
+attendre (1) secondes
+avancer de (50)
+
+# Activité 2
+
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+stylo en position d'écriture
+avancer de (50)
+attendre (1) secondes
+s'orienter à (180)
+avancer de (50)
+attendre (1) secondes
+s'orienter à (-90)
+avancer de (100)
+attendre (1) secondes
+s'orienter à (0)
+avancer de (100)
+attendre (1) secondes
+s'orienter à (90)
+avancer de (100)
+
+
+# Activité 3
+
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+stylo en position d'écriture
+avancer de (100)
+attendre (1) secondes
+tourner gauche de (90) degrés
+avancer de (50)
+attendre (1) secondes
+tourner gauche de (90) degrés
+avancer de (50)
+attendre (1) secondes
+tourner droite de (90) degrés
+avancer de (100)
+attendre (1) secondes
+tourner gauche de (90) degrés
+avancer de (50)
+attendre (1) secondes
+tourner gauche de (90) degrés
+avancer de (150)
+

@@ -1,0 +1,84 @@
+
+# Pour énoncé
+
+répéter (10) fois
+
+fin
+
+
+# Activité 1
+
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+stylo en position d'écriture
+répéter (10) fois
+    s'orienter à (0)
+    avancer de (10)
+    s'orienter à (90)
+    avancer de (20)
+    attendre (1) secondes
+fin
+
+# Activité 2
+
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+stylo en position d'écriture
+répéter (8) fois
+    avancer de (50)
+    tourner gauche de (45) degrés
+    ajouter (10) à la couleur du stylo
+    attendre (1) secondes
+fin
+
+# Activité 3
+
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+stylo en position d'écriture
+répéter (3) fois
+    mettre la couleur du stylo à [#0000FF]
+    répéter (3) fois
+        s'orienter à (0)
+        avancer de (10)
+        s'orienter à (90)
+        avancer de (10)
+	fin
+    mettre la couleur du stylo à [#FF0000]
+    répéter (3) fois
+        s'orienter à (-90)
+        avancer de (10)
+        s'orienter à (90)
+        avancer de (10)
+	fin	
+fin
+dire (abscisse x)
+
+
+# Enigme 3
+
+quand le drapeau vert pressé
+aller à x:(0) y:(0)
+s'orienter à (90)
+effacer tout
+stylo en position d'écriture
+montrer
+répéter (4) fois
+    répéter (3) fois
+        avancer de (20)
+        tourner droite de (60) degrés
+        avancer de (10)
+        tourner gauche de (120) degrés
+        avancer de (10)
+        tourner droite de (60) degrés
+        avancer de (20)
+    fin
+    tourner gauche de (90) degrés	
+fin
+cacher

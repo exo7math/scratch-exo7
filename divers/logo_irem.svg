@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+      
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+ viewBox="-150 -231.25 487.5 325"
+  >
+  <!-- zone de protection = 1.36cm = 38.7pt (1cm = 28.45275pt) autour du logo -->
+  <!--    width="720px"
+  height="480px"
+  Initialement viewBox="-150 -231.25 487.5 325" 
+  TEnté ??? viewBox="-188 -269 525 363"-->
+  <title>Logo IREM Lille</title>
+
+  <defs>
+  <rect
+  id="rect"
+  x="-300"
+  y="-300"
+  width="300"
+  height="300"
+  rx="30"
+  />
+
+  <g id="niveau_1">
+  <use xlink:href="#rect" transform="scale(0.3333)" />
+  <use xlink:href="#rect" transform="translate(100) scale(0.3333) rotate(-60)" />
+  <use xlink:href="#rect" transform="translate(300) translate(-100) scale(0.3333) rotate(60) translate(-300)" />
+  <use xlink:href="#rect" transform="translate(300) scale(0.3333) translate(-300)" />
+  </g>
+
+  <g id="niveau_2">
+  <use xlink:href="#niveau_1" transform="scale(0.3333) " />
+  <use xlink:href="#niveau_1" transform="translate(100) scale(0.3333) rotate(-60) " />
+  <use xlink:href="#niveau_1" transform="translate(300) translate(-100) scale(0.3333) rotate(60) translate(-300)" />
+  <use xlink:href="#niveau_1" transform="translate(300) scale(0.3333) translate(-300)" />
+  </g>
+
+  <g id="niveau_3">
+  <use xlink:href="#niveau_2" transform="scale(0.3333) " />
+  <use xlink:href="#niveau_2" transform="translate(100) scale(0.3333) rotate(-60) " />
+  <use xlink:href="#niveau_2" transform="translate(300) translate(-100) scale(0.3333) rotate(60) translate(-300)" />
+  <use xlink:href="#niveau_2" transform="translate(300) scale(0.3333) translate(-300)" />
+  </g>
+
+  // Définitions des dégradés de couleurs
+  <linearGradient id="unverszero">
+  <stop style="stop-color:'#000000'; stop-opacity:1;" offset="0" />
+  <stop style="stop-color:'#000000'; stop-opacity:1;" offset="1" />
+  </linearGradient>
+
+  <linearGradient id="unverszeroflou">
+  <stop style="stop-color:#000000;stop-opacity:0;" offset="0" />
+  <stop style="stop-color:#000000;stop-opacity:0;" offset="1" />
+  </linearGradient>
+
+  <linearGradient id="zeroversun">
+  <stop style="stop-color:#000000;stop-opacity:1;" offset="0" />
+  <stop style="stop-color:#000000;stop-opacity:1;" offset="1" />
+  </linearGradient>
+
+  <linearGradient id="zeroversunflou">
+  <stop style="stop-color:#000000;stop-opacity:0;" offset="0" />
+  <stop style="stop-color:#000000;stop-opacity:0;" offset="1" />
+  </linearGradient>
+
+  // Ajustement des dégradés aux longueurs des textes
+  <linearGradient xlink:href="#unverszero"
+  id="allerIrem"
+  x1="-100"
+  y1="-148.5"
+  x2="62"
+  y2="-148.5"
+  gradientUnits="userSpaceOnUse" />
+
+  <linearGradient xlink:href="#unverszeroflou"
+  id="retourIrem"
+  x1="-100"
+  y1="-148.5"
+  x2="62"
+  y2="-148.5"
+  gradientUnits="userSpaceOnUse" />
+
+  <linearGradient xlink:href="#zeroversun"
+  id="allerLille"
+  x1="181.25"
+  y1="45"
+  x2="293.75"
+  y2="45"
+  gradientUnits="userSpaceOnUse" />
+
+  <linearGradient xlink:href="#zeroversunflou"
+  id="retourLille"
+  x1="181.25"
+  y1="45"
+  x2="293.75"
+  y2="45"
+  gradientUnits="userSpaceOnUse" />
+  </defs>
+
+
+
+
+
+
+  // Texte "IREM" - ombre
+  <!-- font-weight="bold" -->
+  <text
+  font-family="Verdana"
+  fill="url(#retourIrem)"
+  font-size="62"
+  x="-100"
+  y="-112.5">
+  IREM</text>
+	   
+  // Texte "IREM" x="-102"
+  <!-- font-weight="bold" -->
+  <text
+      font-family = "cursive"
+      fill="url(#allerIrem)"
+      font-size="88"
+      x="-130"
+      y="-114.5">
+  IREM</text>
+  
+  // Texte "Lille" - ombre
+<text
+font-family="Verdana"
+  fill="url(#retourLille)"
+  font-size="60"
+  x="181.25"
+  y="75">
+  Lille</text>
+
+  // Texte "Lille" x="179.25"
+<text
+font-family = "cursive"
+  fill="url(#allerLille)"
+  font-size="68"
+  x="179.25"
+  y="73">
+  Lille</text>
+
+  // Texte "Groupe" - ombre
+<text
+font-family="Times New Roman"
+  fill="#AE2573"
+  fill-opacity="0.7"
+  font-style="oblique"
+  font-size=""
+  x=""
+  y="">
+  </text>
+
+  // Texte "Groupe"
+<text
+font-family="Times New Roman"
+  fill="#AE2573"
+  fill-opacity="0.3"
+  font-style="oblique"
+  font-size=""
+  x="1"
+  y="1">
+  </text>
+
+  // Tracé du logo - 3 niveaux
+
+
+
+<!-- 
+<g>
+<use fill="#AE2573" opacity="0.9" id="niveau_1" xlink:href="#niveau_1"/>
+  </g>
+    
+  <g>
+  <use fill="#AE2573" opacity="0.6" id="niveau_2" xlink:href="#niveau_2"/>
+  </g>
+
+  <g>
+  <use fill="#AE2573" opacity="0.3" id="niveau_3" xlink:href="#niveau_3"/>
+  </g>
+-->
+
+
+<!-- #AE2573 = rgb(174,37,115) 
+Simulaition rgb de l'opacity
+0.1  ->  rgb(246,233,241)
+0.2  ->  rgb(238,211,227)
+0.3  ->  rgb(230,189,213)
+0.4  ->  rgb(222,167,199)
+0.5  ->  rgb(214,146,185)
+0.6  ->  rgb(206,124,171)
+0.7  ->  rgb(198,102,157)
+0.8  ->  rgb(190,80,143)
+0.9  ->  rgb(182,58,129)
+1.0  ->  rgb(174,37,115) 
+-->
+<!-- #1d428a = rgb(29,66,138) 
+Simulaition rgb de l'opacity
+0,1  ->  rgb(232,236,243)
+0,2  ->  rgb(209,217,231)
+0,3  ->  rgb(187,198,219)
+0,4  ->  rgb(164,179,208)
+0,5  ->  rgb(142,160,196)
+0,6  ->  rgb(119,141,184)
+0,7  ->  rgb(96,122,173)
+0,8  ->  rgb(74,103,161)
+0,9  ->  rgb(51,84,149)
+1  ->  rgb(29,66,138)
+
+#00b398 = rgb(0,179,152) 
+
+
+#8dc8e8 = rgb(141,200,232) 
+
+
+#f9423a 	#78be20 	#fce300
+
+
+-->
+
+
+
+<g>
+<use fill="rgb(142,160,196)" id="niveau_1" xlink:href="#niveau_1"/>
+  </g>
+    
+  <g>
+  <use fill="rgb(96,122,173)" id="niveau_2" xlink:href="#niveau_2"/>
+  </g>
+
+  <g>
+  <use fill="rgb(29,66,138)" id="niveau_3" xlink:href="#niveau_3"/>
+  </g>
+
+
+
+  </svg>

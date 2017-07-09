@@ -1,0 +1,20 @@
+
+\begin{tikzpicture}
+
+\def\R{206}
+\def\V{182}
+\def\B{125}
+
+\pgfmathsetmacro\nb{(0.21*\R+0.72*\V+0.07*\B)/255};
+
+
+\definecolor{Coul}{RGB}{\R,\V,\B};
+\definecolor{NB}{rgb}{\nb,\nb,\nb};
+
+
+\draw [draw=none, fill=Coul] (0,0) rectangle ++(2,2);
+\draw [draw=none, fill=NB] (4,0) rectangle ++(2,2);
+
+\draw[->,ultra thick] (2.5,1)--++(1,0);
+
+\end{tikzpicture}

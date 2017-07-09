@@ -1,0 +1,47 @@
+\usetikzlibrary{shadows,arrows}
+
+% Define block styles
+
+
+\tikzstyle{boxstyle} =  [draw, text width=8em, text centered, minimum width=10em,
+  minimum height=3em, drop shadow]
+
+\tikzstyle{boxinput} = [boxstyle, rounded corners, drop shadow, fill=green!30]
+\tikzstyle{instruction} = [boxstyle,  fill=blue!30]
+\tikzstyle{ifthen} = [boxstyle,  fill=red!30]
+
+\tikzstyle{line} = [draw,  thick]
+
+
+
+\begin{tikzpicture}
+
+\path node(P1) {$5$ };
+\path (P1)+(2,0) node(P2) {$4$};
+\path (P1)+(1,-1.5) node(P3){$\times$};
+\path (P3)+(2,0) node(P4) {$3$};
+\path (P3)+(1,-1.5) node(P5){$+$};
+
+% Draw arrows between elements
+\path[line] (P1.south) -- node [above] {} (P3);
+\path[line] (P2.south) -- node [above] {} (P3);
+\path[line] (P3.south) -- node [above] {} (P5);
+\path[line] (P4.south) -- node [above] {} (P5);
+
+
+\begin{scope}[xshift=6cm]
+\path node(P1) { };
+\path (P1)+(2,0) node(P2) {};
+\path (P1)+(1,-1.5) node(P3){$20$};
+\path (P3)+(2,0) node(P4) {$3$};
+\path (P3)+(1,-1.5) node(P5){$+$};
+
+% Draw arrows between elements
+
+\path[line] (P3.south) -- node [above] {} (P5);
+\path[line] (P4.south) -- node [above] {} (P5);
+\end{scope}
+
+\draw[->,>=latex,ultra thick,gray] (4,-2.5)--(6,-2.5);
+
+\end{tikzpicture}

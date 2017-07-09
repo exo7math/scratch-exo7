@@ -1,0 +1,32 @@
+\tikzstyle{line} = [draw,gray,thick]
+\tikzstyle{arrow} = [->,>=latex,thick]
+\begin{tikzpicture}[scale=0.5]
+
+\draw[gray] (-2,-12) grid (24,2);
+
+\draw[arrow,thick,orange] (-3,0)--(25,0) node[below]{$x$};
+\draw[arrow,thick,blue] (0,-13)--(0,3) node[left]{$y$};
+
+\node[above left] at (0,0) {$(0,0)$};
+
+\foreach \x/\L in {5/50,10/100,15/150,20/200}{
+    \node[above, orange] at (\x,0) {$\L$};
+}
+
+\foreach \y/\L in {-2/-20,-4/-40,-6/-60,-8/-80,-10/-100,2/20}{
+    \node[left, blue] at (0,\y) {$\L$};
+}
+
+\fill (0,0) circle (0.2);
+
+% Chiffre 4
+
+\draw[blue,line width = 2.5] (0,0)--(5,0);
+
+\draw[blue, line width = 4] (5,0)--++(-30:5)--++(10,0)-- ++(-60:5) coordinate(A);
+
+\fill[blue] (A) circle (0.2);
+
+\draw[blue, line width = 6] (A)  -- ++(-120:5);
+
+\end{tikzpicture}

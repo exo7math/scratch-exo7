@@ -1,0 +1,21 @@
+\tikzstyle{line} = [draw,gray,thick]
+\tikzstyle{arrow} = [->,>=latex,very thick,blue]
+\begin{tikzpicture}[scale=1]
+
+%\draw[gray] (0,0) grid (12,15);
+\def\alpha{40}
+
+\draw[arrow] (90-\alpha:5)--(0,0);
+\draw[arrow] (0,0)--(90+\alpha:5);
+
+
+\fill[black!50] (-3,0) rectangle ++(6,-0.5);
+
+% Borders
+\draw[gray, thick, dashed] (0,0)--++(0,5);
+
+% Angle
+\draw[double,->,>=latex] (0,4.5) arc (90:90-\alpha:4.5) node[midway, above]{\small angle};
+\draw[double,->,>=latex] (0,4) arc (90:90+\alpha:4) node[midway, above]{\small nouvel angle};
+
+\end{tikzpicture}

@@ -1,0 +1,153 @@
+\documentclass[class=report,crop=false, 12pt]{standalone}
+\usepackage[screen,nosolutions]{../scratch}
+
+\begin{document}
+
+\titre[S]{Listes}
+%===============================
+
+
+\insertvideo{Evt1pIm91O8}{Listes -- Activité 1}
+
+\insertvideo{Kl3hdt1CrGU}{Listes -- Activité 2}
+
+\insertvideo{bG7Y4JUn-c0}{Listes -- Activité 3}
+
+\bigskip
+\bigskip
+
+\begin{activite}[Calcul de la moyenne]
+
+Écris un programme qui demande trois notes à l'utilisateur et ensuite en calcule la moyenne.
+
+\begin{center}
+  \includegraphics[scale=\scaleecran,scale=1.2]{ecran-12-ex1} 
+\end{center}
+
+\begin{itemize}
+  \item Crée une liste \codeinline{notes}.
+  \item Demande trois notes à l'utilisateur. Ajoute chaque note à la liste.
+    
+  \item Calcule la somme des trois notes. Pour cela :
+  \begin{itemize}
+    \item Crée une variable \codeinline{somme} initialisée à $0$.
+    
+    \item Crée une variable \codeinline{n} initialisée à $0$. Ce sera le \emph{compteur} pour parcourir la liste. 
+    
+    \item Répète $3$ fois : ajouter $1$ à \codeinline{n} ; ajouter à
+    \codeinline{somme} l'élément numéro \codeinline{n} de la liste \codeinline{notes}.    
+  \end{itemize}
+  
+  \item La moyenne s'obtient par la formule :
+  $$\text{moyenne} = \frac{\text{somme des notes}}{\text{nombre de notes}}$$
+\end{itemize}
+
+
+\bigskip
+
+\textbf{Bonus.}
+\begin{itemize}
+  \item Modifie ton programme de sorte que le nombre de notes soit une variable. 
+  
+  \item Tu peux même demander à l'utilisateur de combien de notes il souhaite calculer la moyenne.
+  
+\end{itemize}
+
+\bigskip
+
+\textbf{Blocs utiles.}
+
+\begin{itemize}
+  \item On crée une liste à partir de la catégorie \og Données \fg{}. Ici la liste \codeinline{notes} contiendra trois nombres.
+  
+ 
+  \item On ajoute les éléments un par un. Par exemple, voici le bloc pour ajouter la note $15$ à la liste.
+ \begin{center}
+  \includegraphics[scale=\scalebloc]{bloc-12-ex1a}
+\end{center} 
+
+  \item On peut récupérer un élément de la liste. Par exemple, voici comment récupérer le premier élément ainsi que celui en position $n$
+  ($n$ est notre compteur qui peut valoir $1$, $2$, $3$...).
+ \begin{center}
+  \includegraphics[scale=\scalebloc]{bloc-12-ex1b}
+\end{center}   
+  \item Pour démarrer à chaque fois en partant d'une liste vide, commence ton programme avec le bloc :
+ \begin{center}
+  \includegraphics[scale=\scalebloc]{bloc-12-ex1c}
+\end{center}   
+  
+\end{itemize}
+
+  
+\end{activite}
+
+
+
+
+\begin{activite}[Le cadavre exquis]
+
+Programme un jeu de mots : forme une phrase au hasard à partir d'un sujet, d'un verbe, d'un lieu et d'un complément.
+
+\begin{center}
+  \includegraphics[scale=\scaleecran,scale=1.2]{ecran-12-ex2} 
+\end{center}
+
+\begin{itemize}
+  \item Crée une liste de sujets (par exemple : \codeinline{sujets} = [Le chat, Dark Vador, Ma voisine, Mickey Mouse,...]).
+  \item Crée une liste de verbes (par exemple : [mange, plonge, ronfle, grimpe,...]).
+  \item Crée une liste de lieux (par exemple : [dans la piscine, dans la forêt, à la plage, sur la neige,...]).  
+  \item Crée une liste de compléments (par exemple : [avec plaisir., sans s'arrêter., en boudant., avec Batman.,...]). 
+  \item Crée une variable \codeinline{monsujet} qui stocke un élément au hasard de la liste des sujets, idem avec un verbe, un lieu et un complément.
+  \item Affiche une phrase composée de ce sujet, ce verbe, ce lieu et ce complément.
+\end{itemize}
+
+
+
+\bigskip
+
+\textbf{Blocs utiles.}
+
+
+
+\begin{center}
+  \includegraphics[scale=\scalebloc]{bloc-12-ex2} 
+\end{center} 
+  
+\end{activite}
+
+
+
+
+\begin{activite}[Le loto en couleur]
+
+Programme un mini-jeu de loto en couleur.
+\begin{itemize}
+  \item Une urne contient $6$ boules : 3 noires, 2 rouges, 1 bleue.
+  \item On tire au hasard une première boule (puis on la remet dans l'urne) ; on tire au hasard une seconde boule (puis on la remet dans l'urne).
+  \item C'est gagné si l'une des boules est rouge et que l'autre est bleue.
+  \item Répète $10\,000$ tirages. Sur ces $10\,000$ tirages, combien en obtiens-tu de gagnants ?
+\end{itemize}
+
+\bigskip
+
+\emph{Indications.} 
+\begin{itemize}
+  \item Crée une liste [N,N,N,R,R,B] qui modélise les boules de l'urne. 
+  \item Attention, il n'y a pas d'ordre. Le tirage (R,B) et le tirage (B,R) sont tous les deux gagnants !
+\end{itemize}
+  
+\end{activite}
+
+
+
+
+\ifx \displaysolutions \myzero
+\else
+\begin{code}
+\onesolution{Listes}{Activité 1}{\includegraphics[scale=\scalesolution]{code-12-ex1}}
+\onesolution{Listes}{Activité 2}{\includegraphics[scale=\scalesolution]{code-12-ex2}}
+\onesolution{Listes}{Activité 3}{\includegraphics[scale=\scalesolution]{code-12-ex3}}    
+\end{code}
+\fi
+
+\end{document}

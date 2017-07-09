@@ -1,0 +1,45 @@
+%\usetikzlibrary{shadows,arrows, shapes}
+
+% Define block styles
+
+
+
+\tikzstyle{line} = [draw, ultra thick]
+\tikzstyle{point} = [circle, fill=red]
+
+
+\begin{tikzpicture}
+
+\draw[step=1.0, black] (0,0) grid (13,7);
+
+\coordinate (A) at (2,1);
+\node[below right] at (A) {$A$};
+
+\coordinate (B) at (8,6);
+\node[below right]  at (B) {$B$};
+
+\coordinate (C) at (11,3);
+\node[below right]  at (C) {$C$};
+
+\coordinate (D) at (10,2);
+\node[below right] at (D) {$D$};
+
+\coordinate (E) at (8,1);
+\node[below right]  at (E) {$E$};
+
+\coordinate (F) at (11,1);
+\node[below right]  at (F) {$F$};
+
+\draw[draw,fill=red] (A) circle (0.7ex); 
+\draw[draw,fill=red] (B) circle (0.7ex); 
+\draw[draw,fill=red] (C) circle (0.7ex); 
+\draw[draw,fill=red] (D) circle (0.7ex); 
+\draw[draw,fill=red] (E) circle (0.7ex); 
+\draw[draw,fill=red] (F) circle (0.7ex); 
+
+\begin{scope}[xshift=-2cm,yshift=1cm,scale=0.8]
+\draw[<->, >=latex, ultra thick] (-1,0) node[left]{O}--(1,0)node[right]{E};
+\draw[<->, >=latex, ultra thick] (0,-1)node[below]{S}--(0,1)node[above]{N};
+\end{scope}
+
+\end{tikzpicture}

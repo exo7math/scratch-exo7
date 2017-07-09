@@ -1,0 +1,24 @@
+\usetikzlibrary{patterns}
+\begin{tikzpicture}
+
+\tikzstyle{edge} = [draw, thick]
+\tikzstyle{border} = [draw, thick, blue]
+\tikzstyle{vertex} = [draw] 
+
+
+\begin{scope}[scale=1.8]
+
+
+\draw[border] (-1,-0.9) circle (0.8cm);
+\draw[border] (0:1) -- (120:1) -- (-120:1) -- cycle;
+
+
+
+\draw[border,xshift=-1cm] (0:1) -- (120:1) -- (-120:1) -- cycle;
+\draw[border,scale=0.7,xshift=0.7cm,yshift=0.6cm] (0:1) -- (120:1) -- (-120:1) -- cycle;
+
+
+\end{scope}
+
+
+\end{tikzpicture}
