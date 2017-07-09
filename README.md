@@ -20,7 +20,7 @@ Les vidéos sont visible depuis la chaîne *Youtube* [Scratch au collège](http:
 Livre
 =====
 
-Le livre est en vente sur Amazon.fr à prix coûtant. Vous ouvez aussi le téléchargez sur ce site. 
+Le livre sera en vente sur Amazon.fr à prix coûtant. Vous pouvez aussi le téléchargez sur ce site : [Livre 'Scratch au collège' (18 Mo)](livre-scratch.pdf)
 
 Activités Scratch
 =================
@@ -106,7 +106,7 @@ Ce projet est porté par le site Exo7 et l'IREM de Lille.
 Nous avons bénéficié du soutien de l'université de Lille 1, de la COMUE Lille Nord de France et d'une bourse Google CS4HS (*Computer Science for High School*).
 
 
-![Logo Exo7](divers/logo_exo7.svg "logo Exo7")
+![Logo Exo7](divers/logo_exo7.png "logo Exo7")
 ![Logo Exo7](divers/logo-irem-144.png "logo IREM")
 
 ![Logo Lille 1](divers/logo-lille1-320.png "logo Lille 1")
