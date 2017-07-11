@@ -20,7 +20,9 @@ Les vidéos sont visible depuis la chaîne *Youtube* [Scratch au collège](http:
 Livre
 =====
 
-Le livre sera en vente sur Amazon.fr à prix coûtant. Vous pouvez aussi le téléchargez sur ce site : [Livre 'Scratch au collège' (18 Mo)](livre-scratch.pdf)
+Le livre sera en vente sur Amazon.fr à prix coûtant. [Commander le livre sur Amazon.fr]( https://www.amazon.fr/dp/1548211508).
+
+Vous pouvez aussi le téléchargez sur ce site : [Livre 'Scratch au collège' (18 Mo)](livre-scratch.pdf).
 
 Activités Scratch
 =================
