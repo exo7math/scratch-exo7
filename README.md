@@ -1,5 +1,5 @@
-Nouvelle version disponible !
-=============================
+Une nouvelle version disponible !
+=================================
 
 Attention, cette page concerne Scratch 2 et est obsolète.
 La nouvelle version pour Scratch 3 se trouve ici : [Scratch au collège version 3](https://exo7math.github.io/scratch3-exo7/).
